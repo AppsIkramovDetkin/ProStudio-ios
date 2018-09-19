@@ -13,6 +13,11 @@
 		117360D020DD51B100BA156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117360CF20DD51B100BA156C /* Assets.xcassets */; };
 		117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360D120DD51B100BA156C /* LaunchScreen.storyboard */; };
 		117360DE20DD51B100BA156C /* ProStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360DD20DD51B100BA156C /* ProStudioUITests.swift */; };
+		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
+		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
+		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
+		7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */; };
+		7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */; };
 		C0AAFADCEFDFFC99D8F9DDF0 /* Pods_ProStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E8009C2DF02019A8BBF90E /* Pods_ProStudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +44,11 @@
 		117360DD20DD51B100BA156C /* ProStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStudioUITests.swift; sourceTree = "<group>"; };
 		117360DF20DD51B100BA156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
+		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
+		7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularViewConfiguration.swift; sourceTree = "<group>"; };
+		7CCE13E620F16DB700E268F3 /* PSCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularView.swift; sourceTree = "<group>"; };
+		7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleTest.storyboard; sourceTree = "<group>"; };
+		7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTestViewController.swift; sourceTree = "<group>"; };
 		BEF97739B9CBC7DC8B13DF69 /* Pods-ProStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,8 +94,8 @@
 		117360C720DD51B100BA156C /* ProStudio */ = {
 			isa = PBXGroup;
 			children = (
-				117360C820DD51B100BA156C /* AppDelegate.swift */,
-				117360CA20DD51B100BA156C /* ViewController.swift */,
+				7CCE13ED20F16F9900E268F3 /* Classes */,
+				7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */,
 				117360CC20DD51B100BA156C /* Main.storyboard */,
 				117360CF20DD51B100BA156C /* Assets.xcassets */,
 				117360D120DD51B100BA156C /* LaunchScreen.storyboard */,
@@ -118,6 +128,51 @@
 				BEF97739B9CBC7DC8B13DF69 /* Pods-ProStudio.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7CCE13E320F16D9700E268F3 /* Help Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CCE13E120F16D9200E268F3 /* Sinder.swift */,
+			);
+			path = "Help Files";
+			sourceTree = "<group>";
+		};
+		7CCE13E420F16DB700E268F3 /* PSCircularView */ = {
+			isa = PBXGroup;
+			children = (
+				7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */,
+				7CCE13E620F16DB700E268F3 /* PSCircularView.swift */,
+			);
+			path = PSCircularView;
+			sourceTree = "<group>";
+		};
+		7CCE13E920F16DC000E268F3 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				7CCE13E420F16DB700E268F3 /* PSCircularView */,
+			);
+			path = "Custom Elements";
+			sourceTree = "<group>";
+		};
+		7CCE13EC20F16F8C00E268F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				117360CA20DD51B100BA156C /* ViewController.swift */,
+				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7CCE13ED20F16F9900E268F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				117360C820DD51B100BA156C /* AppDelegate.swift */,
+				7CCE13E320F16D9700E268F3 /* Help Files */,
+				7CCE13E920F16DC000E268F3 /* Custom Elements */,
+				7CCE13EC20F16F8C00E268F3 /* View Controllers */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +263,7 @@
 			files = (
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
+				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
+				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
+				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
