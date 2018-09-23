@@ -7,6 +7,7 @@ target 'ProStudio' do
 	
 	pod 'SwiftyJSON'
 	pod 'Firebase'
+	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
