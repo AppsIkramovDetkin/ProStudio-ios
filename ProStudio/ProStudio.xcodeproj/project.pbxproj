@@ -13,6 +13,7 @@
 		117360D020DD51B100BA156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117360CF20DD51B100BA156C /* Assets.xcassets */; };
 		117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360D120DD51B100BA156C /* LaunchScreen.storyboard */; };
 		117360DE20DD51B100BA156C /* ProStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360DD20DD51B100BA156C /* ProStudioUITests.swift */; };
+		44832892215770D200BF4352 /* AuthorisationScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44832891215770D200BF4352 /* AuthorisationScreen.xib */; };
 		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
 		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
@@ -43,6 +44,7 @@
 		117360D920DD51B100BA156C /* ProStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360DD20DD51B100BA156C /* ProStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStudioUITests.swift; sourceTree = "<group>"; };
 		117360DF20DD51B100BA156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44832891215770D200BF4352 /* AuthorisationScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorisationScreen.xib; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
 		7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularViewConfiguration.swift; sourceTree = "<group>"; };
@@ -113,6 +115,22 @@
 			path = ProStudioUITests;
 			sourceTree = "<group>";
 		};
+		4483288D21576FF400BF4352 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4483288E2157700400BF4352 /* AuthorisationScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4483288E2157700400BF4352 /* AuthorisationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				44832891215770D200BF4352 /* AuthorisationScreen.xib */,
+			);
+			path = AuthorisationScreen;
+			sourceTree = "<group>";
+		};
 		67EFB22641E5760234A550AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +185,7 @@
 		7CCE13ED20F16F9900E268F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4483288D21576FF400BF4352 /* Screens */,
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
 				7CCE13E320F16D9700E268F3 /* Help Files */,
 				7CCE13E920F16DC000E268F3 /* Custom Elements */,
@@ -262,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
+				44832892215770D200BF4352 /* AuthorisationScreen.xib in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
