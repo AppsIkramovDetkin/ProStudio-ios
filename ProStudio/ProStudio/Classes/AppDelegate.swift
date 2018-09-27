@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+			
+			FirebaseApp.configure()
+			
+			let chat = FBChat(chat_ID: "12", from: 1, to: 2, failure: createChatFailure)
+			chat.sendText(text: "message 1", failure: messageFailure, success: messageSuccess)
+			chat.sendText(text: "message 2", failure: messageFailure, success: messageSuccess)
+			
+			if let localFile = Bundle.main.url(forResource: "image", withExtension: "jpg"){
+				chat.sendImage(imageURL: localFile, failure: messageFailure, success: messageSuccess)
+				chat.sendVideo(videoURL: localFile, failure: messageFailure, success: messageSuccess)
+			}
+			
+			let user = FBUser(email: "aizikovich4@mail2.ru", password: "qwerty")
+			let auth = FBAuthentication()
+			auth.register(email: user.getEmail(), password: user.getPassword(), failure: registrationFailure, success: registrationSuccess )
+			auth.login(user: user, failure: loginFailure, success: loginSuccess)
         return true
     }
+	
+	func messageFailure(err: Error) {
+		print("messageFailure")
+	}
+	
+	func messageSuccess() {
+		print("messageSuccess")
+	}
+	
+	func createChatFailure(err: Error) {
+		print("createChatFailure")
+	}
+	
+	func registrationSuccess() {
+		print("registrationSuccess")
+	}
+	
+	func registrationFailure() {
+		print("registrationFailure")
+	}
+	
+	func loginSuccess() {
+		print("loginSuccess")
+	}
+	
+	func loginFailure() {
+		print("loginFailure")
+	}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

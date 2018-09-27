@@ -13,6 +13,12 @@
 		117360D020DD51B100BA156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117360CF20DD51B100BA156C /* Assets.xcassets */; };
 		117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360D120DD51B100BA156C /* LaunchScreen.storyboard */; };
 		117360DE20DD51B100BA156C /* ProStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360DD20DD51B100BA156C /* ProStudioUITests.swift */; };
+		447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B821571A3100ACBE09 /* FBAuthentication.swift */; };
+		447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B921571A3100ACBE09 /* FBUserModel.swift */; };
+		447764BD21571A3100ACBE09 /* FBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764BA21571A3100ACBE09 /* FBReference.swift */; };
+		447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447764C02157208400ACBE09 /* GoogleService-Info.plist */; };
+		4483288A2157277900BF4352 /* FBMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448328892157277900BF4352 /* FBMessageModel.swift */; };
+		4483288C215727FF00BF4352 /* FBChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483288B215727FF00BF4352 /* FBChatService.swift */; };
 		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
 		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
@@ -43,6 +49,12 @@
 		117360D920DD51B100BA156C /* ProStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360DD20DD51B100BA156C /* ProStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStudioUITests.swift; sourceTree = "<group>"; };
 		117360DF20DD51B100BA156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447764B821571A3100ACBE09 /* FBAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthentication.swift; sourceTree = "<group>"; };
+		447764B921571A3100ACBE09 /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
+		447764BA21571A3100ACBE09 /* FBReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBReference.swift; sourceTree = "<group>"; };
+		447764C02157208400ACBE09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ProStudio/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		448328892157277900BF4352 /* FBMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMessageModel.swift; sourceTree = "<group>"; };
+		4483288B215727FF00BF4352 /* FBChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChatService.swift; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
 		7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularViewConfiguration.swift; sourceTree = "<group>"; };
@@ -99,6 +111,7 @@
 				117360CC20DD51B100BA156C /* Main.storyboard */,
 				117360CF20DD51B100BA156C /* Assets.xcassets */,
 				117360D120DD51B100BA156C /* LaunchScreen.storyboard */,
+				447764C02157208400ACBE09 /* GoogleService-Info.plist */,
 				117360D420DD51B100BA156C /* Info.plist */,
 			);
 			path = ProStudio;
@@ -111,6 +124,26 @@
 				117360DF20DD51B100BA156C /* Info.plist */,
 			);
 			path = ProStudioUITests;
+			sourceTree = "<group>";
+		};
+		447764B72157170C00ACBE09 /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				448328882157276000BF4352 /* Models */,
+				447764B821571A3100ACBE09 /* FBAuthentication.swift */,
+				447764BA21571A3100ACBE09 /* FBReference.swift */,
+				4483288B215727FF00BF4352 /* FBChatService.swift */,
+			);
+			path = FirebaseService;
+			sourceTree = "<group>";
+		};
+		448328882157276000BF4352 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				447764B921571A3100ACBE09 /* FBUserModel.swift */,
+				448328892157277900BF4352 /* FBMessageModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		67EFB22641E5760234A550AB /* Frameworks */ = {
@@ -167,6 +200,7 @@
 		7CCE13ED20F16F9900E268F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				447764B72157170C00ACBE09 /* FirebaseService */,
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
 				7CCE13E320F16D9700E268F3 /* Help Files */,
 				7CCE13E920F16DC000E268F3 /* Custom Elements */,
@@ -263,6 +297,7 @@
 			files = (
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 			);
@@ -357,11 +392,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447764BD21571A3100ACBE09 /* FBReference.swift in Sources */,
+				4483288C215727FF00BF4352 /* FBChatService.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
+				447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
+				4483288A2157277900BF4352 /* FBMessageModel.swift in Sources */,
+				447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
