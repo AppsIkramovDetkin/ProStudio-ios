@@ -18,7 +18,7 @@ Codestyle from RayWenderlich should be used:  [_Swift_](https://github.com/raywe
 -   Constants declaration:
 -   Inside .swift - only calss propperties are supported i.e.  `static let name = value`
 -   Colors should be used through the constants declared in UIColor+PS.swift, if it not exist, you need to create it
--   For fonts - use UIFont extension methods from UIFont+Lykke.swift, if it not exist, you need to create it
+-   For fonts - use UIFont extension methods from UIFont+PS.swift, if it not exist, you need to create it
 -   Replace all  `deprecated`functionality in scope of changed method. If for some reason you can't do that, provide full description  `// why`above the line.
 
 ### Process
