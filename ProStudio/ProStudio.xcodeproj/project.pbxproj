@@ -21,9 +21,9 @@
 		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
 		AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */; };
 		AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7997BC215BC02800A6B297 /* MessageModel.swift */; };
-		ACE5906B215BF9F10053EC10 /* CellWithoutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59069215BF9F10053EC10 /* CellWithoutImage.swift */; };
-		ACE5906C215BF9F10053EC10 /* CellWithoutImageLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906A215BF9F10053EC10 /* CellWithoutImageLeft.xib */; };
-		ACE59070215BFA170053EC10 /* CellWithoutImageRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906E215BFA170053EC10 /* CellWithoutImageRight.xib */; };
+		ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59069215BF9F10053EC10 /* TextChatCell.swift */; };
+		ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */; };
+		ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */; };
 		ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59071215BFDF30053EC10 /* ImageChatCell.swift */; };
 		ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE59072215BFDF30053EC10 /* ImageChatCellLeft.xib */; };
 		ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE59076215BFE110053EC10 /* ImageChatCellRight.xib */; };
@@ -61,9 +61,9 @@
 		AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithManager.swift; sourceTree = "<group>"; };
 		AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatWithManager.xib; sourceTree = "<group>"; };
 		AC7997BC215BC02800A6B297 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
-		ACE59069215BF9F10053EC10 /* CellWithoutImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithoutImage.swift; sourceTree = "<group>"; };
-		ACE5906A215BF9F10053EC10 /* CellWithoutImageLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellWithoutImageLeft.xib; sourceTree = "<group>"; };
-		ACE5906E215BFA170053EC10 /* CellWithoutImageRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellWithoutImageRight.xib; sourceTree = "<group>"; };
+		ACE59069215BF9F10053EC10 /* TextChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatCell.swift; sourceTree = "<group>"; };
+		ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextChatCellLeft.xib; sourceTree = "<group>"; };
+		ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextChatCellRight.xib; sourceTree = "<group>"; };
 		ACE59071215BFDF30053EC10 /* ImageChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChatCell.swift; sourceTree = "<group>"; };
 		ACE59072215BFDF30053EC10 /* ImageChatCellLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageChatCellLeft.xib; sourceTree = "<group>"; };
 		ACE59076215BFE110053EC10 /* ImageChatCellRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageChatCellRight.xib; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		ACE59066215BF9BD0053EC10 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				ACE59068215BF9D30053EC10 /* CellWithoutImage */,
+				ACE59068215BF9D30053EC10 /* TextChatCell */,
 				ACE59067215BF9C80053EC10 /* ImageChatCell */,
 			);
 			path = CustomCells;
@@ -241,14 +241,14 @@
 			path = CellWithoutImage1;
 			sourceTree = "<group>";
 		};
-		ACE59068215BF9D30053EC10 /* CellWithoutImage */ = {
+		ACE59068215BF9D30053EC10 /* TextChatCell */ = {
 			isa = PBXGroup;
 			children = (
-				ACE59069215BF9F10053EC10 /* CellWithoutImage.swift */,
-				ACE5906A215BF9F10053EC10 /* CellWithoutImageLeft.xib */,
-				ACE5906E215BFA170053EC10 /* CellWithoutImageRight.xib */,
+				ACE59069215BF9F10053EC10 /* TextChatCell.swift */,
+				ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */,
+				ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */,
 			);
-			path = CellWithoutImage;
+			path = TextChatCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,13 +340,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
-				ACE5906C215BF9F10053EC10 /* CellWithoutImageLeft.xib in Resources */,
+				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
-				ACE59070215BFA170053EC10 /* CellWithoutImageRight.xib in Resources */,
+				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +446,7 @@
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
-				ACE5906B215BF9F10053EC10 /* CellWithoutImage.swift in Sources */,
+				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,

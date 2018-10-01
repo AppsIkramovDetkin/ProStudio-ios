@@ -1,6 +1,6 @@
 import UIKit
 
-class CellWithoutImage: UITableViewCell {
+class TextChatCell: UITableViewCell {
     
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var bubbleView: UIView!

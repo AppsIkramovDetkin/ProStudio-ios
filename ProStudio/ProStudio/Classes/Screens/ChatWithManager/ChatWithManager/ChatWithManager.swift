@@ -4,10 +4,10 @@ class ChatWithManager: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let imageChatCellLeft       = "ImageChatCellLeft"
-    private let imageChatCellRight      = "ImageChatCellRight"
-    private let cellWithoutImageLeft    = "CellWithoutImageLeft"
-    private let cellWithoutImageRight   = "CellWithoutImageRight"
+    private let imageChatCellLeft   = "ImageChatCellLeft"
+    private let imageChatCellRight  = "ImageChatCellRight"
+    private let textChatCellLeft    = "TextChatCellLeft"
+    private let textChatCellRight   = "TextChatCellRight"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,13 @@ extension ChatWithManager: UITableViewDataSource, UITableViewDelegate {
         
         
         if MessageModel.mockedMessages[indexPath.row].sender != true {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageRight, for: indexPath) as! CellWithoutImage
+            let cell = tableView.dequeueReusableCell(withIdentifier: textChatCellRight, for: indexPath) as! TextChatCell
             cell.avatarImageView.image = data.image
             cell.textView.text = data.textMessage
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageLeft, for: indexPath) as! CellWithoutImage
+            let cell = tableView.dequeueReusableCell(withIdentifier: textChatCellLeft, for: indexPath) as! TextChatCell
             cell.avatarImageView.image = data.image
             cell.textView.text = data.textMessage
             
@@ -50,8 +50,8 @@ extension ChatWithManager: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func registerCells() {
-        tableView.register(UINib(nibName: cellWithoutImageLeft, bundle: nil), forCellReuseIdentifier: cellWithoutImageLeft)
-        tableView.register(UINib(nibName: cellWithoutImageRight, bundle: nil), forCellReuseIdentifier: cellWithoutImageRight)
+        tableView.register(UINib(nibName: textChatCellLeft, bundle: nil), forCellReuseIdentifier: textChatCellLeft)
+        tableView.register(UINib(nibName: textChatCellRight, bundle: nil), forCellReuseIdentifier: textChatCellRight)
         tableView.register(UINib(nibName: imageChatCellLeft, bundle: nil), forCellReuseIdentifier: imageChatCellLeft)
         tableView.register(UINib(nibName: imageChatCellRight, bundle: nil), forCellReuseIdentifier: imageChatCellRight)
     }
