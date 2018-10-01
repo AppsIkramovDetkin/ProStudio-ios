@@ -4,10 +4,10 @@ class ChatWithManager: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let cellWithImageLeft       = "CellWithImageLeft"
-    let cellWithImageRight      = "CellWithImageRight"
-    let cellWithoutImageLeft    = "CellWithoutImageLeft"
-    let cellWithoutImageRight   = "CellWithoutImageRight"
+    private let imageChatCellLeft       = "ImageChatCellLeft"
+    private let imageChatCellRight      = "ImageChatCellRight"
+    private let cellWithoutImageLeft    = "CellWithoutImageLeft"
+    private let cellWithoutImageRight   = "CellWithoutImageRight"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,38 +26,33 @@ class ChatWithManager: UIViewController {
 extension ChatWithManager: UITableViewDataSource, UITableViewDelegate {
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = ChatModel.arrayForSample.count
+        let count = MessageModel.mockedMessages.count
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = ChatModel.arrayForSample[indexPath.row]
+        let data = MessageModel.mockedMessages[indexPath.row]
         
-        if ChatModel.arrayForSample[indexPath.row].sender == true {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageLeft, for: indexPath) as? CellWithoutImage
-            cell?.avatarImage.image = data.image
-            cell?.textView.text = data.textMessage
-
-            return cell!
-        } else if ChatModel.arrayForSample[indexPath.row].sender == false {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageRight, for: indexPath) as? CellWithoutImage
-            cell?.avatarImage.image = data.image
-            cell?.textView.text = data.textMessage
+        
+        if MessageModel.mockedMessages[indexPath.row].sender != true {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageRight, for: indexPath) as! CellWithoutImage
+            cell.avatarImageView.image = data.image
+            cell.textView.text = data.textMessage
             
-            return cell!
+            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageLeft, for: indexPath) as? CellWithoutImage
-            cell?.avatarImage.image = data.image
-            cell?.textView.text = data.textMessage
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellWithoutImageLeft, for: indexPath) as! CellWithoutImage
+            cell.avatarImageView.image = data.image
+            cell.textView.text = data.textMessage
             
-            return cell!
+            return cell
         }
     }
     
-    func registerCells() {
+    private func registerCells() {
         tableView.register(UINib(nibName: cellWithoutImageLeft, bundle: nil), forCellReuseIdentifier: cellWithoutImageLeft)
         tableView.register(UINib(nibName: cellWithoutImageRight, bundle: nil), forCellReuseIdentifier: cellWithoutImageRight)
-        tableView.register(UINib(nibName: cellWithImageLeft, bundle: nil), forCellReuseIdentifier: cellWithImageLeft)
-        tableView.register(UINib(nibName: cellWithImageRight, bundle: nil), forCellReuseIdentifier: cellWithImageRight)
+        tableView.register(UINib(nibName: imageChatCellLeft, bundle: nil), forCellReuseIdentifier: imageChatCellLeft)
+        tableView.register(UINib(nibName: imageChatCellRight, bundle: nil), forCellReuseIdentifier: imageChatCellRight)
     }
 }

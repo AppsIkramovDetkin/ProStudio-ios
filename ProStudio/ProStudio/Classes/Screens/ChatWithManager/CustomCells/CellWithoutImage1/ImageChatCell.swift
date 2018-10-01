@@ -1,11 +1,10 @@
 import UIKit
 
-class CellWithoutImage: UITableViewCell {
-    
+class ImageChatCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var bubbleView: UIView!
-    @IBOutlet weak var textView: UITextView!
-    
+    @IBOutlet weak var imageViewInMessage: UIImageView!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImageView.layer.cornerRadius  = 17.5

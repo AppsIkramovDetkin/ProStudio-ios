@@ -32,6 +32,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxC-7h-O48">
                                 <rect key="frame" x="5" y="0.0" width="203.5" height="72"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203.5" id="j5v-Wn-ewh"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -60,6 +63,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="BoX-3s-ZLg" firstAttribute="top" secondItem="BZ9-LU-Pbk" secondAttribute="top" id="2Jm-ef-qAm"/>
+                    <constraint firstItem="BoX-3s-ZLg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vRj-C1-GUV" secondAttribute="leading" constant="47" id="6Ef-C3-TMJ"/>
                     <constraint firstItem="BoX-3s-ZLg" firstAttribute="leading" secondItem="GPY-xX-xHU" secondAttribute="leading" id="GvG-On-Ykb"/>
                     <constraint firstItem="BZ9-LU-Pbk" firstAttribute="top" secondItem="vRj-C1-GUV" secondAttribute="topMargin" id="JjJ-bl-uEE"/>
                     <constraint firstItem="BoX-3s-ZLg" firstAttribute="leading" secondItem="GPY-xX-xHU" secondAttribute="trailing" constant="-40" id="M4l-S4-xBM"/>
@@ -74,7 +78,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="zz5-PT-sg2"/>
             <connections>
-                <outlet property="avatarImage" destination="BZ9-LU-Pbk" id="l4H-SS-QTg"/>
+                <outlet property="avatarImageView" destination="BZ9-LU-Pbk" id="l4H-SS-QTg"/>
                 <outlet property="bubbleView" destination="BoX-3s-ZLg" id="dRL-h6-UEZ"/>
                 <outlet property="textView" destination="PxC-7h-O48" id="3vh-Rx-BY6"/>
             </connections>
