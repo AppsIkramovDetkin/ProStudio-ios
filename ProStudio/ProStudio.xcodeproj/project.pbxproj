@@ -18,8 +18,11 @@
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
 		7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */; };
 		7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */; };
+		AC1CE96C2162A2E500E7F26F /* RegistraionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */; };
+		AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */; };
 		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
 		AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */; };
+		AC798C5021653EBC00C33EBD /* Intro in Resources */ = {isa = PBXBuildFile; fileRef = AC798C4F21653EBC00C33EBD /* Intro */; };
 		AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7997BC215BC02800A6B297 /* MessageModel.swift */; };
 		ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59069215BF9F10053EC10 /* TextChatCell.swift */; };
 		ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */; };
@@ -58,8 +61,11 @@
 		7CCE13E620F16DB700E268F3 /* PSCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularView.swift; sourceTree = "<group>"; };
 		7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleTest.storyboard; sourceTree = "<group>"; };
 		7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTestViewController.swift; sourceTree = "<group>"; };
+		AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistraionViewController.swift; sourceTree = "<group>"; };
+		AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistraionViewController.xib; sourceTree = "<group>"; };
 		AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithManager.swift; sourceTree = "<group>"; };
 		AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatWithManager.xib; sourceTree = "<group>"; };
+		AC798C4F21653EBC00C33EBD /* Intro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Intro; sourceTree = "<group>"; };
 		AC7997BC215BC02800A6B297 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		ACE59069215BF9F10053EC10 /* TextChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatCell.swift; sourceTree = "<group>"; };
 		ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextChatCellLeft.xib; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		117360C720DD51B100BA156C /* ProStudio */ = {
 			isa = PBXGroup;
 			children = (
+				AC798C4D21653EA700C33EBD /* Resources */,
 				7CCE13ED20F16F9900E268F3 /* Classes */,
 				7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */,
 				117360CC20DD51B100BA156C /* Main.storyboard */,
@@ -194,9 +201,19 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		AC1CE9692162A27000E7F26F /* FirstLaunchRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */,
+				AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */,
+			);
+			path = FirstLaunchRegistration;
+			sourceTree = "<group>";
+		};
 		AC3D58F6215A7E30005E0673 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC1CE9692162A27000E7F26F /* FirstLaunchRegistration */,
 				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
 			);
 			path = Screens;
@@ -209,6 +226,22 @@
 				ACE59066215BF9BD0053EC10 /* CustomCells */,
 			);
 			path = ChatWithManager;
+			sourceTree = "<group>";
+		};
+		AC798C4D21653EA700C33EBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC798C4E21653EAE00C33EBD /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC798C4E21653EAE00C33EBD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC798C4F21653EBC00C33EBD /* Intro */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		AC7997C0215BDC8100A6B297 /* ChatWithManager */ = {
@@ -339,12 +372,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC798C5021653EBC00C33EBD /* Intro in Resources */,
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
+				AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
@@ -440,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1CE96C2162A2E500E7F26F /* RegistraionViewController.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,

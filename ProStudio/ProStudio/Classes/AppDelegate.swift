@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("test build")
         
         //TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
-        let root: ChatWithManager = ChatWithManager()
+        let root: RegistraionViewController = RegistraionViewController()
         if let window = self.window {
             window.rootViewController = root
         }
