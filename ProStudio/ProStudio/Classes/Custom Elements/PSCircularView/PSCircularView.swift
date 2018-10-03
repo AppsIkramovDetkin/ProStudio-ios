@@ -108,8 +108,8 @@ final class PSCircularView: UIView {
 		progress.fromValue = circleLayerGradientMask.strokeStart
 		progress.toValue = endValue
 		
-		progress.fillMode = kCAFillModeForwards
-		progress.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+		progress.fillMode = CAMediaTimingFillMode.forwards
+		progress.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
 		progress.isRemovedOnCompletion = false
 		circleLayerGradientMask.add(progress, forKey: "strokeEnd")
 	}
@@ -159,7 +159,7 @@ final class PSCircularView: UIView {
 		circleView.layer.addSublayer(staticCircleLayer)
 		
 		circleLayerGradientMask.path = circlePath.cgPath
-		circleLayerGradientMask.lineCap = kCALineCapRound
+		circleLayerGradientMask.lineCap = CAShapeLayerLineCap.round
 //		circleLayerGradientLayer.mask = circleLayerGradientMask
 		circleLayerGradientMask.frame = frame
 		

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D754D048A59EE2C949DB4030D58270DC"
+               BlueprintIdentifier = "218BE2BF226073EB0AE3F80735508C47"
                BuildableName = "GoogleAPIClientForREST.framework"
                BlueprintName = "GoogleAPIClientForREST"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D754D048A59EE2C949DB4030D58270DC"
+            BlueprintIdentifier = "218BE2BF226073EB0AE3F80735508C47"
             BuildableName = "GoogleAPIClientForREST.framework"
             BlueprintName = "GoogleAPIClientForREST"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D754D048A59EE2C949DB4030D58270DC"
+            BlueprintIdentifier = "218BE2BF226073EB0AE3F80735508C47"
             BuildableName = "GoogleAPIClientForREST.framework"
             BlueprintName = "GoogleAPIClientForREST"
             ReferencedContainer = "container:Pods.xcodeproj">

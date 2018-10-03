@@ -18,6 +18,15 @@
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
 		7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */; };
 		7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */; };
+		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
+		AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */; };
+		AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7997BC215BC02800A6B297 /* MessageModel.swift */; };
+		ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59069215BF9F10053EC10 /* TextChatCell.swift */; };
+		ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */; };
+		ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */; };
+		ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59071215BFDF30053EC10 /* ImageChatCell.swift */; };
+		ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE59072215BFDF30053EC10 /* ImageChatCellLeft.xib */; };
+		ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE59076215BFE110053EC10 /* ImageChatCellRight.xib */; };
 		C0AAFADCEFDFFC99D8F9DDF0 /* Pods_ProStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E8009C2DF02019A8BBF90E /* Pods_ProStudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +58,15 @@
 		7CCE13E620F16DB700E268F3 /* PSCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularView.swift; sourceTree = "<group>"; };
 		7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleTest.storyboard; sourceTree = "<group>"; };
 		7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTestViewController.swift; sourceTree = "<group>"; };
+		AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithManager.swift; sourceTree = "<group>"; };
+		AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatWithManager.xib; sourceTree = "<group>"; };
+		AC7997BC215BC02800A6B297 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		ACE59069215BF9F10053EC10 /* TextChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatCell.swift; sourceTree = "<group>"; };
+		ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextChatCellLeft.xib; sourceTree = "<group>"; };
+		ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextChatCellRight.xib; sourceTree = "<group>"; };
+		ACE59071215BFDF30053EC10 /* ImageChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChatCell.swift; sourceTree = "<group>"; };
+		ACE59072215BFDF30053EC10 /* ImageChatCellLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageChatCellLeft.xib; sourceTree = "<group>"; };
+		ACE59076215BFE110053EC10 /* ImageChatCellRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageChatCellRight.xib; sourceTree = "<group>"; };
 		BEF97739B9CBC7DC8B13DF69 /* Pods-ProStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,9 +188,67 @@
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
 				7CCE13E320F16D9700E268F3 /* Help Files */,
 				7CCE13E920F16DC000E268F3 /* Custom Elements */,
+				AC3D58F6215A7E30005E0673 /* Screens */,
 				7CCE13EC20F16F8C00E268F3 /* View Controllers */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		AC3D58F6215A7E30005E0673 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AC3D58F7215A7E41005E0673 /* ChatWithManager */ = {
+			isa = PBXGroup;
+			children = (
+				AC7997C0215BDC8100A6B297 /* ChatWithManager */,
+				ACE59066215BF9BD0053EC10 /* CustomCells */,
+			);
+			path = ChatWithManager;
+			sourceTree = "<group>";
+		};
+		AC7997C0215BDC8100A6B297 /* ChatWithManager */ = {
+			isa = PBXGroup;
+			children = (
+				AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */,
+				AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */,
+				AC7997BC215BC02800A6B297 /* MessageModel.swift */,
+			);
+			path = ChatWithManager;
+			sourceTree = "<group>";
+		};
+		ACE59066215BF9BD0053EC10 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				ACE59068215BF9D30053EC10 /* TextChatCell */,
+				ACE59067215BF9C80053EC10 /* ImageChatCell */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		ACE59067215BF9C80053EC10 /* ImageChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACE59071215BFDF30053EC10 /* ImageChatCell.swift */,
+				ACE59072215BFDF30053EC10 /* ImageChatCellLeft.xib */,
+				ACE59076215BFE110053EC10 /* ImageChatCellRight.xib */,
+			);
+			name = ImageChatCell;
+			path = CellWithoutImage1;
+			sourceTree = "<group>";
+		};
+		ACE59068215BF9D30053EC10 /* TextChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACE59069215BF9F10053EC10 /* TextChatCell.swift */,
+				ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */,
+				ACE5906E215BFA170053EC10 /* TextChatCellRight.xib */,
+			);
+			path = TextChatCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,15 +299,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Nikita;
 				TargetAttributes = {
 					117360C420DD51B100BA156C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 					117360D820DD51B100BA156C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 117360C420DD51B100BA156C;
 					};
@@ -261,10 +339,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
+				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
+				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
+				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
+				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,8 +442,12 @@
 			files = (
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
+				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
+				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
+				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
+				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
 			);
@@ -418,6 +505,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -425,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -475,6 +564,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -482,6 +572,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -523,7 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DD.ProStudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ProStrudio-dev";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -541,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DD.ProStudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ProStudio-adhoc";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -555,7 +646,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "App-sID.ProStudioUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ProStudio;
 			};
@@ -570,7 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "App-sID.ProStudioUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ProStudio;
 			};
