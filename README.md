@@ -21,14 +21,6 @@ Codestyle from RayWenderlich should be used:  [_Swift_](https://github.com/raywe
 -   For fonts - use UIFont extension methods from UIFont+PS.swift, if it not exist, you need to create it
 -   Replace all  `deprecated`functionality in scope of changed method. If for some reason you can't do that, provide full description  `// why`above the line.
 
-### Process
-
--   Do not fallback build version in  `Info.plist`to a smaller number
--   Do not make any changes with Pod updates within the same commit
--   Do smoke tests before providing your pull request to code review
--   Use  `xxx.y`for build and version number, where  `y`in 0..9
--   Do not discuss in PM, only in Slack Chat, named  _Prostudio_
-
 ### Git Flow
 -   Create branch, inherit from master named by your task number and name in JIRA. For example, if task name is "PS-6 Design screen", your branch should named as "PS-6_design_screen"
 -   Making changes inside your branch
