@@ -11,17 +11,13 @@ import UIKit
 class TextFieldCell: UITableViewCell {
     
     @IBOutlet weak var textField: CustomTextField!
-    var whaaat = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         textField.delegate = self
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         endEditing(true)
     }
     
@@ -37,7 +33,6 @@ class TextFieldCell: UITableViewCell {
             }
         }
         
-        
     }
     
 }
@@ -50,14 +45,10 @@ extension TextFieldCell: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         start(what: true)
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         start(what: false)
-        
     }
 }

@@ -17,9 +17,8 @@ class CustomTextField: UITextField {
     lazy var rightButton = UIButton()
     
     override func draw(_ rect: CGRect) {
-        
+        super.drawText(in: rect)
         styleTextField()
-        
     }
 
     private func styleTextField() {
@@ -28,24 +27,20 @@ class CustomTextField: UITextField {
         layer.masksToBounds = true
         border.borderWidth = width1
         border.frame = CGRect(x: 0, y: frame.size.height - width1, width: frame.size.width, height: 3)
-        border.borderColor = GlobalColors.light.cgColor
+        border.borderColor = PSColors.light.cgColor
         layer.addSublayer(border)
         
-        font = UIFont(name: "Intro-Book", size: 24)
-        attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: UIFont(name: "Intro-Book", size: 17) as Any])
+        font = PSFonts.textInTextField
+        attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: PSFonts.placeholder as Any])
         
     }
     
     func chengeBorderColor() {
         
         if isActive {
-            
-            border.borderColor = GlobalColors.light.cgColor
-            
+            border.borderColor = PSColors.light.cgColor
         } else {
-            
-            border.borderColor = GlobalColors.blue.cgColor
-            
+            border.borderColor = PSColors.blue.cgColor
         }
         
         isActive = !isActive

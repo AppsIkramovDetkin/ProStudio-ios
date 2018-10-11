@@ -11,23 +11,26 @@ import UIKit
 class CustomButton: UIButton {
 
     override func draw(_ rect: CGRect) {
-        
-        setupButton()
-        
+        super.draw(rect)
+        customizeButton()
     }
     
-    private func setupButton() {
+    private func customizeButton() {
         
-        layer.backgroundColor = GlobalColors.blue.cgColor
+        layer.backgroundColor = PSColors.blue.cgColor
         titleLabel?.font = UIFont(name: "Intro-Bold", size: 17)
-        setTitleColor(GlobalColors.buttonText, for: .normal)
+        setTitleColor(PSColors.buttonText, for: .normal)
         layer.cornerRadius = frame.height / 2
-        layer.shadowColor = GlobalColors.blue.cgColor
+        layer.shadowColor = PSColors.blue.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.masksToBounds = false
         layer.shadowOpacity = 7
         layer.shadowRadius = 5
         
+    }
+    
+    func action(complition: ()->()) {
+        complition()
     }
 
 }

@@ -11,16 +11,16 @@ import UIKit
 class ButtonCell: UITableViewCell {
 
     @IBOutlet weak var button: CustomButton!
-    var delegat: ButtonCellDelegat?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     @IBAction func send(_ sender: Any) {
         
-        delegat?.didTaped()
+        button.action { () -> () in
+            print("Ghbdtn")
+        }
         
     }
     

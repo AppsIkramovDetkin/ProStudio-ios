@@ -9,6 +9,9 @@
 import UIKit
 
 class ProjectDiscussion: UITableViewController {
+    
+    private let textFieldCell = "TextFieldCell"
+    private let buttonCell = "ButtonCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +19,8 @@ class ProjectDiscussion: UITableViewController {
         tableView.separatorColor = .clear
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
+        
+        registerCells()
         
     }
     
@@ -26,63 +31,58 @@ class ProjectDiscussion: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if indexPath.row == 0 {
+        
+        switch indexPath.row {
+        case 0:
             
-            let cell  = Bundle.main.loadNibNamed("TextFieldCell", owner: self, options: nil)?.first as! TextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
             cell.textField.placeholderText = "Выберите вид проекта"
             cell.textField.tag = 0
             cell.textField.addRightButton()
             cell.textField.rightButton.addTarget(self, action: #selector(textFieldButtonAction(button:)), for: .touchUpInside)
             return cell
             
-        } else if indexPath.row == 1 {
+        case 1:
             
-            let cell  = Bundle.main.loadNibNamed("TextFieldCell", owner: self, options: nil)?.first as! TextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
             cell.textField.placeholderText = "Имя"
             cell.textField.tag = 1
-            
             return cell
             
-        } else if indexPath.row == 2 {
+        case 2:
             
-            let cell  = Bundle.main.loadNibNamed("TextFieldCell", owner: self, options: nil)?.first as! TextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
             cell.textField.placeholderText = "Телефон"
             cell.textField.tag = 2
-            
             return cell
+        case 3:
             
-        } else if indexPath.row == 3 {
-            
-            let cell  = Bundle.main.loadNibNamed("TextFieldCell", owner: self, options: nil)?.first as! TextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
             cell.textField.placeholderText = "Email"
             cell.textField.tag = 3
-            
             return cell
             
-        } else if indexPath.row == 4 {
+        case 4:
             
-            let cell  = Bundle.main.loadNibNamed("TextFieldCell", owner: self, options: nil)?.first as! TextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
             cell.textField.placeholderText = "Комментарий"
             cell.textField.tag = 4
-            
             return cell
             
-        } else {
+        case 5:
             
-            let cell  = Bundle.main.loadNibNamed("ButtonCell", owner: self, options: nil)?.first as! ButtonCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: buttonCell, for: indexPath) as! ButtonCell
             cell.button.setTitle("ОТПРАВИТЬ", for: .normal)
-            cell.delegat = self
-            
             return cell
             
+        default:
+            return UITableViewCell()
         }
         
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = (view.frame.height - 30) / 6
-        return height
+        return 70
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,25 +90,16 @@ class ProjectDiscussion: UITableViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         view.endEditing(true)
-        
     }
     
     @objc func textFieldButtonAction(button: UIButton) {
-        
         print("This is button in textField!")
-        
-    }
-
-}
-
-extension ProjectDiscussion: ButtonCellDelegat {
-    func didTaped() {
-        
-        print("Вот и отправили")
-        
     }
     
-    
+    private func registerCells() {
+        tableView.register(UINib(nibName: textFieldCell, bundle: nil), forCellReuseIdentifier: textFieldCell)
+        tableView.register(UINib(nibName: buttonCell, bundle: nil), forCellReuseIdentifier: buttonCell)
+    }
+
 }
