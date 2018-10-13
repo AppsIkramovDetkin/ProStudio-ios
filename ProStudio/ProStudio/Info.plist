@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Intro-Book.otf</string>
+		<string>Intro-Bold.ttf</string>
+		<string>Intro-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1686BD2170D792005A2944 /* AboutUserCell.swift */; };
+		0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686BE2170D792005A2944 /* AboutUserCell.xib */; };
+		0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1686C12170D82D005A2944 /* NotificationCell.swift */; };
+		0F1686C42170D82D005A2944 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686C22170D82D005A2944 /* NotificationCell.xib */; };
+		0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1686C52170D83C005A2944 /* ExitCell.swift */; };
+		0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686C62170D83C005A2944 /* ExitCell.xib */; };
+		0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B078F216E904100337FA6 /* PersonalAccount.swift */; };
+		0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B0790216E904100337FA6 /* PersonalAccount.xib */; };
+		0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483452171FE09003A7170 /* Intro-Bold.ttf */; };
+		0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483492171FE16003A7170 /* Intro-Regular.ttf */; };
+		0F64834C21729599003A7170 /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F64834B21729598003A7170 /* Intro-Book.otf */; };
+		0F64834E2172964B003A7170 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834D2172964B003A7170 /* Colors.swift */; };
+		0F648350217298E3003A7170 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834F217298E3003A7170 /* Fonts.swift */; };
 		117360C920DD51B100BA156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360C820DD51B100BA156C /* AppDelegate.swift */; };
 		117360CB20DD51B100BA156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360CA20DD51B100BA156C /* ViewController.swift */; };
 		117360CE20DD51B100BA156C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360CC20DD51B100BA156C /* Main.storyboard */; };
@@ -42,6 +55,19 @@
 
 /* Begin PBXFileReference section */
 		09E8009C2DF02019A8BBF90E /* Pods_ProStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F1686BD2170D792005A2944 /* AboutUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserCell.swift; sourceTree = "<group>"; };
+		0F1686BE2170D792005A2944 /* AboutUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUserCell.xib; sourceTree = "<group>"; };
+		0F1686C12170D82D005A2944 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		0F1686C22170D82D005A2944 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		0F1686C52170D83C005A2944 /* ExitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCell.swift; sourceTree = "<group>"; };
+		0F1686C62170D83C005A2944 /* ExitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitCell.xib; sourceTree = "<group>"; };
+		0F2B078F216E904100337FA6 /* PersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccount.swift; sourceTree = "<group>"; };
+		0F2B0790216E904100337FA6 /* PersonalAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccount.xib; sourceTree = "<group>"; };
+		0F6483452171FE09003A7170 /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
+		0F6483492171FE16003A7170 /* Intro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular.ttf"; sourceTree = "<group>"; };
+		0F64834B21729598003A7170 /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Intro-Book.otf"; path = "../../../../../Downloads/intro-book-alt-cufonfonts/Intro-Book.otf"; sourceTree = "<group>"; };
+		0F64834D2172964B003A7170 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0F64834F217298E3003A7170 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		117360C520DD51B100BA156C /* ProStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360C820DD51B100BA156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		117360CA20DD51B100BA156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +115,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1686B92170D6F9005A2944 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				0F1686BA2170D720005A2944 /* AboutUserCell */,
+				0F1686BB2170D756005A2944 /* NotificationCell */,
+				0F1686BC2170D75E005A2944 /* ExitCell */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		0F1686BA2170D720005A2944 /* AboutUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F1686BD2170D792005A2944 /* AboutUserCell.swift */,
+				0F1686BE2170D792005A2944 /* AboutUserCell.xib */,
+			);
+			path = AboutUserCell;
+			sourceTree = "<group>";
+		};
+		0F1686BB2170D756005A2944 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F1686C12170D82D005A2944 /* NotificationCell.swift */,
+				0F1686C22170D82D005A2944 /* NotificationCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		0F1686BC2170D75E005A2944 /* ExitCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F1686C52170D83C005A2944 /* ExitCell.swift */,
+				0F1686C62170D83C005A2944 /* ExitCell.xib */,
+			);
+			path = ExitCell;
+			sourceTree = "<group>";
+		};
+		0F2B0782216E45A200337FA6 /* PersonalAccount */ = {
+			isa = PBXGroup;
+			children = (
+				0F2B078F216E904100337FA6 /* PersonalAccount.swift */,
+				0F2B0790216E904100337FA6 /* PersonalAccount.xib */,
+				0F1686B92170D6F9005A2944 /* CustomCells */,
+			);
+			path = PersonalAccount;
+			sourceTree = "<group>";
+		};
 		117360BC20DD51B100BA156C = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +190,9 @@
 				117360CC20DD51B100BA156C /* Main.storyboard */,
 				117360CF20DD51B100BA156C /* Assets.xcassets */,
 				117360D120DD51B100BA156C /* LaunchScreen.storyboard */,
+				0F6483452171FE09003A7170 /* Intro-Bold.ttf */,
+				0F64834B21729598003A7170 /* Intro-Book.otf */,
+				0F6483492171FE16003A7170 /* Intro-Regular.ttf */,
 				117360D420DD51B100BA156C /* Info.plist */,
 			);
 			path = ProStudio;
@@ -152,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				7CCE13E120F16D9200E268F3 /* Sinder.swift */,
+				0F64834D2172964B003A7170 /* Colors.swift */,
+				0F64834F217298E3003A7170 /* Fonts.swift */,
 			);
 			path = "Help Files";
 			sourceTree = "<group>";
@@ -197,6 +275,7 @@
 		AC3D58F6215A7E30005E0673 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F2B0782216E45A200337FA6 /* PersonalAccount */,
 				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
 			);
 			path = Screens;
@@ -340,13 +419,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
+				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */,
+				0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
+				0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */,
+				0F1686C42170D82D005A2944 /* NotificationCell.xib in Resources */,
+				0F64834C21729599003A7170 /* Intro-Book.otf in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
+				0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,15 +526,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F648350217298E3003A7170 /* Fonts.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
+				0F64834E2172964B003A7170 /* Colors.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
+				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
+				0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */,
+				0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
 				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
+				0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
