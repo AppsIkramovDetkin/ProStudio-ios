@@ -2,8 +2,8 @@ import UIKit
 
 class AboutUserCell: UITableViewCell {
 	
-	@IBOutlet weak var abtUserLbl: UILabel!
-	@IBOutlet weak var abtUserTextFld: UITextField!
+	@IBOutlet weak var aboutUserLabel: UILabel!
+	@IBOutlet weak var aboutUserTextField: UITextField!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -15,44 +15,49 @@ class AboutUserCell: UITableViewCell {
 	
 	func nameSettings() {
 		
-		abtUserLbl.text = "Имя"
-		abtUserLbl.textAlignment = .left
-		abtUserLbl.textColor = CustomColors.textColor
-		abtUserLbl.font = CustomFonts.cellText
+		let line = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 0.33))
+		line.backgroundColor = PSColor.grayLine
+		self.addSubview(line)
 		
-		abtUserTextFld.placeholder = "Введите имя..."
-		abtUserTextFld.text = "Филиппов Михаил"
-		abtUserTextFld.font = CustomFonts.textFieldFont
-		abtUserTextFld.textColor = CustomColors.cerulean
+		aboutUserLabel.text = "Имя"
+		aboutUserLabel.textAlignment = .left
+		aboutUserLabel.textColor = PSColor.textColor
+		aboutUserLabel.font = PSFont.cellText
+		
+		aboutUserTextField.placeholder = "Введите имя..."
+		aboutUserTextField.text = "Филиппов Михаил"
+		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.textColor = PSColor.cerulean
+		
 	}
 	
 	func numberSettings() {
 		
-		abtUserLbl.text = "Телефон"
-		abtUserLbl.textAlignment = .left
-		abtUserLbl.textColor = CustomColors.textColor
-		abtUserLbl.font = CustomFonts.cellText
+		aboutUserLabel.text = "Телефон"
+		aboutUserLabel.textAlignment = .left
+		aboutUserLabel.textColor = PSColor.textColor
+		aboutUserLabel.font = PSFont.cellText
 		
-		abtUserTextFld.placeholder = "Введите номер..."
-		abtUserTextFld.keyboardType = .numberPad
-		abtUserTextFld.text = "+7 (981) 750-70-70"
-		abtUserTextFld.textContentType = UITextContentType.telephoneNumber
-		abtUserTextFld.font = CustomFonts.textFieldFont
-		abtUserTextFld.textColor = CustomColors.cerulean
+		aboutUserTextField.placeholder = "Введите номер..."
+		aboutUserTextField.keyboardType = .numberPad
+		aboutUserTextField.text = "+7 (981) 750-70-70"
+		aboutUserTextField.textContentType = UITextContentType.telephoneNumber
+		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.textColor = PSColor.cerulean
 	}
 	
 	func mailSettings() {
 		
-		abtUserLbl.text = "Почта"
-		abtUserLbl.textAlignment = .left
-		abtUserLbl.textColor = CustomColors.textColor
-		abtUserLbl.font = CustomFonts.cellText
+		aboutUserLabel.text = "Почта"
+		aboutUserLabel.textAlignment = .left
+		aboutUserLabel.textColor = PSColor.textColor
+		aboutUserLabel.font = PSFont.cellText
 		
-		abtUserTextFld.placeholder = "Введите почту..."
-		abtUserTextFld.text = "mail@prostudio.ru"
-		abtUserTextFld.textContentType = UITextContentType.emailAddress
-		abtUserTextFld.font = CustomFonts.textFieldFont
-		abtUserTextFld.textColor = CustomColors.cerulean
+		aboutUserTextField.placeholder = "Введите почту..."
+		aboutUserTextField.text = "mail@prostudio.ru"
+		aboutUserTextField.textContentType = UITextContentType.emailAddress
+		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.textColor = PSColor.cerulean
 	}
 	
 }

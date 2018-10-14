@@ -15,11 +15,13 @@
 		0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686C62170D83C005A2944 /* ExitCell.xib */; };
 		0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B078F216E904100337FA6 /* PersonalAccount.swift */; };
 		0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B0790216E904100337FA6 /* PersonalAccount.xib */; };
+		0F4F6F22217385250080D12A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F6F21217385250080D12A /* HeaderView.swift */; };
+		0F4F6F24217385460080D12A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F6F23217385460080D12A /* HeaderView.xib */; };
 		0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483452171FE09003A7170 /* Intro-Bold.ttf */; };
 		0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483492171FE16003A7170 /* Intro-Regular.ttf */; };
 		0F64834C21729599003A7170 /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F64834B21729598003A7170 /* Intro-Book.otf */; };
-		0F64834E2172964B003A7170 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834D2172964B003A7170 /* Colors.swift */; };
-		0F648350217298E3003A7170 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834F217298E3003A7170 /* Fonts.swift */; };
+		0F64834E2172964B003A7170 /* PSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834D2172964B003A7170 /* PSColor.swift */; };
+		0F648350217298E3003A7170 /* PSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834F217298E3003A7170 /* PSFont.swift */; };
 		117360C920DD51B100BA156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360C820DD51B100BA156C /* AppDelegate.swift */; };
 		117360CB20DD51B100BA156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360CA20DD51B100BA156C /* ViewController.swift */; };
 		117360CE20DD51B100BA156C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360CC20DD51B100BA156C /* Main.storyboard */; };
@@ -63,11 +65,13 @@
 		0F1686C62170D83C005A2944 /* ExitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitCell.xib; sourceTree = "<group>"; };
 		0F2B078F216E904100337FA6 /* PersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccount.swift; sourceTree = "<group>"; };
 		0F2B0790216E904100337FA6 /* PersonalAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccount.xib; sourceTree = "<group>"; };
+		0F4F6F21217385250080D12A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0F4F6F23217385460080D12A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		0F6483452171FE09003A7170 /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
 		0F6483492171FE16003A7170 /* Intro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular.ttf"; sourceTree = "<group>"; };
 		0F64834B21729598003A7170 /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Intro-Book.otf"; path = "../../../../../Downloads/intro-book-alt-cufonfonts/Intro-Book.otf"; sourceTree = "<group>"; };
-		0F64834D2172964B003A7170 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0F64834F217298E3003A7170 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0F64834D2172964B003A7170 /* PSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSColor.swift; sourceTree = "<group>"; };
+		0F64834F217298E3003A7170 /* PSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFont.swift; sourceTree = "<group>"; };
 		117360C520DD51B100BA156C /* ProStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360C820DD51B100BA156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		117360CA20DD51B100BA156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		0F1686B92170D6F9005A2944 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				0F4F6F20217384F20080D12A /* HeaderView */,
 				0F1686BA2170D720005A2944 /* AboutUserCell */,
 				0F1686BB2170D756005A2944 /* NotificationCell */,
 				0F1686BC2170D75E005A2944 /* ExitCell */,
@@ -160,6 +165,15 @@
 				0F1686B92170D6F9005A2944 /* CustomCells */,
 			);
 			path = PersonalAccount;
+			sourceTree = "<group>";
+		};
+		0F4F6F20217384F20080D12A /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				0F4F6F21217385250080D12A /* HeaderView.swift */,
+				0F4F6F23217385460080D12A /* HeaderView.xib */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		117360BC20DD51B100BA156C = {
@@ -228,8 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				7CCE13E120F16D9200E268F3 /* Sinder.swift */,
-				0F64834D2172964B003A7170 /* Colors.swift */,
-				0F64834F217298E3003A7170 /* Fonts.swift */,
+				0F64834D2172964B003A7170 /* PSColor.swift */,
+				0F64834F217298E3003A7170 /* PSFont.swift */,
 			);
 			path = "Help Files";
 			sourceTree = "<group>";
@@ -424,6 +438,7 @@
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				0F4F6F24217385460080D12A /* HeaderView.xib in Resources */,
 				0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */,
 				0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
@@ -526,12 +541,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F648350217298E3003A7170 /* Fonts.swift in Sources */,
+				0F648350217298E3003A7170 /* PSFont.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
-				0F64834E2172964B003A7170 /* Colors.swift in Sources */,
+				0F64834E2172964B003A7170 /* PSColor.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
+				0F4F6F22217385250080D12A /* HeaderView.swift in Sources */,
 				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
 				0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */,
 				0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */,

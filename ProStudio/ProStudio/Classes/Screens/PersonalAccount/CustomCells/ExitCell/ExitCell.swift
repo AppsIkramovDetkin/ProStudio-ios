@@ -15,8 +15,8 @@ class ExitCell: UITableViewCell {
 	
 	private func exitButtonSettings() {
 		exitButton.setTitle("ВЫЙТИ", for: .normal)
-		exitButton.setTitleColor(CustomColors.customRed, for: .normal)
-		exitButton.titleLabel?.font = CustomFonts.exitButtonFont
+		exitButton.setTitleColor(PSColor.customRed, for: .normal)
+		exitButton.titleLabel?.font = PSFont.exitButtonFont
 	}
 	
 }

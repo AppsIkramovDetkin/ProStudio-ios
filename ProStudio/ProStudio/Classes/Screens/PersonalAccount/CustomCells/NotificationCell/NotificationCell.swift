@@ -17,11 +17,11 @@ class NotificationCell: UITableViewCell {
 	private func notificationSettings() {
 		notificationLabel.text = "PUSH уведомления"
 		notificationLabel.textAlignment = .left
-		notificationLabel.textColor = CustomColors.textColor
-		notificationLabel.font = CustomFonts.cellText
+		notificationLabel.textColor = PSColor.textColor
+		notificationLabel.font = PSFont.cellText
 		
-		switchControl.tintColor = CustomColors.cerulean
-		switchControl.onTintColor = CustomColors.cerulean
+		switchControl.tintColor = PSColor.cerulean
+		switchControl.onTintColor = PSColor.cerulean
 	}
 	
 }

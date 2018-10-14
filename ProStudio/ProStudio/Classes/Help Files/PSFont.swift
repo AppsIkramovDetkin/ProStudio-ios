@@ -1,6 +1,6 @@
 import UIKit
 
-struct CustomFonts {
+struct PSFont {
 	static let headerText = UIFont(name: "Intro-Bold", size: 37)
 	static let nameFont = UIFont(name: "Intro-Bold", size: 29.15)
 	static let companyFont = UIFont(name: "Intro-Book", size: 18.45)
