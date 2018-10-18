@@ -31,7 +31,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="415" height="224"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-cy-iRK">
-                            <rect key="frame" x="15" y="93.5" width="399" height="37"/>
+                            <rect key="frame" x="15" y="73.5" width="399" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="399" id="06y-iQ-y6I"/>
                             </constraints>
@@ -42,7 +42,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.008448993787" green="0.69726878400000003" blue="0.57954663039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="MzK-cy-iRK" firstAttribute="centerY" secondItem="evq-Um-bGx" secondAttribute="centerY" id="9xb-Ti-tT9"/>
+                        <constraint firstItem="MzK-cy-iRK" firstAttribute="centerY" secondItem="evq-Um-bGx" secondAttribute="centerY" constant="-20" id="9xb-Ti-tT9"/>
                         <constraint firstItem="Bjr-hZ-9mQ" firstAttribute="top" secondItem="evq-Um-bGx" secondAttribute="top" id="IGl-Lx-bZu"/>
                         <constraint firstAttribute="trailing" secondItem="Bjr-hZ-9mQ" secondAttribute="trailing" id="XRb-v7-Eg6"/>
                         <constraint firstItem="Bjr-hZ-9mQ" firstAttribute="leading" secondItem="evq-Um-bGx" secondAttribute="leading" id="qR1-SQ-Onc"/>
