@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("test build")
 			
         //TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
-        let root: PersonalAccount = PersonalAccount()
+
+        let root: ProjectDiscussion = ProjectDiscussion()
         if let window = self.window {
             window.rootViewController = root
         }
