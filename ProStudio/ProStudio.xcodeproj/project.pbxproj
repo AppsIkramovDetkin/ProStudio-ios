@@ -17,9 +17,7 @@
 		0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B0790216E904100337FA6 /* PersonalAccount.xib */; };
 		0F4F6F22217385250080D12A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F6F21217385250080D12A /* HeaderView.swift */; };
 		0F4F6F24217385460080D12A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F6F23217385460080D12A /* HeaderView.xib */; };
-		0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483452171FE09003A7170 /* Intro-Bold.ttf */; };
 		0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483492171FE16003A7170 /* Intro-Regular.ttf */; };
-		0F64834C21729599003A7170 /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F64834B21729598003A7170 /* Intro-Book.otf */; };
 		0F64834E2172964B003A7170 /* PSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834D2172964B003A7170 /* PSColor.swift */; };
 		0F648350217298E3003A7170 /* PSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834F217298E3003A7170 /* PSFont.swift */; };
 		117360C920DD51B100BA156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360C820DD51B100BA156C /* AppDelegate.swift */; };
@@ -37,7 +35,6 @@
 		2E002C47216E70E2000C8734 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E002C45216E70E2000C8734 /* ButtonCell.xib */; };
 		2E002C49216E7141000C8734 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E002C48216E7141000C8734 /* CustomButton.swift */; };
 		2E2F60F6216FA9680005BE8E /* PSFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F60F5216FA9680005BE8E /* PSFonts.swift */; };
-		2E3CACEA216E957E0092A720 /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E3CACE9216E957E0092A720 /* Intro-Book.otf */; };
 		2E3CACEC216E96BE0092A720 /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E3CACEB216E96BE0092A720 /* Intro-Bold.ttf */; };
 		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
 		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
@@ -78,9 +75,7 @@
 		0F2B0790216E904100337FA6 /* PersonalAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccount.xib; sourceTree = "<group>"; };
 		0F4F6F21217385250080D12A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0F4F6F23217385460080D12A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		0F6483452171FE09003A7170 /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
 		0F6483492171FE16003A7170 /* Intro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular.ttf"; sourceTree = "<group>"; };
-		0F64834B21729598003A7170 /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Intro-Book.otf"; path = "../../../../../Downloads/intro-book-alt-cufonfonts/Intro-Book.otf"; sourceTree = "<group>"; };
 		0F64834D2172964B003A7170 /* PSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSColor.swift; sourceTree = "<group>"; };
 		0F64834F217298E3003A7170 /* PSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFont.swift; sourceTree = "<group>"; };
 		117360C520DD51B100BA156C /* ProStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +98,6 @@
 		2E002C48216E7141000C8734 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2E2F60EE216F85000005BE8E /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book.otf"; sourceTree = "<group>"; };
 		2E2F60F5216FA9680005BE8E /* PSFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFonts.swift; sourceTree = "<group>"; };
-		2E3CACE9216E957E0092A720 /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Intro-Book.otf"; path = "../../../../../../../../Downloads/Intro-Book.otf"; sourceTree = "<group>"; };
 		2E3CACEB216E96BE0092A720 /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
@@ -227,12 +221,8 @@
 				117360CC20DD51B100BA156C /* Main.storyboard */,
 				117360CF20DD51B100BA156C /* Assets.xcassets */,
 				117360D120DD51B100BA156C /* LaunchScreen.storyboard */,
-				0F6483452171FE09003A7170 /* Intro-Bold.ttf */,
-				0F64834B21729598003A7170 /* Intro-Book.otf */,
-				0F6483492171FE16003A7170 /* Intro-Regular.ttf */,
 				117360D420DD51B100BA156C /* Info.plist */,
 				2E2F60ED216F84FF0005BE8E /* Fonts */,
-				2E3CACE9216E957E0092A720 /* Intro-Book.otf */,
 			);
 			path = ProStudio;
 			sourceTree = "<group>";
@@ -303,6 +293,7 @@
 			children = (
 				2E3CACEB216E96BE0092A720 /* Intro-Bold.ttf */,
 				2E2F60EE216F85000005BE8E /* Intro-Book.otf */,
+				0F6483492171FE16003A7170 /* Intro-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -525,20 +516,17 @@
 			files = (
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
-				2E3CACEA216E957E0092A720 /* Intro-Book.otf in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				2E3CACEC216E96BE0092A720 /* Intro-Bold.ttf in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				0F4F6F24217385460080D12A /* HeaderView.xib in Resources */,
-				0F6483462171FE09003A7170 /* Intro-Bold.ttf in Resources */,
 				0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */,
 				2E002C47216E70E2000C8734 /* ButtonCell.xib in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */,
 				0F1686C42170D82D005A2944 /* NotificationCell.xib in Resources */,
-				0F64834C21729599003A7170 /* Intro-Book.otf in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 				2E002C3C216E3018000C8734 /* TextFieldCell.xib in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
