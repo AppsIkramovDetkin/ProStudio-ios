@@ -16,15 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("test build")
-			
+        
         //TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
-
         let root: ProjectDiscussion = ProjectDiscussion()
         if let window = self.window {
             window.rootViewController = root
         }
-				
-			
         return true
     }
 
