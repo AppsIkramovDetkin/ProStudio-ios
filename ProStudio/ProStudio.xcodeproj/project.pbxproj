@@ -15,11 +15,19 @@
 		0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686C62170D83C005A2944 /* ExitCell.xib */; };
 		0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B078F216E904100337FA6 /* PersonalAccount.swift */; };
 		0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B0790216E904100337FA6 /* PersonalAccount.xib */; };
+		0F403D84217A565C00EA5FBF /* ProjectTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F403D82217A565C00EA5FBF /* ProjectTaskCell.swift */; };
+		0F403D85217A565C00EA5FBF /* ProjectTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F403D83217A565C00EA5FBF /* ProjectTaskCell.xib */; };
+		0F403D87217A56DD00EA5FBF /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F403D86217A56DD00EA5FBF /* ProjectTask.swift */; };
 		0F4F6F22217385250080D12A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F6F21217385250080D12A /* HeaderView.swift */; };
 		0F4F6F24217385460080D12A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F6F23217385460080D12A /* HeaderView.xib */; };
 		0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6483492171FE16003A7170 /* Intro-Regular.ttf */; };
 		0F64834E2172964B003A7170 /* PSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834D2172964B003A7170 /* PSColor.swift */; };
 		0F648350217298E3003A7170 /* PSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64834F217298E3003A7170 /* PSFont.swift */; };
+		0FCA091C217A21A900887BBB /* ProjectsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA091B217A21A900887BBB /* ProjectsList.swift */; };
+		0FCA091E217A227600887BBB /* ProjectsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA091D217A227600887BBB /* ProjectsList.xib */; };
+		0FCA0921217A2A6C00887BBB /* ProjectsListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA0920217A2A6C00887BBB /* ProjectsListHeader.swift */; };
+		0FCA0923217A2A7E00887BBB /* ProjectsListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA0922217A2A7E00887BBB /* ProjectsListHeader.xib */; };
+		0FCA0925217A483F00887BBB /* Intro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA0924217A483E00887BBB /* Intro-Light.otf */; };
 		117360C920DD51B100BA156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360C820DD51B100BA156C /* AppDelegate.swift */; };
 		117360CB20DD51B100BA156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360CA20DD51B100BA156C /* ViewController.swift */; };
 		117360CE20DD51B100BA156C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360CC20DD51B100BA156C /* Main.storyboard */; };
@@ -73,11 +81,19 @@
 		0F1686C62170D83C005A2944 /* ExitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitCell.xib; sourceTree = "<group>"; };
 		0F2B078F216E904100337FA6 /* PersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccount.swift; sourceTree = "<group>"; };
 		0F2B0790216E904100337FA6 /* PersonalAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccount.xib; sourceTree = "<group>"; };
+		0F403D82217A565C00EA5FBF /* ProjectTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskCell.swift; sourceTree = "<group>"; };
+		0F403D83217A565C00EA5FBF /* ProjectTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTaskCell.xib; sourceTree = "<group>"; };
+		0F403D86217A56DD00EA5FBF /* ProjectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
 		0F4F6F21217385250080D12A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0F4F6F23217385460080D12A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		0F6483492171FE16003A7170 /* Intro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular.ttf"; sourceTree = "<group>"; };
 		0F64834D2172964B003A7170 /* PSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSColor.swift; sourceTree = "<group>"; };
 		0F64834F217298E3003A7170 /* PSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFont.swift; sourceTree = "<group>"; };
+		0FCA091B217A21A900887BBB /* ProjectsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsList.swift; sourceTree = "<group>"; };
+		0FCA091D217A227600887BBB /* ProjectsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsList.xib; sourceTree = "<group>"; };
+		0FCA0920217A2A6C00887BBB /* ProjectsListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListHeader.swift; sourceTree = "<group>"; };
+		0FCA0922217A2A7E00887BBB /* ProjectsListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsListHeader.xib; sourceTree = "<group>"; };
+		0FCA0924217A483E00887BBB /* Intro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Light.otf"; sourceTree = "<group>"; };
 		117360C520DD51B100BA156C /* ProStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360C820DD51B100BA156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		117360CA20DD51B100BA156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +200,32 @@
 			path = PersonalAccount;
 			sourceTree = "<group>";
 		};
+		0F403D7B217A4E1D00EA5FBF /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				0FCA0920217A2A6C00887BBB /* ProjectsListHeader.swift */,
+				0FCA0922217A2A7E00887BBB /* ProjectsListHeader.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		0F403D81217A55CE00EA5FBF /* ProjectTasksCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F403D82217A565C00EA5FBF /* ProjectTaskCell.swift */,
+				0F403D83217A565C00EA5FBF /* ProjectTaskCell.xib */,
+			);
+			path = ProjectTasksCell;
+			sourceTree = "<group>";
+		};
+		0F403D88217A59E000EA5FBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F403D86217A56DD00EA5FBF /* ProjectTask.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0F4F6F20217384F20080D12A /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +233,26 @@
 				0F4F6F23217385460080D12A /* HeaderView.xib */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		0FCA091A217A217800887BBB /* ProjectsList */ = {
+			isa = PBXGroup;
+			children = (
+				0F403D88217A59E000EA5FBF /* Model */,
+				0FCA091B217A21A900887BBB /* ProjectsList.swift */,
+				0FCA091D217A227600887BBB /* ProjectsList.xib */,
+				0FCA091F217A22B000887BBB /* CustomCells */,
+			);
+			path = ProjectsList;
+			sourceTree = "<group>";
+		};
+		0FCA091F217A22B000887BBB /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				0F403D7B217A4E1D00EA5FBF /* HeaderView */,
+				0F403D81217A55CE00EA5FBF /* ProjectTasksCell */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		117360BC20DD51B100BA156C = {
@@ -294,6 +356,7 @@
 				2E3CACEB216E96BE0092A720 /* Intro-Bold.ttf */,
 				2E2F60EE216F85000005BE8E /* Intro-Book.otf */,
 				0F6483492171FE16003A7170 /* Intro-Regular.ttf */,
+				0FCA0924217A483E00887BBB /* Intro-Light.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -370,6 +433,7 @@
 		AC3D58F6215A7E30005E0673 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0FCA091A217A217800887BBB /* ProjectsList */,
 				0F2B0782216E45A200337FA6 /* PersonalAccount */,
 				2E002C34216E290B000C8734 /* ProjectDiscussion */,
 				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
@@ -517,13 +581,16 @@
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
+				0F403D85217A565C00EA5FBF /* ProjectTaskCell.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				2E3CACEC216E96BE0092A720 /* Intro-Bold.ttf in Resources */,
+				0FCA091E217A227600887BBB /* ProjectsList.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				0F4F6F24217385460080D12A /* HeaderView.xib in Resources */,
 				0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */,
 				2E002C47216E70E2000C8734 /* ButtonCell.xib in Resources */,
+				0FCA0923217A2A7E00887BBB /* ProjectsListHeader.xib in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */,
 				0F1686C42170D82D005A2944 /* NotificationCell.xib in Resources */,
@@ -531,6 +598,7 @@
 				2E002C3C216E3018000C8734 /* TextFieldCell.xib in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */,
+				0FCA0925217A483F00887BBB /* Intro-Light.otf in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,18 +704,22 @@
 				0F4F6F22217385250080D12A /* HeaderView.swift in Sources */,
 				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
 				0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */,
+				0FCA091C217A21A900887BBB /* ProjectsList.swift in Sources */,
 				0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
 				2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */,
+				0F403D87217A56DD00EA5FBF /* ProjectTask.swift in Sources */,
 				2E002C46216E70E2000C8734 /* ButtonCell.swift in Sources */,
 				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
+				0F403D84217A565C00EA5FBF /* ProjectTaskCell.swift in Sources */,
 				0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
 				2E002C42216E4D1E000C8734 /* PSColors.swift in Sources */,
 				2E002C3B216E3018000C8734 /* TextFieldCell.swift in Sources */,
+				0FCA0921217A2A6C00887BBB /* ProjectsListHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

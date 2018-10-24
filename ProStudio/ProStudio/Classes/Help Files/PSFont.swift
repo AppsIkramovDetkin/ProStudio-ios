@@ -7,4 +7,5 @@ struct PSFont {
 	static let textFieldFont = UIFont(name: "Intro-Book", size: 16)
 	static let cellText = UIFont(name: "Intro-Regular", size: 16)
 	static let exitButtonFont = UIFont(name: "Intro-Book", size: 20)
+	static let segmentedFont = UIFont(name: "Intro-Light", size: 13)
 }

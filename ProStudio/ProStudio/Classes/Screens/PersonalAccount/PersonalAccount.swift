@@ -14,7 +14,7 @@ class PersonalAccount: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
+		
 		registerCells()
 		tableView.isScrollEnabled = false
 	}
@@ -73,9 +73,9 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let headerVieww = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
+		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
 		
-		return headerVieww
+		return headerView
 	}
 	
 	private func registerCells() {
