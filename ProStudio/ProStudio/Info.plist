@@ -43,6 +43,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Intro-Light.otf</string>
 		<string>Intro-Book.otf</string>
 		<string>Intro-Bold.ttf</string>
 		<string>Intro-Regular.ttf</string>
