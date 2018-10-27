@@ -11,28 +11,11 @@ import UIKit
 class CircleTestViewController: UIViewController {
 	
 	@IBOutlet weak var circleView: PSCircularView!
+    
+    let shapeLayer = CAShapeLayer()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		circleView.animate(with: 1)
-		
-		// Do any additional setup after loading the view.
+        circleView.animate(with: 0)
 	}
-	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-	
-	
-	/*
-	// MARK: - Navigation
-	
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-	// Get the new view controller using segue.destinationViewController.
-	// Pass the selected object to the new view controller.
-	}
-	*/
-	
 }

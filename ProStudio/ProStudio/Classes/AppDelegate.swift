@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("test build")
         
         //TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
-        let root: ChatWithManager = ChatWithManager()
-        if let window = self.window {
-            window.rootViewController = root
-        }
+//        let root: CircleTestViewController = CircleTestViewController()
+//        if let window = self.window {
+//            window.rootViewController = root
+//        }
         return true
     }
 
