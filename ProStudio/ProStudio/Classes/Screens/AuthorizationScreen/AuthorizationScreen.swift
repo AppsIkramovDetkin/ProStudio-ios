@@ -12,7 +12,7 @@ class AuthorizationScreen: UIViewController {
 	@IBOutlet weak var accessButton: UIButton!
 	@IBOutlet weak var okImage: UIImageView!
 	
-	var trueOrFalse: Int = 0
+	var setAccessButton: Bool = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -86,14 +86,15 @@ class AuthorizationScreen: UIViewController {
 	}
 	
 	@IBAction func accessButtonPressed(_ sender: Any) {
-		trueOrFalse += 1
 		
-		if trueOrFalse % 2 != 0 {
+		if !setAccessButton {
 			accessButton.backgroundColor = PSColor.cerulean
 			okImage.image = UIImage(named: "invalid-name")
+			setAccessButton = true
 		} else {
 			okImage.image = nil
 			accessButton.backgroundColor = PSColors.light
+			setAccessButton = false
 		}
 	}
 }
