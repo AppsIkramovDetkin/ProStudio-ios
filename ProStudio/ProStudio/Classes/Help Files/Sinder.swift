@@ -169,7 +169,7 @@ public extension UIViewController {
 
     
     func prevVC(with offset: Int = 2) -> UIViewController {
-        return navigationController!.childViewControllers[navigationController!.childViewControllers.count - offset]
+        return navigationController!.children[navigationController!.children.count - offset]
     }
     
     func resignAllTextFields() {
@@ -180,7 +180,7 @@ public extension UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
             handle()
         }
@@ -195,7 +195,7 @@ public extension UIViewController {
         replaceView.translatesAutoresizingMaskIntoConstraints = false
         replaceView.contentMode = .scaleToFill
         self.view.addSubview(replaceView)
-        self.view.sendSubview(toBack: replaceView)
+        self.view.sendSubviewToBack(replaceView)
         
         let top = NSLayoutConstraint(item: replaceView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0)
         let leading = NSLayoutConstraint(item: replaceView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
@@ -254,8 +254,8 @@ public extension UIViewController {
     
     //easy way to show alert
     func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "ОK", style: UIAlertActionStyle.default,handler: nil))
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "ОK", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -265,7 +265,7 @@ public extension UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         for button in buttons {
-            let okAction = UIAlertAction(title: button.title, style: UIAlertActionStyle.default) {
+            let okAction = UIAlertAction(title: button.title, style: UIAlertAction.Style.default) {
                 UIAlertAction in
                 button.action()
             }
@@ -362,7 +362,7 @@ extension UIImage {
     /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
     /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
     func jpeg(_ quality: JPEGQuality) -> Data? {
-        return UIImageJPEGRepresentation(self, quality.rawValue)
+        return self.jpegData(compressionQuality: quality.rawValue)
     }
 }
 extension UIColor {

@@ -15,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("test build")
+        
+        //TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
+        let root: RegistraionViewController = RegistraionViewController()
+        if let window = self.window {
+            window.rootViewController = root
+        }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 			
 			FirebaseApp.configure()
