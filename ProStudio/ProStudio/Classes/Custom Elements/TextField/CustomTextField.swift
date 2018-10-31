@@ -19,6 +19,7 @@ class CustomTextField: UITextField {
     override func draw(_ rect: CGRect) {
         super.drawText(in: rect)
         styleTextField()
+						print("test7")
     }
 
     private func styleTextField() {
@@ -32,6 +33,7 @@ class CustomTextField: UITextField {
         
         font = PSFonts.textInTextField
         attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: PSFonts.placeholder as Any])
+
         
     }
     
@@ -44,7 +46,6 @@ class CustomTextField: UITextField {
         }
         
         isActive = !isActive
-        
     }
     
     func addRightButton() {

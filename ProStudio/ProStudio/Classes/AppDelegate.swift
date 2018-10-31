@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		
-		let root: ProjectsList = ProjectsList()
+		let root: AuthorizationScreen = AuthorizationScreen()
 		if let window = self.window {
 			window.rootViewController = root
 		}

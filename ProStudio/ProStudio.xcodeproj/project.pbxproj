@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F077822218385E7003B11F1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F077820218385E7003B11F1 /* AuthorizationScreen.swift */; };
+		0F077823218385E7003B11F1 /* AuthorizationScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F077821218385E7003B11F1 /* AuthorizationScreen.xib */; };
 		0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1686BD2170D792005A2944 /* AboutUserCell.swift */; };
 		0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1686BE2170D792005A2944 /* AboutUserCell.xib */; };
 		0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1686C12170D82D005A2944 /* NotificationCell.swift */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		09E8009C2DF02019A8BBF90E /* Pods_ProStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F077820218385E7003B11F1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
+		0F077821218385E7003B11F1 /* AuthorizationScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationScreen.xib; sourceTree = "<group>"; };
 		0F1686BD2170D792005A2944 /* AboutUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserCell.swift; sourceTree = "<group>"; };
 		0F1686BE2170D792005A2944 /* AboutUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUserCell.xib; sourceTree = "<group>"; };
 		0F1686C12170D82D005A2944 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F07781F21838578003B11F1 /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0F077820218385E7003B11F1 /* AuthorizationScreen.swift */,
+				0F077821218385E7003B11F1 /* AuthorizationScreen.xib */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
 		0F1686B92170D6F9005A2944 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,8 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				7CCE13E120F16D9200E268F3 /* Sinder.swift */,
-				0F64834D2172964B003A7170 /* PSColor.swift */,
 				0F64834F217298E3003A7170 /* PSFont.swift */,
+				0F64834D2172964B003A7170 /* PSColor.swift */,
 			);
 			path = "Help Files";
 			sourceTree = "<group>";
@@ -433,6 +446,7 @@
 		AC3D58F6215A7E30005E0673 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F07781F21838578003B11F1 /* AuthorizationScreen */,
 				0FCA091A217A217800887BBB /* ProjectsList */,
 				0F2B0782216E45A200337FA6 /* PersonalAccount */,
 				2E002C34216E290B000C8734 /* ProjectDiscussion */,
@@ -585,6 +599,7 @@
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
 				2E3CACEC216E96BE0092A720 /* Intro-Bold.ttf in Resources */,
 				0FCA091E217A227600887BBB /* ProjectsList.xib in Resources */,
+				0F077823218385E7003B11F1 /* AuthorizationScreen.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				0F4F6F24217385460080D12A /* HeaderView.xib in Resources */,
@@ -698,6 +713,7 @@
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				0F64834E2172964B003A7170 /* PSColor.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
+				0F077822218385E7003B11F1 /* AuthorizationScreen.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				2E002C49216E7141000C8734 /* CustomButton.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Intro-Regular.ttf">
+            <string>Intro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationScreen" customModule="ProStudio" customModuleProvider="target">
+            <connections>
+                <outlet property="accessButton" destination="9yk-OW-5a9" id="bu0-AX-zHw"/>
+                <outlet property="cancelButton" destination="ugO-61-IJL" id="SNq-yS-6vv"/>
+                <outlet property="emailTextField" destination="fFc-aS-lbC" id="XAR-IA-tmj"/>
+                <outlet property="getLoginAndPasswordButton" destination="sg6-B2-Gxr" id="nA8-f0-alw"/>
+                <outlet property="loginButton" destination="iuH-iE-1zo" id="D9w-Fi-FtH"/>
+                <outlet property="logoImage" destination="ukJ-MB-r1j" id="Qmt-t9-0wO"/>
+                <outlet property="okImage" destination="zjY-C4-0PX" id="gpE-rV-O4L"/>
+                <outlet property="passwordTextField" destination="GB8-GX-t77" id="WB5-0s-mTd"/>
+                <outlet property="setAccessCodeLabel" destination="hEA-6m-uRG" id="nHw-Bx-zsG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugO-61-IJL">
+                    <rect key="frame" x="17" y="60" width="62" height="29"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="17"/>
+                    <state key="normal" title="Отмена"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukJ-MB-r1j">
+                    <rect key="frame" x="76" y="139" width="223" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="0Yp-73-Fly"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="4Gh-KA-C0F"/>
+                        <constraint firstAttribute="width" constant="223" id="DrO-mz-JTi"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="223" id="Vi6-Uv-KXI"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-GX-t77" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
+                    <rect key="frame" x="52" y="333" width="271" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="BdY-Ut-6Xa"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="JRU-K5-joX"/>
+                        <constraint firstAttribute="width" constant="271" id="jns-DX-6Yh"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="19"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Задать код доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEA-6m-uRG">
+                    <rect key="frame" x="52" y="389" width="242" height="17"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sg6-B2-Gxr">
+                    <rect key="frame" x="0.0" y="441" width="375" height="27"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="ПОЛУЧИТЬ ЛОГИН И ПАРОЛЬ">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Intro-Book"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    <integer key="NSUnderline" value="1"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="getLoginAndPasswordButton:" destination="-1" eventType="touchUpInside" id="7Wg-pr-ZMr"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-aS-lbC" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
+                    <rect key="frame" x="52" y="257" width="271" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="271" id="29s-ag-Ed2"/>
+                        <constraint firstAttribute="height" constant="31" id="Of9-CR-E9l"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="19"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuH-iE-1zo" customClass="CustomButton" customModule="ProStudio" customModuleProvider="target">
+                    <rect key="frame" x="32" y="502" width="310" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="UZT-e9-971"/>
+                        <constraint firstAttribute="width" constant="310" id="jkd-v4-mnc"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="DPH-yD-UVK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-OW-5a9">
+                    <rect key="frame" x="302" y="387" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2Kh-Qz-si4"/>
+                        <constraint firstAttribute="width" constant="21" id="mxD-uu-No9"/>
+                    </constraints>
+                    <connections>
+                        <action selector="accessButtonPressed:" destination="-1" eventType="touchUpInside" id="YaU-3q-HZw"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjY-C4-0PX">
+                    <rect key="frame" x="306" y="392" width="13" height="10"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iuH-iE-1zo" secondAttribute="trailing" constant="33" id="0KY-bB-xAh"/>
+                <constraint firstItem="9yk-OW-5a9" firstAttribute="top" secondItem="zjY-C4-0PX" secondAttribute="bottom" constant="-15" id="1yJ-w8-mQ4"/>
+                <constraint firstItem="fFc-aS-lbC" firstAttribute="top" secondItem="ukJ-MB-r1j" secondAttribute="bottom" constant="79" id="2g1-rC-Vpz"/>
+                <constraint firstItem="ukJ-MB-r1j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="95" id="3Dl-OQ-j4E"/>
+                <constraint firstItem="ugO-61-IJL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="5Ub-fF-rTU"/>
+                <constraint firstItem="fFc-aS-lbC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="7pI-G4-2ek"/>
+                <constraint firstItem="zjY-C4-0PX" firstAttribute="width" secondItem="9yk-OW-5a9" secondAttribute="width" constant="-8" id="9jW-M5-zXF"/>
+                <constraint firstItem="GB8-GX-t77" firstAttribute="top" secondItem="fFc-aS-lbC" secondAttribute="bottom" constant="45" id="Bx8-hS-q8d"/>
+                <constraint firstItem="9yk-OW-5a9" firstAttribute="centerY" secondItem="hEA-6m-uRG" secondAttribute="centerY" id="Emu-Mp-sGt"/>
+                <constraint firstItem="hEA-6m-uRG" firstAttribute="top" secondItem="GB8-GX-t77" secondAttribute="bottom" constant="25" id="GPK-W4-5ra"/>
+                <constraint firstItem="ugO-61-IJL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="If4-Ed-1wj"/>
+                <constraint firstItem="9yk-OW-5a9" firstAttribute="leading" secondItem="hEA-6m-uRG" secondAttribute="trailing" constant="8" id="JV1-ae-LN8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9yk-OW-5a9" secondAttribute="trailing" constant="52" id="V0a-QN-HZ8"/>
+                <constraint firstItem="iuH-iE-1zo" firstAttribute="top" secondItem="sg6-B2-Gxr" secondAttribute="bottom" constant="34" id="WHi-BN-dt1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GB8-GX-t77" secondAttribute="trailing" constant="52" id="WKI-90-5RJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sg6-B2-Gxr" secondAttribute="trailing" id="e9K-2n-CA2"/>
+                <constraint firstItem="zjY-C4-0PX" firstAttribute="height" secondItem="9yk-OW-5a9" secondAttribute="height" constant="-11" id="ftq-25-JEf"/>
+                <constraint firstItem="hEA-6m-uRG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="iMj-c9-Q0d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fFc-aS-lbC" secondAttribute="trailing" constant="52" id="mJo-rb-IoP"/>
+                <constraint firstItem="GB8-GX-t77" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="npN-5s-KFN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ukJ-MB-r1j" secondAttribute="trailing" constant="76" id="o1i-WW-v8b"/>
+                <constraint firstItem="iuH-iE-1zo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="opv-Rb-Lz0"/>
+                <constraint firstItem="ukJ-MB-r1j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="76" id="p7O-RF-Ewq"/>
+                <constraint firstItem="zjY-C4-0PX" firstAttribute="leading" secondItem="9yk-OW-5a9" secondAttribute="trailing" constant="-17" id="qPy-vT-Buf"/>
+                <constraint firstItem="sg6-B2-Gxr" firstAttribute="top" secondItem="hEA-6m-uRG" secondAttribute="bottom" constant="35" id="sJM-34-6EI"/>
+                <constraint firstItem="sg6-B2-Gxr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ug6-d3-YGa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-79.200000000000003" y="44.334975369458128"/>
+        </view>
+    </objects>
+</document>
