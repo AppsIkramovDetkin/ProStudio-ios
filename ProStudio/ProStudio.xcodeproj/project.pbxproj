@@ -13,6 +13,14 @@
 		117360D020DD51B100BA156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117360CF20DD51B100BA156C /* Assets.xcassets */; };
 		117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360D120DD51B100BA156C /* LaunchScreen.storyboard */; };
 		117360DE20DD51B100BA156C /* ProStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360DD20DD51B100BA156C /* ProStudioUITests.swift */; };
+		2E6A06CB218703EB00D247D0 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A06CA218703EB00D247D0 /* PointView.swift */; };
+		2E83D5A32186088200CA4236 /* SecurityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E83D5A22186088200CA4236 /* SecurityScreen.swift */; };
+		2E83D5A62186341400CA4236 /* SecurityPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E83D5A52186341400CA4236 /* SecurityPoints.swift */; };
+		2E9589EF218B242600CE34FE /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589EE218B242600CE34FE /* KeyboardView.swift */; };
+		2E9589F1218B244A00CE34FE /* KeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589F0218B244A00CE34FE /* KeyboardCell.swift */; };
+		2E9589F6218B3F4D00CE34FE /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9589F5218B3DC200CE34FE /* Intro-Book.otf */; };
+		2E9589F7218B3F4F00CE34FE /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */; };
+		2E9589FC218BA48300CE34FE /* BackspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589FB218BA48300CE34FE /* BackspaceCell.swift */; };
 		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
 		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
@@ -52,6 +60,14 @@
 		117360D920DD51B100BA156C /* ProStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360DD20DD51B100BA156C /* ProStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStudioUITests.swift; sourceTree = "<group>"; };
 		117360DF20DD51B100BA156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E6A06CA218703EB00D247D0 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		2E83D5A22186088200CA4236 /* SecurityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityScreen.swift; sourceTree = "<group>"; };
+		2E83D5A52186341400CA4236 /* SecurityPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityPoints.swift; sourceTree = "<group>"; };
+		2E9589EE218B242600CE34FE /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		2E9589F0218B244A00CE34FE /* KeyboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCell.swift; sourceTree = "<group>"; };
+		2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
+		2E9589F5218B3DC200CE34FE /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book.otf"; sourceTree = "<group>"; };
+		2E9589FB218BA48300CE34FE /* BackspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceCell.swift; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
 		7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularViewConfiguration.swift; sourceTree = "<group>"; };
@@ -112,6 +128,7 @@
 		117360C720DD51B100BA156C /* ProStudio */ = {
 			isa = PBXGroup;
 			children = (
+				2E9589F3218B3DA200CE34FE /* Fonts */,
 				7CCE13ED20F16F9900E268F3 /* Classes */,
 				7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */,
 				117360CC20DD51B100BA156C /* Main.storyboard */,
@@ -129,6 +146,51 @@
 				117360DF20DD51B100BA156C /* Info.plist */,
 			);
 			path = ProStudioUITests;
+			sourceTree = "<group>";
+		};
+		2E83D5A42186339400CA4236 /* SecurityPointsView */ = {
+			isa = PBXGroup;
+			children = (
+				2E9589ED218B23FA00CE34FE /* KeyboardView */,
+				2E9589F2218B2E1D00CE34FE /* SecurityView */,
+			);
+			path = SecurityPointsView;
+			sourceTree = "<group>";
+		};
+		2E9589ED218B23FA00CE34FE /* KeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				2E9589EE218B242600CE34FE /* KeyboardView.swift */,
+				2E9589F0218B244A00CE34FE /* KeyboardCell.swift */,
+				2E9589FB218BA48300CE34FE /* BackspaceCell.swift */,
+			);
+			path = KeyboardView;
+			sourceTree = "<group>";
+		};
+		2E9589F2218B2E1D00CE34FE /* SecurityView */ = {
+			isa = PBXGroup;
+			children = (
+				2E83D5A52186341400CA4236 /* SecurityPoints.swift */,
+				2E6A06CA218703EB00D247D0 /* PointView.swift */,
+			);
+			path = SecurityView;
+			sourceTree = "<group>";
+		};
+		2E9589F3218B3DA200CE34FE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E9589F5218B3DC200CE34FE /* Intro-Book.otf */,
+				2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2E9589FA218B9BA700CE34FE /* SecurityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2E83D5A22186088200CA4236 /* SecurityScreen.swift */,
+			);
+			path = SecurityScreen;
 			sourceTree = "<group>";
 		};
 		67EFB22641E5760234A550AB /* Frameworks */ = {
@@ -168,6 +230,7 @@
 		7CCE13E920F16DC000E268F3 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				2E83D5A42186339400CA4236 /* SecurityPointsView */,
 				7CCE13E420F16DB700E268F3 /* PSCircularView */,
 			);
 			path = "Custom Elements";
@@ -197,6 +260,7 @@
 		AC3D58F6215A7E30005E0673 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				2E9589FA218B9BA700CE34FE /* SecurityScreen */,
 				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
 			);
 			path = Screens;
@@ -346,6 +410,8 @@
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
+				2E9589F7218B3F4F00CE34FE /* Intro-Bold.ttf in Resources */,
+				2E9589F6218B3F4D00CE34FE /* Intro-Book.otf in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
@@ -442,11 +508,17 @@
 			files = (
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
+				2E9589F1218B244A00CE34FE /* KeyboardCell.swift in Sources */,
+				2E83D5A32186088200CA4236 /* SecurityScreen.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
+				2E6A06CB218703EB00D247D0 /* PointView.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
 				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
+				2E9589EF218B242600CE34FE /* KeyboardView.swift in Sources */,
+				2E9589FC218BA48300CE34FE /* BackspaceCell.swift in Sources */,
+				2E83D5A62186341400CA4236 /* SecurityPoints.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
