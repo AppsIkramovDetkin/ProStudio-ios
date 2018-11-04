@@ -9,6 +9,9 @@
 import UIKit
 
 struct PSColors {
+	static let blue = UIColor(displayP3Red: 0/255, green: 129/255, blue: 204/255, alpha: 1.0)
+	static let buttonText = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 1.0)
+	static let light = UIColor(displayP3Red: 213/255, green: 213/255, blue: 213/255, alpha: 1.0)
     static let staticCircleLayerColorOn = UIColor(displayP3Red: 217/255, green: 229/255, blue: 239/255, alpha: 1.0)
     static let staticCircleLayerColorOff = UIColor(displayP3Red: 237/255, green: 239/255, blue: 242/255, alpha: 1.0)
     static let circleLayerGradientMask = UIColor(displayP3Red: 46/255, green: 107/255, blue: 176/255, alpha: 1.0)

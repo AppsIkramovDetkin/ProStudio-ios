@@ -10,7 +10,7 @@ import UIKit
 
 class ButtonCell: UITableViewCell {
 
-    @IBOutlet weak var button: CustomButton!
+    @IBOutlet weak var button: PSButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +18,7 @@ class ButtonCell: UITableViewCell {
     
     @IBAction func send(_ sender: Any) {
         
-        button.action { () -> () in
+        button.touched = {
             print("Ghbdtn")
         }
         

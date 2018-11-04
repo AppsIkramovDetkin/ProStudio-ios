@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +17,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		print("test build")
-		
+		IQKeyboardManager.shared.enable = true
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
+		let tabBarController = UITabBarController()
+		let appearance = UITabBarItem.appearance()
+		let attributes = [NSAttributedString.Key.font: PSFont.introBook.with(size: 8)]
+		appearance.setTitleTextAttributes(attributes, for: .normal)
+		let registerVC = UINavigationController(rootViewController: RegistraionViewController())
+		let registerTabItem = UITabBarItem(title: "Регистрация", image: UIImage.init(named: "key"), tag: 0)
+		let inset: CGFloat = 0
+		registerTabItem.imageInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+		tabBarController.tabBar.tintColor = PSColor.cerulean
+		tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
+		registerVC.tabBarItem = registerTabItem
 		
-		let root: AuthorizationScreen = AuthorizationScreen()
+		let contactsVC = UINavigationController(rootViewController: ContactsViewController())
+		let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
+		let inset2: CGFloat = 0
+		registerTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
+		tabBarController.tabBar.tintColor = PSColor.cerulean
+		tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
+		contactsVC.tabBarItem = contactsTabItem
+		
+		
+		let discussVC = UINavigationController(rootViewController: ProjectDiscussion())
+		let discussTabItem = UITabBarItem(title: "Обсудить проект", image: UIImage.init(named: "discuss"), tag: 0)
+		let inset3: CGFloat = 0
+		registerTabItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+		discussVC.tabBarItem = discussTabItem
+		tabBarController.setViewControllers([registerVC, discussVC, contactsVC], animated: true)
+		let root = tabBarController
+		
 		if let window = self.window {
 			window.rootViewController = root
 		}
-		
-		
 		return true
 	}
 	

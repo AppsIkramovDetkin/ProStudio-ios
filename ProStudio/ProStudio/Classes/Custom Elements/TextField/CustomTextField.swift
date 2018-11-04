@@ -9,61 +9,83 @@
 import UIKit
 
 class CustomTextField: UITextField {
-    
-    var placeholderText: String?
-    let border = CALayer()
-    let width1: CGFloat = 2.0
-    var isActive = false
-    lazy var rightButton = UIButton()
-    
-    override func draw(_ rect: CGRect) {
-        super.drawText(in: rect)
-        styleTextField()
-						print("test7")
-    }
+	
+	var placeholderText: String?
+	let border = CALayer()
+	let width1: CGFloat = 2.0
+	var isActive = false
+	lazy var rightButton = UIButton()
+	
+	override func draw(_ rect: CGRect) {
+		super.drawText(in: rect)
+		styleTextField()
+	}
+	
+	private lazy var rect = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+	override func layoutSubviews() {
+		super.layoutSubviews()
+	}
+	
+	let offset: CGFloat = -5
+	
+	override func textRect(forBounds bounds: CGRect) -> CGRect {
+		var f = bounds
+		f.origin.y = offset
+		return f
+	}
 
-    private func styleTextField() {
-        
-        borderStyle = .none
-        layer.masksToBounds = true
-        border.borderWidth = width1
-        border.frame = CGRect(x: 0, y: frame.size.height - width1, width: frame.size.width, height: 3)
-        border.borderColor = PSColors.light.cgColor
-        layer.addSublayer(border)
-        
-        font = PSFonts.textInTextField
-        attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: PSFonts.placeholder as Any])
+	override func editingRect(forBounds bounds: CGRect) -> CGRect {
+		var f = bounds
+		f.origin.y = offset
+		return f
+	}
 
-        
-    }
-    
-    func chengeBorderColor() {
-        
-        if isActive {
-            border.borderColor = PSColors.light.cgColor
-        } else {
-            border.borderColor = PSColors.blue.cgColor
-        }
-        
-        isActive = !isActive
-    }
-    
-    func addRightButton() {
-        
-        let viewSize = frame.height
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: viewSize, height: viewSize))
-        
-        rightButton.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
-        rightButton.setImage(UIImage(named: "arrowDown"), for: .normal)
-        rightButton.imageView?.contentMode = .scaleAspectFit
-        rightButton.frame.size = CGSize(width: view.frame.size.width, height: view.frame.size.height)
-        
-        view.addSubview(rightButton)
-        
-        rightView = view
-        rightViewMode = .always
-        
-    }
-    
+	override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+		var f = bounds
+		f.origin.y = offset
+		return f
+	}
+	
+	private func styleTextField() {
+		
+		borderStyle = .none
+		layer.masksToBounds = true
+		border.borderWidth = width1
+		border.frame = CGRect(x: 0, y: frame.size.height - width1, width: frame.size.width, height: 3)
+		border.borderColor = PSColors.light.cgColor
+		layer.addSublayer(border)
+		
+		font = PSFonts.textInTextField
+		attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: PSFonts.placeholder as Any])
+	}
+	
+	func chengeBorderColor() {
+		
+		if isActive {
+			border.borderColor = PSColors.light.cgColor
+		} else {
+			border.borderColor = PSColors.blue.cgColor
+		}
+		
+		isActive = !isActive
+	}
+	
+	func addRightButton() {
+		
+		let viewSize = frame.height * 0.55
+		
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: viewSize, height: viewSize))
+		
+		rightButton.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
+		rightButton.setImage(UIImage(named: "arrowDown"), for: .normal)
+		rightButton.imageView?.contentMode = .scaleAspectFit
+		rightButton.frame.size = CGSize(width: view.frame.size.width, height: view.frame.size.height)
+		
+		view.addSubview(rightButton)
+		
+		rightView = view
+		rightViewMode = .always
+		
+	}
+	
 }

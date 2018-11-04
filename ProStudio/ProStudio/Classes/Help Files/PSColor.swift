@@ -6,18 +6,5 @@ struct PSColor {
 	static let grayLine = UIColor(red: 196 / 255, green: 196 / 255, blue: 196 / 255, alpha: 1)
 	static let companyNameColor = UIColor(red: 161 / 255, green: 161 / 255, blue: 162 / 255, alpha: 1)
 	static let textColor = UIColor(red: 1.0 / 255.0, green: 1.0 / 255.0, blue: 1.0 / 255.0, alpha: 1)
-}
-//
-//  PSColor.swift
-//  ProStudio
-//
-//  Created by Danil Detkin on 03/11/2018.
-//  Copyright © 2018 Nikita. All rights reserved.
-//
-
-import UIKit
-
-class PSColor {
-	static let cerulean = UIColor(red: 0, green: 129, blue: 204)
 	static let coolGrey = UIColor(red: 161, green: 162, blue: 162)
 }

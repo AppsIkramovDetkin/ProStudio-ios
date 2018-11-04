@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="98.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-jH-V3L" customClass="CustomButton" customModule="ProStudio" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-jH-V3L" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
                         <rect key="frame" x="16" y="20" width="292" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="dzW-d3-Rg3"/>
