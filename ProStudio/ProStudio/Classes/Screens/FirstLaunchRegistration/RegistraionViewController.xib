@@ -49,7 +49,7 @@
                     <color key="textColor" red="0.00043634738540276885" green="0.50770604610443115" blue="0.79845690727233887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P67-K3-1J6">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P67-K3-1J6" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
                     <rect key="frame" x="45" y="531" width="285" height="43"/>
                     <color key="backgroundColor" red="0.00043634738540000001" green="0.50770604610000003" blue="0.79845690729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -66,7 +66,8 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fSt-ro-WJq">
                     <rect key="frame" x="63" y="614" width="248" height="34"/>
-                    <string key="text">Если у вас нет проектов,будем рады обсудить сотрудничество.</string>
+                    <string key="text">Если у вас нет проектов,
+будем рады обсудить сотрудничество.</string>
                     <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="17"/>
                     <color key="textColor" red="0.63119727370000001" green="0.63535064460000001" blue="0.63526231050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

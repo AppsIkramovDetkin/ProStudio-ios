@@ -43,6 +43,11 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>CircleTest</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Intro-Book.otf</string>
+		<string>Intro-Bold.otf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

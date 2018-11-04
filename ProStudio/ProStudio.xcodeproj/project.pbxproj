@@ -19,6 +19,41 @@
 		447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447764C02157208400ACBE09 /* GoogleService-Info.plist */; };
 		4483288A2157277900BF4352 /* FBMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448328892157277900BF4352 /* FBMessageModel.swift */; };
 		4483288C215727FF00BF4352 /* FBChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483288B215727FF00BF4352 /* FBChatService.swift */; };
+		7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */; };
+		7C7E552D218DFFC6009152EC /* Intro-Regular-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */; };
+		7C7E552E218DFFC6009152EC /* Intro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5514218DFFC2009152EC /* Intro-Bold.otf */; };
+		7C7E552F218DFFC6009152EC /* Intro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5515218DFFC2009152EC /* Intro-Bold-Italic.otf */; };
+		7C7E5530218DFFC6009152EC /* Intro-Bold-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5516218DFFC2009152EC /* Intro-Bold-Caps.otf */; };
+		7C7E5531218DFFC6009152EC /* Intro-Light-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5517218DFFC3009152EC /* Intro-Light-Alt.otf */; };
+		7C7E5532218DFFC6009152EC /* Intro-Black-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5518218DFFC3009152EC /* Intro-Black-Alt.otf */; };
+		7C7E5533218DFFC6009152EC /* Intro-Book-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5519218DFFC3009152EC /* Intro-Book-Italic.otf */; };
+		7C7E5534218DFFC6009152EC /* Intro-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551A218DFFC3009152EC /* Intro-Black-Italic.otf */; };
+		7C7E5535218DFFC6009152EC /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551B218DFFC3009152EC /* Intro-Book.otf */; };
+		7C7E5536218DFFC6009152EC /* Intro-Regular-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551C218DFFC3009152EC /* Intro-Regular-Caps.otf */; };
+		7C7E5537218DFFC6009152EC /* Intro-Book-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551D218DFFC4009152EC /* Intro-Book-Alt.otf */; };
+		7C7E5538218DFFC6009152EC /* Intro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551E218DFFC4009152EC /* Intro-Light-Italic.otf */; };
+		7C7E5539218DFFC6009152EC /* Intro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E551F218DFFC4009152EC /* Intro-Black.otf */; };
+		7C7E553A218DFFC6009152EC /* Intro-Book-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5520218DFFC4009152EC /* Intro-Book-Caps.otf */; };
+		7C7E553B218DFFC6009152EC /* Intro-Black-Inline-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5521218DFFC4009152EC /* Intro-Black-Inline-Caps.otf */; };
+		7C7E553C218DFFC6009152EC /* Intro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5522218DFFC5009152EC /* Intro-Light.otf */; };
+		7C7E553D218DFFC6009152EC /* Intro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5523218DFFC5009152EC /* Intro-Regular.otf */; };
+		7C7E553E218DFFC6009152EC /* Intro-Thin-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5524218DFFC5009152EC /* Intro-Thin-Italic.otf */; };
+		7C7E553F218DFFC6009152EC /* Intro-Bold-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5525218DFFC5009152EC /* Intro-Bold-Alt.otf */; };
+		7C7E5540218DFFC6009152EC /* Intro-Light-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5526218DFFC5009152EC /* Intro-Light-Caps.otf */; };
+		7C7E5541218DFFC6009152EC /* Intro-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5527218DFFC5009152EC /* Intro-Thin.otf */; };
+		7C7E5542218DFFC6009152EC /* Intro-Black-Inline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5528218DFFC6009152EC /* Intro-Black-Inline.otf */; };
+		7C7E5543218DFFC6009152EC /* Intro-Thin-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5529218DFFC6009152EC /* Intro-Thin-Alt.otf */; };
+		7C7E5544218DFFC6009152EC /* Intro-Thin-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E552A218DFFC6009152EC /* Intro-Thin-Caps.otf */; };
+		7C7E5545218DFFC6009152EC /* Intro-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E552B218DFFC6009152EC /* Intro-Regular-Italic.otf */; };
+		7C7E5547218E0279009152EC /* NavigationBarDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E5546218E0279009152EC /* NavigationBarDecorator.swift */; };
+		7C7E5549218E031A009152EC /* PSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E5548218E031A009152EC /* PSFont.swift */; };
+		7C7E554B218E03AE009152EC /* PSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E554A218E03AE009152EC /* PSColor.swift */; };
+		7C7E554D218E06E3009152EC /* PSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E554C218E06E3009152EC /* PSButton.swift */; };
+		7C7E554F218E0E77009152EC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E554E218E0E77009152EC /* ContactsViewController.swift */; };
+		7C7E5551218E0EA9009152EC /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5550218E0EA9009152EC /* ContactsViewController.xib */; };
+		7C7E5553218E0F62009152EC /* ContactsSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E5552218E0F62009152EC /* ContactsSegment.swift */; };
+		7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E5554218E0F68009152EC /* ContactsSegmentedControl.swift */; };
+		7C7E5557218E174A009152EC /* PSScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E5556218E174A009152EC /* PSScaleView.swift */; };
 		7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E120F16D9200E268F3 /* Sinder.swift */; };
 		7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */; };
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
@@ -28,7 +63,6 @@
 		AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */; };
 		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
 		AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC422C1A215AC1F500AAD1EE /* ChatWithManager.xib */; };
-		AC798C5021653EBC00C33EBD /* Intro in Resources */ = {isa = PBXBuildFile; fileRef = AC798C4F21653EBC00C33EBD /* Intro */; };
 		AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7997BC215BC02800A6B297 /* MessageModel.swift */; };
 		ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE59069215BF9F10053EC10 /* TextChatCell.swift */; };
 		ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5906A215BF9F10053EC10 /* TextChatCellLeft.xib */; };
@@ -68,6 +102,41 @@
 		448328892157277900BF4352 /* FBMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMessageModel.swift; sourceTree = "<group>"; };
 		4483288B215727FF00BF4352 /* FBChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChatService.swift; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
+		7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Caps.otf"; sourceTree = "<group>"; };
+		7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular-Alt.otf"; sourceTree = "<group>"; };
+		7C7E5514218DFFC2009152EC /* Intro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.otf"; sourceTree = "<group>"; };
+		7C7E5515218DFFC2009152EC /* Intro-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold-Italic.otf"; sourceTree = "<group>"; };
+		7C7E5516218DFFC2009152EC /* Intro-Bold-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold-Caps.otf"; sourceTree = "<group>"; };
+		7C7E5517218DFFC3009152EC /* Intro-Light-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Light-Alt.otf"; sourceTree = "<group>"; };
+		7C7E5518218DFFC3009152EC /* Intro-Black-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Alt.otf"; sourceTree = "<group>"; };
+		7C7E5519218DFFC3009152EC /* Intro-Book-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book-Italic.otf"; sourceTree = "<group>"; };
+		7C7E551A218DFFC3009152EC /* Intro-Black-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Italic.otf"; sourceTree = "<group>"; };
+		7C7E551B218DFFC3009152EC /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book.otf"; sourceTree = "<group>"; };
+		7C7E551C218DFFC3009152EC /* Intro-Regular-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular-Caps.otf"; sourceTree = "<group>"; };
+		7C7E551D218DFFC4009152EC /* Intro-Book-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book-Alt.otf"; sourceTree = "<group>"; };
+		7C7E551E218DFFC4009152EC /* Intro-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Light-Italic.otf"; sourceTree = "<group>"; };
+		7C7E551F218DFFC4009152EC /* Intro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black.otf"; sourceTree = "<group>"; };
+		7C7E5520218DFFC4009152EC /* Intro-Book-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book-Caps.otf"; sourceTree = "<group>"; };
+		7C7E5521218DFFC4009152EC /* Intro-Black-Inline-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Inline-Caps.otf"; sourceTree = "<group>"; };
+		7C7E5522218DFFC5009152EC /* Intro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Light.otf"; sourceTree = "<group>"; };
+		7C7E5523218DFFC5009152EC /* Intro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular.otf"; sourceTree = "<group>"; };
+		7C7E5524218DFFC5009152EC /* Intro-Thin-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Thin-Italic.otf"; sourceTree = "<group>"; };
+		7C7E5525218DFFC5009152EC /* Intro-Bold-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold-Alt.otf"; sourceTree = "<group>"; };
+		7C7E5526218DFFC5009152EC /* Intro-Light-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Light-Caps.otf"; sourceTree = "<group>"; };
+		7C7E5527218DFFC5009152EC /* Intro-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Thin.otf"; sourceTree = "<group>"; };
+		7C7E5528218DFFC6009152EC /* Intro-Black-Inline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Inline.otf"; sourceTree = "<group>"; };
+		7C7E5529218DFFC6009152EC /* Intro-Thin-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Thin-Alt.otf"; sourceTree = "<group>"; };
+		7C7E552A218DFFC6009152EC /* Intro-Thin-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Thin-Caps.otf"; sourceTree = "<group>"; };
+		7C7E552B218DFFC6009152EC /* Intro-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular-Italic.otf"; sourceTree = "<group>"; };
+		7C7E5546218E0279009152EC /* NavigationBarDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDecorator.swift; sourceTree = "<group>"; };
+		7C7E5548218E031A009152EC /* PSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFont.swift; sourceTree = "<group>"; };
+		7C7E554A218E03AE009152EC /* PSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSColor.swift; sourceTree = "<group>"; };
+		7C7E554C218E06E3009152EC /* PSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSButton.swift; sourceTree = "<group>"; };
+		7C7E554E218E0E77009152EC /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		7C7E5550218E0EA9009152EC /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		7C7E5552218E0F62009152EC /* ContactsSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSegment.swift; sourceTree = "<group>"; };
+		7C7E5554218E0F68009152EC /* ContactsSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSegmentedControl.swift; sourceTree = "<group>"; };
+		7C7E5556218E174A009152EC /* PSScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSScaleView.swift; sourceTree = "<group>"; };
 		7CCE13E120F16D9200E268F3 /* Sinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinder.swift; sourceTree = "<group>"; };
 		7CCE13E520F16DB700E268F3 /* PSCircularViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularViewConfiguration.swift; sourceTree = "<group>"; };
 		7CCE13E620F16DB700E268F3 /* PSCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularView.swift; sourceTree = "<group>"; };
@@ -192,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				7CCE13E120F16D9200E268F3 /* Sinder.swift */,
+				7C7E5548218E031A009152EC /* PSFont.swift */,
+				7C7E554A218E03AE009152EC /* PSColor.swift */,
 			);
 			path = "Help Files";
 			sourceTree = "<group>";
@@ -217,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				117360CA20DD51B100BA156C /* ViewController.swift */,
+				7C7E554E218E0E77009152EC /* ContactsViewController.swift */,
+				7C7E5550218E0EA9009152EC /* ContactsViewController.xib */,
 				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
 			);
 			path = "View Controllers";
@@ -227,6 +300,9 @@
 			children = (
 				447764B72157170C00ACBE09 /* FirebaseService */,
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
+				7C7E5546218E0279009152EC /* NavigationBarDecorator.swift */,
+				7C7E554C218E06E3009152EC /* PSButton.swift */,
+				7C7E5556218E174A009152EC /* PSScaleView.swift */,
 				7CCE13E320F16D9700E268F3 /* Help Files */,
 				7CCE13E920F16DC000E268F3 /* Custom Elements */,
 				AC3D58F6215A7E30005E0673 /* Screens */,
@@ -239,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */,
+				7C7E5554218E0F68009152EC /* ContactsSegmentedControl.swift */,
+				7C7E5552218E0F62009152EC /* ContactsSegment.swift */,
 				AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */,
 			);
 			path = FirstLaunchRegistration;
@@ -273,6 +351,32 @@
 		AC798C4E21653EAE00C33EBD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7C7E5518218DFFC3009152EC /* Intro-Black-Alt.otf */,
+				7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */,
+				7C7E5521218DFFC4009152EC /* Intro-Black-Inline-Caps.otf */,
+				7C7E5528218DFFC6009152EC /* Intro-Black-Inline.otf */,
+				7C7E551A218DFFC3009152EC /* Intro-Black-Italic.otf */,
+				7C7E551F218DFFC4009152EC /* Intro-Black.otf */,
+				7C7E5525218DFFC5009152EC /* Intro-Bold-Alt.otf */,
+				7C7E5516218DFFC2009152EC /* Intro-Bold-Caps.otf */,
+				7C7E5515218DFFC2009152EC /* Intro-Bold-Italic.otf */,
+				7C7E5514218DFFC2009152EC /* Intro-Bold.otf */,
+				7C7E551D218DFFC4009152EC /* Intro-Book-Alt.otf */,
+				7C7E5520218DFFC4009152EC /* Intro-Book-Caps.otf */,
+				7C7E5519218DFFC3009152EC /* Intro-Book-Italic.otf */,
+				7C7E551B218DFFC3009152EC /* Intro-Book.otf */,
+				7C7E5517218DFFC3009152EC /* Intro-Light-Alt.otf */,
+				7C7E5526218DFFC5009152EC /* Intro-Light-Caps.otf */,
+				7C7E551E218DFFC4009152EC /* Intro-Light-Italic.otf */,
+				7C7E5522218DFFC5009152EC /* Intro-Light.otf */,
+				7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */,
+				7C7E551C218DFFC3009152EC /* Intro-Regular-Caps.otf */,
+				7C7E552B218DFFC6009152EC /* Intro-Regular-Italic.otf */,
+				7C7E5523218DFFC5009152EC /* Intro-Regular.otf */,
+				7C7E5529218DFFC6009152EC /* Intro-Thin-Alt.otf */,
+				7C7E552A218DFFC6009152EC /* Intro-Thin-Caps.otf */,
+				7C7E5524218DFFC5009152EC /* Intro-Thin-Italic.otf */,
+				7C7E5527218DFFC5009152EC /* Intro-Thin.otf */,
 				AC798C4F21653EBC00C33EBD /* Intro */,
 			);
 			path = Fonts;
@@ -406,12 +510,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC798C5021653EBC00C33EBD /* Intro in Resources */,
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
+				7C7E5551218E0EA9009152EC /* ContactsViewController.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */,
+				7C7E552D218DFFC6009152EC /* Intro-Regular-Alt.otf in Resources */,
+				7C7E552E218DFFC6009152EC /* Intro-Bold.otf in Resources */,
+				7C7E552F218DFFC6009152EC /* Intro-Bold-Italic.otf in Resources */,
+				7C7E5530218DFFC6009152EC /* Intro-Bold-Caps.otf in Resources */,
+				7C7E5531218DFFC6009152EC /* Intro-Light-Alt.otf in Resources */,
+				7C7E5532218DFFC6009152EC /* Intro-Black-Alt.otf in Resources */,
+				7C7E5533218DFFC6009152EC /* Intro-Book-Italic.otf in Resources */,
+				7C7E5534218DFFC6009152EC /* Intro-Black-Italic.otf in Resources */,
+				7C7E5535218DFFC6009152EC /* Intro-Book.otf in Resources */,
+				7C7E5536218DFFC6009152EC /* Intro-Regular-Caps.otf in Resources */,
+				7C7E5537218DFFC6009152EC /* Intro-Book-Alt.otf in Resources */,
+				7C7E5538218DFFC6009152EC /* Intro-Light-Italic.otf in Resources */,
+				7C7E5539218DFFC6009152EC /* Intro-Black.otf in Resources */,
+				7C7E553A218DFFC6009152EC /* Intro-Book-Caps.otf in Resources */,
+				7C7E553B218DFFC6009152EC /* Intro-Black-Inline-Caps.otf in Resources */,
+				7C7E553C218DFFC6009152EC /* Intro-Light.otf in Resources */,
+				7C7E553D218DFFC6009152EC /* Intro-Regular.otf in Resources */,
+				7C7E553E218DFFC6009152EC /* Intro-Thin-Italic.otf in Resources */,
+				7C7E553F218DFFC6009152EC /* Intro-Bold-Alt.otf in Resources */,
+				7C7E5540218DFFC6009152EC /* Intro-Light-Caps.otf in Resources */,
+				7C7E5541218DFFC6009152EC /* Intro-Thin.otf in Resources */,
+				7C7E5542218DFFC6009152EC /* Intro-Black-Inline.otf in Resources */,
+				7C7E5543218DFFC6009152EC /* Intro-Thin-Alt.otf in Resources */,
+				7C7E5544218DFFC6009152EC /* Intro-Thin-Caps.otf in Resources */,
+				7C7E5545218DFFC6009152EC /* Intro-Regular-Italic.otf in Resources */,
 				447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */,
@@ -512,17 +642,25 @@
 			files = (
 				AC1CE96C2162A2E500E7F26F /* RegistraionViewController.swift in Sources */,
 				447764BD21571A3100ACBE09 /* FBReference.swift in Sources */,
+				7C7E554B218E03AE009152EC /* PSColor.swift in Sources */,
 				4483288C215727FF00BF4352 /* FBChatService.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
+				7C7E5553218E0F62009152EC /* ContactsSegment.swift in Sources */,
+				7C7E554F218E0E77009152EC /* ContactsViewController.swift in Sources */,
+				7C7E5557218E174A009152EC /* PSScaleView.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
+				7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
+				7C7E5549218E031A009152EC /* PSFont.swift in Sources */,
 				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
+				7C7E554D218E06E3009152EC /* PSButton.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
 				447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */,
 				7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */,
+				7C7E5547218E0279009152EC /* NavigationBarDecorator.swift in Sources */,
 				4483288A2157277900BF4352 /* FBMessageModel.swift in Sources */,
 				447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
