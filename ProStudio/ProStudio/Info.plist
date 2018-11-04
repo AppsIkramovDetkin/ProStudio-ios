@@ -6,6 +6,24 @@
 	<array>
 		<string>Intro-Book.otf</string>
 		<string>Intro-Bold.ttf</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.489158769957-7ecunpnigra5f33927d3c89i0r1dsmit</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>App-sID.ProStudio</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
@@ -29,6 +47,11 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>CircleTest</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Intro-Book.otf</string>
+		<string>Intro-Bold.otf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -158,6 +158,7 @@ DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Core
   - Firebase/Crash
   - Firebase/Database
   - Firebase/DynamicLinks
@@ -223,6 +224,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: a1867e01c7371ff36e02f46b0daa77bb7138fd5f
+PODFILE CHECKSUM: 0e82277dcbbca895be2b236d9eba03a3c6436f8a
 
 COCOAPODS: 1.5.3
