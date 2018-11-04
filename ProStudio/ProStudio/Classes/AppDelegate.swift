@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,32 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		print("test build")
 		
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
-		let tabBarController = UITabBarController()
-		let appearance = UITabBarItem.appearance()
-		let attributes = [NSAttributedString.Key.font: PSFont.introBook.with(size: 8)]
-		appearance.setTitleTextAttributes(attributes, for: .normal)
-		let registerVC = UINavigationController(rootViewController: RegistraionViewController())
-		let registerTabItem = UITabBarItem(title: "Регистрация", image: UIImage.init(named: "key"), tag: 0)
-		let inset: CGFloat = 0
-		registerTabItem.imageInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-		tabBarController.tabBar.tintColor = PSColor.cerulean
-		tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
-		registerVC.tabBarItem = registerTabItem
 		
-		let contactsVC = UINavigationController(rootViewController: ContactsViewController())
-		let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
-		let inset2: CGFloat = 0
-		registerTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
-		tabBarController.tabBar.tintColor = PSColor.cerulean
-		tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
-		contactsVC.tabBarItem = contactsTabItem
-		
-		tabBarController.setViewControllers([registerVC, contactsVC], animated: true)
-		let root = tabBarController
-		
+		let root: AuthorizationScreen = AuthorizationScreen()
 		if let window = self.window {
 			window.rootViewController = root
 		}
+		
+		
 		return true
 	}
 	
@@ -70,3 +50,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 }
+
