@@ -21,11 +21,12 @@ class HeaderView: UITableViewHeaderFooterView {
 	override func draw(_ rect: CGRect) {
 		
 		ceruleanHeader.backgroundColor = PSColor.cerulean
-		backgroundPhoto.image = UIImage(named: "photo")?.alpha(0.5)
-		
+		backgroundPhoto.image = UIImage(named: "ava")?.alpha(0.5)
+		backgroundPhoto.contentMode = .scaleAspectFill
 		let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
 		visualEffectView.frame = backgroundPhoto.bounds
 		visualEffectView.alpha = 0.5
+		visualEffectView.backgroundColor = PSColor.cerulean
 		backgroundPhoto.addSubview(visualEffectView)
 		
 		avatarBorder.layer.cornerRadius = avatarBorder.frame.size.width / 2
@@ -33,7 +34,7 @@ class HeaderView: UITableViewHeaderFooterView {
 		avatarBorder.layer.borderColor = UIColor.white.cgColor
 		avatarBorder.clipsToBounds = true
 		
-		avatar.image = UIImage(named: "photo")
+		avatar.image = UIImage(named: "ava")
 		avatar.layer.cornerRadius = avatar.frame.size.width / 2
 		avatar.clipsToBounds = true
 		

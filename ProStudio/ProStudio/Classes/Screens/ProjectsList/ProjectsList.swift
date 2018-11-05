@@ -73,8 +73,13 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! ProjectsListHeader
+		headerView.addProjectButton.hero.id = "right"
+		headerView.progressButton.hero.id = "left"
 		headerView.progressButtonClicked = {
-			let vc = ProgressListViewController()
+			let vc = UINavigationController(rootViewController: ProgressListViewController())
+			vc.hero.isEnabled = true
+			self.definesPresentationContext = true
+			vc.modalPresentationStyle = .overCurrentContext
 			self.present(vc, animated: true, completion: nil)
 		}
 		headerView.tintColor = UIColor.white

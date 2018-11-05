@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension UINavigationBar {
+	func transparentNavigationBar() {
+		self.setBackgroundImage(UIImage(), for: .default)
+		self.shadowImage = UIImage()
+		self.isTranslucent = true
+	}
+}
+
 class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var scrollView: UIScrollView!
@@ -26,9 +34,44 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		v.animate(with: 0.65, duration: 1.5)
 		setupscrollView(slides: [v, PSCircularView(), PSCircularView(), PSCircularView(), PSCircularView()])
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
-		
+		addRightButton()
+		navigationController?.navigationBar.transparentNavigationBar()
+		addLeftButton() 
 		// Do any additional setup after loading the view.
 	}
+	
+	private func addRightButton() {
+		let button = UIButton(type: .system)
+		let imageInset: CGFloat = 6
+		button.imageEdgeInsets = UIEdgeInsets(top: imageInset, left: -imageInset, bottom: imageInset, right: -imageInset)
+		button.hero.id = "right"
+		button.titleEdgeInsets = UIEdgeInsets(top: 10, left: -12, bottom: 10, right: -16)
+		button.imageView?.contentMode = .scaleAspectFit
+		button.semanticContentAttribute = .forceRightToLeft
+		button.setTitleColor(PSColor.cerulean, for: .normal)
+		button.setTitle("Добавить", for: .normal)
+		button.titleLabel?.font = PSFont.introBold.with(size: 14)
+		navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+	}
+	
+	private func addLeftButton() {
+		let button = UIButton(type: .system)
+		let imageInset: CGFloat = 9
+		button.imageEdgeInsets = UIEdgeInsets(top: imageInset, left: -imageInset, bottom: imageInset, right: -imageInset)
+		button.hero.id = "left"
+		button.titleEdgeInsets = UIEdgeInsets(top: 10, left: -12, bottom: 10, right: -16)
+		button.imageView?.contentMode = .scaleAspectFit
+		button.setTitleColor(PSColor.cerulean, for: .normal)
+		button.setTitle("Список", for: .normal)
+		button.titleLabel?.font = PSFont.introBold.with(size: 14)
+		button.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
+		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+	}
+	
+	@objc private func leftButtonClicked() {
+		dismiss(animated: true, completion: nil)
+	}
+	
 	func setupscrollView(slides: [UIView]) {
 		scrollView.showsHorizontalScrollIndicator = false
 		let spacing: CGFloat = 48

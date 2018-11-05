@@ -51,7 +51,6 @@
 		2E83D5A62186341400CA4236 /* SecurityPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E83D5A52186341400CA4236 /* SecurityPoints.swift */; };
 		2E9589EF218B242600CE34FE /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589EE218B242600CE34FE /* KeyboardView.swift */; };
 		2E9589F1218B244A00CE34FE /* KeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589F0218B244A00CE34FE /* KeyboardCell.swift */; };
-		2E9589F6218B3F4D00CE34FE /* Intro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9589F5218B3DC200CE34FE /* Intro-Book.otf */; };
 		2E9589F7218B3F4F00CE34FE /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */; };
 		2E9589FC218BA48300CE34FE /* BackspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589FB218BA48300CE34FE /* BackspaceCell.swift */; };
 		447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B821571A3100ACBE09 /* FBAuthentication.swift */; };
@@ -771,6 +770,7 @@
 				117360C320DD51B100BA156C /* Resources */,
 				6667FE89C55828B225E478C7 /* [CP] Embed Pods Frameworks */,
 				0DFB941AFC0D80D4D7A68384 /* [CP] Copy Pods Resources */,
+				7C6BC5DD2190972D00D45866 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -895,7 +895,6 @@
 				AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */,
 				117360CE20DD51B100BA156C /* Main.storyboard in Resources */,
 				2E9589F7218B3F4F00CE34FE /* Intro-Bold.ttf in Resources */,
-				2E9589F6218B3F4D00CE34FE /* Intro-Book.otf in Resources */,
 				2E002C3C216E3018000C8734 /* TextFieldCell.xib in Resources */,
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */,
@@ -973,6 +972,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7C6BC5DD2190972D00D45866 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5e2a70d2b395042195df699073fb9f1262017a89 9ebd4b4a5b67a25584489e1b4060c4b6c9238e85d748fd91c6c92f8207af81d2\n";
 		};
 		BC513231D5776F64B2B73B99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1208,6 +1224,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5UN8LZ7V2H;
 				INFOPLIST_FILE = ProStudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

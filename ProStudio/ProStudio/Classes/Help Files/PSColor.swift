@@ -7,4 +7,5 @@ struct PSColor {
 	static let companyNameColor = UIColor(red: 161 / 255, green: 161 / 255, blue: 162 / 255, alpha: 1)
 	static let textColor = UIColor(red: 1.0 / 255.0, green: 1.0 / 255.0, blue: 1.0 / 255.0, alpha: 1)
 	static let coolGrey = UIColor(red: 161, green: 162, blue: 162)
+	static let silver = UIColor(red: 198, green: 197, blue: 203)
 }

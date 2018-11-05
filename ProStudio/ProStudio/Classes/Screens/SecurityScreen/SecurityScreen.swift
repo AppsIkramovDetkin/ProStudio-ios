@@ -116,8 +116,30 @@ class SecurityScreen: UIViewController {
 			
 			//1.
 			let listVC = ProjectsList()
-			listVC.tabBarItem = UITabBarItem(title: "Проекты", image: nil, tag: 0)
-			tabBarController.setViewControllers([listVC], animated: true)
+			listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
+			//2.
+			let cabinetVC = PersonalAccount()
+			let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "contacts"), tag: 1)
+			let inset3: CGFloat = 0
+			cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+			cabinetVC.tabBarItem = cabinetItem
+			
+			//3.
+			let chatVC = UINavigationController(rootViewController: ChatWithManager())
+			let chatItem = UITabBarItem(title: "Поддержка", image: UIImage.init(named: "support"), tag: 2)
+			chatItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+			chatVC.tabBarItem = chatItem
+			//4.
+			let contactsVC = UINavigationController(rootViewController: ContactsViewController())
+			let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
+			let inset2: CGFloat = 0
+			contactsTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
+			
+			contactsVC.tabBarItem = contactsTabItem
+			
+			tabBarController.tabBar.tintColor = PSColor.cerulean
+			tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
+			tabBarController.setViewControllers([listVC, chatVC, cabinetVC, contactsVC], animated: true)
 			present(tabBarController, animated: true, completion: nil)
 		}
 	}

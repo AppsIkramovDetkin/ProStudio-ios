@@ -16,7 +16,7 @@ class PersonalAccount: UIViewController {
 		super.viewDidLoad()
 		
 		registerCells()
-		tableView.isScrollEnabled = false
+		tableView.isScrollEnabled = true
 	}
 
 	override var preferredStatusBarStyle : UIStatusBarStyle {

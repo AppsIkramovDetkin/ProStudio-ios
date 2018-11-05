@@ -81,6 +81,7 @@
                 <outlet property="avatarImageView" destination="BZ9-LU-Pbk" id="l4H-SS-QTg"/>
                 <outlet property="bubbleView" destination="BoX-3s-ZLg" id="dRL-h6-UEZ"/>
                 <outlet property="textView" destination="PxC-7h-O48" id="3vh-Rx-BY6"/>
+                <outlet property="timeLabel" destination="GPY-xX-xHU" id="duz-b6-6ta"/>
             </connections>
             <point key="canvasLocation" x="10" y="50"/>
         </tableViewCell>

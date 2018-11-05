@@ -86,7 +86,7 @@ class ProjectTaskCell: UITableViewCell {
 			taskTitle.setColors(colorsForGradient)
 			taskTitle.start(shiftPoint: .left)
 			taskTitle.end(shiftPoint: .right)
-			taskTitle.animationDuration(3.0)
+			taskTitle.animationDuration(1.5)
 			taskTitle.maskToText = true
 			taskTitle.startTimedAnimation()
 			
@@ -94,7 +94,7 @@ class ProjectTaskCell: UITableViewCell {
 			taskComment.setColors(colorsForGradient)
 			taskComment.start(shiftPoint: .left)
 			taskComment.end(shiftPoint: .right)
-			taskComment.animationDuration(3.0)
+			taskComment.animationDuration(1.5)
 			taskComment.maskToText = true
 			taskComment.startTimedAnimation()
 			okImage.image = .none
