@@ -66,12 +66,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sg6-B2-Gxr">
-                    <rect key="frame" x="0.0" y="441" width="375" height="27"/>
+                    <rect key="frame" x="0.0" y="441" width="375" height="30"/>
                     <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="ПОЛУЧИТЬ ЛОГИН И ПАРОЛЬ">
                                 <attributes>
-                                    <font key="NSFont" size="15" name="Intro-Book"/>
+                                    <font key="NSFont" metaFont="system" size="15"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     <integer key="NSUnderline" value="1"/>
                                 </attributes>
@@ -93,7 +93,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuH-iE-1zo" customClass="CustomButton" customModule="ProStudio" customModuleProvider="target">
-                    <rect key="frame" x="32" y="502" width="310" height="55"/>
+                    <rect key="frame" x="32" y="505" width="310" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="UZT-e9-971"/>
                         <constraint firstAttribute="width" constant="310" id="jkd-v4-mnc"/>

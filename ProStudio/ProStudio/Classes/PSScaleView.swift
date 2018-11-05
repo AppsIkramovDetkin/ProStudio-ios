@@ -11,13 +11,13 @@ import UIKit
 class PSScaleView: UIView {
 	
 	private func scaleIn() {
-		UIView.animate(withDuration: 0.2) {
-			self.transform = CGAffineTransform(scaleX: 0.84, y: 0.84)
+		UIView.animate(withDuration: 0.12) {
+			self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 		}
 	}
 	
 	private func scaleOut() {
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.12) {
 			self.transform = .identity
 		}
 	}

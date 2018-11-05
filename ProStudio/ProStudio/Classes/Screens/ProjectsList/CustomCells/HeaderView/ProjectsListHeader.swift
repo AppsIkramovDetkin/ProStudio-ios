@@ -7,8 +7,10 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 	@IBOutlet weak var addProjectButton: UIButton!
 	@IBOutlet weak var projectsListLabel: UILabel!
 	
+	var progressButtonClicked: VoidClosure?
+	
 	override func draw(_ rect: CGRect) {
-
+		projectsListLabel.hero.id = "title"
 		progressButton.setTitle("Прогресс", for: .normal)
 		progressButton.setTitleColor(PSColor.cerulean, for: .normal)
 		progressButton.titleLabel?.font = PSFont.cellText
@@ -30,7 +32,7 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 	}
 	
 	@objc func progress(_ sender: UIButton) {
-		print("do smth")
+		progressButtonClicked?()
 	}
 	
 	@objc func addProject(_ sender: UIButton) {

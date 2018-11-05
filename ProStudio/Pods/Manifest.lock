@@ -144,6 +144,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
+  - Hero (1.4.0)
   - IQKeyboardManagerSwift (6.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -152,6 +153,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - Shift (0.2.2)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
@@ -168,7 +170,9 @@ DEPENDENCIES:
   - Firebase/Performance
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - Hero
   - IQKeyboardManagerSwift
+  - Shift
   - SwiftyJSON
 
 SPEC REPOS:
@@ -194,10 +198,12 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - Hero
     - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
     - Protobuf
+    - Shift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -222,12 +228,14 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Shift: 86dc634d046fc86a879dbfdb492739672cc092be
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 38eaa4dc04776dc384229d4e682df604cb66a1bc
+PODFILE CHECKSUM: 6de436c0f275ed76fc5285891d0969b082ff443c
 
 COCOAPODS: 1.5.3

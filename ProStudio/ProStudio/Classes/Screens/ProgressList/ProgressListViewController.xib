@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Intro-Bold.otf">
+            <string>Intro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressListViewController" customModule="ProStudio" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollView" destination="mvt-Ud-2R0" id="wus-Wn-iYn"/>
+                <outlet property="tableView" destination="0zF-uh-6hR" id="Q0K-dZ-clf"/>
+                <outlet property="titleLabel" destination="aCk-T5-hfC" id="oOf-sr-J1f"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработка сайта для ProStudio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCk-T5-hfC">
+                    <rect key="frame" x="16" y="36" width="343" height="64"/>
+                    <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvt-Ud-2R0">
+                    <rect key="frame" x="0.0" y="116" width="375" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="GRl-E7-8Q5"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 из 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yz-H2-NRN">
+                    <rect key="frame" x="8" y="374" width="359" height="17"/>
+                    <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="17"/>
+                    <color key="textColor" red="0.63137254901960782" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0zF-uh-6hR">
+                    <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aCk-T5-hfC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="2nU-Xb-dOy"/>
+                <constraint firstItem="0zF-uh-6hR" firstAttribute="top" secondItem="5Yz-H2-NRN" secondAttribute="bottom" constant="16" id="8Ub-0Y-Au9"/>
+                <constraint firstItem="mvt-Ud-2R0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GeI-8N-lio"/>
+                <constraint firstItem="5Yz-H2-NRN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="SB1-1U-8aK"/>
+                <constraint firstItem="mvt-Ud-2R0" firstAttribute="top" secondItem="aCk-T5-hfC" secondAttribute="bottom" constant="16" id="dhM-Pr-tV2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aCk-T5-hfC" secondAttribute="trailing" constant="16" id="gpH-if-80x"/>
+                <constraint firstItem="aCk-T5-hfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="i6P-5Q-rkU"/>
+                <constraint firstItem="5Yz-H2-NRN" firstAttribute="top" secondItem="mvt-Ud-2R0" secondAttribute="bottom" constant="8" id="neX-5T-dIf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0zF-uh-6hR" secondAttribute="bottom" id="qNG-3e-gT2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mvt-Ud-2R0" secondAttribute="trailing" id="vbt-sj-fEZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0zF-uh-6hR" secondAttribute="trailing" id="wNq-YO-NRU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Yz-H2-NRN" secondAttribute="trailing" constant="8" id="x3P-2L-S5g"/>
+                <constraint firstItem="0zF-uh-6hR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yT3-D0-8dZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="153.37331334332833"/>
+        </view>
+    </objects>
+</document>

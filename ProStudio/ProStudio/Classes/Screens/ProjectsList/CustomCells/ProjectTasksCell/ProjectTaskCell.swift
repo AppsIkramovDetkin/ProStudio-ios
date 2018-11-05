@@ -1,60 +1,103 @@
 import UIKit
+import Shift
 
 class ProjectTaskCell: UITableViewCell {
 	
-	@IBOutlet weak var taskButton: UIButton!
-	@IBOutlet weak var taskTitle: UILabel!
-	@IBOutlet weak var taskComment: UILabel!
+	@IBOutlet weak var taskButton: PSScaleView!
+	@IBOutlet weak var taskTitle: ShiftMaskableLabel!
+	@IBOutlet weak var taskComment: ShiftMaskableLabel!
 	@IBOutlet weak var okImage: UIImageView!
 	
-	let colorsForGradient = [PSColor.cerulean.cgColor, UIColor.white.cgColor, UIColor.red.cgColor, UIColor.purple.cgColor, UIColor.yellow.cgColor, UIColor.orange.cgColor, UIColor.green.cgColor, UIColor.gray.cgColor, UIColor.lightGray.cgColor]
+	var colorsForGradient: [UIColor] = []
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		
+		taskTitle.textLabel.font = PSFont.introBold.with(size: 17.0)
+		taskComment.textLabel.font = PSFont.introBook.with(size: 14.0)
+		taskComment.backgroundColor = .clear
+		taskTitle.backgroundColor = .clear
 	}
 	
 	override func setSelected(_ selected: Bool, animated: Bool) {
 		super.setSelected(selected, animated: animated)
-		
-		taskButton.addTarget(self, action: #selector(doneButton(_:)), for: .touchUpInside)
+	
 		taskButton.layer.cornerRadius = 10
 		taskButton.layer.masksToBounds = true
 		
 	}
 	
-	func settingsCell(done: Bool) {
+	var layouted = false
+	var done = false
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		guard !layouted && !done else {
+			return
+		}
+		layouted = true
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
+			self.taskButton.layer.cornerRadius = 10
+			self.taskButton.clipsToBounds = true
+			
+			let gradient = CAGradientLayer()
+			gradient.frame =  CGRect(origin: CGPoint.zero, size: self.taskButton.frame.size)
+			gradient.colors = [self.colorsForGradient[0].cgColor, self.colorsForGradient[1].cgColor]
+			
+			let shape = CAShapeLayer()
+			shape.lineWidth = 3
+			
+			shape.path = UIBezierPath(roundedRect: self.taskButton.bounds, cornerRadius: self.taskButton.layer.cornerRadius).cgPath
+			
+			shape.strokeColor = UIColor.black.cgColor
+			shape.fillColor = UIColor.clear.cgColor
+			gradient.mask = shape
+			
+			self.taskButton.layer.addSublayer(gradient)
+		}
 		
+	}
+	
+	func settingsCell(done: Bool) {
+		self.done = done
 		if done {
 			
 			let layer = CAGradientLayer()
 			layer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: taskButton.frame.size.height)
 			layer.startPoint = CGPoint(x: 0, y: 0.5)
 			layer.endPoint = CGPoint(x: 1, y: 0.5)
-			layer.colors = [colorsForGradient[Int.random(in: 0...5)], colorsForGradient[Int.random(in: 0...5)]]
-			taskButton.layer.addSublayer(layer)
+			layer.colors = [colorsForGradient[0].cgColor, colorsForGradient[1].cgColor]
+			taskButton.layer.insertSublayer(layer, at: 0)
 
 			okImage.image = UIImage(named: "ok")
-			taskTitle.textColor = UIColor.white
-			taskComment.textColor = UIColor.white
+			taskTitle.setColors([UIColor.white, UIColor.white])
+			taskTitle.start(shiftPoint: .left)
+			taskTitle.end(shiftPoint: .right)
+			taskTitle.animationDuration(3.0)
+			taskTitle.maskToText = true
+			taskTitle.startTimedAnimation()
 			
+			taskComment.setColors([.white, UIColor.white])
+			taskComment.start(shiftPoint: .left)
+			taskComment.end(shiftPoint: .right)
+			taskComment.animationDuration(3.0)
+			taskComment.maskToText = true
+			taskComment.startTimedAnimation()
 		} else {
+			taskTitle.setColors(colorsForGradient)
+			taskTitle.start(shiftPoint: .left)
+			taskTitle.end(shiftPoint: .right)
+			taskTitle.animationDuration(3.0)
+			taskTitle.maskToText = true
+			taskTitle.startTimedAnimation()
 			
-			taskTitle.textColor = PSColor.cerulean
-			taskComment.textColor = PSColor.cerulean
 			
-			taskButton.layer.borderWidth = 2
-			taskButton.layer.borderColor = PSColor.cerulean.cgColor
-			taskButton.layer.cornerRadius = 10
-			taskButton.layer.masksToBounds = true
+			taskComment.setColors(colorsForGradient)
+			taskComment.start(shiftPoint: .left)
+			taskComment.end(shiftPoint: .right)
+			taskComment.animationDuration(3.0)
+			taskComment.maskToText = true
+			taskComment.startTimedAnimation()
 			okImage.image = .none
-			
 		}
 	}
-	
-	@objc func doneButton(_ sender: UIButton) {
-		print("now true")
-	}
-	
 }
-

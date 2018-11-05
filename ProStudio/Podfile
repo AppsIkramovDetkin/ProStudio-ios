@@ -9,6 +9,7 @@ target 'ProStudio' do
 	pod 'Firebase'
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
+  	pod 'Hero'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Crash'
@@ -19,5 +20,6 @@ target 'ProStudio' do
 	pod 'Firebase/Performance'
 	pod 'Firebase/RemoteConfig'
 	pod 'Firebase/Storage'
+        pod 'Shift'
 
 end

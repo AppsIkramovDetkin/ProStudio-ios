@@ -1,16 +1,18 @@
 import UIKit
-
+import Hero
 class RegistraionViewController: UIViewController {
 	
-	@IBOutlet weak var loginButton: UIButton!
-	
-	@IBAction func loginButton(_ sender: UIButton) {
-	}
+	@IBOutlet weak var loginButton: PSButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		NavigationBarDecorator.decorate(self)
+		hero.isEnabled = true
+		loginButton.touched = {
+			let vc = SecurityScreen()
+			self.present(vc, animated: true, completion: nil)
+		}
 		addLeftButton()
 		addRightButton()
 		UIApplication.shared.statusBarStyle = .lightContent

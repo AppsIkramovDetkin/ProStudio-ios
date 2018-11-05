@@ -12,12 +12,21 @@ class ProjectsList: UIViewController {
 		case projectTaskCell = "ProjectTaskCell"
 	}
 	
+	var colors: [[UIColor]] = [
+		[UIColor(netHex: 0x3f8cc1), UIColor(netHex: 0x3bb2c2)],
+		[UIColor.init(netHex: 0xf7c100), UIColor.init(netHex: 0xdb2249)],
+		[UIColor.init(netHex: 0xdb2149), UIColor.init(netHex: 0x8f1c77)],
+		[UIColor.init(netHex: 0x8d1d77), UIColor.init(netHex: 0x0066ad)],
+		[UIColor.init(netHex: 0x0067ad), UIColor.init(netHex: 0x3ab1c2)]
+	]
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		getTasks()
 		registerCells()
 		tableView.separatorStyle = .none
+		hero.isEnabled = true
 	}
 
 	func getTasks() {
@@ -43,8 +52,9 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.projectTaskCell.rawValue, for: indexPath) as! ProjectTaskCell
 		
-		cell.taskTitle.text = projects[indexPath.row].taskTitle
-		cell.taskComment.text = projects[indexPath.row].commentForTask
+		cell.colorsForGradient = colors[indexPath.row]
+		cell.taskTitle.setText(projects[indexPath.row].taskTitle)
+		cell.taskComment.setText(projects[indexPath.row].commentForTask)
 		
 		if projects[indexPath.row].done {
 			cell.settingsCell(done: true)
@@ -63,7 +73,10 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! ProjectsListHeader
-
+		headerView.progressButtonClicked = {
+			let vc = ProgressListViewController()
+			self.present(vc, animated: true, completion: nil)
+		}
 		headerView.tintColor = UIColor.white
 		
 		return headerView
