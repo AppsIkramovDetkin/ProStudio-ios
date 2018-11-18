@@ -13,7 +13,7 @@ class ProjectTaskCell: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		taskTitle.textLabel.font = PSFont.introBold.with(size: 17.0)
-		taskComment.textLabel.font = PSFont.introBook.with(size: 14.0)
+		taskComment.textLabel.font = PSFont.introBold.with(size: 14.0)
 		taskComment.backgroundColor = .clear
 		taskTitle.backgroundColor = .clear
 	}

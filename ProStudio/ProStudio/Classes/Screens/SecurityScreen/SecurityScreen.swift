@@ -27,7 +27,7 @@ struct PSColors {
 	static let cancelButtonText = UIColor(displayP3Red: 255/255, green: 37/255, blue: 37/255, alpha: 1.0)
 }
 
-class SecurityScreen: UIViewController {
+class : UIViewController {
 	
 	override var preferredStatusBarStyle : UIStatusBarStyle {
 		return .lightContent
@@ -36,6 +36,7 @@ class SecurityScreen: UIViewController {
 	let cancelButton: UIButton = {
 		let button = UIButton()
 		button.setTitle("Отмена", for: .normal)
+        button.titleLabel?.font = PSFont.introBook.with(size: 15)
 		button.setTitleColor(PSColors.cancelButtonText, for: .normal)
 		button.setTitleColor(PSColors.securityPointOff, for: .highlighted)
 		button.translatesAutoresizingMaskIntoConstraints = false

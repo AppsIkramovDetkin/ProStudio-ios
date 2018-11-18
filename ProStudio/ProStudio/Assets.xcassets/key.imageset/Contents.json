@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "иконка регистрация.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "invalidName.png",
       "scale" : "2x"
     },
     {

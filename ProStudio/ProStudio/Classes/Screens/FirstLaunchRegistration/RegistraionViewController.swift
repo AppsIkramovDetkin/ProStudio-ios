@@ -3,6 +3,8 @@ import Hero
 class RegistraionViewController: UIViewController {
 	
 	@IBOutlet weak var loginButton: PSButton!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -16,6 +18,10 @@ class RegistraionViewController: UIViewController {
 		addLeftButton()
 		addRightButton()
 		UIApplication.shared.statusBarStyle = .lightContent
+//        descLabel.setLineSpacing(lineSpacing: 8)
+        descLabel.text = "Для доступа к своим проектам\nвойдите с помошью логина и пароля."
+        descLabel.textAlignment = .center
+//        bottomLabel.setLineSpacing(lineSpacing: 0.14, lineHeightMultiple: 20)
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -26,7 +32,7 @@ class RegistraionViewController: UIViewController {
 		let button = UIButton(type: .system)
 		let imageInset: CGFloat = 6
 		button.imageEdgeInsets = UIEdgeInsets(top: imageInset, left: -imageInset, bottom: imageInset, right: -imageInset)
-		button.titleEdgeInsets = UIEdgeInsets(top: 10, left: -12, bottom: 10, right: -16)
+		button.titleEdgeInsets = UIEdgeInsets(top: 10, left: -13, bottom: 10, right: -19)
 		button.setImage(UIImage(named: "eye")!, for: .normal)
 		button.imageView?.contentMode = .scaleAspectFit
 		button.semanticContentAttribute = .forceRightToLeft
@@ -49,4 +55,27 @@ class RegistraionViewController: UIViewController {
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
 	}
 	
+}
+extension UILabel {
+    
+    func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
+        
+        guard let labelText = self.text else { return }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+        
+        let attributedString:NSMutableAttributedString
+        if let labelattributedText = self.attributedText {
+            attributedString = NSMutableAttributedString(attributedString: labelattributedText)
+        } else {
+            attributedString = NSMutableAttributedString(string: labelText)
+        }
+        
+        // Line spacing attribute
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        
+        self.attributedText = attributedString
+    }
 }
