@@ -88,7 +88,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	}
 	
 	@objc private func leftButtonClicked() {
-		dismiss(animated: true, completion: nil)
+		navigationController?.dismiss(animated: true, completion: nil)
 	}
 	
 	func setupscrollView(slides: [UIView]) {
@@ -128,7 +128,15 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
         guard let v = maxView else {
             return
         }
+        
+        guard projects.contains(index: v.tag) else {
+            return
+        }
+        
         self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+        let project = projects[v.tag]
+        self.currentSteps = project.steps
+        self.tableView.reloadData()
 	}
     
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

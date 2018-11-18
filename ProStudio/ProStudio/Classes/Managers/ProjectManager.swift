@@ -27,7 +27,7 @@ class ProjectManager {
                 allProjects.append(Project.from(json: JSON(projectDict))!)
             })
             
-            completion(allProjects)
+            completion(allProjects.sorted{$0.startDate < $1.startDate})
         }
     }
 }

@@ -66,7 +66,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 		headerView.progressButtonClicked = {
 			let vc = UINavigationController(rootViewController: ProgressListViewController())
 			vc.hero.isEnabled = true
-			self.definesPresentationContext = true
+//            self.definesPresentationContext = true
 			vc.modalPresentationStyle = .overCurrentContext
 			self.present(vc, animated: true, completion: nil)
 		}

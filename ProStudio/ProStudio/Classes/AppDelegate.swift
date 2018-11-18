@@ -52,11 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "type": ProjectType.branding.rawValue,
             "startDate": date(startDate).timeIntervalSince1970,
             "endDate": date(endDate).timeIntervalSince1970,
-            "name": "Разработка Velvet",
+            "name": "Prostudio",
             "isEnded": false,
-            "progress": 0,
+            "progress": 65,
             "steps": [
-                ["name": "Разработка дизайна", "isEnded": false, "endDate": date(endDate).timeIntervalSince1970]
+                ["name": "Разработка прототипа", "isEnded": true, "endDate": date(endDate).timeIntervalSince1970],
+                ["name": "Разработка 123", "isEnded": false, "endDate": date(endDate).timeIntervalSince1970]
             ]
         ])
     }
@@ -69,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        reigisterUser()
      
         
-//        createProject(for: "hhadevs@gmail.com")
+        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()
 		let appearance = UITabBarItem.appearance()
