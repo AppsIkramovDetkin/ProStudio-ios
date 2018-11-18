@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseAuth
+import Alamofire
 
 class AuthorizationScreen: UIViewController {
 	
@@ -19,8 +21,19 @@ class AuthorizationScreen: UIViewController {
 
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
-		
+		hero.isEnabled = true
+        logoImage.hero.id = "logo"
+        loginButton.hero.id = "button"
 		settingsView()
+        emailTextField.font = PSFont.introRegular.with(size: 17)
+        passwordTextField.font = PSFont.introRegular.with(size: 17)
+        emailTextField.placeholderText = "Ваша почта"
+        passwordTextField.placeholderText = "Пароль"
+        getLoginAndPasswordButton.titleLabel?.font = PSFont.introRegular.with(size: 14.5)
+        getLoginAndPasswordButton.setTitleColor(#colorLiteral(red: 0, green: 0.5156363845, blue: 0.8242413402, alpha: 1), for: .normal)
+        getLoginAndPasswordButton.underline(with: #colorLiteral(red: 0, green: 0.5156363845, blue: 0.8242413402, alpha: 1))
+        passwordTextField.underline()
+        emailTextField.underline()
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,6 +51,7 @@ class AuthorizationScreen: UIViewController {
 		loginButton.setTitle("ВОЙТИ", for: .normal)
 		
 		cancelButton.setTitle("Отмена", for: .normal)
+        cancelButton.addTarget(self, action: #selector(smartBack), for: .touchUpInside)
 		cancelButton.titleLabel?.font = PSFont.cellText
 		cancelButton.setTitleColor(PSColor.cerulean, for: .normal)
 		
@@ -74,15 +88,86 @@ class AuthorizationScreen: UIViewController {
 	}
 	
 	@IBAction func login(_ sender: Any) {
-		
-		loginButton.action { () -> () in
-			print("test")
-		}
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            self.showAlert(title: "Ошибка", message: "Заполните поля")
+            return
+        }
+        defaults.set(email, forKey: "email")
+        defaults.set(password, forKey: "password")
+        defaults.synchronize()
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let _ = error {
+                self.showAlert(title: "Ошибка", message: "Неверные данные")
+            } else if let user = result?.user {
+                currentUser = user
+                if self.setAccessButton {
+                    // need to set pin
+                    let pinVC = SecurityScreen()
+                    self.present(pinVC, animated: true, completion: nil)
+                } else {
+                    // no
+                    let tabBarController = UITabBarController()
+                    
+                    //1.
+                    let listVC = ProjectsList()
+                    listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
+                    //2.
+                    let cabinetVC = PersonalAccount()
+                    let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "contacts"), tag: 1)
+                    let inset3: CGFloat = 0
+                    cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+                    cabinetVC.tabBarItem = cabinetItem
+                    
+                    //3.
+                    let chatVC = UINavigationController(rootViewController: ChatWithManager())
+                    let chatItem = UITabBarItem(title: "Поддержка", image: UIImage.init(named: "support"), tag: 2)
+                    chatItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+                    chatVC.tabBarItem = chatItem
+                    //4.
+                    let contactsVC = UINavigationController(rootViewController: ContactsViewController())
+                    let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
+                    let inset2: CGFloat = 0
+                    contactsTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
+                    
+                    contactsVC.tabBarItem = contactsTabItem
+                    
+                    tabBarController.tabBar.tintColor = PSColor.cerulean
+                    tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
+                    tabBarController.setViewControllers([listVC, chatVC, cabinetVC, contactsVC], animated: true)
+                    self.present(tabBarController, animated: true, completion: nil)
+                }
+            }
+        }
 		
 	}
 
 	@IBAction func getLoginAndPasswordButton(_ sender: Any) {
-		print("do smth")
+        guard let email = emailTextField.text else {
+            return
+        }
+        Auth.auth().fetchProviders(forEmail: email) { (string, error) in
+            if let error = error {
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            } else {
+                if string == nil {
+                    let params: Parameters = [
+                        "FromEmail": "hhadevs@gmail.com",
+                        "FromName": "Prostudio",
+                        "Subject": "Ваши данные для входа",
+                        "Text-part": "ky-ky",
+                        "Recipients": [["Email":"hhadevs@gmail.com"]]
+                    ]
+                    Alamofire.request("https://api.mailjet.com/v3/send", method: HTTPMethod.post, parameters: params).authenticate(user: "ee65626bfaf0d051a9bddd3f1b03a1d5", password: "e7e87174bf4342e2c4837383f0b286cc")
+                        .responseString(completionHandler: { (string) in
+                            print(string.result.value)
+                        })
+//                    Alamofire.request(<#T##url: URLConvertible##URLConvertible#>, method: HTTPM, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+                    //todo: -> сделать восстановление
+                } else {
+                    self.showAlert(title: "Ошибка", message: "Данный email уже используется")
+                }
+            }
+        }
 	}
 	
 	@IBAction func accessButtonPressed(_ sender: Any) {
@@ -106,4 +191,20 @@ extension AuthorizationScreen: UITextFieldDelegate {
 		return true
 	}
 	
+}
+
+extension UIView {
+    func underline(with color: UIColor = PSColors.light) {
+        let line = UIView()
+        line.translatesAutoresizingMaskIntoConstraints = false
+        line.backgroundColor = color
+        self.addSubview(line)
+        line.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        line.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        line.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -1).isActive = true
+        line.heightAnchor.constraint(equalToConstant: 1.6).isActive = true
+//        let constraints = NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1)]|", dict: ["v": line])
+        
+//        self.addConstraints(constraints)
+    }
 }

@@ -51,4 +51,8 @@ class PSButton: UIButton {
 		touched?()
 		UIImpactFeedbackGenerator(style: .light).impactOccurred()
 	}
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.scaleOut()
+    }
 }

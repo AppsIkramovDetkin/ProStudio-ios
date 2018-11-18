@@ -24,6 +24,7 @@
                 <outlet property="bottomLabel" destination="fSt-ro-WJq" id="6QB-MM-ZoA"/>
                 <outlet property="descLabel" destination="ud5-8T-Opc" id="ol7-GV-RKj"/>
                 <outlet property="loginButton" destination="P67-K3-1J6" id="H4M-95-2zq"/>
+                <outlet property="logoImage" destination="q5D-66-7jq" id="dY4-L8-lj4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

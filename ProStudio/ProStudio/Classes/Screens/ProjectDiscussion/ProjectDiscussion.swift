@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ProjectDiscussion: UITableViewController {
+class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDelegate {
 	
 	private let textFieldCell = "TextFieldCell"
 	private let buttonCell = "ButtonCell"
@@ -31,6 +32,11 @@ class ProjectDiscussion: UITableViewController {
 		return 6
 	}
 	
+    var projectType: String = ""
+    var name: String = ""
+    var phone: String = ""
+    var email: String = ""
+    var comment: String = ""
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
@@ -40,6 +46,7 @@ class ProjectDiscussion: UITableViewController {
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Выберите вид проекта"
 			cell.textField.tag = 0
+            cell.textChanged  = { self.projectType = $0 }
 			cell.textField.addRightButton()
 			cell.textField.rightButton.addTarget(self, action: #selector(textFieldButtonAction(button:)), for: .touchUpInside)
 			return cell
@@ -48,6 +55,7 @@ class ProjectDiscussion: UITableViewController {
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Имя"
+            cell.textChanged  = { self.name = $0 }
 			cell.textField.tag = 1
 			return cell
 			
@@ -55,12 +63,16 @@ class ProjectDiscussion: UITableViewController {
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Телефон"
+            cell.textField.keyboardType = .phonePad
+            cell.textChanged  = { self.phone = $0 }
 			cell.textField.tag = 2
 			return cell
 		case 3:
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Email"
+            cell.textField.keyboardType = .emailAddress
+            cell.textChanged  = { self.email = $0 }
 			cell.textField.tag = 3
 			return cell
 			
@@ -68,6 +80,7 @@ class ProjectDiscussion: UITableViewController {
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Комментарий"
+            cell.textChanged  = { self.comment = $0 }
 			cell.textField.tag = 4
 			return cell
 			
@@ -75,6 +88,23 @@ class ProjectDiscussion: UITableViewController {
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: buttonCell, for: indexPath) as! ButtonCell
 			cell.button.setTitle("ОТПРАВИТЬ", for: .normal)
+            cell.touched = {
+                guard !self.name.isEmpty, !self.projectType.isEmpty, !self.phone.isEmpty, !self.email.isEmpty else {
+                    self.showAlert(title: "Ошибка", message: "Заполните все поля")
+                    return
+                }
+                if MFMailComposeViewController.canSendMail() {
+                    let mail = MFMailComposeViewController()
+                    mail.mailComposeDelegate = self
+                    mail.setToRecipients(["vsexmogushiy@gmail.com"])
+                    mail.setMessageBody([self.name, self.projectType, self.comment, self.email, self.phone, self.comment].filter{!$0.isEmpty}.joined(separator: ", "), isHTML: false)
+                    
+                    self.present(mail, animated: true)
+                } else {
+                    self.showAlert(title: "Ошибка", message: "Отправка Email недоступна")
+                    // show failure alert
+                }
+            }
 			return cell
 			
 		default:
@@ -82,6 +112,10 @@ class ProjectDiscussion: UITableViewController {
 		}
 		
 	}
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 70

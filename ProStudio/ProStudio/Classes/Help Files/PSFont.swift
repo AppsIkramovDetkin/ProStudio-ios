@@ -11,6 +11,7 @@ import UIKit
 enum PSFont {
 	case introBook
 	case introBold
+    case introRegular
 }
 
 extension PSFont {
@@ -18,6 +19,7 @@ extension PSFont {
 		switch self {
 		case .introBook: return UIFont(name: "Intro-Book", size: size)!
 		case .introBold: return UIFont(name: "Intro-Bold", size: size)!
+        case .introRegular: return UIFont(name: "Intro-Regular", size: size)!
 		}
 	}
 	static let headerText = UIFont(name: "Intro-Bold", size: 37)

@@ -56,7 +56,6 @@
 		447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B821571A3100ACBE09 /* FBAuthentication.swift */; };
 		447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B921571A3100ACBE09 /* FBUserModel.swift */; };
 		447764BD21571A3100ACBE09 /* FBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764BA21571A3100ACBE09 /* FBReference.swift */; };
-		447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447764C02157208400ACBE09 /* GoogleService-Info.plist */; };
 		4483288A2157277900BF4352 /* FBMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448328892157277900BF4352 /* FBMessageModel.swift */; };
 		4483288C215727FF00BF4352 /* FBChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483288B215727FF00BF4352 /* FBChatService.swift */; };
 		7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */; };
@@ -102,6 +101,9 @@
 		7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13E620F16DB700E268F3 /* PSCircularView.swift */; };
 		7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */; };
 		7CCE13EF20F16FBD00E268F3 /* CircleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */; };
+		7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB221A1BEF00029E0E9 /* AuthManager.swift */; };
+		7CD25AB521A1C0910029E0E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */; };
+		7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */; };
 		AC1CE96C2162A2E500E7F26F /* RegistraionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */; };
 		AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */; };
 		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
@@ -183,7 +185,6 @@
 		447764B821571A3100ACBE09 /* FBAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthentication.swift; sourceTree = "<group>"; };
 		447764B921571A3100ACBE09 /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		447764BA21571A3100ACBE09 /* FBReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBReference.swift; sourceTree = "<group>"; };
-		447764C02157208400ACBE09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ProStudio/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		448328892157277900BF4352 /* FBMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMessageModel.swift; sourceTree = "<group>"; };
 		4483288B215727FF00BF4352 /* FBChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChatService.swift; sourceTree = "<group>"; };
 		6DFD826295092EA0BFE38828 /* Pods-ProStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +232,9 @@
 		7CCE13E620F16DB700E268F3 /* PSCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCircularView.swift; sourceTree = "<group>"; };
 		7CCE13EA20F16F4000E268F3 /* CircleTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleTest.storyboard; sourceTree = "<group>"; };
 		7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTestViewController.swift; sourceTree = "<group>"; };
+		7CD25AB221A1BEF00029E0E9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistraionViewController.swift; sourceTree = "<group>"; };
 		AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistraionViewController.xib; sourceTree = "<group>"; };
 		AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithManager.swift; sourceTree = "<group>"; };
@@ -407,7 +411,7 @@
 				117360CC20DD51B100BA156C /* Main.storyboard */,
 				117360CF20DD51B100BA156C /* Assets.xcassets */,
 				117360D120DD51B100BA156C /* LaunchScreen.storyboard */,
-				447764C02157208400ACBE09 /* GoogleService-Info.plist */,
+				7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */,
 				117360D420DD51B100BA156C /* Info.plist */,
 				2E2F60ED216F84FF0005BE8E /* Fonts */,
 			);
@@ -632,12 +636,22 @@
 				7C7E5546218E0279009152EC /* NavigationBarDecorator.swift */,
 				7C7E554C218E06E3009152EC /* PSButton.swift */,
 				7C7E5556218E174A009152EC /* PSScaleView.swift */,
+				7CD25AB121A1BED90029E0E9 /* Managers */,
 				7CCE13E320F16D9700E268F3 /* Help Files */,
 				7CCE13E920F16DC000E268F3 /* Custom Elements */,
 				AC3D58F6215A7E30005E0673 /* Screens */,
 				7CCE13EC20F16F8C00E268F3 /* View Controllers */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		7CD25AB121A1BED90029E0E9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7CD25AB221A1BEF00029E0E9 /* AuthManager.swift */,
+				7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		AC1CE9692162A27000E7F26F /* FirstLaunchRegistration */ = {
@@ -857,6 +871,7 @@
 				0F077823218385E7003B11F1 /* AuthorizationScreen.xib in Resources */,
 				117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */,
 				117360D020DD51B100BA156C /* Assets.xcassets in Resources */,
+				7CD25AB521A1C0910029E0E9 /* GoogleService-Info.plist in Resources */,
 				7C7E555C218F20A7009152EC /* ProgressListViewController.xib in Resources */,
 				0F4F6F24217385460080D12A /* HeaderView.xib in Resources */,
 				0F64834A2171FE16003A7170 /* Intro-Regular.ttf in Resources */,
@@ -888,7 +903,6 @@
 				7C7E5543218DFFC6009152EC /* Intro-Thin-Alt.otf in Resources */,
 				7C7E5544218DFFC6009152EC /* Intro-Thin-Caps.otf in Resources */,
 				7C7E5545218DFFC6009152EC /* Intro-Regular-Italic.otf in Resources */,
-				447764C12157208400ACBE09 /* GoogleService-Info.plist in Resources */,
 				7CCE13EB20F16F4000E268F3 /* CircleTest.storyboard in Resources */,
 				0F1686C02170D792005A2944 /* AboutUserCell.xib in Resources */,
 				0F1686C42170D82D005A2944 /* NotificationCell.xib in Resources */,
@@ -942,6 +956,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
@@ -956,6 +971,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
@@ -1023,6 +1039,7 @@
 				2E002C40216E4BD6000C8734 /* CustomTextField.swift in Sources */,
 				2E2F60F6216FA9680005BE8E /* PSFonts.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
+				7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */,
 				7C7E555F21906F31009152EC /* ProjectStepTableViewCell.swift in Sources */,
 				0F64834E2172964B003A7170 /* PSColor.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
@@ -1044,6 +1061,7 @@
 				7C7E5557218E174A009152EC /* PSScaleView.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */,
+				7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
 				2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */,
 				0F403D87217A56DD00EA5FBF /* ProjectTask.swift in Sources */,

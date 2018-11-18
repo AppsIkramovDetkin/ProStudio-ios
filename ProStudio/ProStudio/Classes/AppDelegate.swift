@@ -10,16 +10,66 @@ import UIKit
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import Firebase
+
+enum ProjectType: String {
+    case appsAndSites = "Сайты, приложения"
+    case branding = "Брендинг"
+    case seo = "Продвижение"
+    case analytics = "Аналитика"
+}
+
+extension String {
+    func formattedEmail() -> String {
+        return self.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: "@", with: "")
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
+    func reigisterUser() {
+        Auth.auth().createUser(withEmail: "hhadevs@gmail.com", password: "12345678") { (result, error) in
+            print("jojojoj")
+            print(result, error)
+        }
+    }
+    
+    func createProject(for email: String) {
+        func date(_ str: String) -> Date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            return dateFormatter.date(from: str)!
+        }
+        let ref = Database.database().reference()
+        let startDate = "01.05.2018"
+        let endDate = "21.12.2018"
+        let id = ID()
+        ref.child("projects").child(email.formattedEmail()).child(id).setValue([
+            "id": id,
+            "client": email,
+            "type": ProjectType.branding.rawValue,
+            "startDate": date(startDate).timeIntervalSince1970,
+            "endDate": date(endDate).timeIntervalSince1970,
+            "name": "Разработка Velvet",
+            "isEnded": false,
+            "progress": 0,
+            "steps": [
+                ["name": "Разработка дизайна", "isEnded": false, "endDate": date(endDate).timeIntervalSince1970]
+            ]
+        ])
+    }
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		print("test build")
+        
 		Fabric.with([Crashlytics.self])
-
+        FirebaseApp.configure()
 		IQKeyboardManager.shared.enable = true
+//        reigisterUser()
+     
+        
+//        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()
 		let appearance = UITabBarItem.appearance()

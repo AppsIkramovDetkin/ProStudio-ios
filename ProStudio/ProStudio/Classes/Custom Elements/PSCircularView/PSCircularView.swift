@@ -29,34 +29,10 @@ final class PSCircularView: UIView {
 		return circleView
 	}()
 	
-	private lazy var staticCircleLayer: CAShapeLayer = {
-		let circleLayer = CAShapeLayer()
-		circleLayer.strokeColor = PSColors.staticCircleLayerColorOff.cgColor
-		circleLayer.fillColor = UIColor.clear.cgColor
-		circleLayer.lineWidth = backLineWidth
-		circleLayer.strokeStart = 0
-		circleLayer.strokeEnd = 1
-		return circleLayer
-	}()
-	
+
 	private let progressView: UIProgressView = {
 		let progress = UIProgressView()
 		return progress
-	}()
-	
-	private lazy var circleLayerGradientMask: CAShapeLayer = {
-		let circleLayer = CAShapeLayer()
-		circleLayer.strokeColor = PSColors.circleLayerGradientMask.cgColor
-		circleLayer.fillColor = UIColor.clear.cgColor
-		circleLayer.lineWidth = lineWidth
-		circleLayer.strokeStart = 0
-		circleLayer.strokeEnd = 1
-		
-		circleLayer.shadowColor = PSColors.circleLayerGradientMaskShadow.cgColor
-		circleLayer.shadowRadius = 8.0
-		circleLayer.shadowOpacity = 0.3
-		circleLayer.shadowOffset = CGSize(width: 4, height: 2)
-		return circleLayer
 	}()
 	
 	@IBInspectable var lineWidth: CGFloat = 25 {
@@ -70,17 +46,24 @@ final class PSCircularView: UIView {
 			updateLineWidths()
 		}
 	}
-	
+    
+    var project: Project!
+    
+    convenience init(project: Project) {
+        self.init()
+        self.project = project
+    }
+    
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)
 		
 		addCircleView()
 		addLabel()
 	}
-	
+    let shape = CAShapeLayer()
 	private func updateLineWidths() {
-		circleLayerGradientMask.lineWidth = lineWidth
-		staticCircleLayer.lineWidth = lineWidth
+//        circleLayerGradientMask.lineWidth = lineWidth
+        shape.lineWidth = lineWidth
 	}
 	
 	func animate(with value: CGFloat, duration: TimeInterval = 2) {
@@ -92,26 +75,32 @@ final class PSCircularView: UIView {
 		
 		label.text = "\(Int(endValue * 100))%"
 		if value > 0 {
-			staticCircleLayer.strokeColor = PSColors.staticCircleLayerColorOn.cgColor
-			staticCircleLayer.lineWidth = lineWidth
-			label.applyGradientWith(startColor: PSColors.textColorFrom, endColor: PSColors.textColorTo)
+            shape.strokeColor = PSColors.staticCircleLayerColorOn.cgColor
+            shape.lineWidth = lineWidth
+//            label.applyGradientWith(startColor: PSColors.textColorFrom, endColor: PSColors.textColorTo)
 		}
 		
 		let progress: CABasicAnimation = CABasicAnimation.init(keyPath: "strokeEnd")
 		
 		progress.duration = duration
-		progress.fromValue = circleLayerGradientMask.strokeStart
+		progress.fromValue = 0
 		progress.toValue = endValue
 		progress.fillMode = CAMediaTimingFillMode.forwards
 		progress.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
 		progress.isRemovedOnCompletion = false
-		circleLayerGradientMask.add(progress, forKey: "strokeEnd")
+		shape.add(progress, forKey: "strokeEnd")
 	}
 	
+    
+    var isLayouted = false
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		addLayersForCircleView()
+        if !isLayouted {
+            isLayouted = true
+            addLayersForCircleView()
+        }
+		
 	}
 	
 	private func addLabel() {
@@ -135,43 +124,36 @@ final class PSCircularView: UIView {
 	}
 	
 	private func addLayersForCircleView() {
-		
-		let radius = circleView.bounds.width / 2 // for full cricle
-		let circlePath = UIBezierPath(arcCenter: .zero, radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-		
-		staticCircleLayer.path = circlePath.cgPath
-		staticCircleLayer.position = circleView.center
-		circleView.layer.addSublayer(staticCircleLayer)
-		
-		circleLayerGradientMask.path = circlePath.cgPath
-		circleLayerGradientMask.lineCap = CAShapeLayerLineCap.round
-		circleLayerGradientMask.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
-		circleLayerGradientMask.position = circleView.center
-		circleView.layer.addSublayer(circleLayerGradientMask)
-	}
-	
-}
-
-extension UILabel {
-	func applyGradientWith(startColor: UIColor, endColor: UIColor) {
-		let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
-		
-		// Create a gradient layer
-		let gradient = CAGradientLayer()
-		
-		// gradient colors in order which they will visually appear
-		gradient.colors = [startColor, endColor]
-		
-		// Gradient from left to right
-		gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-		gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-		
-		// set the gradient layer to the same size as the view
-		gradient.frame = view.bounds
-		// add the gradient layer to the views layer for rendering
-		view.layer.addSublayer(gradient)
-		
-		view.mask = self
+        let scale: CGFloat = 0.9
+        let delta = bounds.height - bounds.height * scale
+        let ovalIn = CGRect(x: bounds.origin.x + delta / 2, y: bounds.origin.y + delta / 2, width: bounds.width * scale, height: bounds.height * scale)
+        let path = UIBezierPath(ovalIn: ovalIn)
+        
+        shape.fillColor = UIColor.clear.cgColor
+        shape.lineWidth = backLineWidth
+        shape.lineCap = .round
+        shape.strokeStart = 0
+        shape.strokeEnd = 1
+        shape.path = path.cgPath
+        shape.position = circleView.center
+        let staticShape = CAShapeLayer()
+        staticShape.fillColor = UIColor.clear.cgColor
+        staticShape.strokeColor = project.gradientsColor[1].withAlphaComponent(0.1).cgColor
+        staticShape.lineWidth = backLineWidth
+        staticShape.lineCap = .round
+        staticShape.path = path.cgPath
+        staticShape.position = circleView.center
+        layer.addSublayer(staticShape)
+        
+        layer.addSublayer(shape)
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = project.gradientsColor.map{$0.cgColor}
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        gradient.mask = shape
+        
+        layer.addSublayer(gradient)
 	}
 	
 }

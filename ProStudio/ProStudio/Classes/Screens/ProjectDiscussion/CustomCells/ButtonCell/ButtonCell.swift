@@ -9,19 +9,18 @@
 import UIKit
 
 class ButtonCell: UITableViewCell {
-
+    
     @IBOutlet weak var button: PSButton!
     
+    
+    var touched: VoidClosure?
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    
     @IBAction func send(_ sender: Any) {
-        
-        button.touched = {
-            print("Ghbdtn")
-        }
-        
+        button.touched = touched
     }
     
 }

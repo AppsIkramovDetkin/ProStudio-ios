@@ -27,7 +27,7 @@ struct PSColors {
 	static let cancelButtonText = UIColor(displayP3Red: 255/255, green: 37/255, blue: 37/255, alpha: 1.0)
 }
 
-class : UIViewController {
+class SecurityScreen: UIViewController {
 	
 	override var preferredStatusBarStyle : UIStatusBarStyle {
 		return .lightContent
@@ -77,7 +77,7 @@ class : UIViewController {
 	
 	//KeyBoardView
 	let keyboardView = KeyboardView()
-	
+	var isRegister = true
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.hero.isEnabled = true
@@ -85,64 +85,103 @@ class : UIViewController {
 		
 		setupView()
 		setupCodeView()
-		
+        if !isRegister {
+            secondCodeStackView.isHidden = true
+            secondCodeLabel.isHidden = true
+        }
 		keyboardView.addObserver(self, forKeyPath: "numPass", options: [.new, .old], context: nil)
 		keyboardView.addObserver(self, forKeyPath: "numPassCheck", options: [.new, .old], context: nil)
 	}
 	
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-		
-		let newValue = change?[.newKey] as? String
-		let oldValue = change?[.oldKey] as? String
-		
-		switch keyPath {
-		case "numPass":
-			if newValue!.count > oldValue!.count {
-				firstCodeStackView.pointArray[newValue!.count - 1].animate(on: true)
-			} else if newValue!.count < oldValue!.count && oldValue!.count != 0 {
-				firstCodeStackView.pointArray[oldValue!.count - 1].animate(on: false)
-			}
-		case "numPassCheck":
-			if newValue!.count > oldValue!.count {
-				secondCodeStackView.pointArray[newValue!.count - 1].animate(on: true)
-			} else if newValue!.count < oldValue!.count && oldValue!.count != 0 {
-				secondCodeStackView.pointArray[oldValue!.count - 1].animate(on: false)
-			}
-		default:
-			break
-		}
-		
-		if (keyboardView.numPassCheck.count + keyboardView.numPass.count) == 8 {
-			let tabBarController = UITabBarController()
-			
-			//1.
-			let listVC = ProjectsList()
-			listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
-			//2.
-			let cabinetVC = PersonalAccount()
-			let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "contacts"), tag: 1)
-			let inset3: CGFloat = 0
-			cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
-			cabinetVC.tabBarItem = cabinetItem
-			
-			//3.
-			let chatVC = UINavigationController(rootViewController: ChatWithManager())
-			let chatItem = UITabBarItem(title: "Поддержка", image: UIImage.init(named: "support"), tag: 2)
-			chatItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
-			chatVC.tabBarItem = chatItem
-			//4.
-			let contactsVC = UINavigationController(rootViewController: ContactsViewController())
-			let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
-			let inset2: CGFloat = 0
-			contactsTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
-			
-			contactsVC.tabBarItem = contactsTabItem
-			
-			tabBarController.tabBar.tintColor = PSColor.cerulean
-			tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
-			tabBarController.setViewControllers([listVC, chatVC, cabinetVC, contactsVC], animated: true)
-			present(tabBarController, animated: true, completion: nil)
-		}
+        func openNeededScreen() {
+            let tabBarController = UITabBarController()
+            
+            //1.
+            let listVC = ProjectsList()
+            listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
+            //2.
+            let cabinetVC = PersonalAccount()
+            let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "contacts"), tag: 1)
+            let inset3: CGFloat = 0
+            cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+            cabinetVC.tabBarItem = cabinetItem
+            
+            //3.
+            let chatVC = UINavigationController(rootViewController: ChatWithManager())
+            let chatItem = UITabBarItem(title: "Поддержка", image: UIImage.init(named: "support"), tag: 2)
+            chatItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
+            chatVC.tabBarItem = chatItem
+            //4.
+            let contactsVC = UINavigationController(rootViewController: ContactsViewController())
+            let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)
+            let inset2: CGFloat = 0
+            contactsTabItem.imageInsets = UIEdgeInsets(top: inset2, left: inset2, bottom: inset2, right: inset2)
+            
+            contactsVC.tabBarItem = contactsTabItem
+            
+            tabBarController.tabBar.tintColor = PSColor.cerulean
+            tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
+            tabBarController.setViewControllers([listVC, chatVC, cabinetVC, contactsVC], animated: true)
+            present(tabBarController, animated: true, completion: nil)
+        }
+        if isRegister {
+            let newValue = change?[.newKey] as? String
+            let oldValue = change?[.oldKey] as? String
+            
+            switch keyPath {
+            case "numPass":
+                if newValue!.count > oldValue!.count {
+                    firstCodeStackView.pointArray[newValue!.count - 1].animate(on: true)
+                } else if newValue!.count < oldValue!.count && oldValue!.count != 0 {
+                    firstCodeStackView.pointArray[oldValue!.count - 1].animate(on: false)
+                }
+            case "numPassCheck":
+                if newValue!.count > oldValue!.count {
+                    secondCodeStackView.pointArray[newValue!.count - 1].animate(on: true)
+                } else if newValue!.count < oldValue!.count && oldValue!.count != 0 {
+                    secondCodeStackView.pointArray[oldValue!.count - 1].animate(on: false)
+                }
+            default:
+                break
+            }
+            
+            
+            if (keyboardView.numPassCheck.count + keyboardView.numPass.count) == 8 && keyboardView.numPassCheck == keyboardView.numPass {
+                defaults.set(keyboardView.numPass, forKey: "pin")
+                defaults.synchronize()
+                
+                openNeededScreen()
+            }
+        } else {
+            // login
+            let newValue = change?[.newKey] as? String
+            let oldValue = change?[.oldKey] as? String
+            
+            switch keyPath {
+            case "numPass":
+                if newValue!.count > oldValue!.count {
+                    firstCodeStackView.pointArray[newValue!.count - 1].animate(on: true)
+                } else if newValue!.count < oldValue!.count && oldValue!.count != 0 {
+                    firstCodeStackView.pointArray[oldValue!.count - 1].animate(on: false)
+                }
+            default:
+                break
+            }
+            
+            if keyboardView.numPass.count == 4 {
+                // try to login
+                let enteredPin = keyboardView.numPass
+                let pin = defaults.string(forKey: "pin") ?? ""
+                if enteredPin == pin {
+                    openNeededScreen()
+                } else {
+                    self.firstCodeStackView.pointArray.forEach{$0.animate(on: false)}
+                    keyboardView.numPass = ""
+                    self.showAlert(title: "Ошибка", message: "Вы ввели неверный PIN.")
+                }
+            }
+        }
 	}
 	
 	private func setupCodeView() {
