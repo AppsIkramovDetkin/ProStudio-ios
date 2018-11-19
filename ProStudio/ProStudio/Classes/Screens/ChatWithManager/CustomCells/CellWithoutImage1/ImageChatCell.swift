@@ -11,5 +11,13 @@ class ImageChatCell: UITableViewCell {
         avatarImageView.clipsToBounds       = true
         bubbleView.layer.cornerRadius       = 5.0
         bubbleView.clipsToBounds            = true
+        imageViewInMessage.image = nil
+        imageViewInMessage.contentMode = .scaleAspectFill
+        imageViewInMessage.backgroundColor = PSColor.coolGrey
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageViewInMessage.image = nil
     }
 }

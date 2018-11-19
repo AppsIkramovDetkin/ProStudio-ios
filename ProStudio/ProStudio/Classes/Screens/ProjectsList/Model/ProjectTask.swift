@@ -1,6 +1,12 @@
 import Foundation
 
-struct ProjectTask {
+struct ProjectTask: Searchable {
+    var parameter: String {
+        return "\(done)"
+    }
+    
+    
+    
     var project: Project
 	var taskTitle: String = ""
 	var commentForTask: String = ""

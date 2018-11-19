@@ -104,6 +104,7 @@
 		7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB221A1BEF00029E0E9 /* AuthManager.swift */; };
 		7CD25AB521A1C0910029E0E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */; };
 		7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */; };
+		7CD25AB921A2EDBD0029E0E9 /* ChatTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB821A2EDBD0029E0E9 /* ChatTextField.swift */; };
 		AC1CE96C2162A2E500E7F26F /* RegistraionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */; };
 		AC1CE96D2162A2E500E7F26F /* RegistraionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */; };
 		AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */; };
@@ -235,6 +236,7 @@
 		7CD25AB221A1BEF00029E0E9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
+		7CD25AB821A2EDBD0029E0E9 /* ChatTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextField.swift; sourceTree = "<group>"; };
 		AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistraionViewController.swift; sourceTree = "<group>"; };
 		AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistraionViewController.xib; sourceTree = "<group>"; };
 		AC422C19215AC1F500AAD1EE /* ChatWithManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithManager.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				2E002C3F216E4BD6000C8734 /* CustomTextField.swift */,
+				7CD25AB821A2EDBD0029E0E9 /* ChatTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -957,12 +960,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProStudio/Pods-ProStudio-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Shift/Shift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -972,12 +977,14 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1054,6 +1061,7 @@
 				0F4F6F22217385250080D12A /* HeaderView.swift in Sources */,
 				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
 				0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */,
+				7CD25AB921A2EDBD0029E0E9 /* ChatTextField.swift in Sources */,
 				0FCA091C217A21A900887BBB /* ProjectsList.swift in Sources */,
 				0F1686BF2170D792005A2944 /* AboutUserCell.swift in Sources */,
 				7C7E5553218E0F62009152EC /* ContactsSegment.swift in Sources */,

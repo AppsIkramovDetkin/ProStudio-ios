@@ -28,8 +28,14 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 		projectsPicker.setTitleTextAttributes([NSAttributedString.Key.font: PSFont.segmentedFont!],
 																						for: .normal)
 		projectsPicker.clipsToBounds = true
-		
+        
 	}
+    
+    @IBAction func selectedIndex() {
+        indexChanged?(projectsPicker.selectedSegmentIndex)
+    }
+    
+    var indexChanged: ItemClosure<Int>?
 	
 	@objc func progress(_ sender: UIButton) {
 		progressButtonClicked?()

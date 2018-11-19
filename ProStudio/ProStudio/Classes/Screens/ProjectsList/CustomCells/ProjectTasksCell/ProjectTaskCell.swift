@@ -51,9 +51,6 @@ class ProjectTaskCell: UITableViewCell {
 			return
 		}
         
-        
-       
-        
 		layouted = true
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
 			self.taskButton.layer.cornerRadius = 10
@@ -64,7 +61,7 @@ class ProjectTaskCell: UITableViewCell {
             self.gradient.colors = [self.colorsForGradient[0].cgColor, self.colorsForGradient[1].cgColor]
 			
 			let shape = CAShapeLayer()
-			shape.lineWidth = 3
+			shape.lineWidth = 5
 			
 			shape.path = UIBezierPath(roundedRect: self.taskButton.bounds, cornerRadius: self.taskButton.layer.cornerRadius).cgPath
 			
@@ -82,7 +79,7 @@ class ProjectTaskCell: UITableViewCell {
 		if done {
 			layer1.isHidden = false
             gradient.isHidden = true
-			okImage.image = UIImage(named: "ok")
+			okImage.image = UIImage(named: "check-circle")
 			taskTitle.setColors([UIColor.white, UIColor.white])
 			taskTitle.start(shiftPoint: .left)
 			taskTitle.end(shiftPoint: .right)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatWithManager" customModule="ProStudio" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="HCY-t5-DKh" id="7rj-mJ-dEK"/>
                 <outlet property="tableView" destination="c6e-dD-bwM" id="tBO-Wb-rP2"/>
                 <outlet property="textField" destination="LDX-Iy-0BJ" id="jYd-R2-eYl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,7 +36,7 @@
                         <outlet property="delegate" destination="-1" id="qmj-jc-gW3"/>
                     </connections>
                 </tableView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Введите сообщение" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-Iy-0BJ">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите сообщение" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-Iy-0BJ" customClass="ChatTextField" customModule="ProStudio" customModuleProvider="target">
                     <rect key="frame" x="68" y="611" width="291" height="44"/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -63,6 +64,9 @@
                         <constraint firstAttribute="height" constant="36" id="qz6-Te-Onr"/>
                     </constraints>
                     <state key="normal" image="skrepka"/>
+                    <connections>
+                        <action selector="attachButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="fU6-iF-Tyb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCY-t5-DKh">
                     <rect key="frame" x="319" y="615" width="36" height="36"/>
@@ -71,6 +75,9 @@
                         <constraint firstAttribute="width" constant="36" id="gsx-gu-m2C"/>
                     </constraints>
                     <state key="normal" image="send"/>
+                    <connections>
+                        <action selector="sendButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="b1O-cA-8NY"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

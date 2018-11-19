@@ -17,6 +17,9 @@ class PersonalAccount: UIViewController {
 		
 		registerCells()
 		tableView.isScrollEnabled = true
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
+        tableView.tableHeaderView = headerView
+        tableView.showsVerticalScrollIndicator = false
 	}
 
 	override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -66,16 +69,6 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate {
 			return cell
 		}
 		return UITableViewCell()
-	}
-	
-	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return view.frame.size.height * 0.4983
-	}
-	
-	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
-		
-		return headerView
 	}
 	
 	private func registerCells() {

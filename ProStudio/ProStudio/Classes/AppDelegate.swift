@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        reigisterUser()
      
         
-        createProject(for: "hhadevs@gmail.com")
+//        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()
 		let appearance = UITabBarItem.appearance()

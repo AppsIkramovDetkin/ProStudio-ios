@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +22,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-vb-ow1" customClass="PSScaleView" customModule="ProStudio" customModuleProvider="target">
                         <rect key="frame" x="12" y="12" width="320" height="85.666666666666671"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-kI-Ntv">
-                                <rect key="frame" x="273" y="27.333333333333336" width="31" height="31"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-kI-Ntv">
+                                <rect key="frame" x="277" y="29.333333333333336" width="27" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="DlB-u7-iPj"/>
-                                    <constraint firstAttribute="width" constant="31" id="Rz4-Z6-Z3w"/>
+                                    <constraint firstAttribute="height" constant="27" id="DlB-u7-iPj"/>
+                                    <constraint firstAttribute="width" constant="27" id="Rz4-Z6-Z3w"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-vH-6Om" customClass="ShiftMaskableLabel" customModule="Shift">
@@ -73,6 +73,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ok" width="20" height="20"/>
+        <image name="ok" width="133" height="132"/>
     </resources>
 </document>

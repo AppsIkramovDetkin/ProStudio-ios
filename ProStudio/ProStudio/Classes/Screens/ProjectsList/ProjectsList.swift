@@ -5,7 +5,7 @@ class ProjectsList: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 
 	var projects = [ProjectTask]()
-	
+	private lazy var searchController = SearchController<ProjectTask>(self.projects)
 	private enum CellId: String {
 		case headerView = "ProjectsListHeader"
 		case projectsListLabelCell = "ProjectsListLabelCell"
@@ -21,6 +21,7 @@ class ProjectsList: UIViewController {
 		hero.isEnabled = true
         ProjectManager.shared.loadProjects { (projects) in
             self.projects = projects.map{ProjectTask.init(from: $0)}
+            self.searchController = SearchController<ProjectTask>(self.projects)
             self.tableView.reloadData()
         }
         tableView.delaysContentTouches = false
@@ -58,11 +59,25 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return view.frame.size.height * 0.1578
 	}
+    
+    func sort(all: Bool) {
+        if all {
+            projects = searchController.items
+        } else {
+            projects = searchController.search(by: "false")
+        }
+        
+        self.tableView.reloadData()
+    }
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! ProjectsListHeader
 		headerView.addProjectButton.hero.id = "right"
 		headerView.progressButton.hero.id = "left"
+        headerView.indexChanged = {
+            index in
+            self.sort(all: index == 0)
+        }
 		headerView.progressButtonClicked = {
 			let vc = UINavigationController(rootViewController: ProgressListViewController())
 			vc.hero.isEnabled = true
@@ -79,4 +94,32 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 		tableView.register(UINib.init(nibName: CellId.headerView.rawValue, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: CellId.headerView.rawValue)
 		tableView.register(UINib(nibName: CellId.projectTaskCell.rawValue, bundle: nil), forCellReuseIdentifier: CellId.projectTaskCell.rawValue)
 	}
+}
+
+
+protocol Searchable {
+    var parameter: String { get }
+}
+
+class SearchController<T: Searchable> {
+    private(set) var items: [T]
+    private var caseSensitive: Bool
+    
+    init(_ items: [T], caseSensitive: Bool = false) {
+        self.items = items
+        self.caseSensitive = caseSensitive
+    }
+    
+    func search(by text: String?) -> [T] {
+        guard !(text?.isEmpty ?? true) else {
+            return items
+        }
+        return self.items.filter({ (item) -> Bool in
+            if caseSensitive {
+                return item.parameter.contains(text ?? "")
+            } else {
+                return item.parameter.lowercased().contains((text ?? "").lowercased())
+            }
+        })
+    }
 }

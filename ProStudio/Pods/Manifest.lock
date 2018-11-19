@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
   - Crashlytics (3.10.9):
     - Fabric (~> 1.7.13)
   - Fabric (1.7.13)
@@ -149,6 +151,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
   - Hero (1.4.0)
+  - ImagePicker (3.1.0)
   - IQKeyboardManagerSwift (6.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -162,6 +165,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - Crashlytics
   - Fabric
   - Firebase
@@ -179,6 +183,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - Hero
+  - ImagePicker
   - IQKeyboardManagerSwift
   - Shift
   - SwiftyJSON
@@ -186,6 +191,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - Crashlytics
     - Fabric
     - Firebase
@@ -210,6 +216,7 @@ SPEC REPOS:
     - GTMOAuth2
     - GTMSessionFetcher
     - Hero
+    - ImagePicker
     - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
@@ -219,6 +226,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
@@ -243,6 +251,7 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -250,6 +259,6 @@ SPEC CHECKSUMS:
   Shift: 86dc634d046fc86a879dbfdb492739672cc092be
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 8991c9158ce15b4ddabcb227f333d64b84060d48
+PODFILE CHECKSUM: ecb5ea75b9abb11a8db8b1d2daebe22a5b3ed38b
 
 COCOAPODS: 1.5.3

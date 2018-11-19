@@ -6,6 +6,7 @@
 //  Copyright © 2018 Nikita. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import SwiftyJSON
 import Firebase
@@ -28,6 +29,49 @@ class ProjectManager {
             })
             
             completion(allProjects.sorted{$0.startDate < $1.startDate})
+        }
+    }
+    
+    func uploadImage(image: UIImage, completion: @escaping ItemClosure<String>) {
+        guard let data = image.jpeg(.medium) else {
+            completion("")
+            return
+        }
+        let id = ID()
+        Storage.storage().reference().child(id).putData(data, metadata: nil) { (metadata, error) in
+            completion(id)
+        }
+    }
+    
+    var images: [String: UIImage] = [:]
+    
+    func downloadImage(id: String, completion: @escaping ItemClosure<URL?>) {
+        let ref = Storage.storage().reference().child(id)
+        ref.downloadURL(completion: { (url, error) in
+            completion(url)
+        })
+    }
+    
+    func sendMessage(with text: String) {
+        let email = currentUser.email ?? ""
+        let ref = Database.database().reference().child("chats").child(email.formattedEmail()).child("messages").childByAutoId()
+
+        let dict: [String: Any] = [
+            "sender": email,
+            "textMessage": text,
+            "time": Date().timeIntervalSince1970
+        ]
+        
+        ref.setValue(dict)
+    }
+    
+    func observeMessages(_ completion: @escaping ItemClosure<[MessageModel]>) {
+        let email = currentUser.email ?? ""
+        let ref = Database.database().reference().child("chats").child(email.formattedEmail()).child("messages")
+        ref.observe(.value) { (snapshot) in
+            let dicts = snapshot.value as? [String: [String: Any]] ?? [:]
+            let messages = dicts.map { MessageModel.from(json: JSON($0.value))! }
+            completion(messages.sorted { $0.time ?? 0 < $1.time ?? 0 } )
         }
     }
 }
