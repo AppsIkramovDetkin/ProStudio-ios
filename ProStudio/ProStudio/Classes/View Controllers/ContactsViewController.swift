@@ -14,6 +14,7 @@ class ContactsViewController: UIViewController {
 	@IBOutlet weak var label2: UILabel!
 	@IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label0: UILabel!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		NavigationBarDecorator.decorate(self)
