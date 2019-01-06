@@ -52,12 +52,12 @@ class ProjectManager {
         })
     }
     
-    func sendMessage(with text: String) {
-        let email = currentUser.email ?? ""
+		func sendMessage(with text: String, userId: String?) {
+        let email = userId ?? currentUser.email ?? ""
         let ref = Database.database().reference().child("chats").child(email.formattedEmail()).child("messages").childByAutoId()
 
         let dict: [String: Any] = [
-            "sender": email,
+					"sender": userId != nil ? "admin@admin.admin" : currentUser.email ?? "" ,
             "textMessage": text,
             "time": Date().timeIntervalSince1970
         ]
@@ -65,8 +65,8 @@ class ProjectManager {
         ref.setValue(dict)
     }
     
-    func observeMessages(_ completion: @escaping ItemClosure<[MessageModel]>) {
-        let email = currentUser.email ?? ""
+		func observeMessages(userId: String?, _ completion: @escaping ItemClosure<[MessageModel]>) {
+        let email = userId ?? currentUser.email ?? ""
         let ref = Database.database().reference().child("chats").child(email.formattedEmail()).child("messages")
         ref.observe(.value) { (snapshot) in
             let dicts = snapshot.value as? [String: [String: Any]] ?? [:]
@@ -112,7 +112,7 @@ class Project: Decodable {
     }
 }
 
-class ProjectStep: Decodable {
+class ProjectStep: Codable {
     var name: String = ""
     var isEnded: Bool = false
     var endDate: TimeInterval = 0

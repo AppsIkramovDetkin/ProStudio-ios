@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Intro-Bold.otf">
+            <string>Intro-Bold</string>
+        </array>
+        <array key="Intro-Book.otf">
+            <string>Intro-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BiomerticViewController" customModule="ProStudio" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="cka-8v-45X" id="1aZ-ff-HT6"/>
+                <outlet property="icon" destination="oo2-TC-yZr" id="aIL-NA-AP6"/>
+                <outlet property="subtitlelabel" destination="wx6-73-GNa" id="Sdo-8F-ngx"/>
+                <outlet property="titlelabel" destination="bjm-Lk-rBS" id="D6c-yg-LYF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjm-Lk-rBS">
+                    <rect key="frame" x="0.0" y="84" width="375" height="32"/>
+                    <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подключите авторизацию по Touch ID, чтобы не вводить код доступ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wx6-73-GNa">
+                    <rect key="frame" x="16" y="124" width="343" height="36"/>
+                    <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShO-eG-vTd">
+                    <rect key="frame" x="119.5" y="192" width="136" height="136"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="136" id="7Uq-Hz-xHK"/>
+                        <constraint firstAttribute="width" secondItem="ShO-eG-vTd" secondAttribute="height" multiplier="1:1" id="C1R-7M-Csa"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="68"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Touch ID" translatesAutoresizingMaskIntoConstraints="NO" id="oo2-TC-yZr">
+                    <rect key="frame" x="153.5" y="226" width="68" height="68.5"/>
+                    <color key="tintColor" name="blue"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cka-8v-45X" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
+                    <rect key="frame" x="16" y="553" width="343" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="qrB-3B-fGm"/>
+                    </constraints>
+                    <state key="normal" title="ИСПОЛЬЗОВАТЬ touch id"/>
+                    <connections>
+                        <action selector="buttonclicked" destination="-1" eventType="touchUpInside" id="DGo-Jb-5l1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ShO-eG-vTd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0wW-wC-heq"/>
+                <constraint firstItem="oo2-TC-yZr" firstAttribute="height" secondItem="ShO-eG-vTd" secondAttribute="height" multiplier="0.5" constant="0.5" id="2Kx-qu-qhq"/>
+                <constraint firstItem="oo2-TC-yZr" firstAttribute="centerY" secondItem="ShO-eG-vTd" secondAttribute="centerY" id="5Sm-Fl-r2i"/>
+                <constraint firstItem="ShO-eG-vTd" firstAttribute="top" secondItem="wx6-73-GNa" secondAttribute="bottom" constant="32" id="COe-xV-JcD"/>
+                <constraint firstItem="wx6-73-GNa" firstAttribute="top" secondItem="bjm-Lk-rBS" secondAttribute="bottom" constant="8" id="Egx-lR-fce"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cka-8v-45X" secondAttribute="trailing" constant="16" id="Hl8-Yq-slI"/>
+                <constraint firstItem="oo2-TC-yZr" firstAttribute="width" secondItem="ShO-eG-vTd" secondAttribute="width" multiplier="0.5" id="Jsl-Bh-qPR"/>
+                <constraint firstItem="cka-8v-45X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Q7t-R2-cSo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cka-8v-45X" secondAttribute="bottom" constant="64" id="baU-ZV-bUm"/>
+                <constraint firstItem="oo2-TC-yZr" firstAttribute="centerX" secondItem="ShO-eG-vTd" secondAttribute="centerX" id="gDP-ny-iMn"/>
+                <constraint firstItem="bjm-Lk-rBS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="ncf-Rp-ELD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bjm-Lk-rBS" secondAttribute="trailing" id="t5h-lV-DVn"/>
+                <constraint firstItem="bjm-Lk-rBS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uiC-5S-1xa"/>
+                <constraint firstItem="wx6-73-GNa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vXa-hf-2nm"/>
+                <constraint firstAttribute="trailing" secondItem="wx6-73-GNa" secondAttribute="trailing" constant="16" id="zNg-Ia-ZPp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Touch ID" width="2117" height="2114"/>
+        <namedColor name="blue">
+            <color red="0.0" green="0.50588235294117645" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

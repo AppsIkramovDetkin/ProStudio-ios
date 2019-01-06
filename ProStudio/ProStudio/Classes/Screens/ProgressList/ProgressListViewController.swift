@@ -20,9 +20,9 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var indexLabel: UILabel!
-    var projects: [Project] = []
-    var currentSteps: [ProjectStep] = []
+	@IBOutlet weak var indexLabel: UILabel!
+	var projects: [Project] = []
+	var currentSteps: [ProjectStep] = []
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		scrollView.delegate = self
@@ -38,25 +38,29 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		addRightButton()
 		navigationController?.navigationBar.transparentNavigationBar()
 		addLeftButton()
-        ProjectManager.shared.loadProjects { (projects) in
-            let views = projects.enumerated().map({ (i, project) -> PSCircularView in
-                let view = PSCircularView(project: project)
-                view.tag = i
-                view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
-                return view
-            })
-            if !projects.isEmpty {
-                self.currentSteps = projects[0].steps
-                self.indexLabel.text = "1 из \(projects.count)"
-            } else {
-                self.indexLabel.text = "Проектов нет"
-            }
-
-            self.setupscrollView(slides: views)
-            self.projects = projects
-            self.tableView.reloadData()
-        }
+		ProjectManager.shared.loadProjects { (projects) in
+			let views = projects.enumerated().map({ (i, project) -> PSCircularView in
+				let view = PSCircularView(project: project)
+				view.tag = i
+				view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
+				return view
+			})
+			if !projects.isEmpty {
+				self.currentSteps = projects[0].steps
+				self.indexLabel.text = "1 из \(projects.count)"
+			} else {
+				self.indexLabel.text = "Проектов нет"
+			}
+			
+			self.setupscrollView(slides: views)
+			self.projects = projects
+			self.tableView.reloadData()
+		}
 		// Do any additional setup after loading the view.
+	}
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 	
 	private func addRightButton() {
@@ -69,7 +73,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		button.semanticContentAttribute = .forceRightToLeft
 		button.setTitleColor(PSColor.cerulean, for: .normal)
 		button.setTitle("Добавить", for: .normal)
-		button.titleLabel?.font = PSFont.introBold.with(size: 14)
+		button.titleLabel?.font = PSFont.introBold.with(size: 16)
 		navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
 	}
 	
@@ -82,13 +86,13 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		button.imageView?.contentMode = .scaleAspectFit
 		button.setTitleColor(PSColor.cerulean, for: .normal)
 		button.setTitle("Список", for: .normal)
-		button.titleLabel?.font = PSFont.introBold.with(size: 14)
+		button.titleLabel?.font = PSFont.introBold.with(size: 16)
 		button.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
 	}
 	
 	@objc private func leftButtonClicked() {
-		navigationController?.dismiss(animated: true, completion: nil)
+		smartBack()
 	}
 	
 	func setupscrollView(slides: [UIView]) {
@@ -100,7 +104,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			
 			slide.translatesAutoresizingMaskIntoConstraints = false
 			scrollView.addSubview(slide)
-            scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide]|", dict: ["slide": slide]) + [NSLayoutConstraint.init(item: slide, attribute: .width, relatedBy: .equal, toItem: slide.superview, attribute: .width, multiplier: 0.65, constant: 0)] + [NSLayoutConstraint.quadroAspect(on: slide)])
+			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide]|", dict: ["slide": slide]) + [NSLayoutConstraint.init(item: slide, attribute: .width, relatedBy: .equal, toItem: slide.superview, attribute: .width, multiplier: 0.65, constant: 0)] + [NSLayoutConstraint.quadroAspect(on: slide)])
 			if slides.contains(index: i - 1) {
 				let prevSlide = slides[i - 1]
 				if i == slides.count - 1 {
@@ -118,39 +122,39 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard scrollView == self.scrollView else {
-            return
-        }
-        let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
-            return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-            }.first
-        
-        guard let v = maxView else {
-            return
-        }
-        
-        guard projects.contains(index: v.tag) else {
-            return
-        }
-        
-        self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-        let project = projects[v.tag]
-        self.currentSteps = project.steps
-        self.tableView.reloadData()
+		guard scrollView == self.scrollView else {
+			return
+		}
+		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
+			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
+			}.first
+		
+		guard let v = maxView else {
+			return
+		}
+		
+		guard projects.contains(index: v.tag) else {
+			return
+		}
+		
+		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+		let project = projects[v.tag]
+		self.currentSteps = project.steps
+		self.tableView.reloadData()
 	}
-    
+	
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        guard scrollView == self.scrollView else {
-            return
-        }
-        let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
-            return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-            }.first
-        
-        guard let v = maxView else {
-            return
-        }
-        self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+		guard scrollView == self.scrollView else {
+			return
+		}
+		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
+			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
+			}.first
+		
+		guard let v = maxView else {
+			return
+		}
+		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
 		scrollView.setContentOffset(CGPoint.init(x: v.center.x - scrollView.frame.width / 2, y: scrollView.contentOffset.y), animated: true)
 	}
 }
@@ -158,17 +162,17 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 extension ProgressListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectStepTableViewCell", for: indexPath) as! ProjectStepTableViewCell
-        let step = currentSteps[indexPath.row]
-        
+		let step = currentSteps[indexPath.row]
+		
 		if !step.isEnded {
 			cell.leftIconView.image = UIImage(named: "time")
 			cell.rightLabel.textColor = PSColor.cerulean
-        } else {
-            cell.leftIconView.image = UIImage(named: "checkmark")
-            cell.rightLabel.textColor = PSColor.coolGrey
-        }
-        cell.titleLabel.text = step.name
-        cell.rightLabel.text = step.formattedDate()
+		} else {
+			cell.leftIconView.image = UIImage(named: "checkmark")
+			cell.rightLabel.textColor = PSColor.coolGrey
+		}
+		cell.titleLabel.text = step.name
+		cell.rightLabel.text = step.formattedDate()
 		cell.separatorInset = .zero
 		cell.selectionStyle = .none
 		return cell

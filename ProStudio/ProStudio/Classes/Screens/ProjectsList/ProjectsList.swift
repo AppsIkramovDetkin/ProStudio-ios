@@ -26,6 +26,11 @@ class ProjectsList: UIViewController {
         }
         tableView.delaysContentTouches = false
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(true, animated: true)
+	}
 }
 
 extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
@@ -79,11 +84,11 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
             self.sort(all: index == 0)
         }
 		headerView.progressButtonClicked = {
-			let vc = UINavigationController(rootViewController: ProgressListViewController())
+			let vc = ProgressListViewController()
 			vc.hero.isEnabled = true
 //            self.definesPresentationContext = true
-			vc.modalPresentationStyle = .overCurrentContext
-			self.present(vc, animated: true, completion: nil)
+			vc.modalPresentationStyle = .currentContext
+			self.navigationController?.pushViewController(vc, animated: true)
 		}
 		headerView.tintColor = UIColor.white
 		

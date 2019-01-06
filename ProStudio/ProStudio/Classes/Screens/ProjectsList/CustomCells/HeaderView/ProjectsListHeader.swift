@@ -22,9 +22,7 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 		addProjectButton.addTarget(self, action: #selector(addProject(_:)), for: .touchUpInside)
 
 		projectsPicker.tintColor = PSColor.cerulean
-		projectsPicker.layer.borderColor = PSColor.cerulean.cgColor
-		projectsPicker.layer.borderWidth = 1.0
-		projectsPicker.layer.cornerRadius = 15
+
 		projectsPicker.setTitleTextAttributes([NSAttributedString.Key.font: PSFont.segmentedFont!],
 																						for: .normal)
 		projectsPicker.clipsToBounds = true

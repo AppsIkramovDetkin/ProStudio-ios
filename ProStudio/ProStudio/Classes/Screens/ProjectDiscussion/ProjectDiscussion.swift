@@ -9,21 +9,62 @@
 import UIKit
 import MessageUI
 
-class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDelegate {
+class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
 	
 	private let textFieldCell = "TextFieldCell"
 	private let buttonCell = "ButtonCell"
+	private let projectTypes: [ProjectType] = [.analytics, .appsAndSites, .branding, .seo]
+	private let typePickerView = UIPickerView()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        navigationController?.navigationBar.barStyle = .black
 		NavigationBarDecorator.decorate(self)
 		tableView.separatorColor = .clear
-		tableView.isScrollEnabled = false
+		tableView.isScrollEnabled = true
 		tableView.allowsSelection = false
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.largeTitleDisplayMode = .always
 		title = "Обсудить проект"
 		tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
+		typePickerView.delegate = self
+		typePickerView.dataSource = self
 		registerCells()
+	}
+	
+	var showed = false
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		if !showed {
+			if let cell = tableView.cellForRow(at: IndexPath.init(row: 3, section: 0)) as? TextFieldCell {
+				delay(delay: 0.5) {
+					cell.textField.becomeFirstResponder()
+				}
+				showed = true
+			}
+		}
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return projectTypes.count
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return projectTypes[row].rawValue
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		projectType = projectTypes[row].rawValue
+		if let cell = tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? TextFieldCell {
+			cell.textField.text = projectType
+		}
+		
 		
 	}
 	
@@ -49,6 +90,8 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
             cell.textChanged  = { self.projectType = $0 }
 			cell.textField.addRightButton()
 			cell.textField.rightButton.addTarget(self, action: #selector(textFieldButtonAction(button:)), for: .touchUpInside)
+			cell.textField.inputView = typePickerView
+			cell.textField.text = projectType
 			return cell
 			
 		case 1:
@@ -56,6 +99,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
 			cell.textField.placeholderText = "Имя"
             cell.textChanged  = { self.name = $0 }
+			cell.textField.text = name
 			cell.textField.tag = 1
 			return cell
 			
@@ -66,6 +110,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
             cell.textField.keyboardType = .phonePad
             cell.textChanged  = { self.phone = $0 }
 			cell.textField.tag = 2
+			cell.textField.text = phone
 			return cell
 		case 3:
 			
@@ -74,6 +119,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
             cell.textField.keyboardType = .emailAddress
             cell.textChanged  = { self.email = $0 }
 			cell.textField.tag = 3
+			cell.textField.text = email
 			return cell
 			
 		case 4:
@@ -82,6 +128,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 			cell.textField.placeholderText = "Комментарий"
             cell.textChanged  = { self.comment = $0 }
 			cell.textField.tag = 4
+			cell.textField.text = comment
 			return cell
 			
 		case 5:

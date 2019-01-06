@@ -19,7 +19,7 @@ class HeaderView: UITableViewHeaderFooterView {
 	@IBOutlet weak var companyName: UILabel!
 	
 	override func draw(_ rect: CGRect) {
-		
+		super.draw(rect)
 		ceruleanHeader.backgroundColor = PSColor.cerulean
 		backgroundPhoto.image = UIImage(named: "ava")?.alpha(0.5)
 		backgroundPhoto.contentMode = .scaleAspectFill
@@ -42,7 +42,7 @@ class HeaderView: UITableViewHeaderFooterView {
 		personalAccount.font = PSFont.headerText
 		personalAccount.textColor = UIColor.white
 		
-		userName.text = "Филиппов Михаил"
+//		userName.text = "Филиппов Михаил"
 		userName.font = PSFont.nameFont
 		userName.textColor = UIColor.black
 		

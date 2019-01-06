@@ -241,6 +241,9 @@
                                 <constraint firstAttribute="width" secondItem="q9n-GM-KaU" secondAttribute="height" multiplier="1:1" id="uYt-QO-3n4"/>
                             </constraints>
                             <state key="normal" image="vk"/>
+                            <connections>
+                                <action selector="vk" destination="-1" eventType="touchUpInside" id="SD7-nf-CXv"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-gk-xtB">
                             <rect key="frame" x="60" y="0.0" width="44" height="44"/>
@@ -298,14 +301,14 @@
         </view>
     </objects>
     <resources>
-        <image name="facebook" width="133" height="132"/>
+        <image name="facebook" width="20.908296585083008" height="20.751091003417969"/>
         <image name="geo-circle" width="129" height="129"/>
-        <image name="google_plus" width="133" height="132"/>
+        <image name="google_plus" width="20.908296585083008" height="20.751091003417969"/>
         <image name="mail-circle" width="129" height="129"/>
-        <image name="ok" width="133" height="132"/>
+        <image name="ok" width="20.908296585083008" height="20.751091003417969"/>
         <image name="phone-circle" width="129" height="129"/>
-        <image name="twitter" width="133" height="132"/>
-        <image name="vk" width="133" height="132"/>
-        <image name="youtube" width="133" height="132"/>
+        <image name="twitter" width="20.908296585083008" height="20.751091003417969"/>
+        <image name="vk" width="20.908296585083008" height="20.751091003417969"/>
+        <image name="youtube" width="20.908296585083008" height="20.751091003417969"/>
     </resources>
 </document>

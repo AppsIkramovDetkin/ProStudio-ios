@@ -17,8 +17,13 @@ class CustomTextField: UITextField {
 	lazy var rightButton = UIButton()
 	
 	override func draw(_ rect: CGRect) {
-		super.drawText(in: rect)
+		super.draw(rect)
 		styleTextField()
+	}
+	
+	override func didMoveToSuperview() {
+		super.didMoveToSuperview()
+		
 	}
 	
 	private lazy var rect = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
@@ -56,6 +61,7 @@ class CustomTextField: UITextField {
 		layer.addSublayer(border)
 		
 		font = PSFonts.textInTextField
+		placeholder = placeholderText
 		attributedPlaceholder = NSAttributedString(string: placeholderText ?? "", attributes: [.font: PSFonts.placeholder as Any])
 	}
 	
@@ -72,14 +78,16 @@ class CustomTextField: UITextField {
 	
 	func addRightButton() {
 		
-		let viewSize = frame.height * 0.55
+		let viewSize = frame.height * 0.65
 		
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: viewSize, height: viewSize))
 		
-		rightButton.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
+		
 		rightButton.setImage(UIImage(named: "arrowDown"), for: .normal)
 		rightButton.imageView?.contentMode = .scaleAspectFit
-		rightButton.frame.size = CGSize(width: view.frame.size.width, height: view.frame.size.height)
+		rightButton.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
+		rightButton.center.y = view.center.y - 4
+//		rightButton.frame.size = CGSize(width: view.frame.size.width, height: view.frame.size.height)
 		
 		view.addSubview(rightButton)
 		

@@ -15,9 +15,11 @@ class ChatWithManager: UIViewController {
     var messages: [MessageModel] = [] {
         didSet {
             tableView.reloadData()
-            tableView.scrollToRow(at: IndexPath.init(row: tableView.numberOfRows(inSection: 0) - 1, section: 0), at: UITableView.ScrollPosition.none, animated: true)
+            tableView.scrollToRow(at: IndexPath.init(row: tableView.numberOfRows(inSection: 0) - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: false)
         }
     }
+	
+	var userId: String?
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		registerCells()
@@ -32,7 +34,7 @@ class ChatWithManager: UIViewController {
 		textField.layer.borderColor = PSColor.silver.cgColor
 		textField.layer.borderWidth = 0.8
         textField.autocapitalizationType = .sentences
-        ProjectManager.shared.observeMessages { (messages) in
+		ProjectManager.shared.observeMessages(userId: userId) { (messages) in
             self.messages = messages
         }
 	}
@@ -49,7 +51,7 @@ class ChatWithManager: UIViewController {
             return
         }
         
-        ProjectManager.shared.sendMessage(with: text)
+        ProjectManager.shared.sendMessage(with: text, userId: userId)
         textField.text = nil
     }
 	
@@ -76,7 +78,7 @@ extension ChatWithManager: ImagePickerDelegate {
         }
         
         ProjectManager.shared.uploadImage(image: image) { (id) in
-            ProjectManager.shared.sendMessage(with: "hash)))image:\(id)")
+					ProjectManager.shared.sendMessage(with: "hash)))image:\(id)", userId: self.userId)
         }
     }
 }
@@ -92,16 +94,16 @@ extension ChatWithManager: UITableViewDataSource, UITableViewDelegate {
 		
         if data.textMessage.contains("hash)))image") {
             let id = String(data.textMessage.split(separator: ":")[1])
-            let cell = tableView.dequeueReusableCell(withIdentifier: data.sender != currentUser.email ? imageChatCellRight : imageChatCellLeft, for: indexPath) as! ImageChatCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: data.sender == "admin@admin.admin" ? imageChatCellRight : imageChatCellLeft, for: indexPath) as! ImageChatCell
             
             if let image = ProjectManager.shared.images[id] {
-                cell.imageViewInMessage.image = image
+                cell.imageViewInMessage?.image = image
             } else {
                 ProjectManager.shared.downloadImage(id: id) { (url) in
-                    if cell.imageViewInMessage.image == nil {
+                    if cell.imageViewInMessage?.image == nil {
                         if let url = url {
-                            cell.imageViewInMessage.af_setImage(withURL: url, completion: { (response) in
-                                if let image = cell.imageViewInMessage.image {
+                            cell.imageViewInMessage?.af_setImage(withURL: url, completion: { (response) in
+                                if let image = cell.imageViewInMessage?.image {
                                     ProjectManager.shared.images[id] = image
                                 }
                             })

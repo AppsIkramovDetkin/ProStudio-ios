@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeProjectViewController" customModule="ProStudio" customModuleProvider="target">
+            <connections>
+                <outlet property="allProgressPickerView" destination="UCq-wf-DKq" id="RJG-8j-h7V"/>
+                <outlet property="stepPickerView" destination="HNk-RB-rkL" id="lt2-Qi-8EJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер этапа и количество процентов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcX-Yx-NbM">
+                    <rect key="frame" x="16" y="352" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Процент всего проекта:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-Is-3b5">
+                    <rect key="frame" x="16" y="83" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="UCq-wf-DKq">
+                    <rect key="frame" x="16" y="120" width="343" height="216"/>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-a3-aw0">
+                    <rect key="frame" x="16" y="607" width="343" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="1Hm-Ic-Kfb"/>
+                    </constraints>
+                    <state key="normal" title="Изменить"/>
+                    <connections>
+                        <action selector="changeButtonClicked" destination="-1" eventType="touchUpInside" id="mAz-pB-Nlp"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="HNk-RB-rkL">
+                    <rect key="frame" x="16" y="389" width="343" height="202"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="moP-Is-3b5" firstAttribute="height" secondItem="dcX-Yx-NbM" secondAttribute="height" id="244-g9-0iR"/>
+                <constraint firstItem="cDZ-a3-aw0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HNk-RB-rkL" secondAttribute="bottom" constant="16" id="43u-7o-TqV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="moP-Is-3b5" secondAttribute="trailing" constant="16" id="6BW-jD-Yrp"/>
+                <constraint firstItem="cDZ-a3-aw0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GEf-8n-GJP"/>
+                <constraint firstItem="moP-Is-3b5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IlV-Yn-Hne"/>
+                <constraint firstItem="dcX-Yx-NbM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MdA-5U-TIk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cDZ-a3-aw0" secondAttribute="trailing" constant="16" id="UrJ-Ov-dud"/>
+                <constraint firstItem="UCq-wf-DKq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fZD-3p-ie8"/>
+                <constraint firstItem="HNk-RB-rkL" firstAttribute="top" secondItem="dcX-Yx-NbM" secondAttribute="bottom" constant="16" id="fvA-UZ-I7N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HNk-RB-rkL" secondAttribute="trailing" constant="16" id="hEM-v3-xXC"/>
+                <constraint firstItem="moP-Is-3b5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="63" id="jFo-Ae-ADT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UCq-wf-DKq" secondAttribute="trailing" constant="16" id="n2y-R6-xNf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cDZ-a3-aw0" secondAttribute="bottom" constant="16" id="pBb-Gq-0as"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dcX-Yx-NbM" secondAttribute="trailing" constant="16" id="qAM-Qo-RWT"/>
+                <constraint firstItem="dcX-Yx-NbM" firstAttribute="top" secondItem="UCq-wf-DKq" secondAttribute="bottom" constant="16" id="qk2-0f-x4T"/>
+                <constraint firstItem="UCq-wf-DKq" firstAttribute="top" secondItem="moP-Is-3b5" secondAttribute="bottom" constant="16" id="ruN-Zs-o0k"/>
+                <constraint firstItem="HNk-RB-rkL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xvU-cw-oNz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
+        </view>
+    </objects>
+</document>

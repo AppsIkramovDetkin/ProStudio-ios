@@ -1,5 +1,6 @@
 import UIKit
-
+import FirebaseDatabase
+import FirebaseAuth
 class PersonalAccount: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
@@ -10,25 +11,74 @@ class PersonalAccount: UIViewController {
 		case notificationCell = "NotificationCell"
 		case exitCell = "ExitCell"
 	}
-
+	
+	var name: String? {
+		didSet {
+			updateHeader()
+			tableView.reloadData()
+		}
+	}
+	
+	var phone: String? {
+		didSet {
+			tableView.reloadData()
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		registerCells()
+		tableView.separatorInset = .zero
 		tableView.isScrollEnabled = true
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
-        tableView.tableHeaderView = headerView
-        tableView.showsVerticalScrollIndicator = false
+		updateHeader()
+		tableView.showsVerticalScrollIndicator = false
+		Database.database().reference().child("users").child((currentUser.email ?? "").formattedEmail()).observe(.value) { (snapshot) in
+			if let value = snapshot.value as? [String: String] {
+				self.name = value["name"]
+				self.phone = value["phone"]
+			}
+		}
 	}
-
+	
+	func updateHeader() {
+		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CellId.headerView.rawValue) as! HeaderView
+		headerView.userName.text = name ?? currentUser.email
+		tableView.tableHeaderView = headerView
+	}
+	
 	override var preferredStatusBarStyle : UIStatusBarStyle {
 		return .lightContent
 	}
 	
 }
 
-extension PersonalAccount: UITableViewDataSource, UITableViewDelegate {
+extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		switch textField.placeholder {
+		case "Введите имя":
+			Database.database().reference().child("users").child(currentUser.email!.formattedEmail()).child("name").setValue(textField.text)
+		case "Введите телефон":
+			Database.database().reference().child("users").child(currentUser.email!.formattedEmail()).child("phone").setValue(textField.text)
+		default: break
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		switch indexPath.row {
+		case 4:
+			try? Auth.auth().signOut()
+			currentUser = nil
+			let domain = Bundle.main.bundleIdentifier!
+			UserDefaults.standard.removePersistentDomain(forName: domain)
+			UserDefaults.standard.synchronize()
+			dismiss(animated: true) {
+				(UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController?.dismiss(animated: true, completion: nil)
+			}
+		default: break
+		}
+	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 5
@@ -43,19 +93,24 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
 			cell.selectionStyle = .none
 			cell.nameSettings()
-			
+			cell.aboutUserTextField.text = name
+			cell.aboutUserTextField.placeholder = "Введите имя"
+			cell.aboutUserTextField.delegate = self
 			return cell
 		} else if indexPath.row == 1 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
 			cell.selectionStyle = .none
 			cell.numberSettings()
-			
+			cell.aboutUserTextField.text = phone
+			cell.aboutUserTextField.delegate = self
+			cell.aboutUserTextField.placeholder = "Введите телефон"
 			return cell
 		} else if indexPath.row == 2 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
 			cell.mailSettings()
 			cell.selectionStyle = .none
-			
+			cell.aboutUserTextField.isUserInteractionEnabled = false
+			cell.aboutUserTextField.text = currentUser.email
 			return cell
 		} else if indexPath.row == 3 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.notificationCell.rawValue, for: indexPath) as! NotificationCell

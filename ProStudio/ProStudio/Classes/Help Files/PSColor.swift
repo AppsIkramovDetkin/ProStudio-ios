@@ -8,4 +8,5 @@ struct PSColor {
 	static let textColor = UIColor(red: 1.0 / 255.0, green: 1.0 / 255.0, blue: 1.0 / 255.0, alpha: 1)
 	static let coolGrey = UIColor(red: 161, green: 162, blue: 162)
 	static let silver = UIColor(red: 198, green: 197, blue: 203)
+	static let veryLightPink = UIColor(red: 190, green: 190, blue: 190)
 }

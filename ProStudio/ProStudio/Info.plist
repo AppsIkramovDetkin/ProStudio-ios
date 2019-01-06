@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>11</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -47,8 +47,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>We need your camera to upload images in chat or cabinet.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>We need your face id for auth.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need your photo library to upload images in chat or cabinet.</string>
+	<key>NSTouchIDUsageDescription</key>
+	<string>We need your touch id for auth.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Intro-Light.otf</string>

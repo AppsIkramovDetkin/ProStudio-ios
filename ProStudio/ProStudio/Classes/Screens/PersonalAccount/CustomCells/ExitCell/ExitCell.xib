@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Intro-Book.otf">
-            <string>Intro-Book</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,20 +19,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8X-yc-6sD">
-                        <rect key="frame" x="123.5" y="9" width="73" height="32"/>
-                        <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="20"/>
-                        <state key="normal" title="ВЫЙТИ"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2y-SM-BFH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                        <state key="normal" title="ВЫЙТИ">
+                            <color key="titleColor" red="1" green="0.047837808098591547" blue="0.042556117957746477" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="J8X-yc-6sD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HoN-FM-kAq"/>
-                    <constraint firstItem="J8X-yc-6sD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zWq-WK-DcL"/>
+                    <constraint firstAttribute="bottom" secondItem="e2y-SM-BFH" secondAttribute="bottom" id="0xk-NA-fcu"/>
+                    <constraint firstItem="e2y-SM-BFH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Md-dm-uZo"/>
+                    <constraint firstItem="e2y-SM-BFH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GML-vm-b5h"/>
+                    <constraint firstAttribute="trailing" secondItem="e2y-SM-BFH" secondAttribute="trailing" id="QJk-tb-ZeW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="exitButton" destination="J8X-yc-6sD" id="YOm-lH-Qh7"/>
+                <outlet property="exitButton" destination="e2y-SM-BFH" id="Hcf-hg-R1r"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </tableViewCell>

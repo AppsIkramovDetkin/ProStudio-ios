@@ -25,6 +25,34 @@ extension String {
     }
 }
 
+func createProject(for email: String) {
+    func date(_ str: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.date(from: str)!
+    }
+  
+    let ref = Database.database().reference()
+    let startDate = "01.05.2018"
+    let endDate = "21.12.2018"
+    let id = ID()
+    ref.child("projects").child(email.formattedEmail()).child(id).setValue([
+        "id": id,
+        "client": email,
+        "type": ProjectType.branding.rawValue,
+        "startDate": date(startDate).timeIntervalSince1970,
+        "endDate": date(endDate).timeIntervalSince1970,
+        "name": "Prostudio",
+        "isEnded": false,
+        "progress": 65,
+        "steps": [
+            ["name": "Разработка прототипа", "isEnded": true, "endDate": date(endDate).timeIntervalSince1970],
+            ["name": "Разработка 123", "isEnded": false, "endDate": date(endDate).timeIntervalSince1970]
+        ]
+        ])
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
@@ -36,40 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func createProject(for email: String) {
-        func date(_ str: String) -> Date {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            return dateFormatter.date(from: str)!
-        }
-        let ref = Database.database().reference()
-        let startDate = "01.05.2018"
-        let endDate = "21.12.2018"
-        let id = ID()
-        ref.child("projects").child(email.formattedEmail()).child(id).setValue([
-            "id": id,
-            "client": email,
-            "type": ProjectType.branding.rawValue,
-            "startDate": date(startDate).timeIntervalSince1970,
-            "endDate": date(endDate).timeIntervalSince1970,
-            "name": "Prostudio",
-            "isEnded": false,
-            "progress": 65,
-            "steps": [
-                ["name": "Разработка прототипа", "isEnded": true, "endDate": date(endDate).timeIntervalSince1970],
-                ["name": "Разработка 123", "isEnded": false, "endDate": date(endDate).timeIntervalSince1970]
-            ]
-        ])
-    }
-	
+   
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        UIApplication.shared.statusBarStyle = .lightContent
 		Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
 		IQKeyboardManager.shared.enable = true
 //        reigisterUser()
      
-        
 //        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()
