@@ -53,6 +53,14 @@
 		2E9589F1218B244A00CE34FE /* KeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589F0218B244A00CE34FE /* KeyboardCell.swift */; };
 		2E9589F7218B3F4F00CE34FE /* Intro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */; };
 		2E9589FC218BA48300CE34FE /* BackspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9589FB218BA48300CE34FE /* BackspaceCell.swift */; };
+		388B3CC721F6241300B178A7 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CC621F6241300B178A7 /* AddProjectViewController.swift */; };
+		388B3CC921F6242700B178A7 /* AddProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CC821F6242700B178A7 /* AddProjectViewController.xib */; };
+		388B3CCC21F628DB00B178A7 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CCB21F628DB00B178A7 /* LabelCell.swift */; };
+		388B3CCE21F628FE00B178A7 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CCD21F628FE00B178A7 /* LabelCell.xib */; };
+		388B3CD021F62F3700B178A7 /* LabelWithCheckMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CCF21F62F3700B178A7 /* LabelWithCheckMarkCell.swift */; };
+		388B3CD221F62F6900B178A7 /* LabelWithCheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CD121F62F6900B178A7 /* LabelWithCheckMarkCell.xib */; };
+		388B3CD421F635F900B178A7 /* StandartTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CD321F635F900B178A7 /* StandartTextFieldCell.swift */; };
+		388B3CD621F6363900B178A7 /* StandartTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CD521F6363900B178A7 /* StandartTextFieldCell.xib */; };
 		447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B821571A3100ACBE09 /* FBAuthentication.swift */; };
 		447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B921571A3100ACBE09 /* FBUserModel.swift */; };
 		447764BD21571A3100ACBE09 /* FBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764BA21571A3100ACBE09 /* FBReference.swift */; };
@@ -201,6 +209,14 @@
 		2E9589F4218B3DBB00CE34FE /* Intro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.ttf"; sourceTree = "<group>"; };
 		2E9589F5218B3DC200CE34FE /* Intro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Book.otf"; sourceTree = "<group>"; };
 		2E9589FB218BA48300CE34FE /* BackspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceCell.swift; sourceTree = "<group>"; };
+		388B3CC621F6241300B178A7 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
+		388B3CC821F6242700B178A7 /* AddProjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProjectViewController.xib; sourceTree = "<group>"; };
+		388B3CCB21F628DB00B178A7 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		388B3CCD21F628FE00B178A7 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		388B3CCF21F62F3700B178A7 /* LabelWithCheckMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithCheckMarkCell.swift; sourceTree = "<group>"; };
+		388B3CD121F62F6900B178A7 /* LabelWithCheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelWithCheckMarkCell.xib; sourceTree = "<group>"; };
+		388B3CD321F635F900B178A7 /* StandartTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartTextFieldCell.swift; sourceTree = "<group>"; };
+		388B3CD521F6363900B178A7 /* StandartTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartTextFieldCell.xib; sourceTree = "<group>"; };
 		447764B821571A3100ACBE09 /* FBAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthentication.swift; sourceTree = "<group>"; };
 		447764B921571A3100ACBE09 /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		447764BA21571A3100ACBE09 /* FBReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBReference.swift; sourceTree = "<group>"; };
@@ -574,6 +590,19 @@
 			path = SecurityScreen;
 			sourceTree = "<group>";
 		};
+		388B3CCA21F628CC00B178A7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				388B3CCB21F628DB00B178A7 /* LabelCell.swift */,
+				388B3CCD21F628FE00B178A7 /* LabelCell.xib */,
+				388B3CCF21F62F3700B178A7 /* LabelWithCheckMarkCell.swift */,
+				388B3CD121F62F6900B178A7 /* LabelWithCheckMarkCell.xib */,
+				388B3CD321F635F900B178A7 /* StandartTextFieldCell.swift */,
+				388B3CD521F6363900B178A7 /* StandartTextFieldCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		447764B72157170C00ACBE09 /* FirebaseService */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +692,8 @@
 				7C7E554E218E0E77009152EC /* ContactsViewController.swift */,
 				7C7E5550218E0EA9009152EC /* ContactsViewController.xib */,
 				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
+				388B3CC621F6241300B178A7 /* AddProjectViewController.swift */,
+				388B3CC821F6242700B178A7 /* AddProjectViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -670,6 +701,7 @@
 		7CCE13ED20F16F9900E268F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				388B3CCA21F628CC00B178A7 /* Cells */,
 				447764B72157170C00ACBE09 /* FirebaseService */,
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
 				2E002C41216E4D1E000C8734 /* PSColors.swift */,
@@ -925,6 +957,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388B3CD621F6363900B178A7 /* StandartTextFieldCell.xib in Resources */,
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
 				7CC00B9B21B5CB630020D3F0 /* ChangeProjectViewController.xib in Resources */,
@@ -958,6 +991,7 @@
 				7C7E5535218DFFC6009152EC /* Intro-Book.otf in Resources */,
 				7C7E5536218DFFC6009152EC /* Intro-Regular-Caps.otf in Resources */,
 				7C7E5537218DFFC6009152EC /* Intro-Book-Alt.otf in Resources */,
+				388B3CCE21F628FE00B178A7 /* LabelCell.xib in Resources */,
 				7C7E5538218DFFC6009152EC /* Intro-Light-Italic.otf in Resources */,
 				7C9D8A5E21E625AF00DCAE83 /* ChangeUserViewController.xib in Resources */,
 				7C7E5539218DFFC6009152EC /* Intro-Black.otf in Resources */,
@@ -967,10 +1001,12 @@
 				7C7E556021906F31009152EC /* ProjectStepTableViewCell.xib in Resources */,
 				7C7E553E218DFFC6009152EC /* Intro-Thin-Italic.otf in Resources */,
 				7C7E553F218DFFC6009152EC /* Intro-Bold-Alt.otf in Resources */,
+				388B3CC921F6242700B178A7 /* AddProjectViewController.xib in Resources */,
 				7C7E5540218DFFC6009152EC /* Intro-Light-Caps.otf in Resources */,
 				7C7E5541218DFFC6009152EC /* Intro-Thin.otf in Resources */,
 				7CFB929D21B42B2600705193 /* AdminViewController.xib in Resources */,
 				7C7E5542218DFFC6009152EC /* Intro-Black-Inline.otf in Resources */,
+				388B3CD221F62F6900B178A7 /* LabelWithCheckMarkCell.xib in Resources */,
 				7C7E5543218DFFC6009152EC /* Intro-Thin-Alt.otf in Resources */,
 				7C7E5544218DFFC6009152EC /* Intro-Thin-Caps.otf in Resources */,
 				7C7E5545218DFFC6009152EC /* Intro-Regular-Italic.otf in Resources */,
@@ -1116,9 +1152,11 @@
 				4483288C215727FF00BF4352 /* FBChatService.swift in Sources */,
 				0F648350217298E3003A7170 /* PSFont.swift in Sources */,
 				2E002C40216E4BD6000C8734 /* CustomTextField.swift in Sources */,
+				388B3CD421F635F900B178A7 /* StandartTextFieldCell.swift in Sources */,
 				2E2F60F6216FA9680005BE8E /* PSFonts.swift in Sources */,
 				7CE64D7E21F4BA13009CD11D /* AdminProjectsViewController.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
+				388B3CD021F62F3700B178A7 /* LabelWithCheckMarkCell.swift in Sources */,
 				7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */,
 				7C7E555F21906F31009152EC /* ProjectStepTableViewCell.swift in Sources */,
 				0F64834E2172964B003A7170 /* PSColor.swift in Sources */,
@@ -1131,6 +1169,7 @@
 				AC7997BD215BC02800A6B297 /* MessageModel.swift in Sources */,
 				2E002C49216E7141000C8734 /* CustomButton.swift in Sources */,
 				2E6A06CB218703EB00D247D0 /* PointView.swift in Sources */,
+				388B3CCC21F628DB00B178A7 /* LabelCell.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
 				0F4F6F22217385250080D12A /* HeaderView.swift in Sources */,
 				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
@@ -1143,6 +1182,7 @@
 				7C7E5557218E174A009152EC /* PSScaleView.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */,
+				388B3CC721F6241300B178A7 /* AddProjectViewController.swift in Sources */,
 				7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */,
 				7CE64D8421F4C734009CD11D /* AdminClientsViewController.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
