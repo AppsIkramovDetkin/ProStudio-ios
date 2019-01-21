@@ -8,7 +8,7 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 	@IBOutlet weak var projectsListLabel: UILabel!
 	
 	var progressButtonClicked: VoidClosure?
-	
+	var addButtonClicked: VoidClosure?
 	override func draw(_ rect: CGRect) {
 		projectsListLabel.hero.id = "title"
 		progressButton.setTitle("Прогресс", for: .normal)
@@ -28,6 +28,7 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 		projectsPicker.clipsToBounds = true
         
 	}
+
     
     @IBAction func selectedIndex() {
         indexChanged?(projectsPicker.selectedSegmentIndex)
@@ -41,6 +42,7 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 	
 	@objc func addProject(_ sender: UIButton) {
 		print("add smth")
+		addButtonClicked?()
 	}
 	
 	

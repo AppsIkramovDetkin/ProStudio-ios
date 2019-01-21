@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ContactsViewController: UIViewController {
 	@IBOutlet weak var segmentedControl: ContactsSegmentedControl!
@@ -14,6 +15,9 @@ class ContactsViewController: UIViewController {
 	@IBOutlet weak var label2: UILabel!
 	@IBOutlet weak var label3: UILabel!
 	@IBOutlet weak var label0: UILabel!
+	@IBOutlet weak var v1: UIView!
+	@IBOutlet weak var v2: UIView!
+	@IBOutlet weak var v3: UIView!
 	
 	
 	override func viewDidLoad() {
@@ -33,6 +37,43 @@ class ContactsViewController: UIViewController {
 		label0.setLineHeight(4)
 		label0.textAlignment = .center
 		segmentedControl.addTarget(self, action: #selector(changed(sender:)), for: .valueChanged)
+		addGestures()
+	}
+	
+	private func addGestures() {
+		let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(v1Clicked))
+		v1.addGestureRecognizer(tapGesture1)
+		let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(v2Clicked))
+		v2.addGestureRecognizer(tapGesture2)
+		let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(v3Clicked))
+		v3.addGestureRecognizer(tapGesture3)
+	}
+	
+	@objc private func v1Clicked() {
+		guard let number = URL(string: "tel://" + "78126456596") else { return }
+		UIApplication.shared.open(number)
+	}
+	
+	@objc private func v2Clicked() {
+		
+		let latitude: CLLocationDegrees = 59.851131
+		let longitude: CLLocationDegrees = 30.301442
+		
+		let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+		let regionSpan = MKCoordinateRegion.init(center: coordinates, span: MKCoordinateSpan.init(latitudeDelta: latitude, longitudeDelta: longitude))
+		let options = [
+			MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+			MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+		]
+		let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+		let mapItem = MKMapItem(placemark: placemark)
+		mapItem.name = "ProStudio"
+		mapItem.openInMaps(launchOptions: options)
+	}
+	
+	@objc private func v3Clicked() {
+		guard let number = URL(string: "mailto:" + "mail@prostudio.ru") else { return }
+		UIApplication.shared.open(number)
 	}
 	
 	@objc func changed(sender: ContactsSegmentedControl) {

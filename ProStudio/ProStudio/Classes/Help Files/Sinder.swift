@@ -95,7 +95,7 @@ public extension Date {
 
     func convertFormateToNormDateString(format: String) -> String {
         let dateFormatter = DateFormatter()
-
+				dateFormatter.locale = Locale.init(identifier: "ru")
         dateFormatter.dateFormat = format
         let timeStamp = dateFormatter.string(from: self)
 

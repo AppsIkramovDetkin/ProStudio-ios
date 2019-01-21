@@ -51,7 +51,7 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="223" id="Vi6-Uv-KXI"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-GX-t77" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-GX-t77" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
                     <rect key="frame" x="52" y="338" width="271" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="BdY-Ut-6Xa"/>
@@ -76,7 +76,7 @@
                         <action selector="getLoginAndPasswordButton:" destination="-1" eventType="touchUpInside" id="7Wg-pr-ZMr"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-aS-lbC" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hhadevs@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-aS-lbC" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
                     <rect key="frame" x="52" y="257" width="271" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="29s-ag-Ed2"/>

@@ -10,15 +10,22 @@ import UIKit
 
 extension UINavigationBar {
 	func transparentNavigationBar() {
-		self.setBackgroundImage(UIImage(), for: .default)
+//		self.setBackgroundImage(UIImage(), for: .default)
+		barTintColor = .white
 		self.shadowImage = UIImage()
-		self.isTranslucent = true
+	}
+	
+	func noTransparent() {
+//		self.setBackgroundImage(?nil, for: .default)
+//		self.shadowImage = nil
+		
 	}
 }
 
 class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var indexLabel: UILabel!
 	var projects: [Project] = []
@@ -41,18 +48,21 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		ProjectManager.shared.loadProjects { (projects) in
 			let views = projects.enumerated().map({ (i, project) -> PSCircularView in
 				let view = PSCircularView(project: project)
+				view.backgroundColor = .white
 				view.tag = i
 				view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
 				return view
 			})
 			if !projects.isEmpty {
 				self.currentSteps = projects[0].steps
+				self.titleLabel.text = projects[0].name.capitalized
 				self.indexLabel.text = "1 из \(projects.count)"
 			} else {
 				self.indexLabel.text = "Проектов нет"
 			}
 			
 			self.setupscrollView(slides: views)
+//			self.scrollViewHeight.constant = self.scrollView.contentSize.height
 			self.projects = projects
 			self.tableView.reloadData()
 		}
@@ -60,7 +70,15 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		navigationItem.largeTitleDisplayMode = .never
+		navigationController?.navigationBar.prefersLargeTitles = false
+		navigationController?.navigationBar.barStyle = .default
+		navigationController?.navigationBar.transparentNavigationBar()
 		navigationController?.setNavigationBarHidden(false, animated: true)
+	}
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .default
 	}
 	
 	private func addRightButton() {
@@ -74,7 +92,13 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		button.setTitleColor(PSColor.cerulean, for: .normal)
 		button.setTitle("Добавить", for: .normal)
 		button.titleLabel?.font = PSFont.introBold.with(size: 16)
+		button.addTarget(self, action: #selector(add), for: .touchUpInside)
 		navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+	}
+	
+	@objc private func add() {
+		let disc = ProjectDiscussion()
+		self.navigationController?.pushViewController(disc, animated: true)
 	}
 	
 	private func addLeftButton() {
@@ -104,7 +128,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			
 			slide.translatesAutoresizingMaskIntoConstraints = false
 			scrollView.addSubview(slide)
-			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide]|", dict: ["slide": slide]) + [NSLayoutConstraint.init(item: slide, attribute: .width, relatedBy: .equal, toItem: slide.superview, attribute: .width, multiplier: 0.65, constant: 0)] + [NSLayoutConstraint.quadroAspect(on: slide)])
+			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide(250)]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
 			if slides.contains(index: i - 1) {
 				let prevSlide = slides[i - 1]
 				if i == slides.count - 1 {
@@ -139,6 +163,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
 		let project = projects[v.tag]
+		titleLabel.text = project.name.capitalized
 		self.currentSteps = project.steps
 		self.tableView.reloadData()
 	}
@@ -154,7 +179,9 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		guard let v = maxView else {
 			return
 		}
+		let project = projects[v.tag]
 		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+		self.titleLabel.text = project.name.capitalized
 		scrollView.setContentOffset(CGPoint.init(x: v.center.x - scrollView.frame.width / 2, y: scrollView.contentOffset.y), animated: true)
 	}
 }

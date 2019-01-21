@@ -38,9 +38,9 @@
                     <rect key="frame" x="16" y="120" width="343" height="216"/>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-a3-aw0">
-                    <rect key="frame" x="16" y="607" width="343" height="44"/>
+                    <rect key="frame" x="16" y="629" width="343" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="1Hm-Ic-Kfb"/>
+                        <constraint firstAttribute="height" constant="22" id="1Hm-Ic-Kfb"/>
                     </constraints>
                     <state key="normal" title="Изменить"/>
                     <connections>
@@ -50,16 +50,26 @@
                 <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="HNk-RB-rkL">
                     <rect key="frame" x="16" y="389" width="343" height="202"/>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-4R-Drf">
+                    <rect key="frame" x="16" y="599" width="343" height="22"/>
+                    <state key="normal" title="Добавить этап"/>
+                    <connections>
+                        <action selector="addStep" destination="-1" eventType="touchUpInside" id="eZZ-Zj-RrC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="moP-Is-3b5" firstAttribute="height" secondItem="dcX-Yx-NbM" secondAttribute="height" id="244-g9-0iR"/>
-                <constraint firstItem="cDZ-a3-aw0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HNk-RB-rkL" secondAttribute="bottom" constant="16" id="43u-7o-TqV"/>
+                <constraint firstItem="gTh-4R-Drf" firstAttribute="top" secondItem="HNk-RB-rkL" secondAttribute="bottom" constant="8" id="2Si-Rg-xJK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="moP-Is-3b5" secondAttribute="trailing" constant="16" id="6BW-jD-Yrp"/>
+                <constraint firstItem="cDZ-a3-aw0" firstAttribute="top" secondItem="gTh-4R-Drf" secondAttribute="bottom" constant="8" id="FGo-9s-6bI"/>
                 <constraint firstItem="cDZ-a3-aw0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GEf-8n-GJP"/>
                 <constraint firstItem="moP-Is-3b5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IlV-Yn-Hne"/>
                 <constraint firstItem="dcX-Yx-NbM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MdA-5U-TIk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cDZ-a3-aw0" secondAttribute="trailing" constant="16" id="UrJ-Ov-dud"/>
+                <constraint firstItem="gTh-4R-Drf" firstAttribute="height" secondItem="cDZ-a3-aw0" secondAttribute="height" id="V5t-LR-eq0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gTh-4R-Drf" secondAttribute="trailing" constant="16" id="Yi2-KS-bvW"/>
                 <constraint firstItem="UCq-wf-DKq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fZD-3p-ie8"/>
                 <constraint firstItem="HNk-RB-rkL" firstAttribute="top" secondItem="dcX-Yx-NbM" secondAttribute="bottom" constant="16" id="fvA-UZ-I7N"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HNk-RB-rkL" secondAttribute="trailing" constant="16" id="hEM-v3-xXC"/>
@@ -70,6 +80,7 @@
                 <constraint firstItem="dcX-Yx-NbM" firstAttribute="top" secondItem="UCq-wf-DKq" secondAttribute="bottom" constant="16" id="qk2-0f-x4T"/>
                 <constraint firstItem="UCq-wf-DKq" firstAttribute="top" secondItem="moP-Is-3b5" secondAttribute="bottom" constant="16" id="ruN-Zs-o0k"/>
                 <constraint firstItem="HNk-RB-rkL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xvU-cw-oNz"/>
+                <constraint firstItem="gTh-4R-Drf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="zPn-In-6xz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>

@@ -203,10 +203,7 @@ extension UIView {
 		line.translatesAutoresizingMaskIntoConstraints = false
 		line.backgroundColor = color
 		self.addSubview(line)
-		line.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-		line.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-		line.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -7).isActive = true
-		line.heightAnchor.constraint(equalToConstant: 1.6).isActive = true
+		self.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1.6)]-(-7)-|", dict: ["v": line]))
 		//        let constraints = NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1)]|", dict: ["v": line])
 		
 		//        self.addConstraints(constraints)

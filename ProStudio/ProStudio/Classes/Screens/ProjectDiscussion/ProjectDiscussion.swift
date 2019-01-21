@@ -22,6 +22,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationController?.navigationBar.noTransparent()
         navigationController?.navigationBar.barStyle = .black
 		NavigationBarDecorator.decorate(self)
 		tableView.separatorColor = .clear
@@ -29,11 +30,19 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 		tableView.allowsSelection = false
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
+		
 		title = "Обсудить проект"
 		tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
 		typePickerView.delegate = self
 		typePickerView.dataSource = self
 		registerCells()
+		
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.navigationBar.transparentNavigationBar()
+		navigationController?.navigationBar.barStyle = .black
 	}
 	
 	var showed = false
@@ -49,6 +58,8 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 				showed = true
 			}
 		}
+		
+		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

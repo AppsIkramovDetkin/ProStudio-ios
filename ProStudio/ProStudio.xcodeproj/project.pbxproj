@@ -100,6 +100,8 @@
 		7C7E555C218F20A7009152EC /* ProgressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E555A218F20A7009152EC /* ProgressListViewController.xib */; };
 		7C7E555F21906F31009152EC /* ProjectStepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E555D21906F31009152EC /* ProjectStepTableViewCell.swift */; };
 		7C7E556021906F31009152EC /* ProjectStepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E555E21906F31009152EC /* ProjectStepTableViewCell.xib */; };
+		7C9D8A5D21E625AF00DCAE83 /* ChangeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D8A5B21E625AF00DCAE83 /* ChangeUserViewController.swift */; };
+		7C9D8A5E21E625AF00DCAE83 /* ChangeUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D8A5C21E625AF00DCAE83 /* ChangeUserViewController.xib */; };
 		7CC00B9A21B5CB630020D3F0 /* ChangeProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC00B9821B5CB630020D3F0 /* ChangeProjectViewController.swift */; };
 		7CC00B9B21B5CB630020D3F0 /* ChangeProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC00B9921B5CB630020D3F0 /* ChangeProjectViewController.xib */; };
 		7CC00B9E21B5CC100020D3F0 /* TablePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC00B9C21B5CC100020D3F0 /* TablePicker.swift */; };
@@ -113,6 +115,10 @@
 		7CD25AB521A1C0910029E0E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */; };
 		7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */; };
 		7CD25AB921A2EDBD0029E0E9 /* ChatTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD25AB821A2EDBD0029E0E9 /* ChatTextField.swift */; };
+		7CE64D7E21F4BA13009CD11D /* AdminProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE64D7C21F4BA13009CD11D /* AdminProjectsViewController.swift */; };
+		7CE64D7F21F4BA13009CD11D /* AdminProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE64D7D21F4BA13009CD11D /* AdminProjectsViewController.xib */; };
+		7CE64D8421F4C734009CD11D /* AdminClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE64D8221F4C734009CD11D /* AdminClientsViewController.swift */; };
+		7CE64D8521F4C734009CD11D /* AdminClientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE64D8321F4C734009CD11D /* AdminClientsViewController.xib */; };
 		7CFB929C21B42B2600705193 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB929A21B42B2600705193 /* AdminViewController.swift */; };
 		7CFB929D21B42B2600705193 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFB929B21B42B2600705193 /* AdminViewController.xib */; };
 		7CFB92A021B42CCC00705193 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB929E21B42CCC00705193 /* CreateProjectViewController.swift */; };
@@ -244,6 +250,8 @@
 		7C7E555A218F20A7009152EC /* ProgressListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressListViewController.xib; sourceTree = "<group>"; };
 		7C7E555D21906F31009152EC /* ProjectStepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStepTableViewCell.swift; sourceTree = "<group>"; };
 		7C7E555E21906F31009152EC /* ProjectStepTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectStepTableViewCell.xib; sourceTree = "<group>"; };
+		7C9D8A5B21E625AF00DCAE83 /* ChangeUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserViewController.swift; sourceTree = "<group>"; };
+		7C9D8A5C21E625AF00DCAE83 /* ChangeUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeUserViewController.xib; sourceTree = "<group>"; };
 		7CC00B9821B5CB630020D3F0 /* ChangeProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProjectViewController.swift; sourceTree = "<group>"; };
 		7CC00B9921B5CB630020D3F0 /* ChangeProjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeProjectViewController.xib; sourceTree = "<group>"; };
 		7CC00B9C21B5CC100020D3F0 /* TablePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePicker.swift; sourceTree = "<group>"; };
@@ -257,6 +265,10 @@
 		7CD25AB421A1C0910029E0E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CD25AB621A1D7500029E0E9 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		7CD25AB821A2EDBD0029E0E9 /* ChatTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextField.swift; sourceTree = "<group>"; };
+		7CE64D7C21F4BA13009CD11D /* AdminProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProjectsViewController.swift; sourceTree = "<group>"; };
+		7CE64D7D21F4BA13009CD11D /* AdminProjectsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminProjectsViewController.xib; sourceTree = "<group>"; };
+		7CE64D8221F4C734009CD11D /* AdminClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClientsViewController.swift; sourceTree = "<group>"; };
+		7CE64D8321F4C734009CD11D /* AdminClientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminClientsViewController.xib; sourceTree = "<group>"; };
 		7CFB929A21B42B2600705193 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		7CFB929B21B42B2600705193 /* AdminViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		7CFB929E21B42CCC00705193 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
@@ -646,6 +658,8 @@
 			isa = PBXGroup;
 			children = (
 				117360CA20DD51B100BA156C /* ViewController.swift */,
+				7C9D8A5B21E625AF00DCAE83 /* ChangeUserViewController.swift */,
+				7C9D8A5C21E625AF00DCAE83 /* ChangeUserViewController.xib */,
 				7C7E554E218E0E77009152EC /* ContactsViewController.swift */,
 				7C7E5550218E0EA9009152EC /* ContactsViewController.xib */,
 				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
@@ -723,6 +737,10 @@
 				AC3D58F7215A7E41005E0673 /* ChatWithManager */,
 				7C2FC38821D03F4100C322AF /* BiomerticViewController.swift */,
 				7C2FC38921D03F4100C322AF /* BiomerticViewController.xib */,
+				7CE64D7C21F4BA13009CD11D /* AdminProjectsViewController.swift */,
+				7CE64D8221F4C734009CD11D /* AdminClientsViewController.swift */,
+				7CE64D8321F4C734009CD11D /* AdminClientsViewController.xib */,
+				7CE64D7D21F4BA13009CD11D /* AdminProjectsViewController.xib */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -911,6 +929,7 @@
 				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
 				7CC00B9B21B5CB630020D3F0 /* ChangeProjectViewController.xib in Resources */,
 				7C2FC38B21D03F4100C322AF /* BiomerticViewController.xib in Resources */,
+				7CE64D8521F4C734009CD11D /* AdminClientsViewController.xib in Resources */,
 				ACE5906C215BF9F10053EC10 /* TextChatCellLeft.xib in Resources */,
 				0F403D85217A565C00EA5FBF /* ProjectTaskCell.xib in Resources */,
 				ACE59074215BFDF30053EC10 /* ImageChatCellLeft.xib in Resources */,
@@ -940,6 +959,7 @@
 				7C7E5536218DFFC6009152EC /* Intro-Regular-Caps.otf in Resources */,
 				7C7E5537218DFFC6009152EC /* Intro-Book-Alt.otf in Resources */,
 				7C7E5538218DFFC6009152EC /* Intro-Light-Italic.otf in Resources */,
+				7C9D8A5E21E625AF00DCAE83 /* ChangeUserViewController.xib in Resources */,
 				7C7E5539218DFFC6009152EC /* Intro-Black.otf in Resources */,
 				7C7E553A218DFFC6009152EC /* Intro-Book-Caps.otf in Resources */,
 				7C7E553B218DFFC6009152EC /* Intro-Black-Inline-Caps.otf in Resources */,
@@ -964,6 +984,7 @@
 				ACE59070215BFA170053EC10 /* TextChatCellRight.xib in Resources */,
 				0F1686C82170D83C005A2944 /* ExitCell.xib in Resources */,
 				0FCA0925217A483F00887BBB /* Intro-Light.otf in Resources */,
+				7CE64D7F21F4BA13009CD11D /* AdminProjectsViewController.xib in Resources */,
 				ACE59078215BFE110053EC10 /* ImageChatCellRight.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1096,11 +1117,13 @@
 				0F648350217298E3003A7170 /* PSFont.swift in Sources */,
 				2E002C40216E4BD6000C8734 /* CustomTextField.swift in Sources */,
 				2E2F60F6216FA9680005BE8E /* PSFonts.swift in Sources */,
+				7CE64D7E21F4BA13009CD11D /* AdminProjectsViewController.swift in Sources */,
 				7CCE13E820F16DB700E268F3 /* PSCircularView.swift in Sources */,
 				7CD25AB721A1D7500029E0E9 /* ProjectManager.swift in Sources */,
 				7C7E555F21906F31009152EC /* ProjectStepTableViewCell.swift in Sources */,
 				0F64834E2172964B003A7170 /* PSColor.swift in Sources */,
 				117360CB20DD51B100BA156C /* ViewController.swift in Sources */,
+				7C9D8A5D21E625AF00DCAE83 /* ChangeUserViewController.swift in Sources */,
 				7C7E555B218F20A7009152EC /* ProgressListViewController.swift in Sources */,
 				2E9589F1218B244A00CE34FE /* KeyboardCell.swift in Sources */,
 				2E83D5A32186088200CA4236 /* SecurityScreen.swift in Sources */,
@@ -1121,6 +1144,7 @@
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */,
 				7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */,
+				7CE64D8421F4C734009CD11D /* AdminClientsViewController.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
 				7CFB929C21B42B2600705193 /* AdminViewController.swift in Sources */,
 				2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */,

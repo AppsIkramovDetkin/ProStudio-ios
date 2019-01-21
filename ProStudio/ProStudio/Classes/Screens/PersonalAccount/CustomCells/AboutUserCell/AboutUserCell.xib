@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,14 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knq-Zd-tKx">
-                        <rect key="frame" x="126" y="13" width="178" height="23.5"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knq-Zd-tKx">
+                        <rect key="frame" x="296" y="13" width="8" height="23.5"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u00-2b-v1H">
-                        <rect key="frame" x="16" y="15" width="42" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u00-2b-v1H">
+                        <rect key="frame" x="16" y="15" width="272" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                     <constraint firstItem="knq-Zd-tKx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="6GA-PW-3KJ"/>
                     <constraint firstItem="u00-2b-v1H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7uc-36-AGQ"/>
                     <constraint firstItem="knq-Zd-tKx" firstAttribute="centerY" secondItem="u00-2b-v1H" secondAttribute="centerY" id="EcI-73-cPq"/>
-                    <constraint firstItem="knq-Zd-tKx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="u00-2b-v1H" secondAttribute="trailing" constant="68" id="hVc-hB-72c"/>
+                    <constraint firstItem="knq-Zd-tKx" firstAttribute="leading" secondItem="u00-2b-v1H" secondAttribute="trailing" constant="8" id="hVc-hB-72c"/>
                     <constraint firstItem="knq-Zd-tKx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v7O-Mm-MMJ"/>
                     <constraint firstAttribute="trailing" secondItem="knq-Zd-tKx" secondAttribute="trailing" constant="16" id="vSK-sZ-ftg"/>
                 </constraints>

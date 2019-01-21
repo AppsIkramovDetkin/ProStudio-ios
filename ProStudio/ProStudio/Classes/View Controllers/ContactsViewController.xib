@@ -22,6 +22,9 @@
                 <outlet property="label2" destination="ukN-7b-qVa" id="lrf-GZ-b31"/>
                 <outlet property="label3" destination="yGk-4F-bvj" id="f24-v7-yui"/>
                 <outlet property="segmentedControl" destination="OOI-fV-y3Q" id="HFC-vm-haA"/>
+                <outlet property="v1" destination="dvh-64-xXR" id="8vs-cp-Rk4"/>
+                <outlet property="v2" destination="N4r-MU-82N" id="6sY-we-107"/>
+                <outlet property="v3" destination="Zu0-v1-Izf" id="nj6-aB-GfN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dQQ-qC-jWV"/>
             </connections>
         </placeholder>

@@ -127,7 +127,7 @@ final class PSCircularView: UIView {
         let scale: CGFloat = 0.9
         let delta = bounds.height - bounds.height * scale
         let ovalIn = CGRect(x: bounds.origin.x + delta / 2, y: bounds.origin.y + delta / 2, width: bounds.width * scale, height: bounds.height * scale)
-        let path = UIBezierPath(ovalIn: ovalIn)
+        let path = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width / 2 - backLineWidth, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
         
         shape.fillColor = UIColor.clear.cgColor
         shape.lineWidth = backLineWidth

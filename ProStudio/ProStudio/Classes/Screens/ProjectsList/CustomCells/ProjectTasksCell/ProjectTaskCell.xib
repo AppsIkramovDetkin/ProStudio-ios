@@ -30,27 +30,25 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-vH-6Om" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="16" width="288" height="22"/>
+                                <rect key="frame" x="16" y="16" width="288" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="ugk-nk-VKo"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U56-tu-5aJ" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="40" width="288" height="29.666666666666671"/>
+                                <rect key="frame" x="16" y="48" width="288" height="29.666666666666671"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rWz-vH-6Om" firstAttribute="height" secondItem="U56-tu-5aJ" secondAttribute="height" id="3Mz-IF-P29"/>
+                            <constraint firstItem="U56-tu-5aJ" firstAttribute="top" secondItem="rWz-vH-6Om" secondAttribute="bottom" constant="2" id="EeR-6Z-RXb"/>
                             <constraint firstItem="rWz-vH-6Om" firstAttribute="top" secondItem="E6i-vb-ow1" secondAttribute="top" constant="16" id="HEH-Xq-c7i"/>
                             <constraint firstItem="rWz-vH-6Om" firstAttribute="leading" secondItem="E6i-vb-ow1" secondAttribute="leading" constant="16" id="JBN-a8-YL1"/>
                             <constraint firstAttribute="trailing" secondItem="rWz-vH-6Om" secondAttribute="trailing" constant="16" id="NRp-NV-LAN"/>
                             <constraint firstAttribute="trailing" secondItem="Xvg-kI-Ntv" secondAttribute="trailing" constant="16" id="TEJ-HM-spi"/>
-                            <constraint firstAttribute="bottom" secondItem="U56-tu-5aJ" secondAttribute="bottom" constant="16" id="XXg-Qp-cLC"/>
+                            <constraint firstAttribute="bottom" secondItem="U56-tu-5aJ" secondAttribute="bottom" constant="8" id="XXg-Qp-cLC"/>
                             <constraint firstAttribute="trailing" secondItem="U56-tu-5aJ" secondAttribute="trailing" constant="16" id="fMl-Vj-3jl"/>
                             <constraint firstItem="U56-tu-5aJ" firstAttribute="leading" secondItem="E6i-vb-ow1" secondAttribute="leading" constant="16" id="oeF-av-rKT"/>
-                            <constraint firstItem="U56-tu-5aJ" firstAttribute="top" secondItem="rWz-vH-6Om" secondAttribute="bottom" constant="2" id="uHV-IX-68W"/>
                             <constraint firstItem="Xvg-kI-Ntv" firstAttribute="centerY" secondItem="E6i-vb-ow1" secondAttribute="centerY" id="vvY-QP-mBa"/>
                         </constraints>
                     </view>
@@ -73,6 +71,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ok" width="133" height="132"/>
+        <image name="ok" width="20.908296585083008" height="20.751091003417969"/>
     </resources>
 </document>

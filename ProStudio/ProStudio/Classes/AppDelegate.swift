@@ -66,12 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
    
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		
+
         UIApplication.shared.statusBarStyle = .lightContent
 		Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
 		IQKeyboardManager.shared.enable = true
 //        reigisterUser()
-     
 //        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()

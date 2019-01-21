@@ -23,9 +23,9 @@ class HeaderView: UITableViewHeaderFooterView {
 		ceruleanHeader.backgroundColor = PSColor.cerulean
 		backgroundPhoto.image = UIImage(named: "ava")?.alpha(0.5)
 		backgroundPhoto.contentMode = .scaleAspectFill
-		let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+		let visualEffectView = UIView()
 		visualEffectView.frame = backgroundPhoto.bounds
-		visualEffectView.alpha = 0.5
+		visualEffectView.alpha = 0.9
 		visualEffectView.backgroundColor = PSColor.cerulean
 		backgroundPhoto.addSubview(visualEffectView)
 		

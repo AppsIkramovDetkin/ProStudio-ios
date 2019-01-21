@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="indexLabel" destination="5Yz-H2-NRN" id="Nj7-9R-4Ca"/>
                 <outlet property="scrollView" destination="mvt-Ud-2R0" id="wus-Wn-iYn"/>
+                <outlet property="scrollViewHeight" destination="mvt-Ud-2R0" id="8F6-U1-5eH"/>
                 <outlet property="tableView" destination="0zF-uh-6hR" id="Q0K-dZ-clf"/>
                 <outlet property="titleLabel" destination="aCk-T5-hfC" id="oOf-sr-J1f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,8 +30,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработка сайта для ProStudio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCk-T5-hfC">
-                    <rect key="frame" x="16" y="36" width="343" height="64"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCk-T5-hfC">
+                    <rect key="frame" x="16" y="36" width="343" height="32"/>
                     <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -42,13 +43,13 @@
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 из 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yz-H2-NRN">
-                    <rect key="frame" x="8" y="374" width="359" height="17"/>
+                    <rect key="frame" x="8" y="342" width="359" height="17"/>
                     <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="17"/>
                     <color key="textColor" red="0.63137254901960782" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0zF-uh-6hR">
-                    <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                    <rect key="frame" x="0.0" y="375" width="375" height="292"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>

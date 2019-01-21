@@ -13,10 +13,71 @@ import Firebase
 
 var currentUser: User!
 
+struct PSUser: Searchable {
+	var parameter: String {
+		return email
+	}
+	
+	var email: String
+	
+	var id: String {
+		return email.formattedEmail()
+	}
+}
+
 class ProjectManager {
     static let shared = ProjectManager()
     private init() {}
-    
+	
+	
+	func loadAllRequests(_ completion: @escaping ItemClosure<[PSUser]>) {
+		Database.database().reference().child("requests").observe(.value) { (snapshot) in
+			var ids: [PSUser] = []
+			for child in (snapshot.value as? [String: Any] ?? [:]) {
+				ids.append(PSUser.init(email: child.key))
+			}
+			completion(ids)
+		}
+	}
+	
+	func loadAllUsers(_ completion: @escaping ItemClosure<[PSUser]>) {
+		loadAllProjects { (projects) in
+			var s: [PSUser] = []
+			for project in projects {
+				if !s.contains(where: { (u) -> Bool in
+					return u.id == project.client.formattedEmail()
+				}) {
+					s.append(PSUser.init(email: project.client))
+				}
+			}
+			
+			completion(s)
+		}
+	}
+	
+	func loadAllProjects(_ completion: @escaping ItemClosure<[Project]>) {
+		
+		let ref = Database.database().reference().child("projects")
+		ref.observeSingleEvent(of: .value) { (snapshot) in
+			var allProjects: [Project] = []
+			if let emailsBranch = snapshot.value as? [String: Any] {
+				for emailObject in emailsBranch {
+					
+					let allDicts = (emailObject.value as? [String: Any]) ?? [:]
+					
+					allDicts.forEach({ (object) in
+						let projectDict = (object.value as? [String: Any]) ?? [:]
+						// crash here, because set of percents invalid from admin panel
+						allProjects.append(Project.from(json: JSON(projectDict))!)
+					})
+					
+				}
+				completion(allProjects.sorted{$0.startDate < $1.startDate})
+			}
+		
+		}
+	}
+	
     func loadProjects(_ completion: @escaping ItemClosure<[Project]>) {
         let email = currentUser.email ?? ""
         let ref = Database.database().reference().child("projects").child(email.formattedEmail())
@@ -25,6 +86,7 @@ class ProjectManager {
             var allProjects: [Project] = []
             allDicts.forEach({ (object) in
                 let projectDict = (object.value as? [String: Any]) ?? [:]
+							// crash here, because set of percents invalid from admin panel
                 allProjects.append(Project.from(json: JSON(projectDict))!)
             })
             
@@ -76,7 +138,12 @@ class ProjectManager {
     }
 }
 
-class Project: Decodable {
+class Project: Decodable, Searchable {
+	
+	var parameter: String {
+		return "\(client), \(name), \(progress)"
+	}
+	
     var id: String = ""
     var client: String = ""
     var type: String = ""
