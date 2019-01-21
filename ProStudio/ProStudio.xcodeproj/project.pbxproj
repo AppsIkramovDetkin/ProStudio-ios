@@ -61,6 +61,8 @@
 		388B3CD221F62F6900B178A7 /* LabelWithCheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CD121F62F6900B178A7 /* LabelWithCheckMarkCell.xib */; };
 		388B3CD421F635F900B178A7 /* StandartTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CD321F635F900B178A7 /* StandartTextFieldCell.swift */; };
 		388B3CD621F6363900B178A7 /* StandartTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CD521F6363900B178A7 /* StandartTextFieldCell.xib */; };
+		388B3CD821F647BE00B178A7 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B3CD721F647BE00B178A7 /* ClientViewController.swift */; };
+		388B3CDA21F6487000B178A7 /* ClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388B3CD921F6487000B178A7 /* ClientViewController.xib */; };
 		447764BB21571A3100ACBE09 /* FBAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B821571A3100ACBE09 /* FBAuthentication.swift */; };
 		447764BC21571A3100ACBE09 /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764B921571A3100ACBE09 /* FBUserModel.swift */; };
 		447764BD21571A3100ACBE09 /* FBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447764BA21571A3100ACBE09 /* FBReference.swift */; };
@@ -217,6 +219,8 @@
 		388B3CD121F62F6900B178A7 /* LabelWithCheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelWithCheckMarkCell.xib; sourceTree = "<group>"; };
 		388B3CD321F635F900B178A7 /* StandartTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartTextFieldCell.swift; sourceTree = "<group>"; };
 		388B3CD521F6363900B178A7 /* StandartTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartTextFieldCell.xib; sourceTree = "<group>"; };
+		388B3CD721F647BE00B178A7 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
+		388B3CD921F6487000B178A7 /* ClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientViewController.xib; sourceTree = "<group>"; };
 		447764B821571A3100ACBE09 /* FBAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthentication.swift; sourceTree = "<group>"; };
 		447764B921571A3100ACBE09 /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		447764BA21571A3100ACBE09 /* FBReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBReference.swift; sourceTree = "<group>"; };
@@ -694,6 +698,8 @@
 				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
 				388B3CC621F6241300B178A7 /* AddProjectViewController.swift */,
 				388B3CC821F6242700B178A7 /* AddProjectViewController.xib */,
+				388B3CD721F647BE00B178A7 /* ClientViewController.swift */,
+				388B3CD921F6487000B178A7 /* ClientViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -980,6 +986,7 @@
 				0FCA0923217A2A7E00887BBB /* ProjectsListHeader.xib in Resources */,
 				7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */,
 				7CFB92A121B42CCC00705193 /* CreateProjectViewController.xib in Resources */,
+				388B3CDA21F6487000B178A7 /* ClientViewController.xib in Resources */,
 				7C7E552D218DFFC6009152EC /* Intro-Regular-Alt.otf in Resources */,
 				7C7E552E218DFFC6009152EC /* Intro-Bold.otf in Resources */,
 				7C7E552F218DFFC6009152EC /* Intro-Bold-Italic.otf in Resources */,
@@ -1186,6 +1193,7 @@
 				7CD25AB321A1BEF00029E0E9 /* AuthManager.swift in Sources */,
 				7CE64D8421F4C734009CD11D /* AdminClientsViewController.swift in Sources */,
 				7CCE13E220F16D9200E268F3 /* Sinder.swift in Sources */,
+				388B3CD821F647BE00B178A7 /* ClientViewController.swift in Sources */,
 				7CFB929C21B42B2600705193 /* AdminViewController.swift in Sources */,
 				2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */,
 				0F403D87217A56DD00EA5FBF /* ProjectTask.swift in Sources */,
