@@ -32,6 +32,7 @@ class AdminProjectsViewController: UIViewController {
 		resultSearchController.dimsBackgroundDuringPresentation = false
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "s")
 		
 		ProjectManager.shared.loadAllProjects { (projects) in
 			self.split(projects)
@@ -87,7 +88,8 @@ extension AdminProjectsViewController: UITableViewDelegate, UITableViewDataSourc
 			default: return endedProjects[indexPath.row]
 			}
 		}()
-		let cell = UITableViewCell()
+		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "s")
+		cell.detailTextLabel?.text = projec.client
 		cell.textLabel?.text = "\(projec.name), \(projec.progress)%"
 		return cell
 	}

@@ -108,16 +108,12 @@ class AdminViewController: UIViewController {
 		alertController.addAction(UIAlertAction.init(title: "Готово", style: .default, handler: { (_) in
 			let email = alertController.textFields![0].text ?? ""
 			let password = alertController.textFields![1].text ?? ""
-			Auth.auth().createUser(withEmail: email, password: password, completion: { (_, error) in
-				if let txt = error?.localizedDescription {
-					self.showAlert(title: "Ошибка", message: txt)
-				} else {
-					self.showAlert(title: "Done", message: "Юзер создан")
-				}
-				
+			ProjectManager.shared.createUser(email: email, password: password, closure: {
+				self.showAlert(title: "Done", message: "Юзер создан")
 			})
-			
 		}))
+		
+		alertController.addAction(UIAlertAction.init(title: "Отменить", style: .cancel, handler: nil))
 		
 		present(alertController, animated: true, completion: nil)
 	}

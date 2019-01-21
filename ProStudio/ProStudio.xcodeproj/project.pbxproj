@@ -64,6 +64,8 @@
 		7C563B7F21E1CFCA00D25402 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C563B7E21E1CFCA00D25402 /* Requests.swift */; };
 		7C71569221F628A50099C2AD /* AdminControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71569021F628A50099C2AD /* AdminControlViewController.swift */; };
 		7C71569321F628A50099C2AD /* AdminControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C71569121F628A50099C2AD /* AdminControlViewController.xib */; };
+		7C71569621F632370099C2AD /* AdminClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71569421F632370099C2AD /* AdminClientViewController.swift */; };
+		7C71569721F632370099C2AD /* AdminClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C71569521F632370099C2AD /* AdminClientViewController.xib */; };
 		7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */; };
 		7C7E552D218DFFC6009152EC /* Intro-Regular-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */; };
 		7C7E552E218DFFC6009152EC /* Intro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5514218DFFC2009152EC /* Intro-Bold.otf */; };
@@ -215,6 +217,8 @@
 		7C563B7E21E1CFCA00D25402 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		7C71569021F628A50099C2AD /* AdminControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlViewController.swift; sourceTree = "<group>"; };
 		7C71569121F628A50099C2AD /* AdminControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminControlViewController.xib; sourceTree = "<group>"; };
+		7C71569421F632370099C2AD /* AdminClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClientViewController.swift; sourceTree = "<group>"; };
+		7C71569521F632370099C2AD /* AdminClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminClientViewController.xib; sourceTree = "<group>"; };
 		7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Caps.otf"; sourceTree = "<group>"; };
 		7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular-Alt.otf"; sourceTree = "<group>"; };
 		7C7E5514218DFFC2009152EC /* Intro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.otf"; sourceTree = "<group>"; };
@@ -705,6 +709,8 @@
 			isa = PBXGroup;
 			children = (
 				7CFB929A21B42B2600705193 /* AdminViewController.swift */,
+				7C71569421F632370099C2AD /* AdminClientViewController.swift */,
+				7C71569521F632370099C2AD /* AdminClientViewController.xib */,
 				7C71569021F628A50099C2AD /* AdminControlViewController.swift */,
 				7C71569121F628A50099C2AD /* AdminControlViewController.xib */,
 				7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */,
@@ -965,6 +971,7 @@
 				7C7E5535218DFFC6009152EC /* Intro-Book.otf in Resources */,
 				7C7E5536218DFFC6009152EC /* Intro-Regular-Caps.otf in Resources */,
 				7C7E5537218DFFC6009152EC /* Intro-Book-Alt.otf in Resources */,
+				7C71569721F632370099C2AD /* AdminClientViewController.xib in Resources */,
 				7C7E5538218DFFC6009152EC /* Intro-Light-Italic.otf in Resources */,
 				7C9D8A5E21E625AF00DCAE83 /* ChangeUserViewController.xib in Resources */,
 				7C7E5539218DFFC6009152EC /* Intro-Black.otf in Resources */,
@@ -1165,6 +1172,7 @@
 				7CC00B9E21B5CC100020D3F0 /* TablePicker.swift in Sources */,
 				7C563B7D21E1C8D100D25402 /* ChatsViewController.swift in Sources */,
 				2E83D5A62186341400CA4236 /* SecurityPoints.swift in Sources */,
+				7C71569621F632370099C2AD /* AdminClientViewController.swift in Sources */,
 				7CC00B9A21B5CB630020D3F0 /* ChangeProjectViewController.swift in Sources */,
 				7C7E554D218E06E3009152EC /* PSButton.swift in Sources */,
 				AC422C1B215AC1F500AAD1EE /* ChatWithManager.swift in Sources */,
