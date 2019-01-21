@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="labelMarkCell" id="l2Z-cx-Ju6" customClass="LabelWithCheckMarkCell" customModule="ProStudio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l2Z-cx-Ju6" id="q9q-vx-qZ7">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR5-O5-42M">
+                        <rect key="frame" x="16" y="11" width="239" height="22"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="IDz-kd-drv">
+                        <rect key="frame" x="344" y="14" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="FDd-fQ-YHE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IDz-kd-drv" firstAttribute="leading" secondItem="uR5-O5-42M" secondAttribute="trailing" constant="89" id="C4J-Pp-zR0"/>
+                    <constraint firstItem="IDz-kd-drv" firstAttribute="trailing" secondItem="q9q-vx-qZ7" secondAttribute="trailingMargin" id="M6K-bD-Tdg"/>
+                    <constraint firstItem="IDz-kd-drv" firstAttribute="top" secondItem="q9q-vx-qZ7" secondAttribute="topMargin" constant="3" id="Re9-KQ-GxH"/>
+                    <constraint firstItem="uR5-O5-42M" firstAttribute="bottom" secondItem="q9q-vx-qZ7" secondAttribute="bottomMargin" id="Uzu-Eg-vKZ"/>
+                    <constraint firstItem="uR5-O5-42M" firstAttribute="top" secondItem="q9q-vx-qZ7" secondAttribute="topMargin" id="agW-9U-dQY"/>
+                    <constraint firstItem="uR5-O5-42M" firstAttribute="centerY" secondItem="IDz-kd-drv" secondAttribute="centerY" id="e2H-3b-pmx"/>
+                    <constraint firstItem="uR5-O5-42M" firstAttribute="leading" secondItem="q9q-vx-qZ7" secondAttribute="leadingMargin" id="tge-Ia-Y6K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkMarkImageView" destination="IDz-kd-drv" id="yId-im-9v8"/>
+                <outlet property="label" destination="uR5-O5-42M" id="1xe-7b-LBP"/>
+            </connections>
+            <point key="canvasLocation" x="504.80000000000001" y="9.8950524737631191"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark" width="60" height="45"/>
+    </resources>
+</document>
