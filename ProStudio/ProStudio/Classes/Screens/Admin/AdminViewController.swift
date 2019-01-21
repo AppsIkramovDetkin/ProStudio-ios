@@ -127,10 +127,8 @@ class AdminViewController: UIViewController {
 		projectsVC.projectSelected = {
 			project in
 			projectsVC.navigationController?.popViewController(animated: true)
-			let vc = ChangeProjectViewController()
-			vc.projectId = project.id
-			vc.stepsCount = project.steps.count
-			vc.emailId = project.client.formattedEmail()
+			let vc = AdminControlViewController(project: project)
+			
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
 		navigationController?.pushViewController(projectsVC, animated: true)
