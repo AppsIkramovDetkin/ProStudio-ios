@@ -62,6 +62,8 @@
 		7C2FC38B21D03F4100C322AF /* BiomerticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FC38921D03F4100C322AF /* BiomerticViewController.xib */; };
 		7C563B7D21E1C8D100D25402 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */; };
 		7C563B7F21E1CFCA00D25402 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C563B7E21E1CFCA00D25402 /* Requests.swift */; };
+		7C71569221F628A50099C2AD /* AdminControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71569021F628A50099C2AD /* AdminControlViewController.swift */; };
+		7C71569321F628A50099C2AD /* AdminControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C71569121F628A50099C2AD /* AdminControlViewController.xib */; };
 		7C7E552C218DFFC6009152EC /* Intro-Black-Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */; };
 		7C7E552D218DFFC6009152EC /* Intro-Regular-Alt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */; };
 		7C7E552E218DFFC6009152EC /* Intro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7E5514218DFFC2009152EC /* Intro-Bold.otf */; };
@@ -211,6 +213,8 @@
 		7C2FC38921D03F4100C322AF /* BiomerticViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiomerticViewController.xib; sourceTree = "<group>"; };
 		7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		7C563B7E21E1CFCA00D25402 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		7C71569021F628A50099C2AD /* AdminControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlViewController.swift; sourceTree = "<group>"; };
+		7C71569121F628A50099C2AD /* AdminControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminControlViewController.xib; sourceTree = "<group>"; };
 		7C7E5512218DFFC2009152EC /* Intro-Black-Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Black-Caps.otf"; sourceTree = "<group>"; };
 		7C7E5513218DFFC2009152EC /* Intro-Regular-Alt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Regular-Alt.otf"; sourceTree = "<group>"; };
 		7C7E5514218DFFC2009152EC /* Intro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intro-Bold.otf"; sourceTree = "<group>"; };
@@ -703,6 +707,8 @@
 			isa = PBXGroup;
 			children = (
 				7CFB929A21B42B2600705193 /* AdminViewController.swift */,
+				7C71569021F628A50099C2AD /* AdminControlViewController.swift */,
+				7C71569121F628A50099C2AD /* AdminControlViewController.xib */,
 				7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */,
 				7C563B7E21E1CFCA00D25402 /* Requests.swift */,
 				7CC00B9821B5CB630020D3F0 /* ChangeProjectViewController.swift */,
@@ -925,6 +931,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C71569321F628A50099C2AD /* AdminControlViewController.xib in Resources */,
 				AC422C1C215AC1F500AAD1EE /* ChatWithManager.xib in Resources */,
 				0F2B0792216E904100337FA6 /* PersonalAccount.xib in Resources */,
 				7CC00B9B21B5CB630020D3F0 /* ChangeProjectViewController.xib in Resources */,
@@ -1133,6 +1140,7 @@
 				2E6A06CB218703EB00D247D0 /* PointView.swift in Sources */,
 				7CCE13E720F16DB700E268F3 /* PSCircularViewConfiguration.swift in Sources */,
 				0F4F6F22217385250080D12A /* HeaderView.swift in Sources */,
+				7C71569221F628A50099C2AD /* AdminControlViewController.swift in Sources */,
 				0F1686C32170D82D005A2944 /* NotificationCell.swift in Sources */,
 				0F1686C72170D83C005A2944 /* ExitCell.swift in Sources */,
 				7CD25AB921A2EDBD0029E0E9 /* ChatTextField.swift in Sources */,
