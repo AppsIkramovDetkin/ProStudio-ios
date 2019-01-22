@@ -27,7 +27,7 @@ class ProjectTaskCell: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		taskTitle.textLabel.font = PSFont.introBold.with(size: 17.0)
-		taskComment.textLabel.font = PSFont.introBold.with(size: 14.0)
+		taskComment.textLabel.font = PSFont.introBook.with(size: 14.0)
 		taskComment.backgroundColor = .clear
 		taskTitle.backgroundColor = .clear
        
@@ -43,7 +43,7 @@ class ProjectTaskCell: UITableViewCell {
 	
 	var layouted = false
 	var done = false
-    let gradient = CAGradientLayer()
+	let gradient = CAGradientLayer()
 	let layer1 = CAGradientLayer()
 	override func layoutSubviews() {
 		super.layoutSubviews()
@@ -78,7 +78,7 @@ class ProjectTaskCell: UITableViewCell {
 		self.done = done
 		if done {
 			layer1.isHidden = false
-            gradient.isHidden = true
+			gradient.isHidden = true
 			okImage.image = UIImage(named: "check-circle")
 			taskTitle.setColors([UIColor.white, UIColor.white])
 			taskTitle.start(shiftPoint: .left)
@@ -94,8 +94,8 @@ class ProjectTaskCell: UITableViewCell {
 			taskComment.maskToText = true
 			taskComment.startTimedAnimation()
 		} else {
-            layer1.isHidden = true
-            gradient.isHidden = false
+			layer1.isHidden = true
+			gradient.isHidden = false
 			taskTitle.setColors(colorsForGradient)
 			taskTitle.start(shiftPoint: .left)
 			taskTitle.end(shiftPoint: .right)

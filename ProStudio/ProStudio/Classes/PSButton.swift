@@ -14,7 +14,7 @@ class PSButton: UIButton {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		titleLabel?.font = PSFont.introBold.with(size: 14.0)
+		titleLabel?.font = PSFont.introBold.with(size: 15.0)
 		setTitleColor(.white, for: .normal)
 		backgroundColor = PSColor.cerulean
 		layer.shadowOffset = CGSize(width: 3.0, height: 2.0)

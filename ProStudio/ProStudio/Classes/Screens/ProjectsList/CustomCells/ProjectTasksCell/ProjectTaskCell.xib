@@ -15,38 +15,44 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="ProjectTaskCell" customModule="ProStudio" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="344" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="344" height="109.66666666666667"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-vb-ow1" customClass="PSScaleView" customModule="ProStudio" customModuleProvider="target">
-                        <rect key="frame" x="12" y="12" width="320" height="85.666666666666671"/>
+                        <rect key="frame" x="12" y="7" width="320" height="76"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-kI-Ntv">
-                                <rect key="frame" x="277" y="29.333333333333336" width="27" height="27"/>
+                                <rect key="frame" x="275" y="25.333333333333336" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="DlB-u7-iPj"/>
-                                    <constraint firstAttribute="width" constant="27" id="Rz4-Z6-Z3w"/>
+                                    <constraint firstAttribute="height" constant="25" id="DlB-u7-iPj"/>
+                                    <constraint firstAttribute="width" constant="25" id="Rz4-Z6-Z3w"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-vH-6Om" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="16" width="288" height="30"/>
+                                <rect key="frame" x="16" y="19" width="288" height="17"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="1Uv-ha-Vwp"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U56-tu-5aJ" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="48" width="288" height="29.666666666666671"/>
+                                <rect key="frame" x="16" y="42" width="288" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="J2V-Q6-hWL"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rWz-vH-6Om" firstAttribute="height" secondItem="U56-tu-5aJ" secondAttribute="height" id="3Mz-IF-P29"/>
-                            <constraint firstItem="U56-tu-5aJ" firstAttribute="top" secondItem="rWz-vH-6Om" secondAttribute="bottom" constant="2" id="EeR-6Z-RXb"/>
-                            <constraint firstItem="rWz-vH-6Om" firstAttribute="top" secondItem="E6i-vb-ow1" secondAttribute="top" constant="16" id="HEH-Xq-c7i"/>
+                            <constraint firstItem="U56-tu-5aJ" firstAttribute="top" secondItem="rWz-vH-6Om" secondAttribute="bottom" constant="6" id="EeR-6Z-RXb"/>
+                            <constraint firstAttribute="height" constant="76" id="FWg-ZR-WxU"/>
+                            <constraint firstItem="rWz-vH-6Om" firstAttribute="top" secondItem="E6i-vb-ow1" secondAttribute="top" constant="19" id="HEH-Xq-c7i"/>
                             <constraint firstItem="rWz-vH-6Om" firstAttribute="leading" secondItem="E6i-vb-ow1" secondAttribute="leading" constant="16" id="JBN-a8-YL1"/>
                             <constraint firstAttribute="trailing" secondItem="rWz-vH-6Om" secondAttribute="trailing" constant="16" id="NRp-NV-LAN"/>
-                            <constraint firstAttribute="trailing" secondItem="Xvg-kI-Ntv" secondAttribute="trailing" constant="16" id="TEJ-HM-spi"/>
-                            <constraint firstAttribute="bottom" secondItem="U56-tu-5aJ" secondAttribute="bottom" constant="8" id="XXg-Qp-cLC"/>
+                            <constraint firstAttribute="trailing" secondItem="Xvg-kI-Ntv" secondAttribute="trailing" constant="20" id="TEJ-HM-spi"/>
+                            <constraint firstAttribute="bottom" secondItem="U56-tu-5aJ" secondAttribute="bottom" constant="19" id="XXg-Qp-cLC"/>
                             <constraint firstAttribute="trailing" secondItem="U56-tu-5aJ" secondAttribute="trailing" constant="16" id="fMl-Vj-3jl"/>
                             <constraint firstItem="U56-tu-5aJ" firstAttribute="leading" secondItem="E6i-vb-ow1" secondAttribute="leading" constant="16" id="oeF-av-rKT"/>
                             <constraint firstItem="Xvg-kI-Ntv" firstAttribute="centerY" secondItem="E6i-vb-ow1" secondAttribute="centerY" id="vvY-QP-mBa"/>
@@ -54,8 +60,8 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="E6i-vb-ow1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="9DC-Wc-W0R"/>
-                    <constraint firstAttribute="bottom" secondItem="E6i-vb-ow1" secondAttribute="bottom" constant="12" id="CRx-ys-K8C"/>
+                    <constraint firstItem="E6i-vb-ow1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="9DC-Wc-W0R"/>
+                    <constraint firstAttribute="bottom" secondItem="E6i-vb-ow1" secondAttribute="bottom" constant="7" id="CRx-ys-K8C"/>
                     <constraint firstItem="E6i-vb-ow1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="JWm-Ic-Qfm"/>
                     <constraint firstAttribute="trailing" secondItem="E6i-vb-ow1" secondAttribute="trailing" constant="12" id="t5X-ZP-fQ0"/>
                 </constraints>
@@ -67,7 +73,7 @@
                 <outlet property="taskComment" destination="U56-tu-5aJ" id="mXo-pP-XDc"/>
                 <outlet property="taskTitle" destination="rWz-vH-6Om" id="VuN-a8-TuW"/>
             </connections>
-            <point key="canvasLocation" x="156.80000000000001" y="151.47783251231527"/>
+            <point key="canvasLocation" x="157" y="146"/>
         </tableViewCell>
     </objects>
     <resources>

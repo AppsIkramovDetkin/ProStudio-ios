@@ -14,7 +14,8 @@ class ExitCell: UITableViewCell {
 	}
 	
 	private func exitButtonSettings() {
-		exitButton.setTitle("ВЫЙТИ", for: .normal)
+		exitButton.setTitle("Выйти из аккаунта", for: .normal)
+		exitButton.titleLabel?.font = PSFont.introBook.with(size: 17)
 		exitButton.setTitleColor(PSColor.customRed, for: .normal)
 		exitButton.isUserInteractionEnabled = false
 //		exitButton.titleLabel?.font = PSFont.exitButtonFont

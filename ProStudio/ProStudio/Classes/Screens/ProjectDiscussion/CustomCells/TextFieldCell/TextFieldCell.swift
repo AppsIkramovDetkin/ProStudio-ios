@@ -15,7 +15,7 @@ class TextFieldCell: UITableViewCell {
     @IBOutlet weak var textField: CustomTextField!
     
     var textChanged: ItemClosure<String>?
-    
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.delegate = self

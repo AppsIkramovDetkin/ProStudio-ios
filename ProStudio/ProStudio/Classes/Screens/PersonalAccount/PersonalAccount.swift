@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+
 class PersonalAccount: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
@@ -27,11 +28,14 @@ class PersonalAccount: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.largeTitleDisplayMode = .always
+		title = "Личный кабинет"
 		registerCells()
 		tableView.separatorInset = .zero
 		tableView.isScrollEnabled = true
 		updateHeader()
+		tableView.tableFooterView = UIView()
 		tableView.showsVerticalScrollIndicator = false
 		Database.database().reference().child("users").child((currentUser.email ?? "").formattedEmail()).observe(.value) { (snapshot) in
 			if let value = snapshot.value as? [String: String] {
@@ -85,18 +89,24 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFie
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return view.frame.height * 0.0825
+		return indexPath.row == 3 ? 52 : 60
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
 		if indexPath.row == 0 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
+			cell.mailSettings()
 			cell.selectionStyle = .none
-			cell.nameSettings()
-			cell.aboutUserTextField.text = name
-			cell.aboutUserTextField.placeholder = "Введите имя"
-			cell.aboutUserTextField.delegate = self
+			cell.aboutUserTextField.isUserInteractionEnabled = false
+			cell.aboutUserTextField.text = currentUser.email
 			return cell
+		} else if indexPath.row == 2 {
+			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.notificationCell.rawValue, for: indexPath) as! NotificationCell
+			cell.selectionStyle = .none
+			
+			return cell
+			
 		} else if indexPath.row == 1 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
 			cell.selectionStyle = .none
@@ -105,18 +115,10 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFie
 			cell.aboutUserTextField.delegate = self
 			cell.aboutUserTextField.placeholder = "Введите телефон"
 			return cell
-		} else if indexPath.row == 2 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
-			cell.mailSettings()
-			cell.selectionStyle = .none
-			cell.aboutUserTextField.isUserInteractionEnabled = false
-			cell.aboutUserTextField.text = currentUser.email
-			return cell
-		} else if indexPath.row == 3 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.notificationCell.rawValue, for: indexPath) as! NotificationCell
-			cell.selectionStyle = .none
 			
-			return cell
+		} else if indexPath.row == 3 {
+			return UITableViewCell()
+			
 		} else if indexPath.row == 4 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.exitCell.rawValue, for: indexPath) as! ExitCell
 			cell.selectionStyle = .none

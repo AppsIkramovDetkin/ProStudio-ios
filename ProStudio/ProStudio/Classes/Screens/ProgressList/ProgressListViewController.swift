@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
 extension UINavigationBar {
 	func transparentNavigationBar() {
 //		self.setBackgroundImage(UIImage(), for: .default)
-		barTintColor = .white
-		self.shadowImage = UIImage()
+//		barTintColor = .white
+//		self.shadowImage = UIImage()
 	}
 	
 	func noTransparent() {
@@ -42,8 +41,10 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		titleLabel.hero.id = "title"
 		
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
-		addRightButton()
+//		addRightButton()
 		navigationController?.navigationBar.transparentNavigationBar()
+		navigationController?.navigationBar.barTintColor = .white
+		navigationController?.navigationBar.shadowImage = UIImage()
 		addLeftButton()
 		ProjectManager.shared.loadProjects { (projects) in
 			let views = projects.enumerated().map({ (i, project) -> PSCircularView in
@@ -91,7 +92,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		button.semanticContentAttribute = .forceRightToLeft
 		button.setTitleColor(PSColor.cerulean, for: .normal)
 		button.setTitle("Добавить", for: .normal)
-		button.titleLabel?.font = PSFont.introBold.with(size: 16)
+		button.titleLabel?.font = PSFont.introRegular.with(size: 17)
 		button.addTarget(self, action: #selector(add), for: .touchUpInside)
 		navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
 	}
@@ -110,7 +111,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		button.imageView?.contentMode = .scaleAspectFit
 		button.setTitleColor(PSColor.cerulean, for: .normal)
 		button.setTitle("Список", for: .normal)
-		button.titleLabel?.font = PSFont.introBold.with(size: 16)
+		button.titleLabel?.font = PSFont.introRegular.with(size: 17)
 		button.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
 	}
@@ -121,8 +122,8 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	
 	func setupscrollView(slides: [UIView]) {
 		scrollView.showsHorizontalScrollIndicator = false
-		let spacing: CGFloat = 48
-		scrollView.contentInset = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
+		let spacing: CGFloat = (view.bounds.width - 250) / 2
+		scrollView.contentInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
 		for i in 0..<slides.count {
 			let slide = slides[i]
 			
@@ -200,13 +201,17 @@ extension ProgressListViewController: UITableViewDelegate, UITableViewDataSource
 		}
 		cell.titleLabel.text = step.name
 		cell.rightLabel.text = step.formattedDate()
-		cell.separatorInset = .zero
+		if indexPath.row == currentSteps.count-1 {
+			cell.separatorInset = .zero
+		} else {
+			cell.separatorInset = UIEdgeInsets(top: 9, left: 15, bottom: 0, right: 0)
+		}
 		cell.selectionStyle = .none
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 75
+		return 60
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

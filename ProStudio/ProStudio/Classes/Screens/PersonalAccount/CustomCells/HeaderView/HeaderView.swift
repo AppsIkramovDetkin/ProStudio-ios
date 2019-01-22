@@ -9,48 +9,26 @@
 import UIKit
 
 class HeaderView: UITableViewHeaderFooterView {
-
-	@IBOutlet weak var ceruleanHeader: UIView!
-	@IBOutlet weak var personalAccount: UILabel!
 	@IBOutlet weak var avatar: UIImageView!
-	@IBOutlet weak var avatarBorder: UIView!
-	@IBOutlet weak var backgroundPhoto: UIImageView!
 	@IBOutlet weak var userName: UILabel!
 	@IBOutlet weak var companyName: UILabel!
 	
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)
-		ceruleanHeader.backgroundColor = PSColor.cerulean
-		backgroundPhoto.image = UIImage(named: "ava")?.alpha(0.5)
-		backgroundPhoto.contentMode = .scaleAspectFill
-		let visualEffectView = UIView()
-		visualEffectView.frame = backgroundPhoto.bounds
-		visualEffectView.alpha = 0.9
-		visualEffectView.backgroundColor = PSColor.cerulean
-		backgroundPhoto.addSubview(visualEffectView)
-		
-		avatarBorder.layer.cornerRadius = avatarBorder.frame.size.width / 2
-		avatarBorder.layer.borderWidth = 11
-		avatarBorder.layer.borderColor = UIColor.white.cgColor
-		avatarBorder.clipsToBounds = true
 		
 		avatar.image = UIImage(named: "ava")
 		avatar.layer.cornerRadius = avatar.frame.size.width / 2
 		avatar.clipsToBounds = true
 		
-		personalAccount.text = "Личный кабинет"
-		personalAccount.font = PSFont.headerText
-		personalAccount.textColor = UIColor.white
-		
-//		userName.text = "Филиппов Михаил"
-		userName.font = PSFont.nameFont
+		userName.font = PSFont.introBold.with(size: 22)
 		userName.textColor = UIColor.black
 		
 		companyName.text = "Цифровая Империя"
 		companyName.textColor = PSColor.companyNameColor
-		companyName.font = PSFont.companyFont
+		companyName.font = PSFont.introBook.with(size: 17)
 		
 	}
+	
 
 
 }

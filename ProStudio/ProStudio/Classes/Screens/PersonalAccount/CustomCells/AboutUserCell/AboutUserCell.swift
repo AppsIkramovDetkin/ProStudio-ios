@@ -26,7 +26,7 @@ class AboutUserCell: UITableViewCell {
 		
 		aboutUserTextField.placeholder = "Введите имя..."
 		aboutUserTextField.text = "Филиппов Михаил"
-		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.font = PSFont.introBook.with(size: 17)
 		aboutUserTextField.textColor = PSColor.cerulean
 		
 	}
@@ -42,7 +42,7 @@ class AboutUserCell: UITableViewCell {
 		aboutUserTextField.keyboardType = .numberPad
 		aboutUserTextField.text = "+7 (981) 750-70-70"
 		aboutUserTextField.textContentType = UITextContentType.telephoneNumber
-		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.font = PSFont.introBook.with(size: 17)
 		aboutUserTextField.textColor = PSColor.cerulean
 	}
 	
@@ -56,7 +56,7 @@ class AboutUserCell: UITableViewCell {
 		aboutUserTextField.placeholder = "Введите почту..."
 		aboutUserTextField.text = "mail@prostudio.ru"
 		aboutUserTextField.textContentType = UITextContentType.emailAddress
-		aboutUserTextField.font = PSFont.textFieldFont
+		aboutUserTextField.font = PSFont.introBook.with(size: 17)
 		aboutUserTextField.textColor = PSColor.cerulean
 	}
 	

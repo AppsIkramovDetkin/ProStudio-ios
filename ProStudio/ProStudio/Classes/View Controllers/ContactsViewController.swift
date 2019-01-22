@@ -23,18 +23,18 @@ class ContactsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		NavigationBarDecorator.decorate(self)
-		navigationController?.navigationBar.barStyle = .black
+//		navigationController?.navigationBar.barStyle = .black
 		navigationItem.title = "Наши контакты"
 		navigationItem.largeTitleDisplayMode = .always
 		navigationController?.navigationBar.prefersLargeTitles = true
 		segmentedControl.titles = ["Петербург", "Москва"]
 		segmentedControl.images = [UIImage(named: "spb")!, UIImage(named: "msc")!]
-		segmentedControl.font = PSFont.introBold.with(size: 14.0)
+		segmentedControl.font = PSFont.introBold.with(size: 16.0)
 		segmentedControl.defaultColor = PSColor.coolGrey
 		decorizeLabel1()
 		decorizeLabel2()
 		decorizeLabel3()
-		label0.setLineHeight(4)
+		label0.setLineSpacing(lineSpacing: 6)
 		label0.textAlignment = .center
 		segmentedControl.addTarget(self, action: #selector(changed(sender:)), for: .valueChanged)
 		addGestures()
@@ -88,29 +88,30 @@ class ContactsViewController: UIViewController {
 		UIApplication.shared.open(URL.init(string: "https://vk.com/prostudioagency")!, options: [:], completionHandler: nil)
 	}
 	
-	let lineHeight: CGFloat = 4.5
+	let lineHeight: CGFloat = 10
 	func decorizeLabel1(first: Bool = true) {
 		let attributedString = NSMutableAttributedString(string: first ? "Позвонить\r+7 (812) 645-65-96" : "Другие данные", attributes: [
-			.font: UIFont(name: "Intro-Bold", size: 15)!,
+			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
 		if first {
 			attributedString.addAttributes([
-				.font: UIFont(name: "Intro-Book", size: 12)!,
+				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 9))
 		}
 		label1.attributedText = attributedString
+		label1.setLineHeight(lineHeight)
 	}
 	
 	func decorizeLabel3(first: Bool = true) {
 		let attributedString = NSMutableAttributedString(string: first ? "Проложить маршрут  \rЛенинский пр-т, 151" : "Другие данные" , attributes: [
-			.font: UIFont(name: "Intro-Bold", size: 15)!,
+			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
 		if first {
 			attributedString.addAttributes([
-				.font: UIFont(name: "Intro-Book", size: 12)!,
+				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 17))
 		}
@@ -121,12 +122,12 @@ class ContactsViewController: UIViewController {
 	
 	func decorizeLabel2(first: Bool = true) {
 		let attributedString = NSMutableAttributedString(string: first ? "Отправить письмо\rmail@prostudio.ru" : "Другие данные", attributes: [
-			.font: UIFont(name: "Intro-Bold", size: 15)!,
+			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
 		if first {
 			attributedString.addAttributes([
-				.font: UIFont(name: "Intro-Book", size: 12)!,
+				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 16))
 		}

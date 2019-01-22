@@ -34,21 +34,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="q5D-66-7jq">
-                    <rect key="frame" x="86" y="112" width="203" height="36"/>
+                    <rect key="frame" x="86" y="109" width="203" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="203" id="hyY-ch-H9e"/>
                         <constraint firstAttribute="height" constant="36" id="sFA-c6-1TP"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="buddy_image" translatesAutoresizingMaskIntoConstraints="NO" id="R65-8C-ipp">
-                    <rect key="frame" x="75.666666666666686" y="216" width="224" height="204"/>
+                    <rect key="frame" x="82" y="212" width="211" height="192"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="204" id="Tpq-nP-lO6"/>
-                        <constraint firstAttribute="width" constant="224" id="XEM-mo-bz8"/>
+                        <constraint firstAttribute="height" constant="192" id="Tpq-nP-lO6"/>
+                        <constraint firstAttribute="width" constant="211" id="XEM-mo-bz8"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-8T-Opc">
-                    <rect key="frame" x="40" y="481" width="295" height="30"/>
+                    <rect key="frame" x="40" y="478" width="295" height="30"/>
                     <string key="text">Для доступа к своим проектам
 войдите с помошью логина и пароля.</string>
                     <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="15"/>
@@ -56,10 +56,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P67-K3-1J6" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
-                    <rect key="frame" x="16" y="544" width="343" height="51"/>
+                    <rect key="frame" x="16" y="542" width="343" height="50"/>
                     <color key="backgroundColor" red="0.00043634738540000001" green="0.50770604610000003" blue="0.79845690729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="51" id="uVr-Ob-MqR"/>
+                        <constraint firstAttribute="height" constant="50" id="uVr-Ob-MqR"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="14"/>
                     <state key="normal" title="ВОЙТИ В PROSTUDIO PROJECT">
@@ -67,32 +67,36 @@
                         <color key="titleShadowColor" name="blue"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fSt-ro-WJq">
-                    <rect key="frame" x="50" y="651" width="275" height="42"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fSt-ro-WJq">
+                    <rect key="frame" x="40" y="648" width="295" height="63"/>
                     <string key="text">Если у вас нет проектов,
 будем рады обсудить сотрудничество.</string>
                     <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="21"/>
-                    <color key="textColor" red="0.63119727370000001" green="0.63535064460000001" blue="0.63526231050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.55674988030000006" green="0.55689430240000004" blue="0.57709598539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ud5-8T-Opc" firstAttribute="top" secondItem="R65-8C-ipp" secondAttribute="bottom" constant="61" id="08U-CS-gbk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fSt-ro-WJq" secondAttribute="trailing" constant="50" id="69m-F9-AGo"/>
-                <constraint firstItem="R65-8C-ipp" firstAttribute="top" secondItem="q5D-66-7jq" secondAttribute="bottom" constant="68" id="D6F-u8-TvJ"/>
+                <constraint firstItem="ud5-8T-Opc" firstAttribute="top" secondItem="R65-8C-ipp" secondAttribute="bottom" priority="250" constant="74" id="08U-CS-gbk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fSt-ro-WJq" secondAttribute="trailing" constant="40" id="69m-F9-AGo"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P67-K3-1J6" secondAttribute="bottom" constant="10" id="7Bi-Ed-Zfz"/>
+                <constraint firstItem="ud5-8T-Opc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R65-8C-ipp" secondAttribute="bottom" constant="10" id="8rR-NT-liz"/>
+                <constraint firstItem="R65-8C-ipp" firstAttribute="top" secondItem="q5D-66-7jq" secondAttribute="bottom" priority="250" constant="67" id="D6F-u8-TvJ"/>
+                <constraint firstItem="R65-8C-ipp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="q5D-66-7jq" secondAttribute="bottom" constant="10" id="DwT-an-44E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P67-K3-1J6" secondAttribute="trailing" constant="16" id="HmY-wQ-5i6"/>
-                <constraint firstItem="P67-K3-1J6" firstAttribute="top" secondItem="ud5-8T-Opc" secondAttribute="bottom" constant="33" id="LRS-Jp-ZCn"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Jj7-S3-mpH"/>
+                <constraint firstItem="P67-K3-1J6" firstAttribute="top" secondItem="ud5-8T-Opc" secondAttribute="bottom" constant="34" id="LRS-Jp-ZCn"/>
                 <constraint firstItem="P67-K3-1J6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Lqg-Ag-Zcg"/>
-                <constraint firstItem="q5D-66-7jq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="86" id="WJw-M2-NEz"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" priority="999" constant="86" id="WJw-M2-NEz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ud5-8T-Opc" secondAttribute="trailing" constant="40" id="cZG-Ys-cdV"/>
-                <constraint firstItem="fSt-ro-WJq" firstAttribute="top" secondItem="P67-K3-1J6" secondAttribute="bottom" constant="56" id="eFe-yj-4zz"/>
-                <constraint firstItem="fSt-ro-WJq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="em1-qN-wbd"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="top" secondItem="P67-K3-1J6" secondAttribute="bottom" priority="250" constant="56" id="eFe-yj-4zz"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="em1-qN-wbd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fSt-ro-WJq" secondAttribute="bottom" constant="8" id="g17-MY-H2s"/>
                 <constraint firstItem="R65-8C-ipp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l8f-LD-aZO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q5D-66-7jq" secondAttribute="trailing" constant="86" id="thl-CF-fQc"/>
                 <constraint firstItem="ud5-8T-Opc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ygQ-e1-SYC"/>
-                <constraint firstItem="q5D-66-7jq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="112" id="yu8-In-C5k"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="250" constant="109" id="yu8-In-C5k"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="130.40000000000001" y="152.95566502463055"/>

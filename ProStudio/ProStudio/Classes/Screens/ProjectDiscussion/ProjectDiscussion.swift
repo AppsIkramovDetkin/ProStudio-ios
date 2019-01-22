@@ -23,7 +23,6 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationController?.navigationBar.noTransparent()
-        navigationController?.navigationBar.barStyle = .black
 		NavigationBarDecorator.decorate(self)
 		tableView.separatorColor = .clear
 		tableView.isScrollEnabled = true
@@ -42,22 +41,11 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.transparentNavigationBar()
-		navigationController?.navigationBar.barStyle = .black
 	}
 	
-	var showed = false
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		if !showed {
-			if let cell = tableView.cellForRow(at: IndexPath.init(row: 3, section: 0)) as? TextFieldCell {
-				delay(delay: 0.5) {
-					cell.textField.becomeFirstResponder()
-				}
-				showed = true
-			}
-		}
 		
 		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
@@ -96,6 +84,7 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
 		case 0:
 			
 			let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell, for: indexPath) as! TextFieldCell
+			cell.textField.discussionField = true
 			cell.textField.placeholderText = "Выберите вид проекта"
 			cell.textField.tag = 0
             cell.textChanged  = { self.projectType = $0 }
@@ -175,8 +164,20 @@ class ProjectDiscussion: UITableViewController, MFMailComposeViewControllerDeleg
         controller.dismiss(animated: true)
     }
 	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		return UIView()
+	}
+	
+	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 16
+	}
+	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 70
+		return UITableView.automaticDimension
+	}
+	
+	override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 60
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
