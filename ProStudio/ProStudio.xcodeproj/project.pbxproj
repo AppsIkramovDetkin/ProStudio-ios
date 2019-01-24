@@ -703,6 +703,8 @@
 				7C9D8A5C21E625AF00DCAE83 /* ChangeUserViewController.xib */,
 				7C7E554E218E0E77009152EC /* ContactsViewController.swift */,
 				7C7E5550218E0EA9009152EC /* ContactsViewController.xib */,
+				7C7E5554218E0F68009152EC /* ContactsSegmentedControl.swift */,
+				7C7E5552218E0F62009152EC /* ContactsSegment.swift */,
 				7CCE13EE20F16FBD00E268F3 /* CircleTestViewController.swift */,
 				388B3CC621F6241300B178A7 /* AddProjectViewController.swift */,
 				388B3CC821F6242700B178A7 /* AddProjectViewController.xib */,
@@ -766,8 +768,6 @@
 			isa = PBXGroup;
 			children = (
 				AC1CE96A2162A2E500E7F26F /* RegistraionViewController.swift */,
-				7C7E5554218E0F68009152EC /* ContactsSegmentedControl.swift */,
-				7C7E5552218E0F62009152EC /* ContactsSegment.swift */,
 				AC1CE96B2162A2E500E7F26F /* RegistraionViewController.xib */,
 			);
 			path = FirstLaunchRegistration;

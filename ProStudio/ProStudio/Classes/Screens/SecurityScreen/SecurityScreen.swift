@@ -25,6 +25,7 @@ struct PSColors {
 	static let securityPointOff = UIColor(displayP3Red: 54/255, green: 54/255, blue: 54/255, alpha: 1.0)
 	static let securityPointOn = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
 	static let cancelButtonText = UIColor(displayP3Red: 255/255, green: 37/255, blue: 37/255, alpha: 1.0)
+	static let separatorColor = #colorLiteral(red: 0.9214485884, green: 0.9216245413, blue: 0.9295840859, alpha: 1)
 }
 
 class SecurityScreen: UIViewController {

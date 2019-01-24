@@ -12,7 +12,7 @@ class AuthorizationScreen: UIViewController {
 	@IBOutlet weak var setAccessCodeLabel: UILabel!
 	@IBOutlet weak var getLoginAndPasswordButton: UIButton!
 	@IBOutlet weak var accessButton: UIButton!
-	@IBOutlet weak var okImage: UIImageView!
+	@IBOutlet weak var restorePassButton: UIButton!
 	
 	var setAccessButton: Bool = false
 	
@@ -29,11 +29,14 @@ class AuthorizationScreen: UIViewController {
 		passwordTextField.font = PSFont.introRegular.with(size: 17)
 		emailTextField.placeholderText = "Ваша почта"
 		passwordTextField.placeholderText = "Пароль"
-		getLoginAndPasswordButton.titleLabel?.font = PSFont.introRegular.with(size: 14.5)
+		getLoginAndPasswordButton.titleLabel?.font = PSFont.introBook.with(size: 15)
 		getLoginAndPasswordButton.setTitleColor(#colorLiteral(red: 0, green: 0.5156363845, blue: 0.8242413402, alpha: 1), for: .normal)
 		getLoginAndPasswordButton.underline(with: #colorLiteral(red: 0, green: 0.5156363845, blue: 0.8242413402, alpha: 1))
-//		passwordTextField.underline()
-//		emailTextField.underline()
+		
+		restorePassButton.titleLabel?.font = PSFont.introBook.with(size: 15)
+		restorePassButton.setTitleColor(#colorLiteral(red: 0.6665528417, green: 0.666705668, blue: 0.6828309894, alpha: 1), for: .normal)
+		restorePassButton.underline(with: #colorLiteral(red: 0.6665528417, green: 0.666705668, blue: 0.6828309894, alpha: 1))
+		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +56,9 @@ class AuthorizationScreen: UIViewController {
 		passwordTextField.addTarget(self, action: #selector(editingBeganPassword(_:)), for: .editingDidBegin)
 		passwordTextField.addTarget(self, action: #selector(editingEndedPassword(_:)), for: .editingDidEnd)
 		
+		emailTextField.discussionField = false
+		passwordTextField.discussionField = false
+		
 		loginButton.setTitle("ВОЙТИ", for: .normal)
 		
 		cancelButton.setTitle("Отмена", for: .normal)
@@ -65,9 +71,11 @@ class AuthorizationScreen: UIViewController {
 		setAccessCodeLabel.text = "Задать код доступа"
 		setAccessCodeLabel.font = PSFont.cellText
 		
+		accessButton.imageEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
 		accessButton.backgroundColor = PSColors.light
 		accessButton.layer.cornerRadius = 2
 		accessButton.layer.masksToBounds = true
+		
 		
 		
 		//    Если раскоментировать строки, то программа крашится
@@ -128,7 +136,7 @@ class AuthorizationScreen: UIViewController {
 					let listVC = UINavigationController.init(rootViewController: ProjectsList())
 					listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
 					//2.
-					let cabinetVC = PersonalAccount()
+					let cabinetVC = UINavigationController(rootViewController: PersonalAccount())
 					let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "profile"), tag: 1)
 					let inset3: CGFloat = 0
 					cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
@@ -177,13 +185,13 @@ class AuthorizationScreen: UIViewController {
 	@IBAction func accessButtonPressed(_ sender: Any) {
 		
 		if !setAccessButton {
-			accessButton.backgroundColor = PSColor.cerulean
-			okImage.image = UIImage(named: "invalid-name")
 			setAccessButton = true
+			accessButton.setImage(UIImage(named: "invalid-name")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			accessButton.backgroundColor = #colorLiteral(red: 0, green: 0.5083315372, blue: 0.8099726439, alpha: 1)
 		} else {
-			okImage.image = nil
-			accessButton.backgroundColor = PSColors.light
 			setAccessButton = false
+			accessButton.setImage(nil, for: .normal)
+			accessButton.backgroundColor = PSColors.light
 		}
 	}
 }
@@ -203,7 +211,7 @@ extension UIView {
 		line.translatesAutoresizingMaskIntoConstraints = false
 		line.backgroundColor = color
 		self.addSubview(line)
-		self.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1.6)]-(-7)-|", dict: ["v": line]))
+		self.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1)]-2-|", dict: ["v": line]))
 		//        let constraints = NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[v]|,V:[v(1)]|", dict: ["v": line])
 		
 		//        self.addConstraints(constraints)

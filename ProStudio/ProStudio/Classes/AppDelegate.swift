@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT
 		let tabBarController = UITabBarController()
 		let appearance = UITabBarItem.appearance()
-		let attributes = [NSAttributedString.Key.font: PSFont.introBook.with(size: 12)]
+		let attributes = [NSAttributedString.Key.font: PSFont.introRegular.with(size: 10)]
 		appearance.setTitleTextAttributes(attributes, for: .normal)
 		let registerVC = UINavigationController(rootViewController: RegistraionViewController())
 		let registerTabItem = UITabBarItem(title: "Регистрация", image: UIImage.init(named: "key"), tag: 0)
@@ -95,6 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		tabBarController.tabBar.tintColor = PSColor.cerulean
 		tabBarController.tabBar.unselectedItemTintColor = PSColor.coolGrey
 		registerVC.tabBarItem = registerTabItem
+		
 		
 		let contactsVC = UINavigationController(rootViewController: ContactsViewController())
 		let contactsTabItem = UITabBarItem(title: "Контакты", image: UIImage.init(named: "contacts"), tag: 0)

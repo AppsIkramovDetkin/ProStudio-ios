@@ -16,6 +16,7 @@ class ProjectsList: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView.backgroundColor = .white
 		registerCells()
 		tableView.separatorStyle = .none
 		hero.isEnabled = true
@@ -42,6 +43,11 @@ class ProjectsList: UIViewController {
 		refreshed()
 		navigationController?.setNavigationBarHidden(true, animated: true)
 	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		navigationController?.setNavigationBarHidden(false, animated: true)
+	}
 }
 
 extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
@@ -51,7 +57,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 95
+		return 91
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +79,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 100
+		return 118.5
 	}
 	
 	func sort(all: Bool) {
@@ -105,7 +111,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 			vc.modalPresentationStyle = .currentContext
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
-		headerView.tintColor = UIColor.white
+//		headerView.tintColor = UIColor.white
 		
 		return headerView
 	}

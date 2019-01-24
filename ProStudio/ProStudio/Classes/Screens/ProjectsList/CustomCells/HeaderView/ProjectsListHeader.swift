@@ -13,11 +13,11 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 		projectsListLabel.hero.id = "title"
 		progressButton.setTitle("Прогресс", for: .normal)
 		progressButton.setTitleColor(PSColor.cerulean, for: .normal)
-		progressButton.titleLabel?.font = PSFont.cellText
+		progressButton.titleLabel?.font = PSFonts.projectListHeaderButtons
 		progressButton.addTarget(self, action: #selector(progress(_:)), for: .touchUpInside)
 
 		addProjectButton.setTitle("Добавить", for: .normal)
-		addProjectButton.titleLabel?.font = PSFont.cellText
+		addProjectButton.titleLabel?.font = PSFonts.projectListHeaderButtons
 		addProjectButton.setTitleColor(PSColor.cerulean, for: .normal)
 		addProjectButton.addTarget(self, action: #selector(addProject(_:)), for: .touchUpInside)
 
@@ -26,7 +26,9 @@ class ProjectsListHeader: UITableViewHeaderFooterView {
 		projectsPicker.setTitleTextAttributes([NSAttributedString.Key.font: PSFont.segmentedFont!],
 																						for: .normal)
 		projectsPicker.clipsToBounds = true
-        
+		
+		projectsPicker.isHidden = true
+		addProjectButton.isHidden = true
 	}
 
     

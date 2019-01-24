@@ -22,11 +22,45 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-PM-2ip">
-                    <rect key="frame" x="0.0" y="-66" width="415" height="216"/>
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="150"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-eD-QJC">
+                    <rect key="frame" x="0.0" y="-200" width="415" height="297"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-T6-2B6">
+                            <rect key="frame" x="0.0" y="296" width="415" height="1"/>
+                            <color key="backgroundColor" red="0.86265087127685547" green="0.86279940605163574" blue="0.86264151334762573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="cKg-V1-fP7"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список проектов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-Gh-zhQ">
+                            <rect key="frame" x="16" y="255" width="383" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="gN1-wU-cqW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97636467218399048" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="SAM-T6-2B6" firstAttribute="top" secondItem="Hql-Gh-zhQ" secondAttribute="bottom" constant="7" id="5bN-KX-Ktm"/>
+                        <constraint firstItem="Hql-Gh-zhQ" firstAttribute="leading" secondItem="xrk-eD-QJC" secondAttribute="leading" constant="16" id="5nm-Sq-bBk"/>
+                        <constraint firstAttribute="height" constant="297" id="BHw-Ze-ZMf"/>
+                        <constraint firstAttribute="bottom" secondItem="SAM-T6-2B6" secondAttribute="bottom" id="FKs-WV-wwA"/>
+                        <constraint firstAttribute="trailing" secondItem="SAM-T6-2B6" secondAttribute="trailing" id="FLe-Ms-mrw"/>
+                        <constraint firstAttribute="trailing" secondItem="Hql-Gh-zhQ" secondAttribute="trailing" constant="16" id="Ra6-Xk-Pwj"/>
+                        <constraint firstItem="SAM-T6-2B6" firstAttribute="leading" secondItem="xrk-eD-QJC" secondAttribute="leading" id="V2r-rK-prw"/>
+                    </constraints>
+                </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N9o-KD-1XX">
-                    <rect key="frame" x="138" y="7.5" width="139" height="29"/>
+                    <rect key="frame" x="138" y="9.5" width="139" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="139" id="W64-SO-JXW"/>
+                    </constraints>
                     <segments>
                         <segment title="Все"/>
                         <segment title="Текущие"/>
@@ -35,41 +69,32 @@
                         <action selector="selectedIndex" destination="9hH-fd-gLr" eventType="valueChanged" id="12N-O0-J6r"/>
                     </connections>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-qO-qSP">
-                    <rect key="frame" x="326" y="5" width="77" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="77" id="WNe-Ro-Ouh"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-qO-qSP">
+                    <rect key="frame" x="282" y="5" width="121" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Добавить"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Jd-71V">
-                    <rect key="frame" x="12" y="5" width="78" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="78" id="1Bk-ox-Gs9"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Jd-71V">
+                    <rect key="frame" x="12" y="7" width="121" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Прогресс"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список проектов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-Gh-zhQ">
-                    <rect key="frame" x="12" y="71.5" width="310" height="37"/>
-                    <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="37"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="xrk-eD-QJC" firstAttribute="top" secondItem="9hH-fd-gLr" secondAttribute="top" constant="-200" id="31Q-Dr-TFX"/>
                 <constraint firstItem="N9o-KD-1XX" firstAttribute="centerY" secondItem="Xn4-Jd-71V" secondAttribute="centerY" id="3eo-cx-MCp"/>
-                <constraint firstItem="Xn4-Jd-71V" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="5" id="54e-q9-cEc"/>
+                <constraint firstItem="Xn4-Jd-71V" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="7" id="54e-q9-cEc"/>
+                <constraint firstItem="va3-0i-TjS" firstAttribute="trailing" secondItem="xrk-eD-QJC" secondAttribute="trailing" id="8A4-J5-iON"/>
                 <constraint firstItem="N9o-KD-1XX" firstAttribute="centerX" secondItem="va3-0i-TjS" secondAttribute="centerX" id="9ma-EA-U3L"/>
+                <constraint firstItem="l8z-qO-qSP" firstAttribute="leading" secondItem="N9o-KD-1XX" secondAttribute="trailing" constant="5" id="DEH-0a-AoH"/>
+                <constraint firstItem="xrk-eD-QJC" firstAttribute="leading" secondItem="9hH-fd-gLr" secondAttribute="leading" id="E5L-lr-7ZK"/>
                 <constraint firstItem="l8z-qO-qSP" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="5" id="Hqw-xu-XtW"/>
                 <constraint firstItem="Xn4-Jd-71V" firstAttribute="leading" secondItem="va3-0i-TjS" secondAttribute="leading" constant="12" id="IPo-Ls-TsB"/>
-                <constraint firstItem="Hql-Gh-zhQ" firstAttribute="centerY" secondItem="va3-0i-TjS" secondAttribute="centerY" constant="15" id="JFC-RS-Qgl"/>
+                <constraint firstItem="N9o-KD-1XX" firstAttribute="leading" secondItem="Xn4-Jd-71V" secondAttribute="trailing" constant="5" id="L6i-6S-0MD"/>
                 <constraint firstItem="Vcp-PM-2ip" firstAttribute="trailing" secondItem="va3-0i-TjS" secondAttribute="trailing" id="UD3-as-BpJ"/>
                 <constraint firstItem="va3-0i-TjS" firstAttribute="trailing" secondItem="l8z-qO-qSP" secondAttribute="trailing" constant="12" id="ZkG-ZN-Rdt"/>
-                <constraint firstItem="Vcp-PM-2ip" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="-66" id="aHv-NE-L3G"/>
-                <constraint firstItem="Hql-Gh-zhQ" firstAttribute="leading" secondItem="va3-0i-TjS" secondAttribute="leading" constant="12" id="cB5-TK-BkP"/>
+                <constraint firstItem="Vcp-PM-2ip" firstAttribute="top" secondItem="9hH-fd-gLr" secondAttribute="top" id="aHv-NE-L3G"/>
                 <constraint firstItem="Vcp-PM-2ip" firstAttribute="bottom" secondItem="va3-0i-TjS" secondAttribute="bottom" id="tHO-02-bdd"/>
                 <constraint firstItem="Vcp-PM-2ip" firstAttribute="leading" secondItem="va3-0i-TjS" secondAttribute="leading" id="vsI-lj-zv8"/>
             </constraints>
@@ -81,7 +106,7 @@
                 <outlet property="projectsListLabel" destination="Hql-Gh-zhQ" id="wi3-Vc-pQc"/>
                 <outlet property="projectsPicker" destination="N9o-KD-1XX" id="Jx1-Rl-CBG"/>
             </connections>
-            <point key="canvasLocation" x="114.40000000000001" y="323.83808095952025"/>
+            <point key="canvasLocation" x="25" y="194"/>
         </view>
     </objects>
 </document>

@@ -15,7 +15,7 @@ class NotificationCell: UITableViewCell {
 	}
 	
 	private func notificationSettings() {
-		notificationLabel.text = "PUSH уведомления"
+		notificationLabel.text = "Push-уведомления"
 		notificationLabel.textAlignment = .left
 		notificationLabel.textColor = PSColor.textColor
 		notificationLabel.font = PSFont.cellText

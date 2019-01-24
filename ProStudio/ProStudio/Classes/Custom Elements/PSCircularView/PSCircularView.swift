@@ -18,7 +18,7 @@ final class PSCircularView: UIView {
 		label.textColor = PSColors.textColorOff
 		label.text = "65%"
 		label.textAlignment = .center
-		label.font = UIFont.boldSystemFont(ofSize: 52.0)
+		label.font = PSFont.introBold.with(size: 42)
 		
 		return label
 	}()
@@ -41,7 +41,7 @@ final class PSCircularView: UIView {
 		}
 	}
 	
-	@IBInspectable var backLineWidth: CGFloat = 20 {
+	@IBInspectable var backLineWidth: CGFloat = 25 {
 		didSet {
 			updateLineWidths()
 		}
@@ -127,7 +127,7 @@ final class PSCircularView: UIView {
         let scale: CGFloat = 0.9
         let delta = bounds.height - bounds.height * scale
         let ovalIn = CGRect(x: bounds.origin.x + delta / 2, y: bounds.origin.y + delta / 2, width: bounds.width * scale, height: bounds.height * scale)
-        let path = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width / 2 - backLineWidth, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width / 2 - backLineWidth/2, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
         
         shape.fillColor = UIColor.clear.cgColor
         shape.lineWidth = backLineWidth

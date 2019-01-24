@@ -94,23 +94,21 @@ import UIKit
         
         bottomLine.frame = CGRect(x: 0, y: self.frame.height - 2,
                                   width: self.frame.width, height: 2)
-        
+			
+				let iconTopPadding = self.frame.height * 0.280
         let iconLeftPadding = self.frame.width * 0.19
         var topPadding = self.frame.height * 0.27
         let size = self.frame.width * 0.11
-        iconView.frame.size = CGSize(width: size, height: size)
+				iconView.frame = CGRect(x: iconLeftPadding, y: iconTopPadding, width: size, height: size)
         
-        
-        let leftPadding = self.frame.width * 0.38
-        topPadding = self.frame.height * 0.364
+        let leftPadding = self.frame.width * 0.36
+        topPadding = self.frame.height * 0.43
         let height = self.frame.height * 0.37
         let width = self.frame.width - leftPadding
         titleLabel.frame = CGRect(x: leftPadding, y: topPadding,
                              width: width, height: height)
-        
-        iconView.center = titleLabel.center
-        iconView.frame.origin.x = iconLeftPadding
-        
+			
+			
     }
     
     

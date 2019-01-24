@@ -5,7 +5,7 @@ import AlamofireImage
 class ChatWithManager: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var textField: UITextField!
+	@IBOutlet weak var textField: ChatTextField!
 	@IBOutlet weak var sendButton: UIButton!
 	@IBOutlet weak var chatHeight: NSLayoutConstraint!
 	
@@ -29,14 +29,14 @@ class ChatWithManager: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		registerCells()
+		navigationController?.navigationBar.isTranslucent = false
 		tabBarController?.tabBar.isTranslucent = false
+		view.backgroundColor = .white
 		NavigationBarDecorator.decorate(self)
 		navigationController?.navigationBar.prefersLargeTitles = true
-		navigationController?.navigationBar.barStyle = .black
 		navigationItem.largeTitleDisplayMode = .always
 		self.tableView.contentInsetAdjustmentBehavior = .never
 		navigationItem.title = "Чат с менеджером"
-		automaticallyAdjustsScrollViewInsets = false
 		edgesForExtendedLayout = []
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 140
@@ -51,7 +51,7 @@ class ChatWithManager: UIViewController {
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
+		return .default
 	}
 	
 	@IBAction func attachButtonClicked(sender: UIButton) {
