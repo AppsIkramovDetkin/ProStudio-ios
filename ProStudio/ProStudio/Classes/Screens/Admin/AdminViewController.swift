@@ -30,7 +30,7 @@ class AdminViewController: UIViewController {
 	}
   
   @IBAction func createProjectClicked() {
-    let vc = CreateProjectViewController()
+    let vc = AddProjectViewController()
     navigationController?.pushViewController(vc, animated: true)
   }
 	
@@ -39,59 +39,46 @@ class AdminViewController: UIViewController {
 	}
 	
 	@IBAction func endProject() {
-		let ref = Database.database().reference().child("projects")
-		ref.observeSingleEvent(of: .value) { (snapshot) in
-			let value = snapshot.value as? [String: Any]
-			let keys = value?.keys.map{String($0)} ?? []
-			TablePicker.show(fromVC: self, withData: keys, isMultiple: false, title: "Выберите клиентa", andCompletion: { (results) in
-				if let first = results.first {
-					ref.child(first.formattedEmail()).observeSingleEvent(of: .value, with: { (subsnap) in
-						let subValue = subsnap.value as? [String: Any]
-						var subIds = subValue?.map{String(($0.value as! [String: Any])["name"] as! String)} ?? []
-						let ids = subValue?.keys.map{String($0)}
-						ids?.enumerated().forEach({ (arg) in
-							let (i, id) = arg
-							subIds[i] = subIds[i] + ":|id: \(id)"
-						})
-						TablePicker.show(fromVC: self, withData: subIds, isMultiple: false, title: "Выберите имя проекта", andCompletion: { (subresults) in
-							if let firstObject = subresults.first {
-								let key = String(describing: firstObject.components(separatedBy: ":|id: ")[1])
-								
-								ref.child(first).child(key).child("progress").setValue(100)
-								ref.child(first).child(key).child("isEnded").setValue(true)
-								delay(delay: 1/2, closure: {
-									self.showAlertWithOneAction(title: "Проект заврешен", message: "", handle: {
-										
-									})
-								})
-							}
-						})
-					})
-				}
+	let ref = Database.database().reference().child("projects")
+		let projectsVC = AdminProjectsViewController()
+		projectsVC.projectSelected = {
+			project in
+			projectsVC.navigationController?.popViewController(animated: true)
+			
+			ref.child(project.client.formattedEmail()).child(project.id).child("progress").setValue(100)
+			ref.child(project.client.formattedEmail()).child(project.id).child("isEnded").setValue(true)
+			delay(delay: 1/2, closure: {
+				self.showAlertWithOneAction(title: "Проект заврешен", message: "", handle: {
+					
+				})
 			})
+			
 		}
+		navigationController?.pushViewController(projectsVC, animated: true)
 	}
 	
 	@IBAction func changeUser() {
-		let ref = Database.database().reference().child("users")
-		ref.observeSingleEvent(of: .value) { (snapshot) in
-			let value = snapshot.value as? [String: [String: Any]]
-			let keys = value?.keys.map{String($0)} ?? []
-			
-			TablePicker.show(fromVC: self, withData: keys, isMultiple: false, title: "Выберите id юзера", andCompletion: { (results) in
-				delay(delay: 1, closure: {
-					let id = results[0]
-					let changeUserVC = ChangeUserViewController()
-					changeUserVC.userId = id
-					let userDict = value?[id]
-					let name = userDict?["name"] as? String
-					let phone = userDict?["phone"] as? String
-					changeUserVC.phone = phone
-					changeUserVC.name = name
-					self.navigationController?.pushViewController(changeUserVC, animated: true)
-				})
-			})
-		}
+//		let usersvc = AdminClientsViewController()
+//		
+//		let ref = Database.database().reference().child("users")
+//		ref.observeSingleEvent(of: .value) { (snapshot) in
+//			let value = snapshot.value as? [String: [String: Any]]
+//			let keys = value?.keys.map{String($0)} ?? []
+//			
+//			TablePicker.show(fromVC: self, withData: keys, isMultiple: false, title: "Выберите id юзера", andCompletion: { (results) in
+//				delay(delay: 1, closure: {
+//					let id = results[0]
+//					let changeUserVC = ChangeUserViewController()
+//					changeUserVC.userId = id
+//					let userDict = value?[id]
+//					let name = userDict?["name"] as? String
+//					let phone = userDict?["phone"] as? String
+//					changeUserVC.phone = phone
+//					changeUserVC.name = name
+//					self.navigationController?.pushViewController(changeUserVC, animated: true)
+//				})
+//			})
+//		}
 		
 	}
 	

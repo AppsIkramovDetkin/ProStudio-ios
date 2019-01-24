@@ -97,6 +97,7 @@ extension AdminControlViewController: UITableViewDelegate, UITableViewDataSource
 			case 1:
 				cell.textLabel?.text = "Категория"
 				cell.detailTextLabel?.text = project.type
+				cell.detailTextLabel?.textColor = ProjectType(rawValue: project.type)?.color
 			case 2:
 				cell.textLabel?.text = "Клиент"
 				cell.detailTextLabel?.text = project.client

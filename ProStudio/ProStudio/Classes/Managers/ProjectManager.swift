@@ -51,7 +51,24 @@ class ProjectManager {
 				}
 			}
 			
-			completion(s)
+			let ref = Database.database().reference().child("users")
+			ref.observeSingleEvent(of: .value, with: { (snapshot) in
+				if let arr = snapshot.value as? [String: [String: Any]] {
+					arr.forEach({ (element) in
+						let email = element.value["email"] as! String
+						let ili = s.contains(where: { (fd) -> Bool in
+							return fd.email == email
+						})
+						
+						if !ili {
+							s.append(PSUser.init(email: email))
+						}
+					})
+							completion(s)
+				}
+			})
+			
+	
 		}
 	}
 	
@@ -73,6 +90,8 @@ class ProjectManager {
 					
 				}
 				completion(allProjects.sorted{$0.startDate < $1.startDate})
+			} else {
+				completion([])
 			}
 			
 		}
@@ -207,5 +226,11 @@ extension Decodable {
 			print("Deserialize error: \(error.localizedDescription)")
 			return nil
 		}
+	}
+}
+extension Encodable {
+	var dictionary: [String: Any]? {
+		guard let data = try? JSONEncoder().encode(self) else { return nil }
+		return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
 	}
 }

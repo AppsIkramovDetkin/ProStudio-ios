@@ -15,7 +15,7 @@ class RegistraionViewController: UIViewController {
 		NavigationBarDecorator.decorate(self)
 		hero.isEnabled = true
 		loginButton.touched = {
-			let vc = UINavigationController(rootViewController: ClientViewController())
+			let vc = UINavigationController(rootViewController: AuthorizationScreen())
 			self.present(vc, animated: true, completion: nil)
 		}
 		hero.isEnabled = true

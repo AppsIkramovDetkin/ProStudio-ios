@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddProjectViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
@@ -18,6 +19,9 @@ class AddProjectViewController: UIViewController {
 	private var isOnBranding = false
 	private var isOnPromotion = false
 	private var isOnAnalytics = false
+	var project: Project = Project()
+	let datepicker = UIDatePicker()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -25,6 +29,12 @@ class AddProjectViewController: UIViewController {
 		registerNibs()
 		customNavBar()
 		self.title = "Добавить проект"
+		datepicker.addTarget(self, action: #selector(datechanged(sender:)), for: .valueChanged)
+	}
+	
+	@objc private func datechanged(sender: UIDatePicker) {
+		project.startDate = sender.date.timeIntervalSince1970
+		tableView.reloadData()
 	}
 	
 	private func customNavBar() {
@@ -65,6 +75,11 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! StandartTextFieldCell
 			cell.textField.placeholder = "Выберите название проекта"
 			cell.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+			cell.textChanged = {
+				text in
+				
+				self.project.name = text
+			}
 			return cell
 		} else if indexPath.row == 3 {
 			let cell = UITableViewCell()
@@ -134,16 +149,63 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 		} else if indexPath.row == 11 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! StandartTextFieldCell
 			cell.textField.placeholder = "Выберите дату начала проекта"
+			cell.textField.inputView = datepicker
+			cell.textField.text = project.getStartDate().convertFormateToNormDateString(format: "dd.MM.yyyy")
 			cell.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
 			return cell
 		} else if indexPath.row == 12 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: buttonCell, for: indexPath) as! ButtonCell
 			cell.button.setTitle("ДОБАВИТЬ ПРОЕКТ", for: .normal)
 			cell.backgroundColor = UIColor.clear
+			cell.touched = buttonClicked
 			return cell
 		}
 		return UITableViewCell()
 	}
+	
+	func buttonClicked() {
+		let vc = AdminClientsViewController()
+		vc.userSelected = { user in
+			vc.navigationController?.popViewController(animated: true)
+			let email = user.email
+			let projectName = self.project.name
+			guard !email.isEmpty && !projectName.isEmpty else {
+				self.showAlert(title: "ошибка", message: "Заполните почту клиента, имя проекта и этапы")
+				return
+			}
+			func date(_ str: String) -> Date {
+				let dateFormatter = DateFormatter()
+				dateFormatter.dateFormat = "dd.MM.yyyy"
+				return dateFormatter.date(from: str)!
+			}
+			
+			let ref = Database.database().reference()
+			
+			let id = ID()
+			let step = ProjectStep()
+			step.endDate = Date().timeIntervalSince1970
+			step.isEnded = false
+			step.name = "Начало проекта"
+			let dict = [
+				"id": id,
+				"client": email,
+				"type": self.project.type,
+				"startDate": self.project.startDate,
+				"endDate": self.project.endDate,
+				"name": projectName,
+				"isEnded": false,
+				"progress": 0,
+				"steps": [step.dictionary!]
+				] as [String : Any]
+			
+			ref.child("projects").child(email.formattedEmail()).child(id).setValue(dict)
+			self.showAlertWithOneAction(title: "Готово", message: "Проект создан") {
+				self.navigationController?.popViewController(animated: true)
+			}
+		}
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.row == 0 || indexPath.row == 3 || indexPath.row == 9 {
@@ -166,6 +228,7 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 			isOnAnalytics = false
 			isOnPromotion = false
 			tableView.reloadData()
+			project.type = ProjectType.appsAndSites.rawValue
 		}
 		
 		if indexPath.row == 6 {
@@ -174,6 +237,7 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 			isOnAnalytics = false
 			isOnPromotion = false
 			tableView.reloadData()
+			project.type = ProjectType.branding.rawValue
 		}
 		
 		if indexPath.row == 7 {
@@ -182,6 +246,8 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 			isOnAnalytics = false
 			isOnPromotion = true
 			tableView.reloadData()
+			project.type = ProjectType.seo.rawValue
+			
 		}
 		
 		if indexPath.row == 8 {
@@ -190,6 +256,7 @@ extension AddProjectViewController: UITableViewDelegate, UITableViewDataSource {
 			isOnAnalytics = true
 			isOnPromotion = false
 			tableView.reloadData()
+			project.type = ProjectType.analytics.rawValue
 		}
 	}
 	
