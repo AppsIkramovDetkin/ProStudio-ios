@@ -17,6 +17,15 @@ enum ProjectType: String {
     case branding = "Брендинг"
     case seo = "Продвижение"
     case analytics = "Аналитика"
+	
+	var color: UIColor {
+		switch self {
+		case .appsAndSites: return UIColor(netHex: 0x0081CC)
+		case .branding: return UIColor(netHex: 0xF7C200)
+		case .seo: return UIColor(netHex: 0x8E1C77)
+		case .analytics: return UIColor(netHex: 0xDB2149)
+		}
+	}
 }
 
 extension String {
