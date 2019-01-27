@@ -56,11 +56,10 @@ final class PSCircularView: UIView {
     
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)
-		
 		addCircleView()
 		addLabel()
 	}
-    let shape = CAShapeLayer()
+	private let shape = CAShapeLayer()
 	private func updateLineWidths() {
 //        circleLayerGradientMask.lineWidth = lineWidth
         shape.lineWidth = lineWidth
@@ -92,7 +91,7 @@ final class PSCircularView: UIView {
 	}
 	
     
-    var isLayouted = false
+	var isLayouted = false
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
@@ -124,36 +123,54 @@ final class PSCircularView: UIView {
 	}
 	
 	private func addLayersForCircleView() {
-        let scale: CGFloat = 0.9
-        let delta = bounds.height - bounds.height * scale
-        let ovalIn = CGRect(x: bounds.origin.x + delta / 2, y: bounds.origin.y + delta / 2, width: bounds.width * scale, height: bounds.height * scale)
-        let path = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width / 2 - backLineWidth/2, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
-        
-        shape.fillColor = UIColor.clear.cgColor
-        shape.lineWidth = backLineWidth
-        shape.lineCap = .round
-        shape.strokeStart = 0
-        shape.strokeEnd = 1
-        shape.path = path.cgPath
-        shape.position = circleView.center
-        let staticShape = CAShapeLayer()
-        staticShape.fillColor = UIColor.clear.cgColor
-        staticShape.strokeColor = project.gradientsColor[1].withAlphaComponent(0.1).cgColor
-        staticShape.lineWidth = backLineWidth
-        staticShape.lineCap = .round
-        staticShape.path = path.cgPath
-        staticShape.position = circleView.center
-        layer.addSublayer(staticShape)
-        
-        layer.addSublayer(shape)
-        let gradient = CAGradientLayer()
-        gradient.frame = bounds
-        gradient.colors = project.gradientsColor.map{$0.cgColor}
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        gradient.mask = shape
-        
-        layer.addSublayer(gradient)
+		let scale: CGFloat = 0.8
+//		let delta = bounds.height - bounds.height * scale
+//		let ovalIn = CGRect(x: bounds.origin.x + delta / 2, y: bounds.origin.y + delta / 2, width: bounds.width * scale, height: bounds.height * scale)
+		let path = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width*scale / 2 - backLineWidth/2, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
+		
+		let whitePath = UIBezierPath(arcCenter: CGPoint.init(x: bounds.width / 2, y: bounds.height / 2), radius: bounds.width*scale / 2 - backLineWidth, startAngle: CGFloat(Double.pi / 2 * -1), endAngle: CGFloat(Double.pi / 2 * -1 + Double.pi * 2), clockwise: true)
+		
+		shape.fillColor = UIColor.clear.cgColor
+		shape.lineWidth = backLineWidth
+		shape.lineCap = .round
+		shape.strokeStart = 0
+		shape.strokeEnd = 1
+		shape.path = path.cgPath
+		shape.position = circleView.center
+		shape.shadowOpacity = 0.8
+		shape.shadowOffset = CGSize.zero
+		shape.shadowRadius = 10
+		
+		
+		layer.addSublayer(shape)
+		
+		
+		let staticShape = CAShapeLayer()
+		staticShape.fillColor = UIColor.white.cgColor
+		
+		staticShape.strokeColor = project.gradientsColor[1].withAlphaComponent(0.1).cgColor
+		staticShape.lineWidth = backLineWidth
+		staticShape.lineCap = .round
+		staticShape.path = path.cgPath
+		staticShape.position = circleView.center
+		layer.addSublayer(staticShape)
+	
+		let lineGradient = CAGradientLayer()
+		lineGradient.frame = bounds
+		lineGradient.colors = project.gradientsColor.map{$0.cgColor}
+		lineGradient.startPoint = CGPoint(x: 0, y: 0)
+		lineGradient.endPoint = CGPoint(x: 1, y: 1)
+		lineGradient.mask = shape
+		
+		layer.addSublayer(lineGradient)
+		
+		
+		let whiteLayer = CAShapeLayer()
+		whiteLayer.fillColor = UIColor.white.cgColor
+		whiteLayer.path = whitePath.cgPath
+		whiteLayer.position = circleView.center
+		layer.addSublayer(whiteLayer)
+		
 	}
 	
 }
