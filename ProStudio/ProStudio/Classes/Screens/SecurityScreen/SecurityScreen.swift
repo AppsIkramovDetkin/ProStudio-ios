@@ -106,7 +106,7 @@ class SecurityScreen: UIViewController {
 		let tabBarController = UITabBarController()
 		
 		//1.
-		let listVC = UINavigationController.init(rootViewController: ProjectsList())
+		let listVC = UINavigationController.init(rootViewController: ProgressListViewController())
 		listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
 		//2.
 		let cabinetVC = PersonalAccount()

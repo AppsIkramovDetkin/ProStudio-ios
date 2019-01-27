@@ -16,6 +16,8 @@ class PSScaleView: UIView {
 		}
 	}
 	
+	var outed: VoidClosure?
+	
 	private func scaleOut() {
 		UIView.animate(withDuration: 0.12) {
 			self.transform = .identity
@@ -29,6 +31,7 @@ class PSScaleView: UIView {
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		scaleOut()	
 		UIImpactFeedbackGenerator(style: .light).impactOccurred()
+		outed?()
 	}
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

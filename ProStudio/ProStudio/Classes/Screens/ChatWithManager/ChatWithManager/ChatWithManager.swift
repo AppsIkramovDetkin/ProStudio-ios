@@ -1,6 +1,7 @@
 import UIKit
 import ImagePicker
 import AlamofireImage
+import IQKeyboardManagerSwift
 
 class ChatWithManager: UIViewController {
 	
@@ -23,6 +24,23 @@ class ChatWithManager: UIViewController {
 			self.chatHeight.constant = min(self.tableView.contentSize.height, 575)
 			self.view.layoutIfNeeded()
 		}
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		textField.layer.cornerRadius = textField.frame.height / 2
+	}
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		IQKeyboardManager.shared.enable = true
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		IQKeyboardManager.shared.enable = false
+		textField.inputAccessoryView = nil
 	}
 	
 	var userId: String?
@@ -48,6 +66,12 @@ class ChatWithManager: UIViewController {
 		ProjectManager.shared.observeMessages(userId: userId) { (messages) in
 			self.messages = messages
 		}
+		let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+		tableView.addGestureRecognizer(tap)
+	}
+	
+	@objc private func tapped() {
+		view.endEditing(true)
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {

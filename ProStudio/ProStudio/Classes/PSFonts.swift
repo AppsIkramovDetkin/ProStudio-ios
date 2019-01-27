@@ -9,7 +9,7 @@
 import UIKit
 
 struct PSFonts {
-	static let projectListHeaderButtons = UIFont(name: "Intro-Book", size: 17)
+	static let projectListHeaderButtons = PSFont.introRegular.with(size: 17)
 	static let placeholder = UIFont(name: "Intro-Regular", size: 17)
 	static let textInTextField = UIFont(name: "Intro-Book", size: 21)
 	static let buttonTitle = UIFont(name: "Intro-Bold", size: 17)

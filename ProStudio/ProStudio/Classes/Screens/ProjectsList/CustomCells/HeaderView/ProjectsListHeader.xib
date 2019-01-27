@@ -13,6 +13,9 @@
         <array key="Intro-Bold.otf">
             <string>Intro-Bold</string>
         </array>
+        <array key="Intro-Regular.otf">
+            <string>Intro-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -57,7 +60,7 @@
                     </constraints>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N9o-KD-1XX">
-                    <rect key="frame" x="138" y="9.5" width="139" height="29"/>
+                    <rect key="frame" x="138" y="7.5" width="139" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="139" id="W64-SO-JXW"/>
                     </constraints>
@@ -75,8 +78,8 @@
                     <state key="normal" title="Добавить"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Jd-71V">
-                    <rect key="frame" x="12" y="7" width="121" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="12" y="7" width="121" height="29"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="17"/>
                     <state key="normal" title="Прогресс"/>
                 </button>
             </subviews>

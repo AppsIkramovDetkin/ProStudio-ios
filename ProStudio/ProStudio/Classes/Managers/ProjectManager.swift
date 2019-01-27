@@ -196,6 +196,10 @@ class Project: Decodable, Searchable {
 		return Date(timeIntervalSince1970: endDate)
 	}
 	
+	func getType() -> ProjectType? {
+		return ProjectType(rawValue: type)
+	}
+	
 	var gradientsColor: [UIColor] {
 		let typed = ProjectType(rawValue: type)!
 		switch typed {

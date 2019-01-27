@@ -74,9 +74,15 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 		}
 		
 		cell.selectionStyle = .none
-		
+		cell.nowSelected = {
+			let id = self.projects[indexPath.row].project.id
+			let vc = ProgressListViewController()
+			vc.projectIdToFocus = id
+			self.navigationController?.pushViewController(vc, animated: true)
+		}
 		return cell
 	}
+	
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 118.5
@@ -105,11 +111,12 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 			self.navigationController?.pushViewController(disc, animated: true)
 		}
 		headerView.progressButtonClicked = {
-			let vc = ProgressListViewController()
-			vc.hero.isEnabled = true
-			//            self.definesPresentationContext = true
-			vc.modalPresentationStyle = .currentContext
-			self.navigationController?.pushViewController(vc, animated: true)
+//			let vc = ProgressListViewController()
+//			vc.hero.isEnabled = true
+//			//            self.definesPresentationContext = true
+//			vc.modalPresentationStyle = .currentContext
+//			self.navigationController?.pushViewController(vc, animated: true)
+			self.smartBack()
 		}
 //		headerView.tintColor = UIColor.white
 		

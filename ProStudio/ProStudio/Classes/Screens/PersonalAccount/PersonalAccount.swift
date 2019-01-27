@@ -30,8 +30,9 @@ class PersonalAccount: UIViewController {
 		super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
-		title = "Личный кабинет"
+		navigationItem.title = "Личный кабинет"
 		registerCells()
+		NavigationBarDecorator.decorate(self)
 		tableView.separatorInset = .zero
 		tableView.isScrollEnabled = true
 		updateHeader()
@@ -100,19 +101,20 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFie
 			cell.selectionStyle = .none
 			cell.aboutUserTextField.isUserInteractionEnabled = false
 			cell.aboutUserTextField.text = currentUser.email
+			
 			return cell
 		} else if indexPath.row == 2 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.notificationCell.rawValue, for: indexPath) as! NotificationCell
 			cell.selectionStyle = .none
 			
 			return cell
-			
 		} else if indexPath.row == 1 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.aboutUserCell.rawValue, for: indexPath) as! AboutUserCell
 			cell.selectionStyle = .none
 			cell.numberSettings()
 			cell.aboutUserTextField.text = phone
 			cell.aboutUserTextField.delegate = self
+			cell.aboutUserTextField.isUserInteractionEnabled = false
 			cell.aboutUserTextField.placeholder = "Введите телефон"
 			return cell
 			

@@ -27,6 +27,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var indexLabel: UILabel!
+	var projectIdToFocus: String?
 	var projects: [Project] = []
 	var currentSteps: [ProjectStep] = []
 	override func viewDidLoad() {
@@ -51,6 +52,9 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 				let view = PSCircularView(project: project)
 				view.backgroundColor = .white
 				view.tag = i
+				view.label.textColor = project.getType()?.color
+				view.checkmark.tintColor = project.getType()?.color
+				view.checkmark.isHidden = !project.isEnded
 				view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
 				return view
 			})
@@ -66,6 +70,10 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 //			self.scrollViewHeight.constant = self.scrollView.contentSize.height
 			self.projects = projects
 			self.tableView.reloadData()
+			
+			if let id = self.projectIdToFocus {
+				self.scroll(to: id)
+			}
 		}
 		// Do any additional setup after loading the view.
 	}
@@ -117,7 +125,8 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	}
 	
 	@objc private func leftButtonClicked() {
-		smartBack()
+		let vc = ProjectsList()
+		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	func setupscrollView(slides: [UIView]) {
@@ -145,6 +154,15 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		self.scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(slides.count), height: scrollView.frame.height)
 	}
 	
+	func scroll(to projectId: String) {
+		let projectIndex = projects.firstIndex { (p) -> Bool in
+			return p.id == projectIdToFocus
+		}!
+		
+		let width = 250
+		let offset = CGFloat(projectIndex * width)
+		scrollView.setContentOffset(CGPoint.init(x: offset, y: 0), animated: true)
+	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		guard scrollView == self.scrollView else {
@@ -193,7 +211,7 @@ extension ProgressListViewController: UITableViewDelegate, UITableViewDataSource
 		let step = currentSteps[indexPath.row]
 		
 		if !step.isEnded {
-			cell.leftIconView.image = UIImage(named: "time")
+			cell.leftIconView.image = UIImage(named: "group55")
 			cell.rightLabel.textColor = PSColor.cerulean
 		} else {
 			cell.leftIconView.image = UIImage(named: "checkmark")
