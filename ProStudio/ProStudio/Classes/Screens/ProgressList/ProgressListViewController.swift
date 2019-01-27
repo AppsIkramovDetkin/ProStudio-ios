@@ -50,6 +50,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		ProjectManager.shared.loadProjects { (projects) in
 			let views = projects.enumerated().map({ (i, project) -> PSCircularView in
 				let view = PSCircularView(project: project)
+				view.clipsToBounds = false
 				view.backgroundColor = .white
 				view.tag = i
 				view.label.textColor = project.getType()?.color
@@ -131,14 +132,14 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	
 	func setupscrollView(slides: [UIView]) {
 		scrollView.showsHorizontalScrollIndicator = false
-		let spacing: CGFloat = (view.bounds.width - 250) / 2
+		let spacing: CGFloat = (view.bounds.width - 305) / 2
 		scrollView.contentInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
 		for i in 0..<slides.count {
 			let slide = slides[i]
 			
 			slide.translatesAutoresizingMaskIntoConstraints = false
 			scrollView.addSubview(slide)
-			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide(250)]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
+			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide(305)]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
 			if slides.contains(index: i - 1) {
 				let prevSlide = slides[i - 1]
 				if i == slides.count - 1 {
