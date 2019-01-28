@@ -1,13 +1,16 @@
 import UIKit
 import ImagePicker
 import AlamofireImage
+import IQKeyboardManagerSwift
 
 class ChatWithManager: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var textField: ChatTextField!
 	@IBOutlet weak var sendButton: UIButton!
-	@IBOutlet weak var chatHeight: NSLayoutConstraint!
+//	@IBOutlet weak var chatHeight: NSLayoutConstraint!
+	
+	@IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
 	
 	private let imageChatCellLeft   = "ImageChatCellLeft"
 	private let imageChatCellRight  = "ImageChatCellRight"
@@ -20,8 +23,8 @@ class ChatWithManager: UIViewController {
 				tableView.scrollToRow(at: IndexPath.init(row: tableView.numberOfRows(inSection: 0) - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: false)
 			}
 			
-			self.chatHeight.constant = min(self.tableView.contentSize.height, 575)
-			self.view.layoutIfNeeded()
+//			self.chatHeight.constant = min(self.tableView.contentSize.height, 575)
+//			self.view.layoutIfNeeded()
 		}
 	}
 	
@@ -47,6 +50,35 @@ class ChatWithManager: UIViewController {
 		
 		ProjectManager.shared.observeMessages(userId: userId) { (messages) in
 			self.messages = messages
+		}
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		IQKeyboardManager.shared.enableAutoToolbar = false
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		IQKeyboardManager.shared.enableAutoToolbar = true
+		
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
+	@objc private func handleKeyboard(notification: NSNotification) {
+		guard let userInfo = notification.userInfo else { return }
+		if let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+			
+			let isShowing = notification.name == UIResponder.keyboardWillShowNotification
+			textFieldBottomConstraint?.constant = isShowing ? frame.height - 40 : 12
+			
+			UIView.animate(withDuration: 0) {
+				self.view.layoutIfNeeded()
+			}
 		}
 	}
 	
