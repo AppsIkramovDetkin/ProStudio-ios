@@ -234,26 +234,26 @@
                                 <constraint firstAttribute="height" constant="44" id="P2p-I8-IZp"/>
                                 <constraint firstAttribute="width" secondItem="q9n-GM-KaU" secondAttribute="height" multiplier="1:1" id="uYt-QO-3n4"/>
                             </constraints>
-                            <state key="normal" image="vk"/>
+                            <state key="normal" image="behance"/>
                             <connections>
                                 <action selector="vk" destination="-1" eventType="touchUpInside" id="SD7-nf-CXv"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-gk-xtB">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmV-br-Ftk">
                             <rect key="frame" x="60" y="0.5" width="44" height="44"/>
-                            <state key="normal" image="facebook"/>
+                            <state key="normal" image="youtube"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9C-Sh-0lJ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-gk-xtB">
                             <rect key="frame" x="119.5" y="0.5" width="44" height="44"/>
-                            <state key="normal" image="twitter"/>
+                            <state key="normal" image="facebook"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwe-N1-fl4">
                             <rect key="frame" x="179.5" y="0.5" width="44" height="44"/>
-                            <state key="normal" image="ok"/>
+                            <state key="normal" image="vk"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmV-br-Ftk">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9C-Sh-0lJ">
                             <rect key="frame" x="239" y="0.5" width="44" height="44"/>
-                            <state key="normal" image="youtube"/>
+                            <state key="normal" image="twitter"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT0-4e-p9f">
                             <rect key="frame" x="299" y="0.5" width="44" height="44"/>
@@ -297,14 +297,14 @@
         </view>
     </objects>
     <resources>
-        <image name="facebook" width="20.908296585083008" height="20.751091003417969"/>
-        <image name="geo-circle" width="129" height="129"/>
-        <image name="google_plus" width="20.908296585083008" height="20.751091003417969"/>
-        <image name="mail-circle" width="129" height="129"/>
-        <image name="ok" width="20.908296585083008" height="20.751091003417969"/>
-        <image name="phone-circle" width="129" height="129"/>
-        <image name="twitter" width="20.908296585083008" height="20.751091003417969"/>
-        <image name="vk" width="20.908296585083008" height="20.751091003417969"/>
-        <image name="youtube" width="20.908296585083008" height="20.751091003417969"/>
+        <image name="behance" width="45" height="45"/>
+        <image name="facebook" width="45" height="45"/>
+        <image name="geo-circle" width="45" height="45"/>
+        <image name="google_plus" width="45" height="45"/>
+        <image name="mail-circle" width="45" height="45"/>
+        <image name="phone-circle" width="45" height="45"/>
+        <image name="twitter" width="45" height="45"/>
+        <image name="vk" width="45" height="45"/>
+        <image name="youtube" width="45" height="45"/>
     </resources>
 </document>

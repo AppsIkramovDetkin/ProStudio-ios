@@ -33,7 +33,7 @@ class PersonalAccount: UIViewController {
 		navigationItem.title = "Личный кабинет"
 		registerCells()
 		NavigationBarDecorator.decorate(self)
-		tableView.separatorInset = .zero
+		tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
 		tableView.isScrollEnabled = true
 		updateHeader()
 		tableView.tableFooterView = UIView()

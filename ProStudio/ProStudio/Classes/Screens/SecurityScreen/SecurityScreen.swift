@@ -110,7 +110,7 @@ class SecurityScreen: UIViewController {
 		listVC.tabBarItem = UITabBarItem(title: "Проекты", image: UIImage.init(named: "projects"), tag: 0)
 		//2.
 		let cabinetVC = PersonalAccount()
-		let cabinetItem = UITabBarItem(title: "Кабинет", image: UIImage.init(named: "profile"), tag: 1)
+		let cabinetItem = UITabBarItem(title: "Личный кабинет", image: UIImage.init(named: "profile"), tag: 1)
 		let inset3: CGFloat = 0
 		cabinetItem.imageInsets = UIEdgeInsets(top: inset3, left: inset3, bottom: inset3, right: inset3)
 		cabinetVC.tabBarItem = cabinetItem

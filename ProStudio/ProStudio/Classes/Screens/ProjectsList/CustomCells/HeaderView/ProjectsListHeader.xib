@@ -21,11 +21,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="9hH-fd-gLr" customClass="ProjectsListHeader" customModule="ProStudio" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="415" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-PM-2ip">
-                    <rect key="frame" x="0.0" y="0.0" width="415" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-eD-QJC">
@@ -109,7 +109,7 @@
                 <outlet property="projectsListLabel" destination="Hql-Gh-zhQ" id="wi3-Vc-pQc"/>
                 <outlet property="projectsPicker" destination="N9o-KD-1XX" id="Jx1-Rl-CBG"/>
             </connections>
-            <point key="canvasLocation" x="25" y="194"/>
+            <point key="canvasLocation" x="24.800000000000001" y="169.56521739130437"/>
         </view>
     </objects>
 </document>

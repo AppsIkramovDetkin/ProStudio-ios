@@ -85,7 +85,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 118.5
+		return 97
 	}
 	
 	func sort(all: Bool) {

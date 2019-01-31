@@ -95,7 +95,7 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="DPH-yD-UVK"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-OW-5a9">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-OW-5a9">
                     <rect key="frame" x="309" y="297" width="19" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="2Kh-Qz-si4"/>
