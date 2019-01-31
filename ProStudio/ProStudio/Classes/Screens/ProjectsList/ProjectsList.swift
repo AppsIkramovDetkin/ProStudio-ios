@@ -65,7 +65,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 		
 		cell.colorsForGradient = projects[indexPath.row].project.gradientsColor
 		cell.taskTitle.setText(projects[indexPath.row].taskTitle)
-		cell.taskComment.setText(projects[indexPath.row].commentForTask)
+		cell.taskComment.setText(projects[indexPath.row].commentForTask.lowercased())
 		
 		if projects[indexPath.row].done {
 			cell.settingsCell(done: true)

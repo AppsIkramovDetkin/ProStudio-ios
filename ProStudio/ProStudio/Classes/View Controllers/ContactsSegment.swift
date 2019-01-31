@@ -8,7 +8,8 @@
 
 import UIKit
 
-@IBDesignable final class ContactsSegment: UIView {
+@IBDesignable
+final class ContactsSegment: UIView {
     
     @IBInspectable public var image: UIImage = UIImage() {
         didSet {
@@ -95,7 +96,7 @@ import UIKit
         bottomLine.frame = CGRect(x: 0, y: self.frame.height - 2,
                                   width: self.frame.width, height: 2)
 			
-				let iconTopPadding = self.frame.height * 0.280
+				let iconTopPadding = self.frame.height * 0.33
         let iconLeftPadding = self.frame.width * 0.19
         var topPadding = self.frame.height * 0.27
         let size = self.frame.width * 0.11

@@ -20,17 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="BZ9-LU-Pbk">
-                        <rect key="frame" x="263" y="11" width="41" height="41"/>
+                        <rect key="frame" x="263" y="15" width="41" height="41"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="BZ9-LU-Pbk" secondAttribute="height" multiplier="1:1" id="Vzd-Bu-mSE"/>
                             <constraint firstAttribute="width" constant="41" id="yhY-Bl-jp6"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoX-3s-ZLg">
-                        <rect key="frame" x="42" y="11" width="196" height="99"/>
+                        <rect key="frame" x="42" y="15" width="196" height="95"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxC-7h-O48">
-                                <rect key="frame" x="15" y="14" width="166" height="71"/>
+                                <rect key="frame" x="15" y="14" width="166" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triag-1" translatesAutoresizingMaskIntoConstraints="NO" id="x0X-sZ-Zuk">
-                        <rect key="frame" x="234" y="11" width="22" height="10"/>
+                        <rect key="frame" x="232" y="15" width="22" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="GnL-iJ-5jm"/>
                             <constraint firstAttribute="height" constant="10" id="YqP-pt-EYQ"/>
@@ -67,8 +67,8 @@
                     <constraint firstItem="PxC-7h-O48" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vRj-C1-GUV" secondAttribute="leading" constant="57" id="0Bo-t7-TOc"/>
                     <constraint firstItem="BoX-3s-ZLg" firstAttribute="top" secondItem="BZ9-LU-Pbk" secondAttribute="top" id="2Jm-ef-qAm"/>
                     <constraint firstItem="GPY-xX-xHU" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="leading" id="3AB-hd-wad"/>
-                    <constraint firstItem="BZ9-LU-Pbk" firstAttribute="top" secondItem="vRj-C1-GUV" secondAttribute="topMargin" id="JjJ-bl-uEE"/>
-                    <constraint firstItem="x0X-sZ-Zuk" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="trailing" constant="-4" id="S31-Of-6Gv"/>
+                    <constraint firstItem="BZ9-LU-Pbk" firstAttribute="top" secondItem="vRj-C1-GUV" secondAttribute="top" constant="15" id="JjJ-bl-uEE"/>
+                    <constraint firstItem="x0X-sZ-Zuk" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="trailing" constant="-6" id="S31-Of-6Gv"/>
                     <constraint firstItem="BZ9-LU-Pbk" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="trailing" constant="25" id="d1q-KI-gW2"/>
                     <constraint firstAttribute="bottom" secondItem="GPY-xX-xHU" secondAttribute="bottom" constant="0.5" id="eTN-N8-Z4i"/>
                     <constraint firstItem="GPY-xX-xHU" firstAttribute="top" secondItem="BoX-3s-ZLg" secondAttribute="bottom" constant="2" id="mqM-U5-3XX"/>

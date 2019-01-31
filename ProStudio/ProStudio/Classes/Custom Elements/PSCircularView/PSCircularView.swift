@@ -19,7 +19,6 @@ final class PSCircularView: UIView {
 		label.text = "65%"
 		label.textAlignment = .center
 		label.font = PSFont.introBold.with(size: 42)
-		
 		return label
 	}()
 	
@@ -106,10 +105,13 @@ final class PSCircularView: UIView {
 		
 		addSubview(label)
 		
-		let constraints: [NSLayoutConstraint] = {
-			return NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[label]|,V:|[label]|", dict: ["label": label])
-		}()
-		
+//		let constraints: [NSLayoutConstraint] = {
+//			return NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[label]|,V:|[label]|", dict: ["label": label])
+//		}()
+		let constraints = [
+			label.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
+			label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 3),
+		]
 		addConstraints(constraints)
 	}
 	
@@ -148,7 +150,8 @@ final class PSCircularView: UIView {
 		let staticShape = CAShapeLayer()
 		staticShape.fillColor = UIColor.white.cgColor
 		
-		staticShape.strokeColor = project.gradientsColor[1].withAlphaComponent(0.1).cgColor
+//		staticShape.strokeColor = project.gradientsColor[1].withAlphaComponent(0.1).cgColor
+		staticShape.strokeColor = PSColor.progressStaticShape.cgColor
 		staticShape.lineWidth = backLineWidth
 		staticShape.lineCap = .round
 		staticShape.path = path.cgPath

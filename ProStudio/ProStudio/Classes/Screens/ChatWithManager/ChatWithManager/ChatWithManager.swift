@@ -47,10 +47,16 @@ class ChatWithManager: UIViewController {
 		textField.layer.borderColor = PSColor.silver.cgColor
 		textField.layer.borderWidth = 0.8
 		textField.autocapitalizationType = .sentences
-		
+		setAttributedPlaceholder()
+		tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
 		ProjectManager.shared.observeMessages(userId: userId) { (messages) in
 			self.messages = messages
 		}
+	}
+	
+	private func setAttributedPlaceholder() {
+		textField.attributedPlaceholder = NSAttributedString(string: "Введите сообщение",
+																												 attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1)])
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -74,7 +80,7 @@ class ChatWithManager: UIViewController {
 		if let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
 			
 			let isShowing = notification.name == UIResponder.keyboardWillShowNotification
-			textFieldBottomConstraint?.constant = isShowing ? frame.height - 40 : 12
+			textFieldBottomConstraint?.constant = isShowing ? -frame.height+65 : -12
 			
 			UIView.animate(withDuration: 0) {
 				self.view.layoutIfNeeded()

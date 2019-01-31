@@ -30,7 +30,7 @@ class PersonalAccount: UIViewController {
 		super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
-		title = "Личный кабинет"
+		title = "Кабинет"
 		registerCells()
 		tableView.separatorInset = .zero
 		tableView.isScrollEnabled = true
@@ -63,7 +63,7 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFie
 		switch textField.placeholder {
 		case "Введите имя":
 			Database.database().reference().child("users").child(currentUser.email!.formattedEmail()).child("name").setValue(textField.text)
-		case "Введите телефон":
+		case "":
 			Database.database().reference().child("users").child(currentUser.email!.formattedEmail()).child("phone").setValue(textField.text)
 		default: break
 		}
@@ -113,7 +113,7 @@ extension PersonalAccount: UITableViewDataSource, UITableViewDelegate, UITextFie
 			cell.numberSettings()
 			cell.aboutUserTextField.text = phone
 			cell.aboutUserTextField.delegate = self
-			cell.aboutUserTextField.placeholder = "Введите телефон"
+			cell.aboutUserTextField.placeholder = ""
 			return cell
 			
 		} else if indexPath.row == 3 {

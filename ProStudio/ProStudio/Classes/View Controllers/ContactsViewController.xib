@@ -39,7 +39,7 @@
                         <constraint firstAttribute="height" constant="42" id="40a-r4-L4g"/>
                     </constraints>
                     <string key="text">Мы работаем с понедельника
-по пятнцу с 10:00 до 19:00.</string>
+по пятнцу с 10:00 до 19:00</string>
                     <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.5083315372467041" blue="0.80997264385223389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="343" height="110"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-P0-81s">
-                                    <rect key="frame" x="32" y="42" width="94.5" height="26"/>
+                                    <rect key="frame" x="20" y="42" width="94.5" height="26"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Позвонить">
                                             <attributes>
@@ -107,7 +107,7 @@
                                 <constraint firstItem="fwc-mD-XPi" firstAttribute="centerY" secondItem="MhD-P0-81s" secondAttribute="centerY" id="AqE-U6-ncH"/>
                                 <constraint firstItem="MhD-P0-81s" firstAttribute="centerY" secondItem="dvh-64-xXR" secondAttribute="centerY" id="S1t-eP-RGL"/>
                                 <constraint firstAttribute="trailing" secondItem="fwc-mD-XPi" secondAttribute="trailing" constant="18" id="YPZ-DV-Z77"/>
-                                <constraint firstItem="MhD-P0-81s" firstAttribute="leading" secondItem="dvh-64-xXR" secondAttribute="leading" constant="32" id="sCu-W1-F8c"/>
+                                <constraint firstItem="MhD-P0-81s" firstAttribute="leading" secondItem="dvh-64-xXR" secondAttribute="leading" constant="20" id="sCu-W1-F8c"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -119,7 +119,7 @@
                             <rect key="frame" x="0.0" y="131" width="343" height="110"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukN-7b-qVa">
-                                    <rect key="frame" x="32" y="42" width="94.5" height="26"/>
+                                    <rect key="frame" x="20" y="42" width="94.5" height="26"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Позвонить">
                                             <attributes>
@@ -153,7 +153,7 @@
                             </subviews>
                             <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="ukN-7b-qVa" firstAttribute="leading" secondItem="N4r-MU-82N" secondAttribute="leading" constant="32" id="1vG-Lt-w6M"/>
+                                <constraint firstItem="ukN-7b-qVa" firstAttribute="leading" secondItem="N4r-MU-82N" secondAttribute="leading" constant="20" id="1vG-Lt-w6M"/>
                                 <constraint firstItem="ukN-7b-qVa" firstAttribute="centerY" secondItem="N4r-MU-82N" secondAttribute="centerY" id="R62-ak-c91"/>
                                 <constraint firstItem="IpO-Bi-cwu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ukN-7b-qVa" secondAttribute="trailing" constant="16" id="TCJ-qN-ahX"/>
                                 <constraint firstAttribute="trailing" secondItem="IpO-Bi-cwu" secondAttribute="trailing" constant="18" id="XGH-4M-Czs"/>
@@ -169,7 +169,7 @@
                             <rect key="frame" x="0.0" y="262" width="343" height="110"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGk-4F-bvj">
-                                    <rect key="frame" x="32" y="42" width="94.5" height="26"/>
+                                    <rect key="frame" x="20" y="42" width="94.5" height="26"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Позвонить">
                                             <attributes>
@@ -205,7 +205,7 @@
                             <constraints>
                                 <constraint firstItem="5Fo-bw-ZWy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yGk-4F-bvj" secondAttribute="trailing" constant="16" id="1B8-zc-ZKF"/>
                                 <constraint firstAttribute="trailing" secondItem="5Fo-bw-ZWy" secondAttribute="trailing" constant="18" id="W1C-h1-Ou0"/>
-                                <constraint firstItem="yGk-4F-bvj" firstAttribute="leading" secondItem="Zu0-v1-Izf" secondAttribute="leading" constant="32" id="WLE-3j-NOe"/>
+                                <constraint firstItem="yGk-4F-bvj" firstAttribute="leading" secondItem="Zu0-v1-Izf" secondAttribute="leading" constant="20" id="WLE-3j-NOe"/>
                                 <constraint firstItem="yGk-4F-bvj" firstAttribute="centerY" secondItem="Zu0-v1-Izf" secondAttribute="centerY" id="eKk-O5-RIJ"/>
                                 <constraint firstItem="5Fo-bw-ZWy" firstAttribute="centerY" secondItem="yGk-4F-bvj" secondAttribute="centerY" id="wt8-uF-Gys"/>
                             </constraints>
