@@ -9,4 +9,5 @@ struct PSColor {
 	static let coolGrey = UIColor(red: 161, green: 162, blue: 162)
 	static let silver = UIColor(red: 198, green: 197, blue: 203)
 	static let veryLightPink = UIColor(red: 190, green: 190, blue: 190)
+	static let progressStaticShape = #colorLiteral(red: 0.9485636353, green: 0.9688937068, blue: 0.9809803367, alpha: 1)
 }

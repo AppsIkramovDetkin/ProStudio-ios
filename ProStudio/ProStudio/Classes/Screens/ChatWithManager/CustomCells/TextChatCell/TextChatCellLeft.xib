@@ -20,24 +20,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="qz5-VK-vMw">
-                        <rect key="frame" x="16" y="4" width="41" height="41"/>
+                        <rect key="frame" x="16" y="15" width="41" height="41"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="qz5-VK-vMw" secondAttribute="height" multiplier="1:1" id="Jh3-77-lWf"/>
                             <constraint firstAttribute="height" constant="41" id="Mxy-iX-nSI"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1q-Ci-pRr">
-                        <rect key="frame" x="82" y="4" width="124" height="85.5"/>
+                        <rect key="frame" x="82" y="15" width="124" height="66"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDw-Md-GQZ">
-                                <rect key="frame" x="15" y="14" width="94" height="57.5"/>
+                                <rect key="frame" x="15" y="14" width="94" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bDw-Md-GQZ" firstAttribute="top" secondItem="g1q-Ci-pRr" secondAttribute="top" constant="14" id="96R-VS-aGl"/>
                             <constraint firstItem="bDw-Md-GQZ" firstAttribute="leading" secondItem="g1q-Ci-pRr" secondAttribute="leading" constant="15" id="MTP-j5-9RB"/>
@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jr-lY-RGo">
-                        <rect key="frame" x="176.5" y="93.5" width="29.5" height="14"/>
+                        <rect key="frame" x="176.5" y="85" width="29.5" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="8on-Jt-epu"/>
                         </constraints>
@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triag-2" translatesAutoresizingMaskIntoConstraints="NO" id="aqJ-g4-sCH">
-                        <rect key="frame" x="64" y="4" width="22" height="10"/>
+                        <rect key="frame" x="66" y="15" width="22" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="8Sd-pC-b97"/>
                             <constraint firstAttribute="height" constant="10" id="OLi-nQ-5yI"/>
@@ -63,13 +63,13 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="g1q-Ci-pRr" firstAttribute="top" secondItem="tzM-OO-hmj" secondAttribute="top" constant="4" id="1BT-kL-5aW"/>
+                    <constraint firstItem="g1q-Ci-pRr" firstAttribute="top" secondItem="tzM-OO-hmj" secondAttribute="top" constant="15" id="1BT-kL-5aW"/>
                     <constraint firstItem="qz5-VK-vMw" firstAttribute="leading" secondItem="tzM-OO-hmj" secondAttribute="leading" constant="16" id="CFe-pU-Ezo"/>
                     <constraint firstItem="aqJ-g4-sCH" firstAttribute="top" secondItem="g1q-Ci-pRr" secondAttribute="top" id="HIf-k0-MFc"/>
-                    <constraint firstItem="g1q-Ci-pRr" firstAttribute="leading" secondItem="aqJ-g4-sCH" secondAttribute="trailing" constant="-4" id="IOg-pJ-Imr"/>
+                    <constraint firstItem="g1q-Ci-pRr" firstAttribute="leading" secondItem="aqJ-g4-sCH" secondAttribute="trailing" constant="-6" id="IOg-pJ-Imr"/>
                     <constraint firstItem="6jr-lY-RGo" firstAttribute="trailing" secondItem="g1q-Ci-pRr" secondAttribute="trailing" id="TIe-Hn-ejg"/>
                     <constraint firstItem="g1q-Ci-pRr" firstAttribute="leading" secondItem="qz5-VK-vMw" secondAttribute="trailing" constant="25" id="Vnq-6h-FwI"/>
-                    <constraint firstAttribute="bottom" secondItem="6jr-lY-RGo" secondAttribute="bottom" constant="4" id="XoQ-H9-LCJ"/>
+                    <constraint firstAttribute="bottom" secondItem="6jr-lY-RGo" secondAttribute="bottom" constant="12.5" id="XoQ-H9-LCJ"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bDw-Md-GQZ" secondAttribute="trailing" constant="57" id="cF7-RU-vBM"/>
                     <constraint firstItem="6jr-lY-RGo" firstAttribute="top" secondItem="g1q-Ci-pRr" secondAttribute="bottom" constant="4" id="cYV-oW-dxO"/>
                     <constraint firstItem="g1q-Ci-pRr" firstAttribute="top" secondItem="qz5-VK-vMw" secondAttribute="top" id="tN4-HK-kNk"/>

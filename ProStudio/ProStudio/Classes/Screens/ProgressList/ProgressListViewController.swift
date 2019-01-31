@@ -42,7 +42,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		titleLabel.hero.id = "title"
 		
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
-//		addRightButton()
+		addRightButton()
 		navigationController?.navigationBar.transparentNavigationBar()
 		navigationController?.navigationBar.barTintColor = .white
 		navigationController?.navigationBar.shadowImage = UIImage()

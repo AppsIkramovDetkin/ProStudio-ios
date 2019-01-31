@@ -20,24 +20,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-vb-ow1" customClass="PSScaleView" customModule="ProStudio" customModuleProvider="target">
-                        <rect key="frame" x="12" y="7" width="320" height="76"/>
+                        <rect key="frame" x="16" y="7" width="312" height="76"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-kI-Ntv">
-                                <rect key="frame" x="275" y="25.333333333333336" width="25" height="25"/>
+                                <rect key="frame" x="267" y="25.333333333333336" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="DlB-u7-iPj"/>
                                     <constraint firstAttribute="width" constant="25" id="Rz4-Z6-Z3w"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-vH-6Om" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="19" width="288" height="17"/>
+                                <rect key="frame" x="16" y="19" width="280" height="17"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="1Uv-ha-Vwp"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U56-tu-5aJ" customClass="ShiftMaskableLabel" customModule="Shift">
-                                <rect key="frame" x="16" y="42" width="288" height="15"/>
+                                <rect key="frame" x="16" y="42" width="280" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="J2V-Q6-hWL"/>
@@ -62,8 +62,8 @@
                 <constraints>
                     <constraint firstItem="E6i-vb-ow1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="9DC-Wc-W0R"/>
                     <constraint firstAttribute="bottom" secondItem="E6i-vb-ow1" secondAttribute="bottom" constant="7" id="CRx-ys-K8C"/>
-                    <constraint firstItem="E6i-vb-ow1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="JWm-Ic-Qfm"/>
-                    <constraint firstAttribute="trailing" secondItem="E6i-vb-ow1" secondAttribute="trailing" constant="12" id="t5X-ZP-fQ0"/>
+                    <constraint firstItem="E6i-vb-ow1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JWm-Ic-Qfm"/>
+                    <constraint firstAttribute="trailing" secondItem="E6i-vb-ow1" secondAttribute="trailing" constant="16" id="t5X-ZP-fQ0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -8,7 +8,9 @@ class ChatWithManager: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var textField: ChatTextField!
 	@IBOutlet weak var sendButton: UIButton!
-	@IBOutlet weak var chatHeight: NSLayoutConstraint!
+//	@IBOutlet weak var chatHeight: NSLayoutConstraint!
+	
+	@IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
 	
 	private let imageChatCellLeft   = "ImageChatCellLeft"
 	private let imageChatCellRight  = "ImageChatCellRight"
@@ -21,8 +23,8 @@ class ChatWithManager: UIViewController {
 				tableView.scrollToRow(at: IndexPath.init(row: tableView.numberOfRows(inSection: 0) - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: false)
 			}
 			
-			self.chatHeight.constant = min(self.tableView.contentSize.height, 575)
-			self.view.layoutIfNeeded()
+//			self.chatHeight.constant = min(self.tableView.contentSize.height, 575)
+//			self.view.layoutIfNeeded()
 		}
 	}
 	
@@ -62,7 +64,8 @@ class ChatWithManager: UIViewController {
 		textField.layer.borderColor = PSColor.silver.cgColor
 		textField.layer.borderWidth = 0.8
 		textField.autocapitalizationType = .sentences
-		
+		setAttributedPlaceholder()
+		tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
 		ProjectManager.shared.observeMessages(userId: userId) { (messages) in
 			self.messages = messages
 		}
@@ -72,6 +75,40 @@ class ChatWithManager: UIViewController {
 	
 	@objc private func tapped() {
 		view.endEditing(true)
+	}
+	
+	private func setAttributedPlaceholder() {
+		textField.attributedPlaceholder = NSAttributedString(string: "Введите сообщение",
+																												 attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1)])
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		IQKeyboardManager.shared.enableAutoToolbar = false
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		IQKeyboardManager.shared.enableAutoToolbar = true
+		
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
+	@objc private func handleKeyboard(notification: NSNotification) {
+		guard let userInfo = notification.userInfo else { return }
+		if let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+			
+			let isShowing = notification.name == UIResponder.keyboardWillShowNotification
+			textFieldBottomConstraint?.constant = isShowing ? -frame.height+65 : -12
+			
+			UIView.animate(withDuration: 0) {
+				self.view.layoutIfNeeded()
+			}
+		}
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
