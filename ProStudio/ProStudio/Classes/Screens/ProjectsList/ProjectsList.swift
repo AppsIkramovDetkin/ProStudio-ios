@@ -12,18 +12,21 @@ class ProjectsList: UIViewController {
 		case projectTaskCell = "ProjectTaskCell"
 	}
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		tableView.backgroundColor = .white
 		registerCells()
 		tableView.separatorStyle = .none
 		hero.isEnabled = true
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.largeTitleDisplayMode = .always
+		self.navigationController?.navigationBar.shadowImage = UIColor.black.withAlphaComponent(0.3).as1ptImage().alpha(0.3)
+		tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
+
+		navigationController?.navigationBar.barTintColor = UIColor.init(netHex: 0xF8F8F8)
+		self.navigationItem.title = "Список проектов"
 		tableView.delaysContentTouches = false
 	}
-	
-	
 	private func addRefresh() {
 		let control = UIRefreshControl(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44))
 		control.addTarget(self, action: #selector(refreshed), for: .valueChanged)
@@ -41,13 +44,8 @@ class ProjectsList: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		refreshed()
-		navigationController?.setNavigationBarHidden(true, animated: true)
 	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		navigationController?.setNavigationBarHidden(false, animated: true)
-	}
+
 }
 
 extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
@@ -62,15 +60,14 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.projectTaskCell.rawValue, for: indexPath) as! ProjectTaskCell
-		
 		cell.colorsForGradient = projects[indexPath.row].project.gradientsColor
 		cell.taskTitle.setText(projects[indexPath.row].taskTitle)
 		cell.taskComment.setText(projects[indexPath.row].commentForTask.lowercased())
 		
 		if projects[indexPath.row].done {
-			cell.settingsCell(done: true)
+			cell.settingsCell(done: true, colors: projects[indexPath.row].project.gradientsColor)
 		} else {
-			cell.settingsCell(done: false)
+			cell.settingsCell(done: false, colors: projects[indexPath.row].project.gradientsColor)
 		}
 		
 		cell.selectionStyle = .none
@@ -85,7 +82,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 	
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 97
+		return 0
 	}
 	
 	func sort(all: Bool) {
@@ -154,5 +151,20 @@ class SearchController<T: Searchable> {
 				return item.parameter.lowercased().contains((text ?? "").lowercased())
 			}
 		})
+	}
+}
+
+extension UIColor {
+	
+	/// Converts this `UIColor` instance to a 1x1 `UIImage` instance and returns it.
+	///
+	/// - Returns: `self` as a 1x1 `UIImage`.
+	func as1ptImage() -> UIImage {
+		UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+		setFill()
+		UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+		let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+		UIGraphicsEndImageContext()
+		return image
 	}
 }

@@ -27,10 +27,10 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoX-3s-ZLg">
-                        <rect key="frame" x="42" y="15" width="196" height="95"/>
+                        <rect key="frame" x="50" y="15" width="188" height="95"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxC-7h-O48">
-                                <rect key="frame" x="15" y="14" width="166" height="67"/>
+                                <rect key="frame" x="8" y="8" width="172" height="79"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,14 +40,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.51372549020000002" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="PxC-7h-O48" secondAttribute="trailing" constant="15" id="M3b-ii-0ka"/>
-                            <constraint firstItem="PxC-7h-O48" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="leading" constant="15" id="XA8-vV-ea7"/>
-                            <constraint firstItem="PxC-7h-O48" firstAttribute="top" secondItem="BoX-3s-ZLg" secondAttribute="top" constant="14" id="ecS-4B-eAk"/>
-                            <constraint firstAttribute="bottom" secondItem="PxC-7h-O48" secondAttribute="bottom" constant="14" id="i6Q-av-Jt2"/>
+                            <constraint firstAttribute="trailing" secondItem="PxC-7h-O48" secondAttribute="trailing" constant="8" id="M3b-ii-0ka"/>
+                            <constraint firstItem="PxC-7h-O48" firstAttribute="leading" secondItem="BoX-3s-ZLg" secondAttribute="leading" constant="8" id="XA8-vV-ea7"/>
+                            <constraint firstItem="PxC-7h-O48" firstAttribute="top" secondItem="BoX-3s-ZLg" secondAttribute="top" constant="8" id="ecS-4B-eAk"/>
+                            <constraint firstAttribute="bottom" secondItem="PxC-7h-O48" secondAttribute="bottom" constant="8" id="i6Q-av-Jt2"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:36" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPY-xX-xHU">
-                        <rect key="frame" x="42" y="112" width="30" height="14"/>
+                        <rect key="frame" x="50" y="112" width="30" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="mGQ-lC-MU4"/>
                         </constraints>

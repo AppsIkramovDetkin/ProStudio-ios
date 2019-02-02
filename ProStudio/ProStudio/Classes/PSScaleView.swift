@@ -12,7 +12,7 @@ class PSScaleView: UIView {
 	
 	private func scaleIn() {
 		UIView.animate(withDuration: 0.12) {
-			self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+			self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
 		}
 	}
 	

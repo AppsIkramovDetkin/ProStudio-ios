@@ -9,9 +9,6 @@
 import UIKit
 extension UINavigationBar {
 	func transparentNavigationBar() {
-//		self.setBackgroundImage(UIImage(), for: .default)
-//		barTintColor = .white
-//		self.shadowImage = UIImage()
 	}
 	
 	func noTransparent() {
@@ -80,12 +77,19 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		navigationItem.title = "Прогресс"
+		title = "Прогресс"
+		navigationItem.titleView = nil
+		
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
 		navigationItem.largeTitleDisplayMode = .never
 		navigationController?.navigationBar.prefersLargeTitles = false
 		navigationController?.navigationBar.barStyle = .default
 		navigationController?.navigationBar.transparentNavigationBar()
 		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
+	
+
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .default
@@ -213,9 +217,11 @@ extension ProgressListViewController: UITableViewDelegate, UITableViewDataSource
 		
 		if !step.isEnded {
 			cell.leftIconView.image = UIImage(named: "group55")
+			cell.titleLabel.textColor = .black
 			cell.rightLabel.textColor = PSColor.cerulean
 		} else {
-			cell.leftIconView.image = UIImage(named: "checkmark")
+			cell.leftIconView.image = UIImage(named: "checka")
+			cell.titleLabel.textColor = PSColor.coolGrey
 			cell.rightLabel.textColor = PSColor.coolGrey
 		}
 		cell.titleLabel.text = step.name

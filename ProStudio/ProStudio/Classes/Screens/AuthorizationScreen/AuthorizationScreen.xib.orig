@@ -43,14 +43,14 @@
                     <state key="normal" title="Отмена"/>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukJ-MB-r1j">
-                    <rect key="frame" x="86" y="134" width="203" height="36"/>
+                    <rect key="frame" x="86" y="109" width="203" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="0Yp-73-Fly"/>
                         <constraint firstAttribute="width" constant="203" id="DrO-mz-JTi"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-GX-t77" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
-                    <rect key="frame" x="47" y="275" width="281" height="36"/>
+                    <rect key="frame" x="47" y="250" width="281" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="BdY-Ut-6Xa"/>
                     </constraints>
@@ -59,13 +59,13 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Задать код доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEA-6m-uRG">
-                    <rect key="frame" x="47" y="325" width="254" height="15"/>
+                    <rect key="frame" x="47" y="300" width="254" height="15"/>
                     <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="15"/>
                     <color key="textColor" red="0.55674988031387329" green="0.55689430236816406" blue="0.57709598541259766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sg6-B2-Gxr">
-                    <rect key="frame" x="77" y="377" width="221" height="15"/>
+                    <rect key="frame" x="77" y="352" width="221" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="221" id="53L-XC-Qt2"/>
                         <constraint firstAttribute="height" constant="15" id="qx0-Qc-dQd"/>
@@ -77,7 +77,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hhadevs@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-aS-lbC" customClass="CustomTextField" customModule="ProStudio" customModuleProvider="target">
-                    <rect key="frame" x="47" y="213" width="281" height="36"/>
+                    <rect key="frame" x="47" y="188" width="281" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="Of9-CR-E9l"/>
                     </constraints>
@@ -86,7 +86,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuH-iE-1zo" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
-                    <rect key="frame" x="47" y="464" width="281" height="50"/>
+                    <rect key="frame" x="47" y="439" width="281" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="UZT-e9-971"/>
                     </constraints>
@@ -95,8 +95,13 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="DPH-yD-UVK"/>
                     </connections>
                 </button>
+<<<<<<< HEAD
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-OW-5a9">
+                    <rect key="frame" x="309" y="297" width="19" height="19"/>
+=======
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-OW-5a9">
-                    <rect key="frame" x="309" y="323" width="19" height="19"/>
+                    <rect key="frame" x="309" y="298" width="19" height="19"/>
+>>>>>>> d2741a7b1ba36c64d999c6a2e2a4273f5750c11c
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="2Kh-Qz-si4"/>
                         <constraint firstAttribute="width" constant="19" id="mxD-uu-No9"/>
@@ -106,7 +111,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-iR-U4d">
-                    <rect key="frame" x="117.66666666666669" y="418" width="140" height="15"/>
+                    <rect key="frame" x="117.66666666666669" y="393" width="140" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="EmC-0A-otN"/>
                         <constraint firstAttribute="width" constant="140" id="LT6-KU-k5j"/>
@@ -120,6 +125,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iuH-iE-1zo" secondAttribute="trailing" constant="47" id="0KY-bB-xAh"/>
                 <constraint firstItem="fFc-aS-lbC" firstAttribute="top" secondItem="ukJ-MB-r1j" secondAttribute="bottom" constant="43" id="2g1-rC-Vpz"/>
+                <constraint firstItem="ukJ-MB-r1j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="109" id="3Dl-OQ-j4E"/>
                 <constraint firstItem="ugO-61-IJL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="5Ub-fF-rTU"/>
                 <constraint firstItem="ukJ-MB-r1j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5le-bj-eBM"/>
                 <constraint firstItem="fFc-aS-lbC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="7pI-G4-2ek"/>
@@ -129,7 +135,6 @@
                 <constraint firstItem="hEA-6m-uRG" firstAttribute="top" secondItem="GB8-GX-t77" secondAttribute="bottom" constant="14" id="GPK-W4-5ra"/>
                 <constraint firstItem="ugO-61-IJL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="If4-Ed-1wj"/>
                 <constraint firstItem="9yk-OW-5a9" firstAttribute="leading" secondItem="hEA-6m-uRG" secondAttribute="trailing" constant="8" id="JV1-ae-LN8"/>
-                <constraint firstItem="ukJ-MB-r1j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="LYy-aT-tQq"/>
                 <constraint firstItem="9yk-OW-5a9" firstAttribute="centerY" secondItem="hEA-6m-uRG" secondAttribute="centerY" id="QL0-qw-ol0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9yk-OW-5a9" secondAttribute="trailing" constant="47" id="V0a-QN-HZ8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GB8-GX-t77" secondAttribute="trailing" constant="47" id="WKI-90-5RJ"/>

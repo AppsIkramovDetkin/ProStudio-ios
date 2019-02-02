@@ -96,7 +96,7 @@
                 <constraint firstItem="R65-8C-ipp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l8f-LD-aZO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q5D-66-7jq" secondAttribute="trailing" constant="86" id="thl-CF-fQc"/>
                 <constraint firstItem="ud5-8T-Opc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ygQ-e1-SYC"/>
-                <constraint firstItem="q5D-66-7jq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="250" constant="109" id="yu8-In-C5k"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="109" id="yu8-In-C5k"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="130.40000000000001" y="152.95566502463055"/>

@@ -178,7 +178,9 @@ class Project: Decodable, Searchable {
 	var startDate: TimeInterval = 0
 	var endDate: TimeInterval = 0
 	var name: String = ""
-	var isEnded = false
+	var isEnded: Bool {
+		return progress == 100
+	}
 	var progress: Int = 0
 	var steps: [ProjectStep] = []
 	
