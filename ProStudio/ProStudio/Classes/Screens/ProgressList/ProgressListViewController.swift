@@ -22,7 +22,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
-	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var titleLabel: SpacedLabel!
 	@IBOutlet weak var indexLabel: UILabel!
 	var projectIdToFocus: String?
 	var projects: [Project] = []
@@ -46,6 +46,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			let newProjects = projects.sorted(by: { (p1, p2) -> Bool in
 				return !p1.isEnded
 			})
+			
 			let views = newProjects.enumerated().map({ (i, project) -> PSCircularView in
 				let view = PSCircularView(project: project)
 				view.clipsToBounds = false
@@ -59,7 +60,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			})
 			if !newProjects.isEmpty {
 				self.currentSteps = newProjects[0].steps
-				self.titleLabel.text = newProjects[0].name.capitalized
+				self.titleLabel.set(text: newProjects[0].name.capitalized, with: 10)
 				self.indexLabel.text = "1 из \(newProjects.count)"
 			} else {
 				self.indexLabel.text = "Проектов нет"
@@ -67,19 +68,26 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			
 			self.setupscrollView(slides: views)
 //			self.scrollViewHeight.constant = self.scrollView.contentSize.height
-			self.projects = newProjects
-			self.tableView.reloadData()
 			
+			self.tableView.reloadData()
+			self.projects = newProjects
 			if let id = self.projectIdToFocus {
 				self.scroll(to: id)
+			} else {
+				if let id = newProjects.first?.id {
+					self.projectIdToFocus = id
+					self.scroll(to: id)
+				}
 			}
+//			self.scrollView.setContentOffset(.zero, animated: true)
+//			self.scrollViewDidEndDragging(self.scrollView, willDecelerate: false)
 		}
 		// Do any additional setup after loading the view.
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		navigationItem.title = "Прогресс"
-		title = "Прогресс"
+		navigationItem.title = "Проекты"
+		title = "Проекты"
 		navigationItem.titleView = nil
 		navigationController?.navigationBar.transparentNavigationBar()
 		navigationController?.navigationBar.barTintColor = .white
@@ -138,15 +146,16 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	}
 	
 	func setupscrollView(slides: [UIView]) {
+		let slideSize: CGFloat = 295
 		scrollView.showsHorizontalScrollIndicator = false
-		let spacing: CGFloat = (view.bounds.width - 305) / 2
+		let spacing: CGFloat = (view.bounds.width - slideSize) / 2
 		scrollView.contentInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
 		for i in 0..<slides.count {
 			let slide = slides[i]
 			
 			slide.translatesAutoresizingMaskIntoConstraints = false
 			scrollView.addSubview(slide)
-			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide(305)]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
+			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
 			if slides.contains(index: i - 1) {
 				let prevSlide = slides[i - 1]
 				if i == slides.count - 1 {
@@ -167,16 +176,19 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			return p.id == projectIdToFocus
 		}!
 		
-		let spacing: CGFloat = (view.bounds.width - 305) / 2
-		let width = CGFloat(305 + spacing)
-		let offset = CGFloat(projectIndex) * width - spacing / 2
+//		let spacing: CGFloat = (view.bounds.width - 295) / 2
+//		let width = CGFloat(295 + spacing)
+//		let offset = CGFloat(projectIndex) * width - spacing / 2
+		
+		let spacing = (view.bounds.width - 295)/2
+		let offset = (view.bounds.width - spacing) * CGFloat(projectIndex) - spacing
 		delay(delay: 0.5) {
 			self.scrollView.setContentOffset(CGPoint.init(x: offset, y: 0), animated: true)
 			
 			delay(delay: 0.3, closure: {
 				let maxView = self.scrollView.subviews.sorted { (view1, view2) -> Bool in
 					return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-					}.first
+				}.first
 				
 				guard let v = maxView else {
 					return
@@ -188,7 +200,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 				
 				self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
 				let project = self.projects[v.tag]
-				self.titleLabel.text = project.name.capitalized
+				self.titleLabel.set(text: project.name.capitalized, with: 10)
 				self.currentSteps = project.steps
 				self.tableView.reloadData()
 				
@@ -202,7 +214,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		}
 		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
 			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-			}.first
+		}[safe: 1]
 		
 		guard let v = maxView else {
 			return
@@ -214,7 +226,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
 		let project = projects[v.tag]
-		titleLabel.text = project.name.capitalized
+		self.titleLabel.set(text: project.name.capitalized, with: 10)
 		self.currentSteps = project.steps
 		self.tableView.reloadData()
 		
@@ -227,7 +239,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
 			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-		}.first
+			}[safe: 1]
 		
 		guard let v = maxView else {
 			return
@@ -235,7 +247,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		let project = projects[v.tag]
 		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-		self.titleLabel.text = project.name.capitalized
+		self.titleLabel.set(text: project.name.capitalized, with: 10)
 		scrollView.scrollRectToVisible(maxView!.frame, animated: true)
 	}
 }

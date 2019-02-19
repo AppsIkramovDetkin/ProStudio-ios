@@ -36,6 +36,8 @@
 		117360D020DD51B100BA156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117360CF20DD51B100BA156C /* Assets.xcassets */; };
 		117360D320DD51B100BA156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117360D120DD51B100BA156C /* LaunchScreen.storyboard */; };
 		117360DE20DD51B100BA156C /* ProStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117360DD20DD51B100BA156C /* ProStudioUITests.swift */; };
+		1C9AAA60221C9A34009E24B3 /* SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9AAA5F221C9A34009E24B3 /* SafeSubscript.swift */; };
+		1C9AAA62221C9CA4009E24B3 /* SpacedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9AAA61221C9CA4009E24B3 /* SpacedLabel.swift */; };
 		2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E002C35216E2A13000C8734 /* ProjectDiscussion.swift */; };
 		2E002C3B216E3018000C8734 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E002C39216E3018000C8734 /* TextFieldCell.swift */; };
 		2E002C3C216E3018000C8734 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E002C3A216E3018000C8734 /* TextFieldCell.xib */; };
@@ -196,6 +198,8 @@
 		117360D920DD51B100BA156C /* ProStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117360DD20DD51B100BA156C /* ProStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStudioUITests.swift; sourceTree = "<group>"; };
 		117360DF20DD51B100BA156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C9AAA5F221C9A34009E24B3 /* SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSubscript.swift; sourceTree = "<group>"; };
+		1C9AAA61221C9CA4009E24B3 /* SpacedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedLabel.swift; sourceTree = "<group>"; };
 		2E002C35216E2A13000C8734 /* ProjectDiscussion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDiscussion.swift; sourceTree = "<group>"; };
 		2E002C39216E3018000C8734 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		2E002C3A216E3018000C8734 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
@@ -659,6 +663,7 @@
 				7C7E555D21906F31009152EC /* ProjectStepTableViewCell.swift */,
 				7C7E555E21906F31009152EC /* ProjectStepTableViewCell.xib */,
 				7C7E555A218F20A7009152EC /* ProgressListViewController.xib */,
+				1C9AAA61221C9CA4009E24B3 /* SpacedLabel.swift */,
 			);
 			path = ProgressList;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				7C7E554A218E03AE009152EC /* PSColor.swift */,
 				0F64834F217298E3003A7170 /* PSFont.swift */,
 				0F64834D2172964B003A7170 /* PSColor.swift */,
+				1C9AAA5F221C9A34009E24B3 /* SafeSubscript.swift */,
 			);
 			path = "Help Files";
 			sourceTree = "<group>";
@@ -1202,6 +1208,7 @@
 				7C7E5553218E0F62009152EC /* ContactsSegment.swift in Sources */,
 				7C7E554F218E0E77009152EC /* ContactsViewController.swift in Sources */,
 				7C7E5557218E174A009152EC /* PSScaleView.swift in Sources */,
+				1C9AAA62221C9CA4009E24B3 /* SpacedLabel.swift in Sources */,
 				ACE59073215BFDF30053EC10 /* ImageChatCell.swift in Sources */,
 				7C7E5555218E0F68009152EC /* ContactsSegmentedControl.swift in Sources */,
 				388B3CC721F6241300B178A7 /* AddProjectViewController.swift in Sources */,
@@ -1233,6 +1240,7 @@
 				0F403D84217A565C00EA5FBF /* ProjectTaskCell.swift in Sources */,
 				0F2B0791216E904100337FA6 /* PersonalAccount.swift in Sources */,
 				117360C920DD51B100BA156C /* AppDelegate.swift in Sources */,
+				1C9AAA60221C9A34009E24B3 /* SafeSubscript.swift in Sources */,
 				2E002C42216E4D1E000C8734 /* PSColors.swift in Sources */,
 				2E002C3B216E3018000C8734 /* TextFieldCell.swift in Sources */,
 				0FCA0921217A2A6C00887BBB /* ProjectsListHeader.swift in Sources */,

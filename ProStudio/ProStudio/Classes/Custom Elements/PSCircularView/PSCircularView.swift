@@ -126,9 +126,10 @@ final class PSCircularView: UIView {
 	
 	private func addCheckmark() {
 		addSubview(checkmark)
-		let size = 25
-		let padding = 0
-		let constraints = NSLayoutConstraint.contraints(withNewVisualFormat: "H:[checkmark(\(size))]-(\(padding))-|,V:|-(\(padding))-[checkmark(\(size))]", dict: ["checkmark": checkmark])
+		let size = 35
+		let horPadding = 0
+		let verPadding = 15
+		let constraints = NSLayoutConstraint.contraints(withNewVisualFormat: "H:[checkmark(\(size))]-(\(horPadding))-|,V:|-(\(verPadding))-[checkmark(\(size))]", dict: ["checkmark": checkmark])
 		addConstraints(constraints)
 	}
 	
