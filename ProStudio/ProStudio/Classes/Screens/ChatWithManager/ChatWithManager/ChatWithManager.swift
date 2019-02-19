@@ -36,12 +36,14 @@ class ChatWithManager: UIViewController {
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		IQKeyboardManager.shared.enable = true
+		IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
 		IQKeyboardManager.shared.enable = false
+		IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 		textField.inputAccessoryView = nil
 	}
 	
@@ -86,6 +88,7 @@ class ChatWithManager: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		IQKeyboardManager.shared.enableAutoToolbar = false
+		IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -94,6 +97,7 @@ class ChatWithManager: UIViewController {
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		IQKeyboardManager.shared.enableAutoToolbar = true
+		IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 		
 		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
 		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)

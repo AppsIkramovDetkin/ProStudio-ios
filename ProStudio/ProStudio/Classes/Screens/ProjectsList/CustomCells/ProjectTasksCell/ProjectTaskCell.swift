@@ -16,7 +16,7 @@ class ProjectTaskCell: UITableViewCell {
 		}
 	}
 	
-	func updateBorder() {
+	func updateBorder() { // это не бордер
 		layer1.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: taskButton.frame.size.height)
 		layer1.startPoint = CGPoint(x: 0, y: 0.5)
 		layer1.endPoint = CGPoint(x: 1, y: 0.5)
@@ -65,7 +65,7 @@ class ProjectTaskCell: UITableViewCell {
 			
 			
 			self.gradient.frame =  CGRect(origin: CGPoint.zero, size: self.taskButton.frame.size)
-			self.gradient.colors = [self.colorsForGradient[0].cgColor, self.colorsForGradient[1].cgColor]
+			self.gradient.colors = [self.colorsForGradient[0].cgColor, self.colorsForGradient[0].cgColor]
 			
 			let shape = CAShapeLayer()
 			shape.lineWidth = 5
@@ -107,14 +107,14 @@ class ProjectTaskCell: UITableViewCell {
 			taskTitle.setColors(colors)
 			taskTitle.start(shiftPoint: .left)
 			taskTitle.end(shiftPoint: .right)
-			taskTitle.animationDuration(1.5)
+			taskTitle.animationDuration(100)
 			taskTitle.maskToText = true
 			taskTitle.startTimedAnimation()
 			
 			taskComment.setColors(colors)
 			taskComment.start(shiftPoint: .left)
 			taskComment.end(shiftPoint: .right)
-			taskComment.animationDuration(1.5)
+			taskComment.animationDuration(100)
 			taskComment.maskToText = true
 			taskComment.startTimedAnimation()
 			okImage.image = .none

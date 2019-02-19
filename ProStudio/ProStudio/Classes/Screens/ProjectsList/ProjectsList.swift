@@ -18,6 +18,7 @@ class ProjectsList: UIViewController {
 		registerCells()
 		tableView.separatorStyle = .none
 		hero.isEnabled = true
+		NavigationBarDecorator.decorate(self)
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 		self.navigationController?.navigationBar.shadowImage = UIColor.black.withAlphaComponent(0.3).as1ptImage().alpha(0.3)

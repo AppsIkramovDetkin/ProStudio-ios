@@ -50,25 +50,49 @@ class ContactsViewController: UIViewController {
 	}
 	
 	@objc private func v1Clicked() {
-		guard let number = URL(string: "tel://" + "78126456596") else { return }
-		UIApplication.shared.open(number)
+		let index = segmentedControl.selectedSegment
+		let first = index == 0
+		if first {
+			guard let number = URL(string: "tel://" + "78124256565") else { return }
+			UIApplication.shared.open(number)
+		} else {
+			guard let number = URL(string: "tel://" + "74954142243") else { return }
+			UIApplication.shared.open(number)
+		}
 	}
 	
 	@objc private func v2Clicked() {
-		
-		let latitude: CLLocationDegrees = 59.851131
-		let longitude: CLLocationDegrees = 30.301442
-		
-		let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-		let regionSpan = MKCoordinateRegion.init(center: coordinates, span: MKCoordinateSpan.init(latitudeDelta: latitude, longitudeDelta: longitude))
-		let options = [
-			MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-			MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-		]
-		let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-		let mapItem = MKMapItem(placemark: placemark)
-		mapItem.name = "ProStudio"
-		mapItem.openInMaps(launchOptions: options)
+		let index = segmentedControl.selectedSegment
+		let first = index == 0
+		if first {
+			let latitude: CLLocationDegrees = 59.851131
+			let longitude: CLLocationDegrees = 30.301442
+			
+			let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+			let regionSpan = MKCoordinateRegion.init(center: coordinates, span: MKCoordinateSpan.init(latitudeDelta: latitude, longitudeDelta: longitude))
+			let options = [
+				MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+				MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+			]
+			let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+			let mapItem = MKMapItem(placemark: placemark)
+			mapItem.name = "ProStudio СПБ"
+			mapItem.openInMaps(launchOptions: options)
+		} else {
+			let latitude: CLLocationDegrees = 55.675767
+			let longitude: CLLocationDegrees = 37.505997
+			
+			let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+			let regionSpan = MKCoordinateRegion.init(center: coordinates, span: MKCoordinateSpan.init(latitudeDelta: latitude, longitudeDelta: longitude))
+			let options = [
+				MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+				MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+			]
+			let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+			let mapItem = MKMapItem(placemark: placemark)
+			mapItem.name = "ProStudio СПБ"
+			mapItem.openInMaps(launchOptions: options)
+		}
 	}
 	
 	@objc private func v3Clicked() {
@@ -90,47 +114,46 @@ class ContactsViewController: UIViewController {
 	
 	let lineHeight: CGFloat = 10
 	func decorizeLabel1(first: Bool = true) {
-		let attributedString = NSMutableAttributedString(string: first ? "Позвонить\r+7 (812) 645-65-96" : "Другие данные", attributes: [
+		let attributedString = NSMutableAttributedString(string: first ? "Позвонить\r+7 (812) 425-65-65" : "Позвонить\r+7 (495) 414-22-43", attributes: [
 			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
-		if first {
+		
 			attributedString.addAttributes([
 				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 9))
-		}
+		
 		label1.attributedText = attributedString
 		label1.setLineHeight(lineHeight)
 	}
 	
 	func decorizeLabel3(first: Bool = true) {
-		let attributedString = NSMutableAttributedString(string: first ? "Проложить маршрут  \rЛенинский пр-т, 151" : "Другие данные" , attributes: [
+		let attributedString = NSMutableAttributedString(string: first ? "Проложить маршрут  \rЛенинский пр-т, 151" : "Проложить маршрут  \rпр-т Вернадского, дом 39" , attributes: [
 			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
-		if first {
+		
 			attributedString.addAttributes([
 				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 17))
-		}
 		
 		label2.attributedText = attributedString
 		label2.setLineHeight(lineHeight)
 	}
 	
 	func decorizeLabel2(first: Bool = true) {
-		let attributedString = NSMutableAttributedString(string: first ? "Отправить письмо\rmail@prostudio.ru" : "Другие данные", attributes: [
+		let attributedString = NSMutableAttributedString(string: "Отправить письмо\rmail@prostudio.ru", attributes: [
 			.font: UIFont(name: "Intro-Bold", size: 18)!,
 			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 			])
-		if first {
+		
 			attributedString.addAttributes([
 				.font: UIFont(name: "Intro-Book", size: 14)!,
 				.foregroundColor: UIColor(red: 0.0, green: 127.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
 				], range: NSRange(location: 0, length: 16))
-		}
+		
 		label3.attributedText = attributedString
 		label3.setLineHeight(lineHeight)
 	}

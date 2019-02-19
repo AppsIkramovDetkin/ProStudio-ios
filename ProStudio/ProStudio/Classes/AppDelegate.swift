@@ -81,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
 		IQKeyboardManager.shared.enable = true
+		IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 //        reigisterUser()
 //        createProject(for: "hhadevs@gmail.com")
 		//TEMP LOADING VIEW DELETE IT AFTER LOAD TO GIT

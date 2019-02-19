@@ -37,15 +37,16 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		hero.isEnabled = true
 		titleLabel.hero.id = "title"
-		
+		scrollView.decelerationRate = .fast
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
 		addRightButton()
-		navigationController?.navigationBar.transparentNavigationBar()
-		navigationController?.navigationBar.barTintColor = .white
-		navigationController?.navigationBar.shadowImage = UIImage()
+		
 		addLeftButton()
 		ProjectManager.shared.loadProjects { (projects) in
-			let views = projects.enumerated().map({ (i, project) -> PSCircularView in
+			let newProjects = projects.sorted(by: { (p1, p2) -> Bool in
+				return !p1.isEnded
+			})
+			let views = newProjects.enumerated().map({ (i, project) -> PSCircularView in
 				let view = PSCircularView(project: project)
 				view.clipsToBounds = false
 				view.backgroundColor = .white
@@ -56,17 +57,17 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 				view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
 				return view
 			})
-			if !projects.isEmpty {
-				self.currentSteps = projects[0].steps
-				self.titleLabel.text = projects[0].name.capitalized
-				self.indexLabel.text = "1 из \(projects.count)"
+			if !newProjects.isEmpty {
+				self.currentSteps = newProjects[0].steps
+				self.titleLabel.text = newProjects[0].name.capitalized
+				self.indexLabel.text = "1 из \(newProjects.count)"
 			} else {
 				self.indexLabel.text = "Проектов нет"
 			}
 			
 			self.setupscrollView(slides: views)
 //			self.scrollViewHeight.constant = self.scrollView.contentSize.height
-			self.projects = projects
+			self.projects = newProjects
 			self.tableView.reloadData()
 			
 			if let id = self.projectIdToFocus {
@@ -80,7 +81,9 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		navigationItem.title = "Прогресс"
 		title = "Прогресс"
 		navigationItem.titleView = nil
-		
+		navigationController?.navigationBar.transparentNavigationBar()
+		navigationController?.navigationBar.barTintColor = .white
+		navigationController?.navigationBar.shadowImage = UIImage()
 		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
 		navigationItem.largeTitleDisplayMode = .never
 		navigationController?.navigationBar.prefersLargeTitles = false
@@ -164,9 +167,33 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			return p.id == projectIdToFocus
 		}!
 		
-		let width = 250
-		let offset = CGFloat(projectIndex * width)
-		scrollView.setContentOffset(CGPoint.init(x: offset, y: 0), animated: true)
+		let spacing: CGFloat = (view.bounds.width - 305) / 2
+		let width = CGFloat(305 + spacing)
+		let offset = CGFloat(projectIndex) * width - spacing / 2
+		delay(delay: 0.5) {
+			self.scrollView.setContentOffset(CGPoint.init(x: offset, y: 0), animated: true)
+			
+			delay(delay: 0.3, closure: {
+				let maxView = self.scrollView.subviews.sorted { (view1, view2) -> Bool in
+					return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
+					}.first
+				
+				guard let v = maxView else {
+					return
+				}
+				
+				guard self.projects.contains(index: v.tag) else {
+					return
+				}
+				
+				self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+				let project = self.projects[v.tag]
+				self.titleLabel.text = project.name.capitalized
+				self.currentSteps = project.steps
+				self.tableView.reloadData()
+				
+			})
+		}
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -190,23 +217,26 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		titleLabel.text = project.name.capitalized
 		self.currentSteps = project.steps
 		self.tableView.reloadData()
+		
 	}
 	
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 		guard scrollView == self.scrollView else {
 			return
 		}
+		
 		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
 			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-			}.first
+		}.first
 		
 		guard let v = maxView else {
 			return
 		}
+		
 		let project = projects[v.tag]
 		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
 		self.titleLabel.text = project.name.capitalized
-		scrollView.setContentOffset(CGPoint.init(x: v.center.x - scrollView.frame.width / 2, y: scrollView.contentOffset.y), animated: true)
+		scrollView.scrollRectToVisible(maxView!.frame, animated: true)
 	}
 }
 

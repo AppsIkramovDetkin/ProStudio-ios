@@ -20,10 +20,10 @@ struct PSColors {
 	static let textColorFrom = UIColor(displayP3Red: 44/255, green: 103/255, blue: 169/255, alpha: 1.0)
 	static let textColorTo = UIColor(displayP3Red: 96/255, green: 176/255, blue: 191/255, alpha: 1.0)
 	static let securityScreenBg = UIColor(displayP3Red: 13/255, green: 28/255, blue: 44/255, alpha: 1.0)
-	static let securityScreenText = UIColor(displayP3Red: 0/255, green: 129/255, blue: 204/255, alpha: 1.0)
+	static let securityScreenText = UIColor.black
 	static let securityScreenButton = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-	static let securityPointOff = UIColor(displayP3Red: 54/255, green: 54/255, blue: 54/255, alpha: 1.0)
-	static let securityPointOn = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+	static let securityPointOff = UIColor.init(netHex: 0x8E8E93)
+	static let securityPointOn = UIColor.init(netHex: 0x0081CC)
 	static let cancelButtonText = UIColor(displayP3Red: 255/255, green: 37/255, blue: 37/255, alpha: 1.0)
 	static let separatorColor = #colorLiteral(red: 0.9214485884, green: 0.9216245413, blue: 0.9295840859, alpha: 1)
 }
@@ -82,14 +82,14 @@ class SecurityScreen: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.hero.isEnabled = true
-		view.backgroundColor = PSColors.securityScreenBg
+		view.backgroundColor = .white
 		
 		setupView()
 		setupCodeView()
-        if !isRegister {
-            secondCodeStackView.isHidden = true
-            secondCodeLabel.isHidden = true
-        }
+		if !isRegister {
+				secondCodeStackView.isHidden = true
+				secondCodeLabel.isHidden = true
+		}
 		keyboardView.addObserver(self, forKeyPath: "numPass", options: [.new, .old], context: nil)
 		keyboardView.addObserver(self, forKeyPath: "numPassCheck", options: [.new, .old], context: nil)
 		if needToUserBiometric {
