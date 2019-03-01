@@ -37,6 +37,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		hero.isEnabled = true
 		titleLabel.hero.id = "title"
+		titleLabel.font = PSFont.introBold.with(size: 34)
 		scrollView.decelerationRate = .fast
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
 		addRightButton()
@@ -207,7 +208,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			})
 		}
 	}
-	
+	var previousTag = 0
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		guard scrollView == self.scrollView else {
 			return
@@ -216,9 +217,20 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
 		}[safe: 1]
 		
+
 		guard let v = maxView else {
 			return
 		}
+		
+		if v.tag != previousTag {
+			let project = projects[v.tag]
+			self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
+			self.titleLabel.set(text: project.name.capitalized, with: 10)
+			scrollView.scrollRectToVisible(maxView!.frame, animated: true)
+		}
+		
+		
+		previousTag = v.tag
 		
 		guard projects.contains(index: v.tag) else {
 			return
