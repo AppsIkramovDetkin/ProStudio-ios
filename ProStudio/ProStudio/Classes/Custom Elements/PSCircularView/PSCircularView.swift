@@ -177,20 +177,18 @@ final class PSCircularView: UIView {
 		layer.addSublayer(staticShape)
 	
 		let lineGradient = CAGradientLayer()
-		lineGradient.frame = bounds
+		var vo = bounds
+		lineGradient.frame = vo
 		lineGradient.colors = project.gradientsColor.map{$0.cgColor}
 		lineGradient.startPoint = CGPoint(x: 0, y: 0)
 		lineGradient.endPoint = CGPoint(x: 1, y: 1)
 		lineGradient.mask = shape
-		
 		layer.addSublayer(lineGradient)
-		
 		
 		let whiteLayer = CAShapeLayer()
 		whiteLayer.fillColor = UIColor.white.cgColor
 		whiteLayer.path = whitePath.cgPath
 		whiteLayer.position = circleView.center
 		layer.addSublayer(whiteLayer)
-		
 	}
 }

@@ -20,16 +20,16 @@ extension UINavigationBar {
 
 class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var scrollView: UIScrollView!
-	@IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
 	@IBOutlet weak var titleLabel: SpacedLabel!
+	@IBOutlet weak var pageContainerView: UIView!
 	@IBOutlet weak var indexLabel: UILabel!
+	var allViewControllers: [UIViewController] = []
 	var projectIdToFocus: String?
 	var projects: [Project] = []
 	var currentSteps: [ProjectStep] = []
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		scrollView.delegate = self
+		
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -38,7 +38,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		hero.isEnabled = true
 		titleLabel.hero.id = "title"
 		titleLabel.font = PSFont.introBold.with(size: 34)
-		scrollView.decelerationRate = .fast
+		
 		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15000, bottom: 0, right: 0)
 		addRightButton()
 		
@@ -59,6 +59,8 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 				view.animate(with: CGFloat(project.progress)/100, duration: 1.5 * (TimeInterval(i) + 1))
 				return view
 			})
+			
+			
 			if !newProjects.isEmpty {
 				self.currentSteps = newProjects[0].steps
 				self.titleLabel.set(text: newProjects[0].name.capitalized, with: 10)
@@ -67,7 +69,15 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 				self.indexLabel.text = "Проектов нет"
 			}
 			
-			self.setupscrollView(slides: views)
+			
+			self.setupscrollView(controllers: views.map { sview in
+				let vc = UIViewController()
+				sview.translatesAutoresizingMaskIntoConstraints = false
+				vc.view.addSubview(sview)
+				let margin: CGFloat = 16
+				vc.view.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": sview]))
+				return vc
+			})
 //			self.scrollViewHeight.constant = self.scrollView.contentSize.height
 			
 			self.tableView.reloadData()
@@ -100,8 +110,21 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		navigationController?.navigationBar.transparentNavigationBar()
 		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
+	let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
 	
-
+	func setupscrollView(controllers: [UIViewController]) {
+		allViewControllers = controllers
+		pageController.view.translatesAutoresizingMaskIntoConstraints = false
+		pageController.delegate = self
+		
+		pageController.dataSource = self
+		
+		pageContainerView.addSubview(pageController.view)
+		let margin: CGFloat = 16
+		pageContainerView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": pageController.view]))
+		
+		pageController.setViewControllers([controllers.first!], direction: .forward, animated: true, completion: nil)
+	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .default
@@ -146,31 +169,6 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
-	func setupscrollView(slides: [UIView]) {
-		let slideSize: CGFloat = 295
-		scrollView.showsHorizontalScrollIndicator = false
-		let spacing: CGFloat = (view.bounds.width - slideSize) / 2
-		scrollView.contentInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
-		for i in 0..<slides.count {
-			let slide = slides[i]
-			
-			slide.translatesAutoresizingMaskIntoConstraints = false
-			scrollView.addSubview(slide)
-			scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "V:|[slide]|", dict: ["slide": slide]) + [NSLayoutConstraint.quadroAspect(on: slide)])
-			if slides.contains(index: i - 1) {
-				let prevSlide = slides[i - 1]
-				if i == slides.count - 1 {
-					scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:[prevSlide]-\(spacing)-[slide]|", dict: ["prevSlide": prevSlide,"slide": slide]))
-				} else {
-					scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:[prevSlide]-\(spacing)-[slide]", dict: ["prevSlide": prevSlide,"slide": slide]))
-				}
-			} else {
-				scrollView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|[slide]", dict: ["slide": slide]))
-			}
-		}
-		
-		self.scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(slides.count), height: scrollView.frame.height)
-	}
 	
 	func scroll(to projectId: String) {
 		let projectIndex = projects.firstIndex { (p) -> Bool in
@@ -183,84 +181,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		
 		let spacing = (view.bounds.width - 295)/2
 		let offset = (view.bounds.width - spacing) * CGFloat(projectIndex) - spacing
-		delay(delay: 0.5) {
-			self.scrollView.setContentOffset(CGPoint.init(x: offset, y: 0), animated: true)
-			
-			delay(delay: 0.3, closure: {
-				let maxView = self.scrollView.subviews.sorted { (view1, view2) -> Bool in
-					return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-				}.first
-				
-				guard let v = maxView else {
-					return
-				}
-				
-				guard self.projects.contains(index: v.tag) else {
-					return
-				}
-				
-				self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-				let project = self.projects[v.tag]
-				self.titleLabel.set(text: project.name.capitalized, with: 10)
-				self.currentSteps = project.steps
-				self.tableView.reloadData()
-				
-			})
-		}
-	}
-	var previousTag = 0
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		guard scrollView == self.scrollView else {
-			return
-		}
-		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
-			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-		}[safe: 1]
 		
-
-		guard let v = maxView else {
-			return
-		}
-		
-		if v.tag != previousTag {
-			let project = projects[v.tag]
-			self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-			self.titleLabel.set(text: project.name.capitalized, with: 10)
-			scrollView.scrollRectToVisible(maxView!.frame, animated: true)
-		}
-		
-		
-		previousTag = v.tag
-		
-		guard projects.contains(index: v.tag) else {
-			return
-		}
-		
-		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-		let project = projects[v.tag]
-		self.titleLabel.set(text: project.name.capitalized, with: 10)
-		self.currentSteps = project.steps
-		self.tableView.reloadData()
-		
-	}
-	
-	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-		guard scrollView == self.scrollView else {
-			return
-		}
-		
-		let maxView = scrollView.subviews.sorted { (view1, view2) -> Bool in
-			return (view1.visibleRect ?? .zero).width > (view2.visibleRect ?? .zero).width
-			}[safe: 1]
-		
-		guard let v = maxView else {
-			return
-		}
-		
-		let project = projects[v.tag]
-		self.indexLabel.text = "\(v.tag + 1) из \(self.projects.count)"
-		self.titleLabel.set(text: project.name.capitalized, with: 10)
-		scrollView.scrollRectToVisible(maxView!.frame, animated: true)
 	}
 }
 
@@ -306,5 +227,23 @@ extension UIView {
 	var visibleRect: CGRect? {
 		guard let superview = superview else { return nil }
 		return frame.intersection(superview.bounds)
+	}
+}
+
+extension ProgressListViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+		guard let currentIndex = allViewControllers.firstIndex(of: viewController) else {
+			return nil
+		}
+		
+		return allViewControllers[safe: currentIndex + 1]
+	}
+	
+	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+		guard let currentIndex = allViewControllers.firstIndex(of: viewController) else {
+			return nil
+		}
+		
+		return allViewControllers[safe: currentIndex - 1]
 	}
 }
