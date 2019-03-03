@@ -73,8 +73,9 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			self.setupscrollView(controllers: views.map { sview in
 				let vc = UIViewController()
 				sview.translatesAutoresizingMaskIntoConstraints = false
+				sview.clipsToBounds = false
 				vc.view.addSubview(sview)
-				let margin: CGFloat = 16
+				let margin: CGFloat = 16//16
 				vc.view.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": sview]))
 				return vc
 			})
@@ -120,7 +121,7 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		pageController.dataSource = self
 		
 		pageContainerView.addSubview(pageController.view)
-		let margin: CGFloat = 16
+		let margin: CGFloat = 0//16
 		pageContainerView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": pageController.view]))
 		
 		pageController.setViewControllers([controllers.first!], direction: .forward, animated: true, completion: nil)
