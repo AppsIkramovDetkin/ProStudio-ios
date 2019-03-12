@@ -76,7 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
-
+		let customFont = PSFont.introBook.with(size: 17)
+		UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         UIApplication.shared.statusBarStyle = .lightContent
 		Fabric.with([Crashlytics.self])
         FirebaseApp.configure()

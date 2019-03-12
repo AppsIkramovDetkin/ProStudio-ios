@@ -74,6 +74,8 @@ class ChatWithManager: UIViewController {
 		}
 		let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
 		tableView.addGestureRecognizer(tap)
+		textField.isUserInteractionEnabled = currentUser.email != "hhadevs@gmail.com"
+		sendButton.isUserInteractionEnabled = currentUser.email != "hhadevs@gmail.com"
 	}
 	
 	@objc private func tapped() {

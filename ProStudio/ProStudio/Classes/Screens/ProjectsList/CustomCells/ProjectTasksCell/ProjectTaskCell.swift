@@ -65,7 +65,7 @@ class ProjectTaskCell: UITableViewCell {
 			
 			
 			self.gradient.frame =  CGRect(origin: CGPoint.zero, size: self.taskButton.frame.size)
-			self.gradient.colors = [self.colorsForGradient[0].cgColor, self.colorsForGradient[0].cgColor]
+			self.gradient.colors = [self.colorsForGradient[1].cgColor, self.colorsForGradient[1].cgColor]
 			
 			let shape = CAShapeLayer()
 			shape.lineWidth = 5

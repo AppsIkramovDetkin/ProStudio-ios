@@ -70,19 +70,21 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 			}
 			
 			
-			self.setupscrollView(controllers: views.map { sview in
-				let vc = UIViewController()
-				sview.translatesAutoresizingMaskIntoConstraints = false
-				sview.clipsToBounds = false
-				vc.view.addSubview(sview)
-				let margin: CGFloat = 16//16
-				vc.view.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": sview]))
-				return vc
-			})
+			
 //			self.scrollViewHeight.constant = self.scrollView.contentSize.height
 			
 			self.tableView.reloadData()
 			self.projects = newProjects
+			self.setupscrollView(controllers: views.enumerated().map { index, sview in
+				let vc = UIViewController()
+				sview.translatesAutoresizingMaskIntoConstraints = false
+				sview.clipsToBounds = false
+				vc.view.addSubview(sview)
+				vc.view.tag = index
+				let margin: CGFloat = 16//16
+				vc.view.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": sview]))
+				return vc
+			})
 			if let id = self.projectIdToFocus {
 				self.scroll(to: id)
 			} else {
@@ -123,8 +125,20 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		pageContainerView.addSubview(pageController.view)
 		let margin: CGFloat = 0//16
 		pageContainerView.addConstraints(NSLayoutConstraint.contraints(withNewVisualFormat: "H:|-\(margin)-[sview]-\(margin)-|,V:|-\(margin)-[sview]-\(margin)-|", dict: ["sview": pageController.view]))
+		let ii = projects.firstIndex(where: { (p) -> Bool in
+			return p.id == idToSelect ?? ""
+		})
 		
-		pageController.setViewControllers([controllers.first!], direction: .forward, animated: true, completion: nil)
+		pageController.setViewControllers([controllers[ii ?? 0]], direction: .forward, animated: true, completion: nil)
+		
+		if let uu = ii {
+			self.indexLabel.text = "\(uu + 1) из \(self.projects.count)"
+			let project = projects[uu]
+			self.titleLabel.set(text: project.name.capitalized, with: 10)
+			self.currentSteps = project.steps
+			self.tableView.reloadData()
+		}
+		
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -165,11 +179,16 @@ class ProgressListViewController: UIViewController, UIScrollViewDelegate {
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
 	}
 	
+	var idToSelect: String?
+	func select(id: String) {
+		self.idToSelect = id
+	}
 	@objc private func leftButtonClicked() {
 		let vc = ProjectsList()
 		navigationController?.pushViewController(vc, animated: true)
 	}
-	
+	var prevIndex = 0
+	var curIndex = 0
 	
 	func scroll(to projectId: String) {
 		let projectIndex = projects.firstIndex { (p) -> Bool in
@@ -211,6 +230,7 @@ extension ProgressListViewController: UITableViewDelegate, UITableViewDataSource
 		return cell
 	}
 	
+	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 60
 	}
@@ -229,9 +249,28 @@ extension UIView {
 		guard let superview = superview else { return nil }
 		return frame.intersection(superview.bounds)
 	}
+	
+
 }
 
 extension ProgressListViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+
+	func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+		if let viewController = pendingViewControllers.first {
+			self.prevIndex = viewController.view.tag
+		}
+	}
+	
+	func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+		if completed {
+			self.curIndex = self.prevIndex
+			self.indexLabel.text = "\(curIndex + 1) из \(self.projects.count)"
+			let project = projects[curIndex]
+			self.titleLabel.set(text: project.name.capitalized, with: 10)
+			self.currentSteps = project.steps
+			self.tableView.reloadData()
+		}
+	}
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 		guard let currentIndex = allViewControllers.firstIndex(of: viewController) else {
 			return nil

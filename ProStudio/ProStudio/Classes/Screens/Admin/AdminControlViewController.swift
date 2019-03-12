@@ -107,7 +107,7 @@ extension AdminControlViewController: UITableViewDelegate, UITableViewDataSource
 				cell.detailTextLabel?.text = project.dateTitle
 			case 4:
 				cell.textLabel?.text = "Готовность"
-				cell.detailTextLabel?.text = "\(project.progress)% (доступно: \(100 - project.progress)%"
+				cell.detailTextLabel?.text = "\(project.progress)% (доступно: \(100 - project.progress)%)"
 			default: break
 			}
 			
@@ -124,7 +124,23 @@ extension AdminControlViewController: UITableViewDelegate, UITableViewDataSource
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.section {
 		case 0:
-			break
+			switch indexPath.row {
+			case 4:
+				let alertController = UIAlertController(title: "Готовность", message: "Введите готовность проекта (ТОЛЬКО ЦИФРЫ)", preferredStyle: .alert)
+				alertController.addTextField { (textField) in
+					textField.keyboardType = .numberPad
+				}
+				alertController.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (_) in
+					let s = Int(alertController.textFields?.first?.text ?? "") ?? 0
+			Database.database().reference().child("projects").child(self.project.client.formattedEmail()).child(self.project.id).child("progress").setValue(s)
+					self.project.progress = s
+					self.tableView.reloadData()
+//					self.showAlert(title: "Готово", message: "Данные обновились на сервере, но на этом экране они будут обновлены позже.")
+				}))
+				alertController.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+				self.present(alertController, animated: true, completion: nil)
+			default: break
+			}
 		default:
 //			let step = project.steps[indexPath.row]
 			showAlertWithActions(title: "Этап", message: "Выберите действие", withCancelButton: true, buttons: [

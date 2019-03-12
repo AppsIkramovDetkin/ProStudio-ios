@@ -77,6 +77,7 @@ extension ProjectsList: UITableViewDataSource, UITableViewDelegate {
 			let vc = ProgressListViewController()
 			vc.projectIdToFocus = id
 			self.navigationController?.pushViewController(vc, animated: true)
+			vc.select(id: id)
 		}
 		return cell
 	}
@@ -168,4 +169,17 @@ extension UIColor {
 		UIGraphicsEndImageContext()
 		return image
 	}
+}
+
+extension UINavigationController {
+	
+	public func pushViewController(viewController: UIViewController,
+																 animated: Bool,
+																 completion: (() -> Void)?) {
+		CATransaction.begin()
+		CATransaction.setCompletionBlock(completion)
+		pushViewController(viewController, animated: animated)
+		CATransaction.commit()
+	}
+	
 }
