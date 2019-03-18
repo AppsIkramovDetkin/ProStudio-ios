@@ -27,5 +27,6 @@ target 'ProStudio' do
 	pod 'ImagePicker'
         pod 'Fabric'
         pod 'Crashlytics'
+        pod 'Strong-Strings'
 
 end

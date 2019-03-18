@@ -135,6 +135,9 @@
 		7CE64D7F21F4BA13009CD11D /* AdminProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE64D7D21F4BA13009CD11D /* AdminProjectsViewController.xib */; };
 		7CE64D8421F4C734009CD11D /* AdminClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE64D8221F4C734009CD11D /* AdminClientsViewController.swift */; };
 		7CE64D8521F4C734009CD11D /* AdminClientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE64D8321F4C734009CD11D /* AdminClientsViewController.xib */; };
+		7CEACFDA223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7CEACFD9223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7CEACFDE223FB17300627DD0 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 7CEACFDD223FB17300627DD0 /* Stickers.xcstickers */; };
+		7CEACFDF223FB17300627DD0 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 7CEACFDD223FB17300627DD0 /* Stickers.xcstickers */; };
 		7CFB929C21B42B2600705193 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB929A21B42B2600705193 /* AdminViewController.swift */; };
 		7CFB929D21B42B2600705193 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFB929B21B42B2600705193 /* AdminViewController.xib */; };
 		7CFB92A021B42CCC00705193 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB929E21B42CCC00705193 /* CreateProjectViewController.swift */; };
@@ -161,7 +164,28 @@
 			remoteGlobalIDString = 117360C420DD51B100BA156C;
 			remoteInfo = ProStudio;
 		};
+		7CEACFDB223FB17300627DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 117360BD20DD51B100BA156C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CEACFD8223FB17300627DD0;
+			remoteInfo = "ProStudio Stickers StickerPackExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CEACFE5223FB17300627DD0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7CEACFDA223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		09E8009C2DF02019A8BBF90E /* Pods_ProStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +325,9 @@
 		7CE64D7D21F4BA13009CD11D /* AdminProjectsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminProjectsViewController.xib; sourceTree = "<group>"; };
 		7CE64D8221F4C734009CD11D /* AdminClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClientsViewController.swift; sourceTree = "<group>"; };
 		7CE64D8321F4C734009CD11D /* AdminClientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminClientsViewController.xib; sourceTree = "<group>"; };
+		7CEACFD6223FB17200627DD0 /* ProStudio Stickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProStudio Stickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEACFD9223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ProStudio Stickers StickerPackExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEACFDD223FB17300627DD0 /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; name = Stickers.xcstickers; path = "ProStudio Stickers StickerPackExtension/Stickers.xcstickers"; sourceTree = "<group>"; };
 		7CFB929A21B42B2600705193 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		7CFB929B21B42B2600705193 /* AdminViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		7CFB929E21B42CCC00705193 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
@@ -454,6 +481,7 @@
 		117360BC20DD51B100BA156C = {
 			isa = PBXGroup;
 			children = (
+				7CEACFDD223FB17300627DD0 /* Stickers.xcstickers */,
 				117360C720DD51B100BA156C /* ProStudio */,
 				117360DC20DD51B100BA156C /* ProStudioUITests */,
 				117360C620DD51B100BA156C /* Products */,
@@ -467,6 +495,8 @@
 			children = (
 				117360C520DD51B100BA156C /* ProStudio.app */,
 				117360D920DD51B100BA156C /* ProStudioUITests.xctest */,
+				7CEACFD6223FB17200627DD0 /* ProStudio Stickers.app */,
+				7CEACFD9223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -934,6 +964,38 @@
 			productReference = 117360D920DD51B100BA156C /* ProStudioUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		7CEACFD5223FB17200627DD0 /* ProStudio Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CEACFE6223FB17300627DD0 /* Build configuration list for PBXNativeTarget "ProStudio Stickers" */;
+			buildPhases = (
+				7CEACFD4223FB17200627DD0 /* Resources */,
+				7CEACFE5223FB17300627DD0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CEACFDC223FB17300627DD0 /* PBXTargetDependency */,
+			);
+			name = "ProStudio Stickers";
+			productName = "ProStudio Stickers";
+			productReference = 7CEACFD6223FB17200627DD0 /* ProStudio Stickers.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		7CEACFD8223FB17300627DD0 /* ProStudio Stickers StickerPackExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CEACFE4223FB17300627DD0 /* Build configuration list for PBXNativeTarget "ProStudio Stickers StickerPackExtension" */;
+			buildPhases = (
+				7CEACFD7223FB17300627DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProStudio Stickers StickerPackExtension";
+			productName = "ProStudio Stickers StickerPackExtension";
+			productReference = 7CEACFD9223FB17300627DD0 /* ProStudio Stickers StickerPackExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -955,6 +1017,14 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 117360C420DD51B100BA156C;
 					};
+					7CEACFD5223FB17200627DD0 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					7CEACFD8223FB17300627DD0 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 117360C020DD51B100BA156C /* Build configuration list for PBXProject "ProStudio" */;
@@ -972,6 +1042,8 @@
 			targets = (
 				117360C420DD51B100BA156C /* ProStudio */,
 				117360D820DD51B100BA156C /* ProStudioUITests */,
+				7CEACFD5223FB17200627DD0 /* ProStudio Stickers */,
+				7CEACFD8223FB17300627DD0 /* ProStudio Stickers StickerPackExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1056,6 +1128,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CEACFD4223FB17200627DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEACFDF223FB17300627DD0 /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CEACFD7223FB17300627DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEACFDE223FB17300627DD0 /* Stickers.xcstickers in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,6 +1351,11 @@
 			target = 117360C420DD51B100BA156C /* ProStudio */;
 			targetProxy = 117360DA20DD51B100BA156C /* PBXContainerItemProxy */;
 		};
+		7CEACFDC223FB17300627DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CEACFD8223FB17300627DD0 /* ProStudio Stickers StickerPackExtension */;
+			targetProxy = 7CEACFDB223FB17300627DD0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1465,6 +1558,70 @@
 			};
 			name = Release;
 		};
+		7CEACFE0223FB17300627DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProStudio Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.ProStudio-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CEACFE1223FB17300627DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProStudio Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.ProStudio-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7CEACFE2223FB17300627DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProStudio Stickers StickerPackExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.ProStudio-Stickers.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CEACFE3223FB17300627DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProStudio Stickers StickerPackExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.ProStudio-Stickers.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1491,6 +1648,24 @@
 			buildConfigurations = (
 				117360E620DD51B100BA156C /* Debug */,
 				117360E720DD51B100BA156C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CEACFE4223FB17300627DD0 /* Build configuration list for PBXNativeTarget "ProStudio Stickers StickerPackExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEACFE2223FB17300627DD0 /* Debug */,
+				7CEACFE3223FB17300627DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CEACFE6223FB17300627DD0 /* Build configuration list for PBXNativeTarget "ProStudio Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEACFE0223FB17300627DD0 /* Debug */,
+				7CEACFE1223FB17300627DD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
