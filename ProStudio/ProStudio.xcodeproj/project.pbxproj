@@ -74,6 +74,7 @@
 		7C2FC38B21D03F4100C322AF /* BiomerticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FC38921D03F4100C322AF /* BiomerticViewController.xib */; };
 		7C563B7D21E1C8D100D25402 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */; };
 		7C563B7F21E1CFCA00D25402 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C563B7E21E1CFCA00D25402 /* Requests.swift */; };
+		7C5A958D223FBAA800C6316A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A958C223FBAA800C6316A /* Constants.swift */; };
 		7C71569221F628A50099C2AD /* AdminControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71569021F628A50099C2AD /* AdminControlViewController.swift */; };
 		7C71569321F628A50099C2AD /* AdminControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C71569121F628A50099C2AD /* AdminControlViewController.xib */; };
 		7C71569621F632370099C2AD /* AdminClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71569421F632370099C2AD /* AdminClientViewController.swift */; };
@@ -263,6 +264,7 @@
 		7C2FC38921D03F4100C322AF /* BiomerticViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiomerticViewController.xib; sourceTree = "<group>"; };
 		7C563B7C21E1C8D100D25402 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		7C563B7E21E1CFCA00D25402 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		7C5A958C223FBAA800C6316A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7C71569021F628A50099C2AD /* AdminControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlViewController.swift; sourceTree = "<group>"; };
 		7C71569121F628A50099C2AD /* AdminControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminControlViewController.xib; sourceTree = "<group>"; };
 		7C71569421F632370099C2AD /* AdminClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClientViewController.swift; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 				447764B72157170C00ACBE09 /* FirebaseService */,
 				117360C820DD51B100BA156C /* AppDelegate.swift */,
 				2E002C41216E4D1E000C8734 /* PSColors.swift */,
+				7C5A958C223FBAA800C6316A /* Constants.swift */,
 				2E2F60F5216FA9680005BE8E /* PSFonts.swift */,
 				7CC00B9C21B5CC100020D3F0 /* TablePicker.swift */,
 				7CC00B9D21B5CC100020D3F0 /* TablePickerViewController.swift */,
@@ -1308,6 +1311,7 @@
 				2E002C36216E2A13000C8734 /* ProjectDiscussion.swift in Sources */,
 				0F403D87217A56DD00EA5FBF /* ProjectTask.swift in Sources */,
 				2E002C46216E70E2000C8734 /* ButtonCell.swift in Sources */,
+				7C5A958D223FBAA800C6316A /* Constants.swift in Sources */,
 				7C7E5549218E031A009152EC /* PSFont.swift in Sources */,
 				ACE5906B215BF9F10053EC10 /* TextChatCell.swift in Sources */,
 				2E9589EF218B242600CE34FE /* KeyboardView.swift in Sources */,

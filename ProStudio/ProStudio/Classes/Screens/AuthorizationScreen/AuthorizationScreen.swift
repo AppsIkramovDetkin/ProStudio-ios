@@ -107,7 +107,7 @@ class AuthorizationScreen: UIViewController {
 			return
 		}
 		
-		guard email != "admin" && password != "admin" else {
+		guard email != ADMIN_LOGIN && password != ADMIN_PASSWORD else {
 			Auth.auth().signIn(withEmail: "admin@admin.admin", password: "admin11") { (c, error) in
 				currentUser = c!.user
 				let vc = AdminViewController()

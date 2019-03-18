@@ -131,7 +131,7 @@ class ContactsViewController: UIViewController {
 	func decorizeLabel3(first: Bool = true) {
 		let attributedString = NSMutableAttributedString(string: first ? "Проложить маршрут  \rЛенинский пр-т, 151" : "Проложить маршрут  \rпр-т Вернадского, дом 39" , attributes: [
 			.font: UIFont(name: "Intro-Bold", size: 18)!,
-			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+			.foregroundColor: UIColor(white: 0.0, alpha: 1.0)	
 			])
 		
 			attributedString.addAttributes([
