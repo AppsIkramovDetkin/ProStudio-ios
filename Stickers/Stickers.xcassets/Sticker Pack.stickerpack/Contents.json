@@ -1,0 +1,56 @@
+{
+  "stickers" : [
+    {
+      "filename" : "1 Получите, распишитесь.sticker"
+    },
+    {
+      "filename" : "2 Просто-ох.енно.sticker"
+    },
+    {
+      "filename" : "3 Кинь-ссылку.sticker"
+    },
+    {
+      "filename" : "4 Done.sticker"
+    },
+    {
+      "filename" : "5 Ближе-к-сути.sticker"
+    },
+    {
+      "filename" : "6 А-я-предупреждал.sticker"
+    },
+    {
+      "filename" : "7 Мои-глаза.sticker"
+    },
+    {
+      "filename" : "8 В-продакшн.sticker"
+    },
+    {
+      "filename" : "9 яндекс в помощь-1.sticker"
+    },
+    {
+      "filename" : "10 звездато-1.sticker"
+    },
+    {
+      "filename" : "11 покажи класс-1.sticker"
+    },
+    {
+      "filename" : "12 полет нормальный-1.sticker"
+    },
+    {
+      "filename" : "13 элемент-арно-1.sticker"
+    },
+    {
+      "filename" : "14 Где результат-1.sticker"
+    },
+    {
+      "filename" : "15 Designd by p-1.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}

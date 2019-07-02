@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Intro-Bold.otf">
+            <string>Intro-Bold</string>
+        </array>
+        <array key="Intro-Regular.otf">
+            <string>Intro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9hH-fd-gLr" customClass="ProjectsListHeader" customModule="ProStudio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-PM-2ip">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-eD-QJC">
+                    <rect key="frame" x="0.0" y="-200" width="415" height="297"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-T6-2B6">
+                            <rect key="frame" x="0.0" y="296" width="415" height="1"/>
+                            <color key="backgroundColor" red="0.86265087127685547" green="0.86279940605163574" blue="0.86264151334762573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="cKg-V1-fP7"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список проектов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-Gh-zhQ">
+                            <rect key="frame" x="16" y="255" width="383" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="gN1-wU-cqW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97636467218399048" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="SAM-T6-2B6" firstAttribute="top" secondItem="Hql-Gh-zhQ" secondAttribute="bottom" constant="7" id="5bN-KX-Ktm"/>
+                        <constraint firstItem="Hql-Gh-zhQ" firstAttribute="leading" secondItem="xrk-eD-QJC" secondAttribute="leading" constant="16" id="5nm-Sq-bBk"/>
+                        <constraint firstAttribute="height" constant="297" id="BHw-Ze-ZMf"/>
+                        <constraint firstAttribute="bottom" secondItem="SAM-T6-2B6" secondAttribute="bottom" id="FKs-WV-wwA"/>
+                        <constraint firstAttribute="trailing" secondItem="SAM-T6-2B6" secondAttribute="trailing" id="FLe-Ms-mrw"/>
+                        <constraint firstAttribute="trailing" secondItem="Hql-Gh-zhQ" secondAttribute="trailing" constant="16" id="Ra6-Xk-Pwj"/>
+                        <constraint firstItem="SAM-T6-2B6" firstAttribute="leading" secondItem="xrk-eD-QJC" secondAttribute="leading" id="V2r-rK-prw"/>
+                    </constraints>
+                </view>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N9o-KD-1XX">
+                    <rect key="frame" x="138" y="7.5" width="139" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="139" id="W64-SO-JXW"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Все"/>
+                        <segment title="Текущие"/>
+                    </segments>
+                    <connections>
+                        <action selector="selectedIndex" destination="9hH-fd-gLr" eventType="valueChanged" id="12N-O0-J6r"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-qO-qSP">
+                    <rect key="frame" x="282" y="5" width="121" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Добавить"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Jd-71V">
+                    <rect key="frame" x="12" y="7" width="121" height="29"/>
+                    <fontDescription key="fontDescription" name="Intro-Regular" family="Intro Regular" pointSize="17"/>
+                    <state key="normal" title="Прогресс"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xrk-eD-QJC" firstAttribute="top" secondItem="9hH-fd-gLr" secondAttribute="top" constant="-200" id="31Q-Dr-TFX"/>
+                <constraint firstItem="N9o-KD-1XX" firstAttribute="centerY" secondItem="Xn4-Jd-71V" secondAttribute="centerY" id="3eo-cx-MCp"/>
+                <constraint firstItem="Xn4-Jd-71V" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="7" id="54e-q9-cEc"/>
+                <constraint firstItem="va3-0i-TjS" firstAttribute="trailing" secondItem="xrk-eD-QJC" secondAttribute="trailing" id="8A4-J5-iON"/>
+                <constraint firstItem="N9o-KD-1XX" firstAttribute="centerX" secondItem="va3-0i-TjS" secondAttribute="centerX" id="9ma-EA-U3L"/>
+                <constraint firstItem="l8z-qO-qSP" firstAttribute="leading" secondItem="N9o-KD-1XX" secondAttribute="trailing" constant="5" id="DEH-0a-AoH"/>
+                <constraint firstItem="xrk-eD-QJC" firstAttribute="leading" secondItem="9hH-fd-gLr" secondAttribute="leading" id="E5L-lr-7ZK"/>
+                <constraint firstItem="l8z-qO-qSP" firstAttribute="top" secondItem="va3-0i-TjS" secondAttribute="top" constant="5" id="Hqw-xu-XtW"/>
+                <constraint firstItem="Xn4-Jd-71V" firstAttribute="leading" secondItem="va3-0i-TjS" secondAttribute="leading" constant="12" id="IPo-Ls-TsB"/>
+                <constraint firstItem="N9o-KD-1XX" firstAttribute="leading" secondItem="Xn4-Jd-71V" secondAttribute="trailing" constant="5" id="L6i-6S-0MD"/>
+                <constraint firstItem="Vcp-PM-2ip" firstAttribute="trailing" secondItem="va3-0i-TjS" secondAttribute="trailing" id="UD3-as-BpJ"/>
+                <constraint firstItem="va3-0i-TjS" firstAttribute="trailing" secondItem="l8z-qO-qSP" secondAttribute="trailing" constant="12" id="ZkG-ZN-Rdt"/>
+                <constraint firstItem="Vcp-PM-2ip" firstAttribute="top" secondItem="9hH-fd-gLr" secondAttribute="top" id="aHv-NE-L3G"/>
+                <constraint firstItem="Vcp-PM-2ip" firstAttribute="bottom" secondItem="va3-0i-TjS" secondAttribute="bottom" id="tHO-02-bdd"/>
+                <constraint firstItem="Vcp-PM-2ip" firstAttribute="leading" secondItem="va3-0i-TjS" secondAttribute="leading" id="vsI-lj-zv8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="va3-0i-TjS"/>
+            <connections>
+                <outlet property="addProjectButton" destination="l8z-qO-qSP" id="cZm-s2-xNh"/>
+                <outlet property="progressButton" destination="Xn4-Jd-71V" id="gC2-im-BfC"/>
+                <outlet property="projectsListLabel" destination="Hql-Gh-zhQ" id="wi3-Vc-pQc"/>
+                <outlet property="projectsPicker" destination="N9o-KD-1XX" id="Jx1-Rl-CBG"/>
+            </connections>
+            <point key="canvasLocation" x="24.800000000000001" y="169.56521739130437"/>
+        </view>
+    </objects>
+</document>

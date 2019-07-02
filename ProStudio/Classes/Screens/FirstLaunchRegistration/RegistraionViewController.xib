@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Intro-Bold.otf">
+            <string>Intro-Bold</string>
+        </array>
+        <array key="Intro-Book.otf">
+            <string>Intro-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistraionViewController" customModule="ProStudio" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLabel" destination="fSt-ro-WJq" id="6QB-MM-ZoA"/>
+                <outlet property="descLabel" destination="ud5-8T-Opc" id="ol7-GV-RKj"/>
+                <outlet property="loginButton" destination="P67-K3-1J6" id="H4M-95-2zq"/>
+                <outlet property="logoImage" destination="q5D-66-7jq" id="dY4-L8-lj4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="q5D-66-7jq">
+                    <rect key="frame" x="86" y="109" width="203" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="203" id="hyY-ch-H9e"/>
+                        <constraint firstAttribute="height" constant="36" id="sFA-c6-1TP"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="buddy_image" translatesAutoresizingMaskIntoConstraints="NO" id="R65-8C-ipp">
+                    <rect key="frame" x="82" y="212" width="211" height="192"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="192" id="Tpq-nP-lO6"/>
+                        <constraint firstAttribute="width" constant="211" id="XEM-mo-bz8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-8T-Opc">
+                    <rect key="frame" x="40" y="478" width="295" height="30"/>
+                    <string key="text">Для доступа к своим проектам
+войдите с помошью логина и пароля.</string>
+                    <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="15"/>
+                    <color key="textColor" name="blue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P67-K3-1J6" customClass="PSButton" customModule="ProStudio" customModuleProvider="target">
+                    <rect key="frame" x="16" y="542" width="343" height="50"/>
+                    <color key="backgroundColor" red="0.00043634738540000001" green="0.50770604610000003" blue="0.79845690729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="uVr-Ob-MqR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Intro-Bold" family="Intro Bold" pointSize="14"/>
+                    <state key="normal" title="ВОЙТИ В PROSTUDIO PROJECT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" name="blue"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fSt-ro-WJq">
+                    <rect key="frame" x="40" y="648" width="295" height="63"/>
+                    <string key="text">Если у вас нет проектов,
+будем рады обсудить сотрудничество.</string>
+                    <fontDescription key="fontDescription" name="Intro-Book" family="Intro Book" pointSize="21"/>
+                    <color key="textColor" red="0.55674988030000006" green="0.55689430240000004" blue="0.57709598539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ud5-8T-Opc" firstAttribute="top" secondItem="R65-8C-ipp" secondAttribute="bottom" priority="250" constant="74" id="08U-CS-gbk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fSt-ro-WJq" secondAttribute="trailing" constant="40" id="69m-F9-AGo"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P67-K3-1J6" secondAttribute="bottom" constant="10" id="7Bi-Ed-Zfz"/>
+                <constraint firstItem="ud5-8T-Opc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R65-8C-ipp" secondAttribute="bottom" constant="10" id="8rR-NT-liz"/>
+                <constraint firstItem="R65-8C-ipp" firstAttribute="top" secondItem="q5D-66-7jq" secondAttribute="bottom" priority="250" constant="67" id="D6F-u8-TvJ"/>
+                <constraint firstItem="R65-8C-ipp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="q5D-66-7jq" secondAttribute="bottom" constant="10" id="DwT-an-44E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P67-K3-1J6" secondAttribute="trailing" constant="16" id="HmY-wQ-5i6"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Jj7-S3-mpH"/>
+                <constraint firstItem="P67-K3-1J6" firstAttribute="top" secondItem="ud5-8T-Opc" secondAttribute="bottom" constant="34" id="LRS-Jp-ZCn"/>
+                <constraint firstItem="P67-K3-1J6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Lqg-Ag-Zcg"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" priority="999" constant="86" id="WJw-M2-NEz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ud5-8T-Opc" secondAttribute="trailing" constant="40" id="cZG-Ys-cdV"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="top" secondItem="P67-K3-1J6" secondAttribute="bottom" priority="250" constant="56" id="eFe-yj-4zz"/>
+                <constraint firstItem="fSt-ro-WJq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="em1-qN-wbd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fSt-ro-WJq" secondAttribute="bottom" constant="8" id="g17-MY-H2s"/>
+                <constraint firstItem="R65-8C-ipp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l8f-LD-aZO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q5D-66-7jq" secondAttribute="trailing" constant="86" id="thl-CF-fQc"/>
+                <constraint firstItem="ud5-8T-Opc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ygQ-e1-SYC"/>
+                <constraint firstItem="q5D-66-7jq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="109" id="yu8-In-C5k"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="130.40000000000001" y="152.95566502463055"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="buddy_image" width="1346" height="1226"/>
+        <image name="main_logo" width="607" height="107"/>
+        <namedColor name="blue">
+            <color red="0.0" green="0.50588235294117645" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
